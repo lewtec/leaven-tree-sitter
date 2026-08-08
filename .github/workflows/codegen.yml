@@ -22,9 +22,6 @@ jobs:
 
       - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
 
-      - name: Install clang 14
-        run: mise install conda:clang@14.0.6
-
       - name: Place grammar C (JIT)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

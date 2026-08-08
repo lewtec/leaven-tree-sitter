@@ -6,7 +6,6 @@ Uncomment a `#grammar` in `workspaced.cue`, lock, dispatch codegen. The factory 
 
 ```bash
 mise install
-mise run clang:install          # clang 14; not installed by default Test CI
 export CC="$(mise which clang)"
 mise run grammars:lock
 mise run grammars:sync          # JIT C under third-party/ (gitignored)

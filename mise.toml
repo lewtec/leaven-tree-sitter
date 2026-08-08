@@ -1,10 +1,8 @@
 [tools]
 go = "1.26.4"
 "github:lucasew/workspaced" = "0.14.1"
-
-[tasks."clang:install"]
-description = "Install clang 14 for leaven (typed LLVM pointers). Not a default tool — Test CI skips it."
-run = "mise install conda:clang@14.0.6"
+# Clang 14 for leaven (typed LLVM pointers).
+"conda:clang" = "14.0.6"
 
 [env]
 CGO_ENABLED = "0"
