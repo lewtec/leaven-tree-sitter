@@ -48,15 +48,6 @@ jobs:
           CGO_ENABLED: "0"
         run: go test work
 
-      - name: Stage cook outputs
-        run: |
-          set -euo pipefail
-          git add -- grammar cmd/parse/languages.go go.mod go.sum go.work
-          if [[ -f go.work.sum ]]; then
-            git add -- go.work.sum
-          fi
-          git status --porcelain
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
@@ -69,9 +60,3 @@ jobs:
             Click **Approve workflows to run** so Test runs on this PR.
           branch: codegen-update
           delete-branch: true
-          add-paths: |
-            grammar
-            cmd/parse/languages.go
-            go.mod
-            go.sum
-            go.work
