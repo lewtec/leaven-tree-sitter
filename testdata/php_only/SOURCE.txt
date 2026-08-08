@@ -1,0 +1,3 @@
+Stolen/adapted from upstream tree-sitter corpus for this grammar.
+origin: class.txt#Abstract class (no tags)
+file: sample.php

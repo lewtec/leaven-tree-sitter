@@ -1,0 +1,44 @@
+{
+  "language": "dockerfile",
+  "file": "tiny.Dockerfile",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 12,
+    "children": [
+      {
+        "type": "from_instruction",
+        "start_byte": 0,
+        "end_byte": 11,
+        "children": [
+          {
+            "type": "FROM",
+            "start_byte": 0,
+            "end_byte": 4,
+            "text": "FROM"
+          },
+          {
+            "type": "image_spec",
+            "start_byte": 5,
+            "end_byte": 11,
+            "children": [
+              {
+                "type": "image_name",
+                "field": "name",
+                "start_byte": 5,
+                "end_byte": 11,
+                "text": "alpine"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "\n",
+        "start_byte": 11,
+        "end_byte": 12,
+        "text": "\n"
+      }
+    ]
+  }
+}

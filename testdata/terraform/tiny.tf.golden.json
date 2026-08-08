@@ -1,0 +1,107 @@
+{
+  "language": "terraform",
+  "file": "tiny.tf",
+  "root": {
+    "type": "config_file",
+    "start_byte": 0,
+    "end_byte": 32,
+    "children": [
+      {
+        "type": "body",
+        "start_byte": 0,
+        "end_byte": 31,
+        "children": [
+          {
+            "type": "block",
+            "start_byte": 0,
+            "end_byte": 31,
+            "children": [
+              {
+                "type": "identifier",
+                "start_byte": 0,
+                "end_byte": 8,
+                "text": "resource"
+              },
+              {
+                "type": "string_lit",
+                "start_byte": 9,
+                "end_byte": 24,
+                "children": [
+                  {
+                    "type": "quoted_template_start",
+                    "start_byte": 9,
+                    "end_byte": 10,
+                    "text": "\""
+                  },
+                  {
+                    "type": "template_literal",
+                    "start_byte": 10,
+                    "end_byte": 23,
+                    "text": "null_resource"
+                  },
+                  {
+                    "type": "quoted_template_end",
+                    "start_byte": 23,
+                    "end_byte": 24,
+                    "text": "\""
+                  }
+                ]
+              },
+              {
+                "type": "string_lit",
+                "start_byte": 25,
+                "end_byte": 28,
+                "children": [
+                  {
+                    "type": "quoted_template_start",
+                    "start_byte": 25,
+                    "end_byte": 26,
+                    "text": "\""
+                  },
+                  {
+                    "type": "template_literal",
+                    "start_byte": 26,
+                    "end_byte": 27,
+                    "text": "x"
+                  },
+                  {
+                    "type": "quoted_template_end",
+                    "start_byte": 27,
+                    "end_byte": 28,
+                    "text": "\""
+                  }
+                ]
+              },
+              {
+                "type": "block_start",
+                "start_byte": 29,
+                "end_byte": 30,
+                "children": [
+                  {
+                    "type": "{",
+                    "start_byte": 29,
+                    "end_byte": 30,
+                    "text": "{"
+                  }
+                ]
+              },
+              {
+                "type": "block_end",
+                "start_byte": 30,
+                "end_byte": 31,
+                "children": [
+                  {
+                    "type": "}",
+                    "start_byte": 30,
+                    "end_byte": 31,
+                    "text": "}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "language": "zig",
+  "file": "tiny.zig",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 22,
+    "children": [
+      {
+        "type": "function_declaration",
+        "start_byte": 0,
+        "end_byte": 21,
+        "children": [
+          {
+            "type": "pub",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "pub"
+          },
+          {
+            "type": "fn",
+            "start_byte": 4,
+            "end_byte": 6,
+            "text": "fn"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 7,
+            "end_byte": 11,
+            "text": "main"
+          },
+          {
+            "type": "parameters",
+            "start_byte": 11,
+            "end_byte": 13,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 11,
+                "end_byte": 12,
+                "text": "("
+              },
+              {
+                "type": ")",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": ")"
+              }
+            ]
+          },
+          {
+            "type": "builtin_type",
+            "field": "type",
+            "start_byte": 14,
+            "end_byte": 18,
+            "children": [
+              {
+                "type": "void",
+                "start_byte": 14,
+                "end_byte": 18,
+                "text": "void"
+              }
+            ]
+          },
+          {
+            "type": "block",
+            "field": "body",
+            "start_byte": 19,
+            "end_byte": 21,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 19,
+                "end_byte": 20,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 20,
+                "end_byte": 21,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

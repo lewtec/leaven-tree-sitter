@@ -1,0 +1,96 @@
+{
+  "language": "commonlisp",
+  "file": "tiny.lisp",
+  "root": {
+    "type": "source",
+    "start_byte": 0,
+    "end_byte": 19,
+    "children": [
+      {
+        "type": "list_lit",
+        "start_byte": 0,
+        "end_byte": 18,
+        "children": [
+          {
+            "type": "defun",
+            "start_byte": 0,
+            "end_byte": 18,
+            "children": [
+              {
+                "type": "(",
+                "field": "open",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "("
+              },
+              {
+                "type": "defun_header",
+                "start_byte": 1,
+                "end_byte": 15,
+                "children": [
+                  {
+                    "type": "defun_keyword",
+                    "field": "keyword",
+                    "start_byte": 1,
+                    "end_byte": 6,
+                    "children": [
+                      {
+                        "type": "defun",
+                        "start_byte": 1,
+                        "end_byte": 6,
+                        "text": "defun"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "sym_lit",
+                    "field": "function_name",
+                    "start_byte": 7,
+                    "end_byte": 12,
+                    "text": "hello"
+                  },
+                  {
+                    "type": "list_lit",
+                    "field": "lambda_list",
+                    "start_byte": 13,
+                    "end_byte": 15,
+                    "children": [
+                      {
+                        "type": "(",
+                        "field": "open",
+                        "start_byte": 13,
+                        "end_byte": 14,
+                        "text": "("
+                      },
+                      {
+                        "type": ")",
+                        "field": "close",
+                        "start_byte": 14,
+                        "end_byte": 15,
+                        "text": ")"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "num_lit",
+                "field": "value",
+                "start_byte": 16,
+                "end_byte": 17,
+                "text": "1"
+              },
+              {
+                "type": ")",
+                "field": "close",
+                "start_byte": 17,
+                "end_byte": 18,
+                "text": ")"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

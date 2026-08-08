@@ -1,0 +1,81 @@
+{
+  "language": "css",
+  "file": "tiny.css",
+  "root": {
+    "type": "stylesheet",
+    "start_byte": 0,
+    "end_byte": 18,
+    "children": [
+      {
+        "type": "rule_set",
+        "start_byte": 0,
+        "end_byte": 17,
+        "children": [
+          {
+            "type": "selectors",
+            "start_byte": 0,
+            "end_byte": 1,
+            "children": [
+              {
+                "type": "tag_name",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "a"
+              }
+            ]
+          },
+          {
+            "type": "block",
+            "start_byte": 2,
+            "end_byte": 17,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 2,
+                "end_byte": 3,
+                "text": "{"
+              },
+              {
+                "type": "declaration",
+                "start_byte": 4,
+                "end_byte": 15,
+                "children": [
+                  {
+                    "type": "property_name",
+                    "start_byte": 4,
+                    "end_byte": 9,
+                    "text": "color"
+                  },
+                  {
+                    "type": ":",
+                    "start_byte": 9,
+                    "end_byte": 10,
+                    "text": ":"
+                  },
+                  {
+                    "type": "plain_value",
+                    "start_byte": 11,
+                    "end_byte": 14,
+                    "text": "red"
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 14,
+                    "end_byte": 15,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 16,
+                "end_byte": 17,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

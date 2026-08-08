@@ -1,0 +1,87 @@
+{
+  "language": "yaml",
+  "file": "tiny.yaml",
+  "root": {
+    "type": "stream",
+    "start_byte": 0,
+    "end_byte": 5,
+    "children": [
+      {
+        "type": "document",
+        "start_byte": 0,
+        "end_byte": 5,
+        "children": [
+          {
+            "type": "block_node",
+            "start_byte": 0,
+            "end_byte": 5,
+            "children": [
+              {
+                "type": "block_mapping",
+                "start_byte": 0,
+                "end_byte": 5,
+                "children": [
+                  {
+                    "type": "block_mapping_pair",
+                    "start_byte": 0,
+                    "end_byte": 4,
+                    "children": [
+                      {
+                        "type": "flow_node",
+                        "field": "key",
+                        "start_byte": 0,
+                        "end_byte": 1,
+                        "children": [
+                          {
+                            "type": "plain_scalar",
+                            "start_byte": 0,
+                            "end_byte": 1,
+                            "children": [
+                              {
+                                "type": "string_scalar",
+                                "start_byte": 0,
+                                "end_byte": 1,
+                                "text": "x"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": ":",
+                        "start_byte": 1,
+                        "end_byte": 2,
+                        "text": ":"
+                      },
+                      {
+                        "type": "flow_node",
+                        "field": "value",
+                        "start_byte": 3,
+                        "end_byte": 4,
+                        "children": [
+                          {
+                            "type": "plain_scalar",
+                            "start_byte": 3,
+                            "end_byte": 4,
+                            "children": [
+                              {
+                                "type": "integer_scalar",
+                                "start_byte": 3,
+                                "end_byte": 4,
+                                "text": "1"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

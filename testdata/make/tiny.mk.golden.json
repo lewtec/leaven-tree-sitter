@@ -1,0 +1,69 @@
+{
+  "language": "make",
+  "file": "tiny.mk",
+  "root": {
+    "type": "makefile",
+    "start_byte": 0,
+    "end_byte": 15,
+    "children": [
+      {
+        "type": "rule",
+        "start_byte": 0,
+        "end_byte": 15,
+        "children": [
+          {
+            "type": "targets",
+            "start_byte": 0,
+            "end_byte": 3,
+            "children": [
+              {
+                "type": "word",
+                "start_byte": 0,
+                "end_byte": 3,
+                "text": "all"
+              }
+            ]
+          },
+          {
+            "type": ":",
+            "start_byte": 3,
+            "end_byte": 4,
+            "text": ":"
+          },
+          {
+            "type": "recipe",
+            "start_byte": 4,
+            "end_byte": 15,
+            "children": [
+              {
+                "type": "\t",
+                "start_byte": 5,
+                "end_byte": 6,
+                "text": "\t"
+              },
+              {
+                "type": "recipe_line",
+                "start_byte": 6,
+                "end_byte": 14,
+                "children": [
+                  {
+                    "type": "@",
+                    "start_byte": 6,
+                    "end_byte": 7,
+                    "text": "@"
+                  },
+                  {
+                    "type": "shell_text",
+                    "start_byte": 7,
+                    "end_byte": 14,
+                    "text": "echo hi"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

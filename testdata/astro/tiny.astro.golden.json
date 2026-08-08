@@ -1,0 +1,118 @@
+{
+  "language": "astro",
+  "file": "tiny.astro",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 31,
+    "children": [
+      {
+        "type": "frontmatter",
+        "start_byte": 0,
+        "end_byte": 19,
+        "children": [
+          {
+            "type": "---",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "---"
+          },
+          {
+            "type": "frontmatter_js_block",
+            "start_byte": 3,
+            "end_byte": 15,
+            "text": "\nconst x = 1"
+          },
+          {
+            "type": "---",
+            "start_byte": 16,
+            "end_byte": 19,
+            "text": "---"
+          }
+        ]
+      },
+      {
+        "type": "element",
+        "start_byte": 20,
+        "end_byte": 30,
+        "children": [
+          {
+            "type": "start_tag",
+            "start_byte": 20,
+            "end_byte": 23,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 20,
+                "end_byte": 21,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 21,
+                "end_byte": 22,
+                "text": "p"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 22,
+                "end_byte": 23,
+                "text": "\u003e"
+              }
+            ]
+          },
+          {
+            "type": "html_interpolation",
+            "start_byte": 23,
+            "end_byte": 26,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 23,
+                "end_byte": 24,
+                "text": "{"
+              },
+              {
+                "type": "permissible_text",
+                "start_byte": 24,
+                "end_byte": 25,
+                "text": "x"
+              },
+              {
+                "type": "}",
+                "start_byte": 25,
+                "end_byte": 26,
+                "text": "}"
+              }
+            ]
+          },
+          {
+            "type": "end_tag",
+            "start_byte": 26,
+            "end_byte": 30,
+            "children": [
+              {
+                "type": "\u003c/",
+                "start_byte": 26,
+                "end_byte": 28,
+                "text": "\u003c/"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 28,
+                "end_byte": 29,
+                "text": "p"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 29,
+                "end_byte": 30,
+                "text": "\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "language": "wgsl_bevy",
+  "file": "sample.wgsl",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 14,
+    "children": [
+      {
+        "type": "function_declaration",
+        "start_byte": 0,
+        "end_byte": 13,
+        "children": [
+          {
+            "type": "fn",
+            "start_byte": 0,
+            "end_byte": 2,
+            "text": "fn"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 3,
+            "end_byte": 7,
+            "text": "main"
+          },
+          {
+            "type": "(",
+            "start_byte": 7,
+            "end_byte": 8,
+            "text": "("
+          },
+          {
+            "type": ")",
+            "start_byte": 8,
+            "end_byte": 9,
+            "text": ")"
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 10,
+            "end_byte": 13,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 10,
+                "end_byte": 11,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "language": "COBOL",
+  "file": "sample.cob",
+  "root": {
+    "type": "start",
+    "start_byte": 6,
+    "end_byte": 122,
+    "children": [
+      {
+        "type": "program_definition",
+        "start_byte": 7,
+        "end_byte": 53,
+        "children": [
+          {
+            "type": "identification_division",
+            "start_byte": 7,
+            "end_byte": 53,
+            "children": [
+              {
+                "type": ".",
+                "start_byte": 30,
+                "end_byte": 31,
+                "text": "."
+              },
+              {
+                "type": ".",
+                "start_byte": 49,
+                "end_byte": 50,
+                "text": "."
+              },
+              {
+                "type": "program_name",
+                "start_byte": 51,
+                "end_byte": 52,
+                "text": "a"
+              },
+              {
+                "type": ".",
+                "start_byte": 52,
+                "end_byte": 53,
+                "text": "."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "comment",
+        "start_byte": 121,
+        "end_byte": 121
+      }
+    ]
+  }
+}

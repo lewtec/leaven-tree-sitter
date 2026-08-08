@@ -1,0 +1,50 @@
+{
+  "language": "ocaml_interface",
+  "file": "tiny.mli",
+  "root": {
+    "type": "compilation_unit",
+    "start_byte": 0,
+    "end_byte": 12,
+    "children": [
+      {
+        "type": "value_specification",
+        "start_byte": 0,
+        "end_byte": 11,
+        "children": [
+          {
+            "type": "val",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "val"
+          },
+          {
+            "type": "value_name",
+            "start_byte": 4,
+            "end_byte": 5,
+            "text": "x"
+          },
+          {
+            "type": ":",
+            "start_byte": 6,
+            "end_byte": 7,
+            "text": ":"
+          },
+          {
+            "type": "type_constructor_path",
+            "field": "type",
+            "start_byte": 8,
+            "end_byte": 11,
+            "children": [
+              {
+                "type": "type_constructor",
+                "start_byte": 8,
+                "end_byte": 11,
+                "text": "int"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

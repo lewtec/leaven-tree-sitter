@@ -1,0 +1,30 @@
+{
+  "language": "luap",
+  "file": "tiny.luap",
+  "root": {
+    "type": "pattern",
+    "start_byte": 0,
+    "end_byte": 4,
+    "children": [
+      {
+        "type": "character",
+        "start_byte": 0,
+        "end_byte": 2,
+        "children": [
+          {
+            "type": "zero_or_more",
+            "start_byte": 1,
+            "end_byte": 2,
+            "text": "*"
+          }
+        ]
+      },
+      {
+        "type": "character",
+        "start_byte": 2,
+        "end_byte": 3,
+        "text": "b"
+      }
+    ]
+  }
+}

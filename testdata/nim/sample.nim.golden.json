@@ -1,0 +1,229 @@
+{
+  "language": "nim",
+  "file": "sample.nim",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 53,
+    "children": [
+      {
+        "type": "using_section",
+        "start_byte": 0,
+        "end_byte": 38,
+        "children": [
+          {
+            "type": "using",
+            "start_byte": 0,
+            "end_byte": 5,
+            "text": "using"
+          },
+          {
+            "type": "variable_declaration",
+            "start_byte": 8,
+            "end_byte": 14,
+            "children": [
+              {
+                "type": "symbol_declaration_list",
+                "start_byte": 8,
+                "end_byte": 9,
+                "children": [
+                  {
+                    "type": "symbol_declaration",
+                    "start_byte": 8,
+                    "end_byte": 9,
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "field": "name",
+                        "start_byte": 8,
+                        "end_byte": 9,
+                        "text": "c"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ":",
+                "start_byte": 9,
+                "end_byte": 10,
+                "text": ":"
+              },
+              {
+                "type": "type_expression",
+                "field": "type",
+                "start_byte": 11,
+                "end_byte": 14,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "start_byte": 11,
+                    "end_byte": 14,
+                    "text": "int"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "variable_declaration",
+            "start_byte": 17,
+            "end_byte": 23,
+            "children": [
+              {
+                "type": "symbol_declaration_list",
+                "start_byte": 17,
+                "end_byte": 18,
+                "children": [
+                  {
+                    "type": "symbol_declaration",
+                    "start_byte": 17,
+                    "end_byte": 18,
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "field": "name",
+                        "start_byte": 17,
+                        "end_byte": 18,
+                        "text": "n"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ":",
+                "start_byte": 18,
+                "end_byte": 19,
+                "text": ":"
+              },
+              {
+                "type": "type_expression",
+                "field": "type",
+                "start_byte": 20,
+                "end_byte": 23,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "start_byte": 20,
+                    "end_byte": 23,
+                    "text": "int"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "variable_declaration",
+            "start_byte": 26,
+            "end_byte": 38,
+            "children": [
+              {
+                "type": "symbol_declaration_list",
+                "start_byte": 26,
+                "end_byte": 33,
+                "children": [
+                  {
+                    "type": "symbol_declaration",
+                    "start_byte": 26,
+                    "end_byte": 33,
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "field": "name",
+                        "start_byte": 26,
+                        "end_byte": 33,
+                        "text": "counter"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ":",
+                "start_byte": 33,
+                "end_byte": 34,
+                "text": ":"
+              },
+              {
+                "type": "type_expression",
+                "field": "type",
+                "start_byte": 35,
+                "end_byte": 38,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "start_byte": 35,
+                    "end_byte": 38,
+                    "text": "int"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "using_section",
+        "start_byte": 40,
+        "end_byte": 52,
+        "children": [
+          {
+            "type": "using",
+            "start_byte": 40,
+            "end_byte": 45,
+            "text": "using"
+          },
+          {
+            "type": "variable_declaration",
+            "start_byte": 46,
+            "end_byte": 52,
+            "children": [
+              {
+                "type": "symbol_declaration_list",
+                "start_byte": 46,
+                "end_byte": 47,
+                "children": [
+                  {
+                    "type": "symbol_declaration",
+                    "start_byte": 46,
+                    "end_byte": 47,
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "field": "name",
+                        "start_byte": 46,
+                        "end_byte": 47,
+                        "text": "c"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ":",
+                "start_byte": 47,
+                "end_byte": 48,
+                "text": ":"
+              },
+              {
+                "type": "type_expression",
+                "field": "type",
+                "start_byte": 49,
+                "end_byte": 52,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "start_byte": 49,
+                    "end_byte": 52,
+                    "text": "int"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

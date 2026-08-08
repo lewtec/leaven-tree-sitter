@@ -1,0 +1,119 @@
+{
+  "language": "c",
+  "file": "tiny.c",
+  "root": {
+    "type": "translation_unit",
+    "start_byte": 0,
+    "end_byte": 29,
+    "children": [
+      {
+        "type": "function_definition",
+        "start_byte": 0,
+        "end_byte": 28,
+        "children": [
+          {
+            "type": "primitive_type",
+            "field": "type",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "int"
+          },
+          {
+            "type": "function_declarator",
+            "field": "declarator",
+            "start_byte": 4,
+            "end_byte": 14,
+            "children": [
+              {
+                "type": "identifier",
+                "field": "declarator",
+                "start_byte": 4,
+                "end_byte": 8,
+                "text": "main"
+              },
+              {
+                "type": "parameter_list",
+                "field": "parameters",
+                "start_byte": 8,
+                "end_byte": 14,
+                "children": [
+                  {
+                    "type": "(",
+                    "start_byte": 8,
+                    "end_byte": 9,
+                    "text": "("
+                  },
+                  {
+                    "type": "parameter_declaration",
+                    "start_byte": 9,
+                    "end_byte": 13,
+                    "children": [
+                      {
+                        "type": "primitive_type",
+                        "field": "type",
+                        "start_byte": 9,
+                        "end_byte": 13,
+                        "text": "void"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 13,
+                    "end_byte": 14,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 15,
+            "end_byte": 28,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 15,
+                "end_byte": 16,
+                "text": "{"
+              },
+              {
+                "type": "return_statement",
+                "start_byte": 17,
+                "end_byte": 26,
+                "children": [
+                  {
+                    "type": "return",
+                    "start_byte": 17,
+                    "end_byte": 23,
+                    "text": "return"
+                  },
+                  {
+                    "type": "number_literal",
+                    "start_byte": 24,
+                    "end_byte": 25,
+                    "text": "0"
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 25,
+                    "end_byte": 26,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 27,
+                "end_byte": 28,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

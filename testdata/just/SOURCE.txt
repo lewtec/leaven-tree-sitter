@@ -1,0 +1,1 @@
+from casey/tree-sitter-just test/corpus/delimited.txt#basic strings

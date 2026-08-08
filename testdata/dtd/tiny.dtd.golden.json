@@ -1,0 +1,74 @@
+{
+  "language": "dtd",
+  "file": "tiny.dtd",
+  "root": {
+    "type": "extSubset",
+    "start_byte": 0,
+    "end_byte": 26,
+    "children": [
+      {
+        "type": "elementdecl",
+        "start_byte": 0,
+        "end_byte": 25,
+        "children": [
+          {
+            "type": "\u003c!",
+            "start_byte": 0,
+            "end_byte": 2,
+            "text": "\u003c!"
+          },
+          {
+            "type": "ELEMENT",
+            "start_byte": 2,
+            "end_byte": 9,
+            "text": "ELEMENT"
+          },
+          {
+            "type": "Name",
+            "start_byte": 10,
+            "end_byte": 14,
+            "text": "note"
+          },
+          {
+            "type": "contentspec",
+            "start_byte": 15,
+            "end_byte": 24,
+            "children": [
+              {
+                "type": "Mixed",
+                "start_byte": 15,
+                "end_byte": 24,
+                "children": [
+                  {
+                    "type": "(",
+                    "start_byte": 15,
+                    "end_byte": 16,
+                    "text": "("
+                  },
+                  {
+                    "type": "#PCDATA",
+                    "start_byte": 16,
+                    "end_byte": 23,
+                    "text": "#PCDATA"
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 23,
+                    "end_byte": 24,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "\u003e",
+            "start_byte": 24,
+            "end_byte": 25,
+            "text": "\u003e"
+          }
+        ]
+      }
+    ]
+  }
+}

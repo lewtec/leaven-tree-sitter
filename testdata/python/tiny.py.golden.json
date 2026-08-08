@@ -1,0 +1,78 @@
+{
+  "language": "python",
+  "file": "tiny.py",
+  "root": {
+    "type": "module",
+    "start_byte": 0,
+    "end_byte": 16,
+    "children": [
+      {
+        "type": "assignment",
+        "start_byte": 0,
+        "end_byte": 6,
+        "children": [
+          {
+            "type": "identifier",
+            "field": "left",
+            "start_byte": 0,
+            "end_byte": 1,
+            "text": "x"
+          },
+          {
+            "type": "=",
+            "start_byte": 2,
+            "end_byte": 3,
+            "text": "="
+          },
+          {
+            "type": "integer",
+            "field": "right",
+            "start_byte": 4,
+            "end_byte": 6,
+            "text": "10"
+          }
+        ]
+      },
+      {
+        "type": "call",
+        "start_byte": 7,
+        "end_byte": 15,
+        "children": [
+          {
+            "type": "identifier",
+            "field": "function",
+            "start_byte": 7,
+            "end_byte": 12,
+            "text": "print"
+          },
+          {
+            "type": "argument_list",
+            "field": "arguments",
+            "start_byte": 12,
+            "end_byte": 15,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": "("
+              },
+              {
+                "type": "identifier",
+                "start_byte": 13,
+                "end_byte": 14,
+                "text": "x"
+              },
+              {
+                "type": ")",
+                "start_byte": 14,
+                "end_byte": 15,
+                "text": ")"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

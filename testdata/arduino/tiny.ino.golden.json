@@ -1,0 +1,149 @@
+{
+  "language": "arduino",
+  "file": "tiny.ino",
+  "root": {
+    "type": "translation_unit",
+    "start_byte": 0,
+    "end_byte": 31,
+    "children": [
+      {
+        "type": "function_definition",
+        "start_byte": 0,
+        "end_byte": 15,
+        "children": [
+          {
+            "type": "primitive_type",
+            "field": "type",
+            "start_byte": 0,
+            "end_byte": 4,
+            "text": "void"
+          },
+          {
+            "type": "function_declarator",
+            "field": "declarator",
+            "start_byte": 5,
+            "end_byte": 12,
+            "children": [
+              {
+                "type": "identifier",
+                "field": "declarator",
+                "start_byte": 5,
+                "end_byte": 10,
+                "text": "setup"
+              },
+              {
+                "type": "parameter_list",
+                "field": "parameters",
+                "start_byte": 10,
+                "end_byte": 12,
+                "children": [
+                  {
+                    "type": "(",
+                    "start_byte": 10,
+                    "end_byte": 11,
+                    "text": "("
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 11,
+                    "end_byte": 12,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 13,
+            "end_byte": 15,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 13,
+                "end_byte": 14,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 14,
+                "end_byte": 15,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function_definition",
+        "start_byte": 16,
+        "end_byte": 30,
+        "children": [
+          {
+            "type": "primitive_type",
+            "field": "type",
+            "start_byte": 16,
+            "end_byte": 20,
+            "text": "void"
+          },
+          {
+            "type": "function_declarator",
+            "field": "declarator",
+            "start_byte": 21,
+            "end_byte": 27,
+            "children": [
+              {
+                "type": "identifier",
+                "field": "declarator",
+                "start_byte": 21,
+                "end_byte": 25,
+                "text": "loop"
+              },
+              {
+                "type": "parameter_list",
+                "field": "parameters",
+                "start_byte": 25,
+                "end_byte": 27,
+                "children": [
+                  {
+                    "type": "(",
+                    "start_byte": 25,
+                    "end_byte": 26,
+                    "text": "("
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 26,
+                    "end_byte": 27,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 28,
+            "end_byte": 30,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 28,
+                "end_byte": 29,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 29,
+                "end_byte": 30,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

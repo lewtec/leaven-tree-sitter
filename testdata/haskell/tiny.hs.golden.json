@@ -1,0 +1,82 @@
+{
+  "language": "haskell",
+  "file": "tiny.hs",
+  "root": {
+    "type": "haskell",
+    "start_byte": 0,
+    "end_byte": 17,
+    "children": [
+      {
+        "type": "declarations",
+        "field": "declarations",
+        "start_byte": 0,
+        "end_byte": 17,
+        "children": [
+          {
+            "type": "bind",
+            "start_byte": 0,
+            "end_byte": 16,
+            "children": [
+              {
+                "type": "variable",
+                "field": "name",
+                "start_byte": 0,
+                "end_byte": 4,
+                "text": "main"
+              },
+              {
+                "type": "match",
+                "field": "match",
+                "start_byte": 5,
+                "end_byte": 16,
+                "children": [
+                  {
+                    "type": "=",
+                    "start_byte": 5,
+                    "end_byte": 6,
+                    "text": "="
+                  },
+                  {
+                    "type": "apply",
+                    "field": "expression",
+                    "start_byte": 7,
+                    "end_byte": 16,
+                    "children": [
+                      {
+                        "type": "variable",
+                        "field": "function",
+                        "start_byte": 7,
+                        "end_byte": 13,
+                        "text": "return"
+                      },
+                      {
+                        "type": "unit",
+                        "field": "argument",
+                        "start_byte": 14,
+                        "end_byte": 16,
+                        "children": [
+                          {
+                            "type": "(",
+                            "start_byte": 14,
+                            "end_byte": 15,
+                            "text": "("
+                          },
+                          {
+                            "type": ")",
+                            "start_byte": 15,
+                            "end_byte": 16,
+                            "text": ")"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

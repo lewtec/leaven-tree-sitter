@@ -1,0 +1,3 @@
+Stolen/adapted from upstream tree-sitter corpus for this grammar.
+origin: comments.txt#Comments
+file: sample.res

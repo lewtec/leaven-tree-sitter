@@ -1,0 +1,58 @@
+{
+  "language": "ron",
+  "file": "tiny.ron",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 7,
+    "children": [
+      {
+        "type": "struct",
+        "start_byte": 0,
+        "end_byte": 6,
+        "children": [
+          {
+            "type": "(",
+            "field": "body",
+            "start_byte": 0,
+            "end_byte": 1,
+            "text": "("
+          },
+          {
+            "type": "struct_entry",
+            "field": "body",
+            "start_byte": 1,
+            "end_byte": 5,
+            "children": [
+              {
+                "type": "identifier",
+                "start_byte": 1,
+                "end_byte": 2,
+                "text": "a"
+              },
+              {
+                "type": ":",
+                "start_byte": 2,
+                "end_byte": 3,
+                "text": ":"
+              },
+              {
+                "type": "integer",
+                "start_byte": 4,
+                "end_byte": 5,
+                "text": "1"
+              }
+            ]
+          },
+          {
+            "type": ")",
+            "field": "body",
+            "start_byte": 5,
+            "end_byte": 6,
+            "text": ")"
+          }
+        ]
+      }
+    ]
+  }
+}

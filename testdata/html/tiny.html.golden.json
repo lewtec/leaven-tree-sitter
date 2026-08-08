@@ -1,0 +1,125 @@
+{
+  "language": "html",
+  "file": "tiny.html",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 27,
+    "children": [
+      {
+        "type": "element",
+        "start_byte": 0,
+        "end_byte": 26,
+        "children": [
+          {
+            "type": "start_tag",
+            "start_byte": 0,
+            "end_byte": 6,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 1,
+                "end_byte": 5,
+                "text": "html"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 5,
+                "end_byte": 6,
+                "text": "\u003e"
+              }
+            ]
+          },
+          {
+            "type": "element",
+            "start_byte": 6,
+            "end_byte": 19,
+            "children": [
+              {
+                "type": "start_tag",
+                "start_byte": 6,
+                "end_byte": 12,
+                "children": [
+                  {
+                    "type": "\u003c",
+                    "start_byte": 6,
+                    "end_byte": 7,
+                    "text": "\u003c"
+                  },
+                  {
+                    "type": "tag_name",
+                    "start_byte": 7,
+                    "end_byte": 11,
+                    "text": "body"
+                  },
+                  {
+                    "type": "\u003e",
+                    "start_byte": 11,
+                    "end_byte": 12,
+                    "text": "\u003e"
+                  }
+                ]
+              },
+              {
+                "type": "end_tag",
+                "start_byte": 12,
+                "end_byte": 19,
+                "children": [
+                  {
+                    "type": "\u003c/",
+                    "start_byte": 12,
+                    "end_byte": 14,
+                    "text": "\u003c/"
+                  },
+                  {
+                    "type": "tag_name",
+                    "start_byte": 14,
+                    "end_byte": 18,
+                    "text": "body"
+                  },
+                  {
+                    "type": "\u003e",
+                    "start_byte": 18,
+                    "end_byte": 19,
+                    "text": "\u003e"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "end_tag",
+            "start_byte": 19,
+            "end_byte": 26,
+            "children": [
+              {
+                "type": "\u003c/",
+                "start_byte": 19,
+                "end_byte": 21,
+                "text": "\u003c/"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 21,
+                "end_byte": 25,
+                "text": "html"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 25,
+                "end_byte": 26,
+                "text": "\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

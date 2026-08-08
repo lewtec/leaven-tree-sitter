@@ -1,0 +1,40 @@
+[tools]
+go = "1.26.4"
+"github:lucasew/workspaced" = "0.14.1"
+
+[tasks."clang:install"]
+description = "Install clang 14 for leaven (typed LLVM pointers). Not a default tool — Test CI skips it."
+run = "mise install conda:clang@14.0.6"
+
+[env]
+CGO_ENABLED = "0"
+
+[tasks."grammars:sync"]
+description = "Place enabled grammar C via workspaced core:place (JIT, not committed)"
+run = """
+workspaced codebase apply
+if git ls-files --error-unmatch workspaced.lock.json >/dev/null 2>&1; then
+  git checkout -- workspaced.lock.json
+fi
+"""
+
+[tasks."grammars:lock"]
+description = "Refresh workspaced.lock.json for tree_sitter + live #grammar inputs"
+run = "workspaced mod lock"
+
+[tasks."tree-sitter:path"]
+description = "Print workspaced cache path for tree_sitter (fetch if missing)"
+run = "go run ./cmd/codegen print-tree-sitter-path"
+
+[tasks.test]
+description = "Unit tests (pure Go, no CGO)"
+env = { CGO_ENABLED = "0" }
+run = "go test work"
+
+[tasks.codegen]
+description = "Transpile core + every placed (enabled) grammar via clang IR + leaven"
+env = { CGO_ENABLED = "0" }
+run = """
+export CC="${CC:-$(mise which clang)}"
+go run -v ./cmd/codegen
+"""

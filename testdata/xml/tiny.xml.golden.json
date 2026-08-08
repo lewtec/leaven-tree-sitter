@@ -1,0 +1,106 @@
+{
+  "language": "xml",
+  "file": "tiny.xml",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 26,
+    "children": [
+      {
+        "type": "prolog",
+        "start_byte": 0,
+        "end_byte": 21,
+        "children": [
+          {
+            "type": "XMLDecl",
+            "start_byte": 0,
+            "end_byte": 21,
+            "children": [
+              {
+                "type": "\u003c?",
+                "start_byte": 0,
+                "end_byte": 2,
+                "text": "\u003c?"
+              },
+              {
+                "type": "xml",
+                "start_byte": 2,
+                "end_byte": 5,
+                "text": "xml"
+              },
+              {
+                "type": "version",
+                "start_byte": 6,
+                "end_byte": 13,
+                "text": "version"
+              },
+              {
+                "type": "=",
+                "start_byte": 13,
+                "end_byte": 14,
+                "text": "="
+              },
+              {
+                "type": "\"",
+                "start_byte": 14,
+                "end_byte": 15,
+                "text": "\""
+              },
+              {
+                "type": "VersionNum",
+                "start_byte": 15,
+                "end_byte": 18,
+                "text": "1.0"
+              },
+              {
+                "type": "\"",
+                "start_byte": 18,
+                "end_byte": 19,
+                "text": "\""
+              },
+              {
+                "type": "?\u003e",
+                "start_byte": 19,
+                "end_byte": 21,
+                "text": "?\u003e"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "element",
+        "field": "root",
+        "start_byte": 21,
+        "end_byte": 25,
+        "children": [
+          {
+            "type": "EmptyElemTag",
+            "start_byte": 21,
+            "end_byte": 25,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 21,
+                "end_byte": 22,
+                "text": "\u003c"
+              },
+              {
+                "type": "Name",
+                "start_byte": 22,
+                "end_byte": 23,
+                "text": "a"
+              },
+              {
+                "type": "/\u003e",
+                "start_byte": 23,
+                "end_byte": 25,
+                "text": "/\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

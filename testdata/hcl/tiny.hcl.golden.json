@@ -1,0 +1,107 @@
+{
+  "language": "hcl",
+  "file": "tiny.hcl",
+  "root": {
+    "type": "config_file",
+    "start_byte": 0,
+    "end_byte": 23,
+    "children": [
+      {
+        "type": "body",
+        "start_byte": 0,
+        "end_byte": 22,
+        "children": [
+          {
+            "type": "block",
+            "start_byte": 0,
+            "end_byte": 22,
+            "children": [
+              {
+                "type": "identifier",
+                "start_byte": 0,
+                "end_byte": 8,
+                "text": "resource"
+              },
+              {
+                "type": "string_lit",
+                "start_byte": 9,
+                "end_byte": 15,
+                "children": [
+                  {
+                    "type": "quoted_template_start",
+                    "start_byte": 9,
+                    "end_byte": 10,
+                    "text": "\""
+                  },
+                  {
+                    "type": "template_literal",
+                    "start_byte": 10,
+                    "end_byte": 14,
+                    "text": "null"
+                  },
+                  {
+                    "type": "quoted_template_end",
+                    "start_byte": 14,
+                    "end_byte": 15,
+                    "text": "\""
+                  }
+                ]
+              },
+              {
+                "type": "string_lit",
+                "start_byte": 16,
+                "end_byte": 19,
+                "children": [
+                  {
+                    "type": "quoted_template_start",
+                    "start_byte": 16,
+                    "end_byte": 17,
+                    "text": "\""
+                  },
+                  {
+                    "type": "template_literal",
+                    "start_byte": 17,
+                    "end_byte": 18,
+                    "text": "x"
+                  },
+                  {
+                    "type": "quoted_template_end",
+                    "start_byte": 18,
+                    "end_byte": 19,
+                    "text": "\""
+                  }
+                ]
+              },
+              {
+                "type": "block_start",
+                "start_byte": 20,
+                "end_byte": 21,
+                "children": [
+                  {
+                    "type": "{",
+                    "start_byte": 20,
+                    "end_byte": 21,
+                    "text": "{"
+                  }
+                ]
+              },
+              {
+                "type": "block_end",
+                "start_byte": 21,
+                "end_byte": 22,
+                "children": [
+                  {
+                    "type": "}",
+                    "start_byte": 21,
+                    "end_byte": 22,
+                    "text": "}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,20 +1,13 @@
 # Plan: `lewtec/leaven-tree-sitter`
 
-Port of the leaven-based tree-sitter Go stack from the
-`ccgo-tree-sitter` experiment (`20260806-try-codegen` branch) into a
-**fresh** repo. Same product scheme as `ccgo-tree-sitter`, backend is
-**leaven only** (no ccgo / modernc.org/libc).
+Clean port of the leaven tree-sitter Go stack from
+`ccgo-tree-sitter` branch `20260806-try-codegen`. New repo. No ccgo.
+No `modernc.org/libc`. No history transplant.
 
-Source of truth for this plan: grilling session 2026-08-07/08.
+Reader: whoever implements Phase 1. After this doc you can land the
+harness on `main` and dispatch a cook of the live `#grammar` set.
 
----
-
-## Goals
-
-1. **Well-tested small set** of languages for short CI iteration.
-2. **Eventually** enable the full workspaced inventory after polish.
-3. Commit **generated Go**, not original grammar **C**.
-4. C sources: **workspaced JIT** download → transpile when regenerating.
+Source of truth: grilling 2026-08-07/08, closed Q12.
 
 ---
 
@@ -22,132 +15,165 @@ Source of truth for this plan: grilling session 2026-08-07/08.
 
 | Item | Decision |
 |------|----------|
-| Target repo | https://github.com/lewtec/leaven-tree-sitter |
-| Port style | **Clean port** (no history from `ccgo-tree-sitter`) |
+| Repo | https://github.com/lewtec/leaven-tree-sitter |
 | Module path | `github.com/lewtec/leaven-tree-sitter` |
 | Backend | clang 14 → LLVM IR → `go tool leaven` (lewtec/leaven pin) |
-| Module layout | **One module for core** (`…/grammar`) + **one module per language** (`…/grammar/<lang>`) |
-| Committed | Generated `.go` (`core.go`, `grammar/<lang>/grammar.go`, hand API, fixtures, codegen, lock) |
-| Not committed | Original C under `third-party/tree-sitter-*` (JIT via workspaced) |
-| Scheme | Codegen → nested modules → `Register` → parse/fixtures API (like ccgo-tree-sitter) |
+| Layout | One module for core (`…/grammar`) + one module per language (`…/grammar/<lang>`) |
+| Scheme | Codegen → nested modules → `Register` → parse/fixtures API |
 
 ---
 
-## Enabled languages (day one)
+## What we commit
 
-**Full inventory** declared in workspaced; **most commented out**.
+| Commit | Do not commit |
+|--------|----------------|
+| Hand API (`api.go`, `query.go`, `parse.go`, `registry.go`, `status.go`, …) | Original C under `third-party/tree-sitter-*` |
+| `cmd/codegen` (leaven only) | `grammar/<lang>/` from a laptop cook |
+| `grammar/core.go` (from local cook) | Generated lang `.go` until a cook PR merges |
+| `workspaced.cue` + `workspaced.lock.json` | Full 190-lang lock |
+| testdata + goldens (full origin set; unused until a lang is registered) | |
+| mise / CI / `go.mod` / `go.work` | |
 
-**Enabled** = richer **corpus-stolen** fixtures only (`testdata/*/sample.*`):
+C sources: workspaced JIT fetch when you cook. The lockfile is the pin.
+
+---
+
+## Phase 1 scope
+
+Focus is the **factory** and **core on `main`**. Languages are inventory:
+uncomment → lock → cook PR. The product is the full set, not one language.
+
+Day-one live `#grammar`: **php** (plus tree-sitter core). That is the first
+smoke, not the destination. Every other language is a `//` comment.
+
+Day-one lockfile pins tree-sitter core + php. Nothing else.
+
+Codegen with no `--only` cooks **all placed / live** grammars. `--only`
+is a local debug filter.
+
+The old “16 corpus langs on day one” list is later expansion. Nested Go
+modules per grammar.
+
+---
+
+## Local loop
+
+Work on the harness and `core.go` on `main`.
+
+1. Run codegen locally (clang 14 + leaven + JIT C). Use `--only=<lang>`
+   to keep the loop short.
+2. Require green local tests for core + the langs you cooked.
+3. Keep or update `grammar/core.go`.
+4. Discard every `grammar/<lang>/`. Do not push lang output from the laptop.
+5. Push the harness + `core.go` when that loop is green.
+
+Do not debug the first clang/PATH/leaven failure only on GitHub Actions.
+
+---
+
+## Codegen workflow
+
+Trigger: **`workflow_dispatch` only**. No cron. No lockfile auto-cook.
+
+Runs once on ubuntu (clang 14 + leaven). One pure-Go output. No
+GOOS/GOARCH codegen matrix.
+
+Steps:
+
+1. You decide local state is good.
+2. Dispatch codegen.
+3. Job JIT-places C with `GITHUB_TOKEN` for the live lockfile set.
+4. Job transpiles every live/placed grammar (may refresh `core.go`).
+5. Job runs `go test` on ubuntu on that tree.
+6. Job opens a PR as `github-actions[bot]` (`GITHUB_TOKEN`).
+7. You click **Approve workflows to run** on the PR.
+8. Test matrix runs. Merge when green.
+
+Repo setting: allow GitHub Actions to create and approve pull requests.
+
+Test workflow must use `on: pull_request` (opened / synchronize /
+reopened) so the approve banner exists. Also run Test on `push` to
+`main`.
+
+A `GITHUB_TOKEN` push does **not** start `on: push` jobs. There is no
+button for those.
+
+lewbot / PAT: later. Not Phase 1.
+
+---
+
+## Test workflow
+
+Matrix: ubuntu + macos + windows. Runtime tests only. If a target
+breaks, fix portability. Do not bring back per-arch codegen.
+
+| Tree | Must be green |
+|------|----------------|
+| `main` with `core.go`, no lang packages | Harness + `./grammar` unit tests. Fixture tests **skip** when `grammar.List()` is empty. Do not `t.Fatal` on empty registry. |
+| Cook PR after langs land | fixtures for registered langs: no null root, no `HasError` on golden sources |
+
+Fixtures and goldens are the contract. Cook PRs must not invent broken
+trees. `LiveParseReady` is optional.
+
+---
+
+## Correctness bar
+
+- Local cook of the live set transpiles and parses.
+- After a cook PR merges: same parse on CI (three OS) for registered langs.
+- Goldens live in `testdata/` and are human-owned.
+
+---
+
+## Later (not Phase 1)
+
+Uncomment one `#grammar` (or a small batch) → `mod lock` → local prove →
+dispatch → cook PR.
+
+First expansion set (corpus fixtures, `testdata/*/sample.*`):
 
 ```
 ada angular blade COBOL gdscript gitcommit just nim
 php php_only purescript rescript squirrel vim wgsl wgsl_bevy
 ```
 
-- First **local canary:** `php`
-- Tiny `tiny.*` fixture langs (json, go, python, …) stay **commented** until later
-- Later: uncomment workspaced entry → cook → PR → merge
+Tiny `tiny.*` langs (json, go, python, …) stay commented until you want them.
 
-Approx generated size for the 16: **~110–120 MB** Go (COBOL is the whale ~31 MB).
-
----
-
-## Landing process
-
-### Phase 1 — Setup (push to `main`)
-
-Until the factory works, land directly on **`main`**:
-
-- Module root + `go.mod` / nested language module wiring
-- Hand API: `api.go`, `query.go`, `parse.go`, `registry.go`, `status.go`, …
-- `cmd/codegen` (leaven path only)
-- workspaced: full grammar list, only the 16 enabled (rest commented)
-- `workspaced.lock.json` pins
-- **Fixture sources + goldens** for the 16 (human-owned contract)
-- CI: **tests every commit** on ubuntu + macos + windows
-- CI: **codegen workflow** (see below), not yet cooking langs until smoke is green
-
-### Phase 2 — Cook (codegen workflow)
-
-1. Local prove: `codegen` for **core + php** (JIT C → leaven → tests).
-2. Push factory to `main` when local is green.
-3. **workflow_dispatch** and/or **lockfile change** triggers codegen.
-4. Codegen runs **once on ubuntu** (clang 14 + leaven), not multi-arch codegen.
-5. Bot opens a **PR** with generated `.go` (`GITHUB_TOKEN` / `github-actions[bot]`).
-6. **Tests run on that PR** (multi-OS).
-7. Merge when green.
-
-### Phase 3 — Expand
-
-Uncomment more langs in workspaced → same cook path. No need for 190 on day one.
+Optional later: Renovate/mise pins for clang 14 and leaven. GitHub App
+for cook PRs so Test runs without the approve click.
 
 ---
 
-## CI detail
+## Out of scope for the first drop
 
-| Workflow | Trigger | What |
-|----------|---------|------|
-| **Test** | Every commit / PR | `go test` for enabled packages + fixtures; matrix **ubuntu + macos + windows** |
-| **Codegen** | `workflow_dispatch`, lockfile (and/or schedule if desired) | JIT place C → transpile **enabled** set → open PR with diffs |
-
-- Codegen does **not** re-run multi-GOOS/GOARCH matrices (leaven = single pure-Go output).
-- Multi-OS is for **runtime tests**; if something breaks, fix portability—do not revive platform-split codegen.
-- Public repo: free GHA minutes; prefer fast iteration via **small enabled set**.
+- Commit original grammar C trees
+- Enable the 16 or the full ~190 inventory
+- Multi-arch leaven codegen
+- lewbot for cook PRs
+- History from `ccgo-tree-sitter`
+- Git submodules / split grammar repos (Go modules are enough now)
 
 ---
 
-## Correctness bar
+## Copy from origin (adapt, no history)
 
-- Enabled langs must **transpile** and **parse** with the hand API the way current fixtures do (no null root, no `HasError` on golden sources).
-- Goldens live in setup (`testdata/`); cook PRs should not invent broken trees.
-- `LiveParseReady`-style probe optional; fixtures are the contract.
+Origin: `modernc-tree-sitter/ccgo-tree-sitter` @ `20260806-try-codegen`.
 
----
+- `cmd/codegen/*` (leaven path)
+- `grammar/api.go`, `query.go`, `parse.go`, `registry.go`, `status.go`,
+  `doc.go`, `lineindex.go`, tests
+- `grammar/core.go` from a local cook (commit it)
+- `testdata/` (all origin fixtures + goldens)
+- workspaced: live `#grammar` only; other langs as comments
+- `go.mod` `tool` + `replace` for `github.com/lewtec/leaven`
+- mise: Go, workspaced, `conda:clang` 14
 
-## Local iteration (fast path)
-
-1. Work on factory **locally** (seconds–minutes for `--only=php`).
-2. Do **not** debug first clang/PATH issues only on GHA.
-3. When local canary is green → push main → dispatch cook → PR → multi-OS tests.
-4. Then widen the enabled set.
-
----
-
-## What is *not* in scope for the first drop
-
-- Committing original grammar C trees
-- Enabling all ~85 tiny-fixture langs or all 190
-- Multi-arch leaven codegen matrix
-- lewbot for codegen PRs (use Actions bot first)
-- History transplant from `ccgo-tree-sitter`
-
----
-
-## Source material (this monorepo)
-
-Useful origin branch: `20260806-try-codegen` on `modernc-tree-sitter/ccgo-tree-sitter`.
-
-Copy / adapt (not full history):
-
-- `cmd/codegen/*` (leaven)
-- `grammar/api.go`, `query.go`, `parse.go`, `registry.go`, `status.go`, `doc.go`, `lineindex.go`, tests
-- `grammar/core.go` (or produce via first cook)
-- Enabled `grammar/<lang>/` after cook
-- `testdata/` for the 16
-- workspaced grammar declarations (comment pattern)
-- leaven pin in `go.mod` (`github.com/lewtec/leaven` replace)
-
----
-
-## Open / later
-
-- When to uncomment more langs (after polish)
-- Optional: drop COBOL from enable set to shrink first cook PR
-- Optional: add `json` as a tiny seed for README without full corpus set
-- Renovate/mise pins for clang 14 and leaven
+Adjust fixture tests so missing langs skip. Do not import a language
+package in core tests until that package exists on `main`.
 
 ---
 
 ## Confirmation
 
-Grill decisions closed as of this document. Implementation starts when we act on Phase 1 (local factory + push main).
+Grill closed. Next act: Phase 1 implementation (local harness + `core.go`
+on `main`, then dispatch cook of the live set).

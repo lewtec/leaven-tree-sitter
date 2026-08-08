@@ -1,0 +1,153 @@
+{
+  "language": "templ",
+  "file": "tiny.templ",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 47,
+    "children": [
+      {
+        "type": "package_clause",
+        "start_byte": 0,
+        "end_byte": 12,
+        "children": [
+          {
+            "type": "package",
+            "start_byte": 0,
+            "end_byte": 7,
+            "text": "package"
+          },
+          {
+            "type": "package_identifier",
+            "start_byte": 8,
+            "end_byte": 12,
+            "text": "main"
+          }
+        ]
+      },
+      {
+        "type": "component_declaration",
+        "start_byte": 14,
+        "end_byte": 46,
+        "children": [
+          {
+            "type": "templ",
+            "start_byte": 14,
+            "end_byte": 19,
+            "text": "templ"
+          },
+          {
+            "type": "component_identifier",
+            "field": "name",
+            "start_byte": 20,
+            "end_byte": 25,
+            "text": "Hello"
+          },
+          {
+            "type": "parameter_list",
+            "start_byte": 25,
+            "end_byte": 27,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 25,
+                "end_byte": 26,
+                "text": "("
+              },
+              {
+                "type": ")",
+                "start_byte": 26,
+                "end_byte": 27,
+                "text": ")"
+              }
+            ]
+          },
+          {
+            "type": "component_block",
+            "start_byte": 28,
+            "end_byte": 46,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 28,
+                "end_byte": 29,
+                "text": "{"
+              },
+              {
+                "type": "element",
+                "start_byte": 31,
+                "end_byte": 44,
+                "children": [
+                  {
+                    "type": "tag_start",
+                    "start_byte": 31,
+                    "end_byte": 36,
+                    "children": [
+                      {
+                        "type": "\u003c",
+                        "start_byte": 31,
+                        "end_byte": 32,
+                        "text": "\u003c"
+                      },
+                      {
+                        "type": "element_identifier",
+                        "field": "name",
+                        "start_byte": 32,
+                        "end_byte": 35,
+                        "text": "div"
+                      },
+                      {
+                        "type": "\u003e",
+                        "start_byte": 35,
+                        "end_byte": 36,
+                        "text": "\u003e"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "element_text",
+                    "start_byte": 36,
+                    "end_byte": 38,
+                    "text": "hi"
+                  },
+                  {
+                    "type": "tag_end",
+                    "start_byte": 38,
+                    "end_byte": 44,
+                    "children": [
+                      {
+                        "type": "\u003c/",
+                        "start_byte": 38,
+                        "end_byte": 40,
+                        "text": "\u003c/"
+                      },
+                      {
+                        "type": "element_identifier",
+                        "field": "name",
+                        "start_byte": 40,
+                        "end_byte": 43,
+                        "text": "div"
+                      },
+                      {
+                        "type": "\u003e",
+                        "start_byte": 43,
+                        "end_byte": 44,
+                        "text": "\u003e"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 45,
+                "end_byte": 46,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

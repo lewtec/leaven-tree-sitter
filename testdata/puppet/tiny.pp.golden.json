@@ -1,0 +1,69 @@
+{
+  "language": "puppet",
+  "file": "tiny.pp",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 17,
+    "children": [
+      {
+        "type": "resource_declaration",
+        "start_byte": 0,
+        "end_byte": 16,
+        "children": [
+          {
+            "type": "identifier",
+            "field": "type",
+            "start_byte": 0,
+            "end_byte": 6,
+            "text": "notify"
+          },
+          {
+            "type": "{",
+            "start_byte": 7,
+            "end_byte": 8,
+            "text": "{"
+          },
+          {
+            "type": "string",
+            "field": "title",
+            "start_byte": 9,
+            "end_byte": 13,
+            "children": [
+              {
+                "type": "'",
+                "start_byte": 9,
+                "end_byte": 10,
+                "text": "'"
+              },
+              {
+                "type": "string_content",
+                "start_byte": 10,
+                "end_byte": 12,
+                "text": "hi"
+              },
+              {
+                "type": "'",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": "'"
+              }
+            ]
+          },
+          {
+            "type": ":",
+            "start_byte": 13,
+            "end_byte": 14,
+            "text": ":"
+          },
+          {
+            "type": "}",
+            "start_byte": 15,
+            "end_byte": 16,
+            "text": "}"
+          }
+        ]
+      }
+    ]
+  }
+}

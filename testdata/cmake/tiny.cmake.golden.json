@@ -1,0 +1,56 @@
+{
+  "language": "cmake",
+  "file": "tiny.cmake",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 17,
+    "children": [
+      {
+        "type": "normal_command",
+        "start_byte": 0,
+        "end_byte": 16,
+        "children": [
+          {
+            "type": "identifier",
+            "start_byte": 0,
+            "end_byte": 7,
+            "text": "project"
+          },
+          {
+            "type": "(",
+            "start_byte": 7,
+            "end_byte": 8,
+            "text": "("
+          },
+          {
+            "type": "argument_list",
+            "start_byte": 8,
+            "end_byte": 15,
+            "children": [
+              {
+                "type": "argument",
+                "start_byte": 8,
+                "end_byte": 15,
+                "children": [
+                  {
+                    "type": "unquoted_argument",
+                    "start_byte": 8,
+                    "end_byte": 15,
+                    "text": "example"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": ")",
+            "start_byte": 15,
+            "end_byte": 16,
+            "text": ")"
+          }
+        ]
+      }
+    ]
+  }
+}

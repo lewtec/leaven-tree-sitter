@@ -1,0 +1,76 @@
+{
+  "language": "dart",
+  "file": "tiny.dart",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 15,
+    "children": [
+      {
+        "type": "function_signature",
+        "start_byte": 0,
+        "end_byte": 11,
+        "children": [
+          {
+            "type": "void_type",
+            "start_byte": 0,
+            "end_byte": 4,
+            "text": "void"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 5,
+            "end_byte": 9,
+            "text": "main"
+          },
+          {
+            "type": "formal_parameter_list",
+            "start_byte": 9,
+            "end_byte": 11,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 9,
+                "end_byte": 10,
+                "text": "("
+              },
+              {
+                "type": ")",
+                "start_byte": 10,
+                "end_byte": 11,
+                "text": ")"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function_body",
+        "start_byte": 12,
+        "end_byte": 14,
+        "children": [
+          {
+            "type": "block",
+            "start_byte": 12,
+            "end_byte": 14,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 13,
+                "end_byte": 14,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

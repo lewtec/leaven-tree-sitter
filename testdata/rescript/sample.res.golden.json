@@ -1,0 +1,577 @@
+{
+  "language": "rescript",
+  "file": "sample.res",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 434,
+    "children": [
+      {
+        "type": "line_comment",
+        "start_byte": 0,
+        "end_byte": 14,
+        "text": "// Single line"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 15,
+        "end_byte": 16,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 15,
+            "end_byte": 16,
+            "text": "1"
+          }
+        ]
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 18,
+        "end_byte": 37,
+        "text": "/*\n * Multiline\n */"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 38,
+        "end_byte": 39,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 38,
+            "end_byte": 39,
+            "text": "2"
+          }
+        ]
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 41,
+        "end_byte": 87,
+        "text": "/* /* Nested\n  /* multiple */ times\n  // */ */"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 88,
+        "end_byte": 89,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 88,
+            "end_byte": 89,
+            "text": "3"
+          }
+        ]
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 91,
+        "end_byte": 92,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 91,
+            "end_byte": 92,
+            "text": "4"
+          }
+        ]
+      },
+      {
+        "type": "line_comment",
+        "start_byte": 93,
+        "end_byte": 112,
+        "text": "// post single-line"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 114,
+        "end_byte": 115,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 114,
+            "end_byte": 115,
+            "text": "5"
+          }
+        ]
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 116,
+        "end_byte": 137,
+        "text": "/* post multi-line */"
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 139,
+        "end_byte": 146,
+        "text": "/* / */"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 147,
+        "end_byte": 148,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 147,
+            "end_byte": 148,
+            "text": "6"
+          }
+        ]
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 150,
+        "end_byte": 155,
+        "text": "/* */"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 156,
+        "end_byte": 157,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 156,
+            "end_byte": 157,
+            "text": "7"
+          }
+        ]
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 159,
+        "end_byte": 166,
+        "text": "/** **/"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 167,
+        "end_byte": 168,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 167,
+            "end_byte": 168,
+            "text": "8"
+          }
+        ]
+      },
+      {
+        "type": "block_comment",
+        "start_byte": 170,
+        "end_byte": 190,
+        "text": "/* comment //*/ */*/"
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 191,
+        "end_byte": 192,
+        "children": [
+          {
+            "type": "number",
+            "start_byte": 191,
+            "end_byte": 192,
+            "text": "9"
+          }
+        ]
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 194,
+        "end_byte": 218,
+        "children": [
+          {
+            "type": "pipe_expression",
+            "start_byte": 194,
+            "end_byte": 218,
+            "children": [
+              {
+                "type": "value_identifier",
+                "start_byte": 194,
+                "end_byte": 197,
+                "text": "foo"
+              },
+              {
+                "type": "line_comment",
+                "start_byte": 200,
+                "end_byte": 210,
+                "text": "// in-pipe"
+              },
+              {
+                "type": "-\u003e",
+                "start_byte": 213,
+                "end_byte": 215,
+                "text": "-\u003e"
+              },
+              {
+                "type": "value_identifier",
+                "start_byte": 215,
+                "end_byte": 218,
+                "text": "bar"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 220,
+        "end_byte": 256,
+        "children": [
+          {
+            "type": "switch_expression",
+            "start_byte": 220,
+            "end_byte": 256,
+            "children": [
+              {
+                "type": "switch",
+                "start_byte": 220,
+                "end_byte": 226,
+                "text": "switch"
+              },
+              {
+                "type": "value_identifier",
+                "start_byte": 227,
+                "end_byte": 230,
+                "text": "foo"
+              },
+              {
+                "type": "{",
+                "start_byte": 231,
+                "end_byte": 232,
+                "text": "{"
+              },
+              {
+                "type": "switch_match",
+                "start_byte": 233,
+                "end_byte": 241,
+                "children": [
+                  {
+                    "type": "|",
+                    "start_byte": 233,
+                    "end_byte": 234,
+                    "text": "|"
+                  },
+                  {
+                    "type": "number",
+                    "field": "pattern",
+                    "start_byte": 235,
+                    "end_byte": 236,
+                    "text": "1"
+                  },
+                  {
+                    "type": "=\u003e",
+                    "start_byte": 237,
+                    "end_byte": 239,
+                    "text": "=\u003e"
+                  },
+                  {
+                    "type": "sequence_expression",
+                    "field": "body",
+                    "start_byte": 240,
+                    "end_byte": 241,
+                    "children": [
+                      {
+                        "type": "expression_statement",
+                        "start_byte": 240,
+                        "end_byte": 241,
+                        "children": [
+                          {
+                            "type": "number",
+                            "start_byte": 240,
+                            "end_byte": 241,
+                            "text": "1"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "line_comment",
+                "start_byte": 242,
+                "end_byte": 254,
+                "text": "// in-switch"
+              },
+              {
+                "type": "}",
+                "start_byte": 255,
+                "end_byte": 256,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 258,
+        "end_byte": 320,
+        "children": [
+          {
+            "type": "switch_expression",
+            "start_byte": 258,
+            "end_byte": 320,
+            "children": [
+              {
+                "type": "switch",
+                "start_byte": 258,
+                "end_byte": 264,
+                "text": "switch"
+              },
+              {
+                "type": "value_identifier",
+                "start_byte": 265,
+                "end_byte": 268,
+                "text": "foo"
+              },
+              {
+                "type": "{",
+                "start_byte": 269,
+                "end_byte": 270,
+                "text": "{"
+              },
+              {
+                "type": "switch_match",
+                "start_byte": 271,
+                "end_byte": 279,
+                "children": [
+                  {
+                    "type": "|",
+                    "start_byte": 271,
+                    "end_byte": 272,
+                    "text": "|"
+                  },
+                  {
+                    "type": "number",
+                    "field": "pattern",
+                    "start_byte": 273,
+                    "end_byte": 274,
+                    "text": "1"
+                  },
+                  {
+                    "type": "=\u003e",
+                    "start_byte": 275,
+                    "end_byte": 277,
+                    "text": "=\u003e"
+                  },
+                  {
+                    "type": "sequence_expression",
+                    "field": "body",
+                    "start_byte": 278,
+                    "end_byte": 279,
+                    "children": [
+                      {
+                        "type": "expression_statement",
+                        "start_byte": 278,
+                        "end_byte": 279,
+                        "children": [
+                          {
+                            "type": "number",
+                            "start_byte": 278,
+                            "end_byte": 279,
+                            "text": "1"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "block_comment",
+                "start_byte": 280,
+                "end_byte": 309,
+                "text": "/* block comment in switch */"
+              },
+              {
+                "type": "switch_match",
+                "start_byte": 310,
+                "end_byte": 318,
+                "children": [
+                  {
+                    "type": "|",
+                    "start_byte": 310,
+                    "end_byte": 311,
+                    "text": "|"
+                  },
+                  {
+                    "type": "number",
+                    "field": "pattern",
+                    "start_byte": 312,
+                    "end_byte": 313,
+                    "text": "2"
+                  },
+                  {
+                    "type": "=\u003e",
+                    "start_byte": 314,
+                    "end_byte": 316,
+                    "text": "=\u003e"
+                  },
+                  {
+                    "type": "sequence_expression",
+                    "field": "body",
+                    "start_byte": 317,
+                    "end_byte": 318,
+                    "children": [
+                      {
+                        "type": "expression_statement",
+                        "start_byte": 317,
+                        "end_byte": 318,
+                        "children": [
+                          {
+                            "type": "number",
+                            "start_byte": 317,
+                            "end_byte": 318,
+                            "text": "2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 319,
+                "end_byte": 320,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "expression_statement",
+        "start_byte": 322,
+        "end_byte": 433,
+        "children": [
+          {
+            "type": "switch_expression",
+            "start_byte": 322,
+            "end_byte": 433,
+            "children": [
+              {
+                "type": "switch",
+                "start_byte": 322,
+                "end_byte": 328,
+                "text": "switch"
+              },
+              {
+                "type": "value_identifier",
+                "start_byte": 329,
+                "end_byte": 330,
+                "text": "l"
+              },
+              {
+                "type": "{",
+                "start_byte": 331,
+                "end_byte": 332,
+                "text": "{"
+              },
+              {
+                "type": "switch_match",
+                "start_byte": 333,
+                "end_byte": 351,
+                "children": [
+                  {
+                    "type": "|",
+                    "start_byte": 333,
+                    "end_byte": 334,
+                    "text": "|"
+                  },
+                  {
+                    "type": "string",
+                    "field": "pattern",
+                    "start_byte": 335,
+                    "end_byte": 338,
+                    "children": [
+                      {
+                        "type": "\"",
+                        "start_byte": 335,
+                        "end_byte": 336,
+                        "text": "\""
+                      },
+                      {
+                        "type": "string_fragment",
+                        "start_byte": 336,
+                        "end_byte": 337,
+                        "text": "a"
+                      },
+                      {
+                        "type": "\"",
+                        "start_byte": 337,
+                        "end_byte": 338,
+                        "text": "\""
+                      }
+                    ]
+                  },
+                  {
+                    "type": "=\u003e",
+                    "start_byte": 339,
+                    "end_byte": 341,
+                    "text": "=\u003e"
+                  },
+                  {
+                    "type": "sequence_expression",
+                    "field": "body",
+                    "start_byte": 342,
+                    "end_byte": 351,
+                    "children": [
+                      {
+                        "type": "expression_statement",
+                        "start_byte": 342,
+                        "end_byte": 351,
+                        "children": [
+                          {
+                            "type": "value_identifier",
+                            "start_byte": 342,
+                            "end_byte": 351,
+                            "text": "letterAll"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "block_comment",
+                "start_byte": 352,
+                "end_byte": 371,
+                "text": "/* | \"b\" =\u003e [||] */"
+              },
+              {
+                "type": "block_comment",
+                "start_byte": 372,
+                "end_byte": 391,
+                "text": "/* | \"g\" =\u003e [||] */"
+              },
+              {
+                "type": "block_comment",
+                "start_byte": 392,
+                "end_byte": 411,
+                "text": "/* | \"h\" =\u003e [||] */"
+              },
+              {
+                "type": "block_comment",
+                "start_byte": 412,
+                "end_byte": 431,
+                "text": "/* | \"i\" =\u003e [||] */"
+              },
+              {
+                "type": "}",
+                "start_byte": 432,
+                "end_byte": 433,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

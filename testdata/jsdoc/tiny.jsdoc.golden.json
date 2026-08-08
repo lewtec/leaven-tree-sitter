@@ -1,0 +1,78 @@
+{
+  "language": "jsdoc",
+  "file": "tiny.jsdoc",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 29,
+    "children": [
+      {
+        "type": "/",
+        "start_byte": 0,
+        "end_byte": 1,
+        "text": "/"
+      },
+      {
+        "type": "*",
+        "start_byte": 1,
+        "end_byte": 2,
+        "text": "*"
+      },
+      {
+        "type": "*",
+        "start_byte": 2,
+        "end_byte": 3,
+        "text": "*"
+      },
+      {
+        "type": "*",
+        "start_byte": 5,
+        "end_byte": 6,
+        "text": "*"
+      },
+      {
+        "type": "tag",
+        "start_byte": 7,
+        "end_byte": 24,
+        "children": [
+          {
+            "type": "tag_name",
+            "start_byte": 7,
+            "end_byte": 13,
+            "text": "@param"
+          },
+          {
+            "type": "{",
+            "start_byte": 14,
+            "end_byte": 15,
+            "text": "{"
+          },
+          {
+            "type": "type",
+            "start_byte": 15,
+            "end_byte": 21,
+            "text": "string"
+          },
+          {
+            "type": "}",
+            "start_byte": 21,
+            "end_byte": 22,
+            "text": "}"
+          },
+          {
+            "type": "identifier",
+            "start_byte": 23,
+            "end_byte": 24,
+            "text": "x"
+          }
+        ]
+      },
+      {
+        "type": "/",
+        "start_byte": 27,
+        "end_byte": 28,
+        "text": "/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "language": "julia",
+  "file": "tiny.jl",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 6,
+    "children": [
+      {
+        "type": "assignment",
+        "start_byte": 0,
+        "end_byte": 5,
+        "children": [
+          {
+            "type": "identifier",
+            "start_byte": 0,
+            "end_byte": 1,
+            "text": "x"
+          },
+          {
+            "type": "operator",
+            "start_byte": 2,
+            "end_byte": 3,
+            "text": "="
+          },
+          {
+            "type": "integer_literal",
+            "start_byte": 4,
+            "end_byte": 5,
+            "text": "1"
+          }
+        ]
+      }
+    ]
+  }
+}

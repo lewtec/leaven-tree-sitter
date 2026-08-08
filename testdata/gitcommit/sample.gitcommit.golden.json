@@ -1,0 +1,30 @@
+{
+  "language": "gitcommit",
+  "file": "sample.gitcommit",
+  "root": {
+    "type": "source",
+    "start_byte": 0,
+    "end_byte": 48,
+    "children": [
+      {
+        "type": "subject",
+        "start_byte": 0,
+        "end_byte": 24,
+        "text": "This is a simple subject"
+      },
+      {
+        "type": "message",
+        "start_byte": 26,
+        "end_byte": 48,
+        "children": [
+          {
+            "type": "message_line",
+            "start_byte": 26,
+            "end_byte": 47,
+            "text": "This is a simple body"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "language": "po",
+  "file": "tiny.po",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 26,
+    "children": [
+      {
+        "type": "message",
+        "start_byte": 0,
+        "end_byte": 25,
+        "children": [
+          {
+            "type": "msgid",
+            "start_byte": 0,
+            "end_byte": 10,
+            "children": [
+              {
+                "type": "msgid",
+                "start_byte": 0,
+                "end_byte": 5,
+                "text": "msgid"
+              },
+              {
+                "type": "string",
+                "start_byte": 6,
+                "end_byte": 10,
+                "children": [
+                  {
+                    "type": "\"",
+                    "start_byte": 6,
+                    "end_byte": 7,
+                    "text": "\""
+                  },
+                  {
+                    "type": "string_fragment",
+                    "start_byte": 7,
+                    "end_byte": 9,
+                    "text": "hi"
+                  },
+                  {
+                    "type": "\"",
+                    "start_byte": 9,
+                    "end_byte": 10,
+                    "text": "\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "msgstr",
+            "start_byte": 11,
+            "end_byte": 25,
+            "children": [
+              {
+                "type": "msgstr",
+                "start_byte": 11,
+                "end_byte": 17,
+                "text": "msgstr"
+              },
+              {
+                "type": "string",
+                "start_byte": 18,
+                "end_byte": 25,
+                "children": [
+                  {
+                    "type": "\"",
+                    "start_byte": 18,
+                    "end_byte": 19,
+                    "text": "\""
+                  },
+                  {
+                    "type": "string_fragment",
+                    "start_byte": 19,
+                    "end_byte": 24,
+                    "text": "hello"
+                  },
+                  {
+                    "type": "\"",
+                    "start_byte": 24,
+                    "end_byte": 25,
+                    "text": "\""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "language": "hare",
+  "file": "tiny.ha",
+  "root": {
+    "type": "module",
+    "start_byte": 0,
+    "end_byte": 30,
+    "children": [
+      {
+        "type": "declarations",
+        "start_byte": 0,
+        "end_byte": 29,
+        "children": [
+          {
+            "type": "export",
+            "start_byte": 0,
+            "end_byte": 6,
+            "text": "export"
+          },
+          {
+            "type": "function_declaration",
+            "start_byte": 7,
+            "end_byte": 28,
+            "children": [
+              {
+                "type": "fn",
+                "start_byte": 7,
+                "end_byte": 9,
+                "text": "fn"
+              },
+              {
+                "type": "identifier",
+                "field": "name",
+                "start_byte": 10,
+                "end_byte": 14,
+                "text": "main"
+              },
+              {
+                "type": "(",
+                "start_byte": 14,
+                "end_byte": 15,
+                "text": "("
+              },
+              {
+                "type": ")",
+                "start_byte": 15,
+                "end_byte": 16,
+                "text": ")"
+              },
+              {
+                "type": "builtin_type",
+                "field": "returns",
+                "start_byte": 17,
+                "end_byte": 21,
+                "children": [
+                  {
+                    "type": "void",
+                    "start_byte": 17,
+                    "end_byte": 21,
+                    "text": "void"
+                  }
+                ]
+              },
+              {
+                "type": "=",
+                "start_byte": 22,
+                "end_byte": 23,
+                "text": "="
+              },
+              {
+                "type": "void",
+                "field": "body",
+                "start_byte": 24,
+                "end_byte": 28,
+                "children": [
+                  {
+                    "type": "void",
+                    "start_byte": 24,
+                    "end_byte": 28,
+                    "text": "void"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": ";",
+            "start_byte": 28,
+            "end_byte": 29,
+            "text": ";"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "language": "wgsl",
+  "file": "sample.wgsl",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 22,
+    "children": [
+      {
+        "type": "function_declaration",
+        "start_byte": 0,
+        "end_byte": 21,
+        "children": [
+          {
+            "type": "fn",
+            "start_byte": 0,
+            "end_byte": 2,
+            "text": "fn"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 3,
+            "end_byte": 7,
+            "text": "main"
+          },
+          {
+            "type": "(",
+            "start_byte": 7,
+            "end_byte": 8,
+            "text": "("
+          },
+          {
+            "type": ")",
+            "start_byte": 8,
+            "end_byte": 9,
+            "text": ")"
+          },
+          {
+            "type": "function_return_type_declaration",
+            "field": "type",
+            "start_byte": 10,
+            "end_byte": 17,
+            "children": [
+              {
+                "type": "-\u003e",
+                "start_byte": 10,
+                "end_byte": 12,
+                "text": "-\u003e"
+              },
+              {
+                "type": "type_declaration",
+                "start_byte": 13,
+                "end_byte": 17,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "start_byte": 13,
+                    "end_byte": 17,
+                    "text": "void"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 18,
+            "end_byte": 21,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 18,
+                "end_byte": 19,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 20,
+                "end_byte": 21,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

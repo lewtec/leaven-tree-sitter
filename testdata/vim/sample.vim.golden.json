@@ -1,0 +1,55 @@
+{
+  "language": "vim",
+  "file": "sample.vim",
+  "root": {
+    "type": "script_file",
+    "start_byte": 0,
+    "end_byte": 14,
+    "children": [
+      {
+        "type": "let_statement",
+        "start_byte": 0,
+        "end_byte": 13,
+        "children": [
+          {
+            "type": "let",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "let"
+          },
+          {
+            "type": "scoped_identifier",
+            "start_byte": 4,
+            "end_byte": 9,
+            "children": [
+              {
+                "type": "scope",
+                "start_byte": 4,
+                "end_byte": 6,
+                "text": "g:"
+              },
+              {
+                "type": "identifier",
+                "start_byte": 6,
+                "end_byte": 9,
+                "text": "foo"
+              }
+            ]
+          },
+          {
+            "type": "=",
+            "start_byte": 10,
+            "end_byte": 11,
+            "text": "="
+          },
+          {
+            "type": "integer_literal",
+            "start_byte": 12,
+            "end_byte": 13,
+            "text": "1"
+          }
+        ]
+      }
+    ]
+  }
+}

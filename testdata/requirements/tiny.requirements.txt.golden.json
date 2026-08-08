@@ -1,0 +1,43 @@
+{
+  "language": "requirements",
+  "file": "tiny.requirements.txt",
+  "root": {
+    "type": "file",
+    "start_byte": 0,
+    "end_byte": 16,
+    "children": [
+      {
+        "type": "requirement",
+        "start_byte": 0,
+        "end_byte": 15,
+        "children": [
+          {
+            "type": "package",
+            "start_byte": 0,
+            "end_byte": 8,
+            "text": "requests"
+          },
+          {
+            "type": "version_spec",
+            "start_byte": 8,
+            "end_byte": 15,
+            "children": [
+              {
+                "type": "version_cmp",
+                "start_byte": 8,
+                "end_byte": 10,
+                "text": "=="
+              },
+              {
+                "type": "version",
+                "start_byte": 10,
+                "end_byte": 15,
+                "text": "2.0.0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

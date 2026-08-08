@@ -1,0 +1,58 @@
+{
+  "language": "javascript",
+  "file": "tiny.js",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 13,
+    "children": [
+      {
+        "type": "lexical_declaration",
+        "start_byte": 0,
+        "end_byte": 12,
+        "children": [
+          {
+            "type": "const",
+            "field": "kind",
+            "start_byte": 0,
+            "end_byte": 5,
+            "text": "const"
+          },
+          {
+            "type": "variable_declarator",
+            "start_byte": 6,
+            "end_byte": 11,
+            "children": [
+              {
+                "type": "identifier",
+                "field": "name",
+                "start_byte": 6,
+                "end_byte": 7,
+                "text": "x"
+              },
+              {
+                "type": "=",
+                "start_byte": 8,
+                "end_byte": 9,
+                "text": "="
+              },
+              {
+                "type": "number",
+                "field": "value",
+                "start_byte": 10,
+                "end_byte": 11,
+                "text": "1"
+              }
+            ]
+          },
+          {
+            "type": ";",
+            "start_byte": 11,
+            "end_byte": 12,
+            "text": ";"
+          }
+        ]
+      }
+    ]
+  }
+}

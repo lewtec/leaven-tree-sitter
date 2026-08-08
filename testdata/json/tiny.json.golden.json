@@ -1,0 +1,107 @@
+{
+  "language": "json",
+  "file": "tiny.json",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 19,
+    "children": [
+      {
+        "type": "object",
+        "start_byte": 0,
+        "end_byte": 18,
+        "children": [
+          {
+            "type": "{",
+            "start_byte": 0,
+            "end_byte": 1,
+            "text": "{"
+          },
+          {
+            "type": "pair",
+            "start_byte": 1,
+            "end_byte": 17,
+            "children": [
+              {
+                "type": "string",
+                "field": "key",
+                "start_byte": 1,
+                "end_byte": 6,
+                "children": [
+                  {
+                    "type": "\"",
+                    "start_byte": 1,
+                    "end_byte": 2,
+                    "text": "\""
+                  },
+                  {
+                    "type": "string_content",
+                    "start_byte": 2,
+                    "end_byte": 5,
+                    "text": "key"
+                  },
+                  {
+                    "type": "\"",
+                    "start_byte": 5,
+                    "end_byte": 6,
+                    "text": "\""
+                  }
+                ]
+              },
+              {
+                "type": ":",
+                "start_byte": 6,
+                "end_byte": 7,
+                "text": ":"
+              },
+              {
+                "type": "array",
+                "field": "value",
+                "start_byte": 8,
+                "end_byte": 17,
+                "children": [
+                  {
+                    "type": "[",
+                    "start_byte": 8,
+                    "end_byte": 9,
+                    "text": "["
+                  },
+                  {
+                    "type": "number",
+                    "start_byte": 9,
+                    "end_byte": 10,
+                    "text": "1"
+                  },
+                  {
+                    "type": ",",
+                    "start_byte": 10,
+                    "end_byte": 11,
+                    "text": ","
+                  },
+                  {
+                    "type": "true",
+                    "start_byte": 12,
+                    "end_byte": 16,
+                    "text": "true"
+                  },
+                  {
+                    "type": "]",
+                    "start_byte": 16,
+                    "end_byte": 17,
+                    "text": "]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "}",
+            "start_byte": 17,
+            "end_byte": 18,
+            "text": "}"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "language": "gdscript",
+  "file": "sample.gd",
+  "root": {
+    "type": "source",
+    "start_byte": 0,
+    "end_byte": 31,
+    "children": [
+      {
+        "type": "class_name_statement",
+        "start_byte": 0,
+        "end_byte": 30,
+        "children": [
+          {
+            "type": "annotations",
+            "start_byte": 0,
+            "end_byte": 9,
+            "children": [
+              {
+                "type": "annotation",
+                "start_byte": 0,
+                "end_byte": 9,
+                "children": [
+                  {
+                    "type": "@",
+                    "start_byte": 0,
+                    "end_byte": 1,
+                    "text": "@"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 1,
+                    "end_byte": 9,
+                    "text": "abstract"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "class_name",
+            "start_byte": 10,
+            "end_byte": 20,
+            "text": "class_name"
+          },
+          {
+            "type": "name",
+            "field": "name",
+            "start_byte": 21,
+            "end_byte": 30,
+            "text": "BaseClass"
+          }
+        ]
+      }
+    ]
+  }
+}

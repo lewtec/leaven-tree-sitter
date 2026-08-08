@@ -1,0 +1,451 @@
+{
+  "language": "ada",
+  "file": "sample.adb",
+  "root": {
+    "type": "compilation",
+    "start_byte": 0,
+    "end_byte": 256,
+    "children": [
+      {
+        "type": "compilation_unit",
+        "start_byte": 0,
+        "end_byte": 255,
+        "children": [
+          {
+            "type": "package_declaration",
+            "start_byte": 0,
+            "end_byte": 255,
+            "children": [
+              {
+                "type": "package",
+                "start_byte": 0,
+                "end_byte": 7,
+                "text": "package"
+              },
+              {
+                "type": "identifier",
+                "field": "name",
+                "start_byte": 8,
+                "end_byte": 9,
+                "text": "P"
+              },
+              {
+                "type": "is",
+                "start_byte": 10,
+                "end_byte": 12,
+                "text": "is"
+              },
+              {
+                "type": "full_type_declaration",
+                "start_byte": 16,
+                "end_byte": 41,
+                "children": [
+                  {
+                    "type": "type",
+                    "start_byte": 16,
+                    "end_byte": 20,
+                    "text": "type"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 21,
+                    "end_byte": 22,
+                    "text": "A"
+                  },
+                  {
+                    "type": "is",
+                    "start_byte": 23,
+                    "end_byte": 25,
+                    "text": "is"
+                  },
+                  {
+                    "type": "access_to_object_definition",
+                    "start_byte": 26,
+                    "end_byte": 40,
+                    "children": [
+                      {
+                        "type": "access",
+                        "start_byte": 26,
+                        "end_byte": 32,
+                        "text": "access"
+                      },
+                      {
+                        "type": "identifier",
+                        "field": "subtype_mark",
+                        "start_byte": 33,
+                        "end_byte": 40,
+                        "text": "Integer"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 40,
+                    "end_byte": 41,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "full_type_declaration",
+                "start_byte": 45,
+                "end_byte": 79,
+                "children": [
+                  {
+                    "type": "type",
+                    "start_byte": 45,
+                    "end_byte": 49,
+                    "text": "type"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 50,
+                    "end_byte": 51,
+                    "text": "B"
+                  },
+                  {
+                    "type": "is",
+                    "start_byte": 52,
+                    "end_byte": 54,
+                    "text": "is"
+                  },
+                  {
+                    "type": "access_to_object_definition",
+                    "start_byte": 55,
+                    "end_byte": 78,
+                    "children": [
+                      {
+                        "type": "access",
+                        "start_byte": 55,
+                        "end_byte": 61,
+                        "text": "access"
+                      },
+                      {
+                        "type": "null_exclusion",
+                        "start_byte": 62,
+                        "end_byte": 70,
+                        "children": [
+                          {
+                            "type": "not",
+                            "start_byte": 62,
+                            "end_byte": 65,
+                            "text": "not"
+                          },
+                          {
+                            "type": "null",
+                            "start_byte": 66,
+                            "end_byte": 70,
+                            "text": "null"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "identifier",
+                        "field": "subtype_mark",
+                        "start_byte": 71,
+                        "end_byte": 78,
+                        "text": "Integer"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 78,
+                    "end_byte": 79,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "full_type_declaration",
+                "start_byte": 83,
+                "end_byte": 117,
+                "children": [
+                  {
+                    "type": "type",
+                    "start_byte": 83,
+                    "end_byte": 87,
+                    "text": "type"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 88,
+                    "end_byte": 89,
+                    "text": "C"
+                  },
+                  {
+                    "type": "is",
+                    "start_byte": 90,
+                    "end_byte": 92,
+                    "text": "is"
+                  },
+                  {
+                    "type": "access_to_object_definition",
+                    "start_byte": 93,
+                    "end_byte": 116,
+                    "children": [
+                      {
+                        "type": "access",
+                        "start_byte": 93,
+                        "end_byte": 99,
+                        "text": "access"
+                      },
+                      {
+                        "type": "general_access_modifier",
+                        "start_byte": 100,
+                        "end_byte": 108,
+                        "children": [
+                          {
+                            "type": "constant",
+                            "start_byte": 100,
+                            "end_byte": 108,
+                            "text": "constant"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "identifier",
+                        "field": "subtype_mark",
+                        "start_byte": 109,
+                        "end_byte": 116,
+                        "text": "Integer"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 116,
+                    "end_byte": 117,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "full_type_declaration",
+                "start_byte": 121,
+                "end_byte": 150,
+                "children": [
+                  {
+                    "type": "type",
+                    "start_byte": 121,
+                    "end_byte": 125,
+                    "text": "type"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 126,
+                    "end_byte": 127,
+                    "text": "D"
+                  },
+                  {
+                    "type": "is",
+                    "start_byte": 128,
+                    "end_byte": 130,
+                    "text": "is"
+                  },
+                  {
+                    "type": "access_to_object_definition",
+                    "start_byte": 131,
+                    "end_byte": 149,
+                    "children": [
+                      {
+                        "type": "access",
+                        "start_byte": 131,
+                        "end_byte": 137,
+                        "text": "access"
+                      },
+                      {
+                        "type": "general_access_modifier",
+                        "start_byte": 138,
+                        "end_byte": 141,
+                        "children": [
+                          {
+                            "type": "all",
+                            "start_byte": 138,
+                            "end_byte": 141,
+                            "text": "all"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "identifier",
+                        "field": "subtype_mark",
+                        "start_byte": 142,
+                        "end_byte": 149,
+                        "text": "Integer"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 149,
+                    "end_byte": 150,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "full_type_declaration",
+                "start_byte": 154,
+                "end_byte": 195,
+                "children": [
+                  {
+                    "type": "type",
+                    "start_byte": 154,
+                    "end_byte": 158,
+                    "text": "type"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 159,
+                    "end_byte": 160,
+                    "text": "E"
+                  },
+                  {
+                    "type": "is",
+                    "start_byte": 161,
+                    "end_byte": 163,
+                    "text": "is"
+                  },
+                  {
+                    "type": "access_to_subprogram_definition",
+                    "start_byte": 164,
+                    "end_byte": 194,
+                    "children": [
+                      {
+                        "type": "access",
+                        "start_byte": 164,
+                        "end_byte": 170,
+                        "text": "access"
+                      },
+                      {
+                        "type": "function",
+                        "start_byte": 171,
+                        "end_byte": 179,
+                        "text": "function"
+                      },
+                      {
+                        "type": "result_profile",
+                        "start_byte": 180,
+                        "end_byte": 194,
+                        "children": [
+                          {
+                            "type": "return",
+                            "start_byte": 180,
+                            "end_byte": 186,
+                            "text": "return"
+                          },
+                          {
+                            "type": "identifier",
+                            "field": "subtype_mark",
+                            "start_byte": 187,
+                            "end_byte": 194,
+                            "text": "Boolean"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 194,
+                    "end_byte": 195,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "full_type_declaration",
+                "start_byte": 199,
+                "end_byte": 250,
+                "children": [
+                  {
+                    "type": "type",
+                    "start_byte": 199,
+                    "end_byte": 203,
+                    "text": "type"
+                  },
+                  {
+                    "type": "identifier",
+                    "start_byte": 204,
+                    "end_byte": 205,
+                    "text": "F"
+                  },
+                  {
+                    "type": "is",
+                    "start_byte": 206,
+                    "end_byte": 208,
+                    "text": "is"
+                  },
+                  {
+                    "type": "access_to_subprogram_definition",
+                    "start_byte": 209,
+                    "end_byte": 249,
+                    "children": [
+                      {
+                        "type": "access",
+                        "start_byte": 209,
+                        "end_byte": 215,
+                        "text": "access"
+                      },
+                      {
+                        "type": "protected",
+                        "start_byte": 216,
+                        "end_byte": 225,
+                        "text": "protected"
+                      },
+                      {
+                        "type": "function",
+                        "start_byte": 226,
+                        "end_byte": 234,
+                        "text": "function"
+                      },
+                      {
+                        "type": "result_profile",
+                        "start_byte": 235,
+                        "end_byte": 249,
+                        "children": [
+                          {
+                            "type": "return",
+                            "start_byte": 235,
+                            "end_byte": 241,
+                            "text": "return"
+                          },
+                          {
+                            "type": "identifier",
+                            "field": "subtype_mark",
+                            "start_byte": 242,
+                            "end_byte": 249,
+                            "text": "Boolean"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 249,
+                    "end_byte": 250,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "end",
+                "start_byte": 251,
+                "end_byte": 254,
+                "text": "end"
+              },
+              {
+                "type": ";",
+                "start_byte": 254,
+                "end_byte": 255,
+                "text": ";"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

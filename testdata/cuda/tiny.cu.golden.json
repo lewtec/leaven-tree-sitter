@@ -1,0 +1,86 @@
+{
+  "language": "cuda",
+  "file": "tiny.cu",
+  "root": {
+    "type": "translation_unit",
+    "start_byte": 0,
+    "end_byte": 23,
+    "children": [
+      {
+        "type": "function_definition",
+        "start_byte": 0,
+        "end_byte": 22,
+        "children": [
+          {
+            "type": "__global__",
+            "start_byte": 0,
+            "end_byte": 10,
+            "text": "__global__"
+          },
+          {
+            "type": "primitive_type",
+            "field": "type",
+            "start_byte": 11,
+            "end_byte": 15,
+            "text": "void"
+          },
+          {
+            "type": "function_declarator",
+            "field": "declarator",
+            "start_byte": 16,
+            "end_byte": 19,
+            "children": [
+              {
+                "type": "identifier",
+                "field": "declarator",
+                "start_byte": 16,
+                "end_byte": 17,
+                "text": "k"
+              },
+              {
+                "type": "parameter_list",
+                "field": "parameters",
+                "start_byte": 17,
+                "end_byte": 19,
+                "children": [
+                  {
+                    "type": "(",
+                    "start_byte": 17,
+                    "end_byte": 18,
+                    "text": "("
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 18,
+                    "end_byte": 19,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 20,
+            "end_byte": 22,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 20,
+                "end_byte": 21,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 21,
+                "end_byte": 22,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

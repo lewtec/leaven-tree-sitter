@@ -1,0 +1,3 @@
+Stolen/adapted from upstream tree-sitter corpus for this grammar.
+origin: abstract.txt#Abstract class_name statement
+file: sample.gd

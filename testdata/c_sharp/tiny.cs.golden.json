@@ -1,0 +1,125 @@
+{
+  "language": "c_sharp",
+  "file": "tiny.cs",
+  "root": {
+    "type": "compilation_unit",
+    "start_byte": 0,
+    "end_byte": 34,
+    "children": [
+      {
+        "type": "class_declaration",
+        "start_byte": 0,
+        "end_byte": 33,
+        "children": [
+          {
+            "type": "class",
+            "start_byte": 0,
+            "end_byte": 5,
+            "text": "class"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 6,
+            "end_byte": 7,
+            "text": "C"
+          },
+          {
+            "type": "declaration_list",
+            "field": "body",
+            "start_byte": 8,
+            "end_byte": 33,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 8,
+                "end_byte": 9,
+                "text": "{"
+              },
+              {
+                "type": "method_declaration",
+                "start_byte": 10,
+                "end_byte": 31,
+                "children": [
+                  {
+                    "type": "modifier",
+                    "start_byte": 10,
+                    "end_byte": 16,
+                    "children": [
+                      {
+                        "type": "static",
+                        "start_byte": 10,
+                        "end_byte": 16,
+                        "text": "static"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "predefined_type",
+                    "field": "returns",
+                    "start_byte": 17,
+                    "end_byte": 21,
+                    "text": "void"
+                  },
+                  {
+                    "type": "identifier",
+                    "field": "name",
+                    "start_byte": 22,
+                    "end_byte": 26,
+                    "text": "Main"
+                  },
+                  {
+                    "type": "parameter_list",
+                    "field": "parameters",
+                    "start_byte": 26,
+                    "end_byte": 28,
+                    "children": [
+                      {
+                        "type": "(",
+                        "start_byte": 26,
+                        "end_byte": 27,
+                        "text": "("
+                      },
+                      {
+                        "type": ")",
+                        "start_byte": 27,
+                        "end_byte": 28,
+                        "text": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "block",
+                    "field": "body",
+                    "start_byte": 29,
+                    "end_byte": 31,
+                    "children": [
+                      {
+                        "type": "{",
+                        "start_byte": 29,
+                        "end_byte": 30,
+                        "text": "{"
+                      },
+                      {
+                        "type": "}",
+                        "start_byte": 30,
+                        "end_byte": 31,
+                        "text": "}"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 32,
+                "end_byte": 33,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

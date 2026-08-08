@@ -1,0 +1,57 @@
+{
+  "language": "query",
+  "file": "tiny.scm",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 19,
+    "children": [
+      {
+        "type": "named_node",
+        "start_byte": 0,
+        "end_byte": 18,
+        "children": [
+          {
+            "type": "(",
+            "start_byte": 0,
+            "end_byte": 1,
+            "text": "("
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 1,
+            "end_byte": 11,
+            "text": "identifier"
+          },
+          {
+            "type": ")",
+            "start_byte": 11,
+            "end_byte": 12,
+            "text": ")"
+          },
+          {
+            "type": "capture",
+            "start_byte": 13,
+            "end_byte": 18,
+            "children": [
+              {
+                "type": "@",
+                "start_byte": 13,
+                "end_byte": 14,
+                "text": "@"
+              },
+              {
+                "type": "identifier",
+                "field": "name",
+                "start_byte": 14,
+                "end_byte": 18,
+                "text": "name"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

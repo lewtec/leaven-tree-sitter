@@ -1,0 +1,3 @@
+Stolen/adapted from upstream tree-sitter corpus for this grammar.
+origin: access.txt#access types
+file: sample.adb

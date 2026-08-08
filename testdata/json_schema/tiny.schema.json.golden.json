@@ -1,0 +1,17 @@
+{
+  "language": "json_schema",
+  "file": "tiny.schema.json",
+  "root": {
+    "type": "scalar",
+    "start_byte": 0,
+    "end_byte": 4,
+    "children": [
+      {
+        "type": "bool",
+        "start_byte": 0,
+        "end_byte": 4,
+        "text": "true"
+      }
+    ]
+  }
+}

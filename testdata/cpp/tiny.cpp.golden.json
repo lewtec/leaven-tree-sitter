@@ -1,0 +1,105 @@
+{
+  "language": "cpp",
+  "file": "tiny.cpp",
+  "root": {
+    "type": "translation_unit",
+    "start_byte": 0,
+    "end_byte": 25,
+    "children": [
+      {
+        "type": "function_definition",
+        "start_byte": 0,
+        "end_byte": 24,
+        "children": [
+          {
+            "type": "primitive_type",
+            "field": "type",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "int"
+          },
+          {
+            "type": "function_declarator",
+            "field": "declarator",
+            "start_byte": 4,
+            "end_byte": 10,
+            "children": [
+              {
+                "type": "identifier",
+                "field": "declarator",
+                "start_byte": 4,
+                "end_byte": 8,
+                "text": "main"
+              },
+              {
+                "type": "parameter_list",
+                "field": "parameters",
+                "start_byte": 8,
+                "end_byte": 10,
+                "children": [
+                  {
+                    "type": "(",
+                    "start_byte": 8,
+                    "end_byte": 9,
+                    "text": "("
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 9,
+                    "end_byte": 10,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compound_statement",
+            "field": "body",
+            "start_byte": 11,
+            "end_byte": 24,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 11,
+                "end_byte": 12,
+                "text": "{"
+              },
+              {
+                "type": "return_statement",
+                "start_byte": 13,
+                "end_byte": 22,
+                "children": [
+                  {
+                    "type": "return",
+                    "start_byte": 13,
+                    "end_byte": 19,
+                    "text": "return"
+                  },
+                  {
+                    "type": "number_literal",
+                    "start_byte": 20,
+                    "end_byte": 21,
+                    "text": "0"
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 21,
+                    "end_byte": 22,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 23,
+                "end_byte": 24,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

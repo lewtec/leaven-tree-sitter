@@ -1,0 +1,39 @@
+{
+  "language": "ruby",
+  "file": "tiny.rb",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 7,
+    "children": [
+      {
+        "type": "call",
+        "start_byte": 0,
+        "end_byte": 6,
+        "children": [
+          {
+            "type": "identifier",
+            "field": "method",
+            "start_byte": 0,
+            "end_byte": 4,
+            "text": "puts"
+          },
+          {
+            "type": "argument_list",
+            "field": "arguments",
+            "start_byte": 5,
+            "end_byte": 6,
+            "children": [
+              {
+                "type": "integer",
+                "start_byte": 5,
+                "end_byte": 6,
+                "text": "1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+# Hide multi-MB leaven dumps in GitHub PR UI.
+grammar/core.go linguist-generated=true
+grammar/**/grammar.go linguist-generated=true

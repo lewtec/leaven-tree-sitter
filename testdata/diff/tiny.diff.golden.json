@@ -1,0 +1,106 @@
+{
+  "language": "diff",
+  "file": "tiny.diff",
+  "root": {
+    "type": "source",
+    "start_byte": 0,
+    "end_byte": 38,
+    "children": [
+      {
+        "type": "old_file",
+        "start_byte": 0,
+        "end_byte": 7,
+        "children": [
+          {
+            "type": "---",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "---"
+          },
+          {
+            "type": "filename",
+            "start_byte": 4,
+            "end_byte": 7,
+            "text": "a/x"
+          }
+        ]
+      },
+      {
+        "type": "new_file",
+        "start_byte": 8,
+        "end_byte": 15,
+        "children": [
+          {
+            "type": "+++",
+            "start_byte": 8,
+            "end_byte": 11,
+            "text": "+++"
+          },
+          {
+            "type": "filename",
+            "start_byte": 12,
+            "end_byte": 15,
+            "text": "b/x"
+          }
+        ]
+      },
+      {
+        "type": "location",
+        "start_byte": 16,
+        "end_byte": 27,
+        "children": [
+          {
+            "type": "@@",
+            "start_byte": 16,
+            "end_byte": 18,
+            "text": "@@"
+          },
+          {
+            "type": "linerange",
+            "start_byte": 19,
+            "end_byte": 21,
+            "text": "-1"
+          },
+          {
+            "type": "linerange",
+            "start_byte": 22,
+            "end_byte": 24,
+            "text": "+1"
+          },
+          {
+            "type": "@@",
+            "start_byte": 25,
+            "end_byte": 27,
+            "text": "@@"
+          }
+        ]
+      },
+      {
+        "type": "deletion",
+        "start_byte": 28,
+        "end_byte": 32,
+        "children": [
+          {
+            "type": "-",
+            "start_byte": 28,
+            "end_byte": 29,
+            "text": "-"
+          }
+        ]
+      },
+      {
+        "type": "addition",
+        "start_byte": 33,
+        "end_byte": 37,
+        "children": [
+          {
+            "type": "+",
+            "start_byte": 33,
+            "end_byte": 34,
+            "text": "+"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "language": "bicep",
+  "file": "tiny.bicep",
+  "root": {
+    "type": "infrastructure",
+    "start_byte": 0,
+    "end_byte": 28,
+    "children": [
+      {
+        "type": "parameter_declaration",
+        "start_byte": 0,
+        "end_byte": 27,
+        "children": [
+          {
+            "type": "param",
+            "start_byte": 0,
+            "end_byte": 5,
+            "text": "param"
+          },
+          {
+            "type": "identifier",
+            "start_byte": 6,
+            "end_byte": 10,
+            "text": "name"
+          },
+          {
+            "type": "type",
+            "start_byte": 11,
+            "end_byte": 17,
+            "children": [
+              {
+                "type": "primitive_type",
+                "start_byte": 11,
+                "end_byte": 17,
+                "children": [
+                  {
+                    "type": "string",
+                    "start_byte": 11,
+                    "end_byte": 17,
+                    "text": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "=",
+            "start_byte": 18,
+            "end_byte": 19,
+            "text": "="
+          },
+          {
+            "type": "string",
+            "start_byte": 20,
+            "end_byte": 27,
+            "children": [
+              {
+                "type": "'",
+                "start_byte": 20,
+                "end_byte": 21,
+                "text": "'"
+              },
+              {
+                "type": "string_content",
+                "start_byte": 21,
+                "end_byte": 26,
+                "text": "world"
+              },
+              {
+                "type": "'",
+                "start_byte": 26,
+                "end_byte": 27,
+                "text": "'"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

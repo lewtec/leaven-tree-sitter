@@ -1,0 +1,178 @@
+{
+  "language": "scala",
+  "file": "tiny.scala",
+  "root": {
+    "type": "compilation_unit",
+    "start_byte": 0,
+    "end_byte": 51,
+    "children": [
+      {
+        "type": "object_definition",
+        "start_byte": 0,
+        "end_byte": 50,
+        "children": [
+          {
+            "type": "object",
+            "start_byte": 0,
+            "end_byte": 6,
+            "text": "object"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 7,
+            "end_byte": 11,
+            "text": "Main"
+          },
+          {
+            "type": "template_body",
+            "field": "body",
+            "start_byte": 12,
+            "end_byte": 50,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": "{"
+              },
+              {
+                "type": "function_definition",
+                "start_byte": 14,
+                "end_byte": 48,
+                "children": [
+                  {
+                    "type": "def",
+                    "start_byte": 14,
+                    "end_byte": 17,
+                    "text": "def"
+                  },
+                  {
+                    "type": "identifier",
+                    "field": "name",
+                    "start_byte": 18,
+                    "end_byte": 22,
+                    "text": "main"
+                  },
+                  {
+                    "type": "parameters",
+                    "field": "parameters",
+                    "start_byte": 22,
+                    "end_byte": 43,
+                    "children": [
+                      {
+                        "type": "(",
+                        "start_byte": 22,
+                        "end_byte": 23,
+                        "text": "("
+                      },
+                      {
+                        "type": "parameter",
+                        "start_byte": 23,
+                        "end_byte": 42,
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "field": "name",
+                            "start_byte": 23,
+                            "end_byte": 27,
+                            "text": "args"
+                          },
+                          {
+                            "type": ":",
+                            "start_byte": 27,
+                            "end_byte": 28,
+                            "text": ":"
+                          },
+                          {
+                            "type": "generic_type",
+                            "field": "type",
+                            "start_byte": 29,
+                            "end_byte": 42,
+                            "children": [
+                              {
+                                "type": "type_identifier",
+                                "field": "type",
+                                "start_byte": 29,
+                                "end_byte": 34,
+                                "text": "Array"
+                              },
+                              {
+                                "type": "type_arguments",
+                                "field": "type_arguments",
+                                "start_byte": 34,
+                                "end_byte": 42,
+                                "children": [
+                                  {
+                                    "type": "[",
+                                    "start_byte": 34,
+                                    "end_byte": 35,
+                                    "text": "["
+                                  },
+                                  {
+                                    "type": "type_identifier",
+                                    "start_byte": 35,
+                                    "end_byte": 41,
+                                    "text": "String"
+                                  },
+                                  {
+                                    "type": "]",
+                                    "start_byte": 41,
+                                    "end_byte": 42,
+                                    "text": "]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": ")",
+                        "start_byte": 42,
+                        "end_byte": 43,
+                        "text": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "=",
+                    "start_byte": 44,
+                    "end_byte": 45,
+                    "text": "="
+                  },
+                  {
+                    "type": "unit",
+                    "field": "body",
+                    "start_byte": 46,
+                    "end_byte": 48,
+                    "children": [
+                      {
+                        "type": "(",
+                        "start_byte": 46,
+                        "end_byte": 47,
+                        "text": "("
+                      },
+                      {
+                        "type": ")",
+                        "start_byte": 47,
+                        "end_byte": 48,
+                        "text": ")"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 49,
+                "end_byte": 50,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

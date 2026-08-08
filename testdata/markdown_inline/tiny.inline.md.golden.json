@@ -1,0 +1,61 @@
+{
+  "language": "markdown_inline",
+  "file": "tiny.inline.md",
+  "root": {
+    "type": "inline",
+    "start_byte": 0,
+    "end_byte": 20,
+    "children": [
+      {
+        "type": "strong_emphasis",
+        "start_byte": 0,
+        "end_byte": 8,
+        "children": [
+          {
+            "type": "emphasis_delimiter",
+            "start_byte": 0,
+            "end_byte": 1,
+            "text": "*"
+          },
+          {
+            "type": "emphasis_delimiter",
+            "start_byte": 1,
+            "end_byte": 2,
+            "text": "*"
+          },
+          {
+            "type": "emphasis_delimiter",
+            "start_byte": 6,
+            "end_byte": 7,
+            "text": "*"
+          },
+          {
+            "type": "emphasis_delimiter",
+            "start_byte": 7,
+            "end_byte": 8,
+            "text": "*"
+          }
+        ]
+      },
+      {
+        "type": "code_span",
+        "start_byte": 13,
+        "end_byte": 19,
+        "children": [
+          {
+            "type": "code_span_delimiter",
+            "start_byte": 13,
+            "end_byte": 14,
+            "text": "`"
+          },
+          {
+            "type": "code_span_delimiter",
+            "start_byte": 18,
+            "end_byte": 19,
+            "text": "`"
+          }
+        ]
+      }
+    ]
+  }
+}

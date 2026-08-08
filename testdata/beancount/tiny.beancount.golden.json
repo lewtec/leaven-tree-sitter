@@ -1,0 +1,38 @@
+{
+  "language": "beancount",
+  "file": "tiny.beancount",
+  "root": {
+    "type": "file",
+    "start_byte": 0,
+    "end_byte": 28,
+    "children": [
+      {
+        "type": "open",
+        "start_byte": 0,
+        "end_byte": 28,
+        "children": [
+          {
+            "type": "date",
+            "field": "date",
+            "start_byte": 0,
+            "end_byte": 10,
+            "text": "2020-01-01"
+          },
+          {
+            "type": "open",
+            "start_byte": 11,
+            "end_byte": 15,
+            "text": "open"
+          },
+          {
+            "type": "account",
+            "field": "account",
+            "start_byte": 16,
+            "end_byte": 27,
+            "text": "Assets:Cash"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "language": "bash",
+  "file": "tiny.sh",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 11,
+    "children": [
+      {
+        "type": "command",
+        "start_byte": 0,
+        "end_byte": 10,
+        "children": [
+          {
+            "type": "command_name",
+            "field": "name",
+            "start_byte": 0,
+            "end_byte": 4,
+            "children": [
+              {
+                "type": "word",
+                "start_byte": 0,
+                "end_byte": 4,
+                "text": "echo"
+              }
+            ]
+          },
+          {
+            "type": "word",
+            "field": "argument",
+            "start_byte": 5,
+            "end_byte": 10,
+            "text": "hello"
+          }
+        ]
+      }
+    ]
+  }
+}

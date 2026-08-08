@@ -1,0 +1,180 @@
+{
+  "language": "java",
+  "file": "tiny.java",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 54,
+    "children": [
+      {
+        "type": "class_declaration",
+        "start_byte": 0,
+        "end_byte": 53,
+        "children": [
+          {
+            "type": "class",
+            "start_byte": 0,
+            "end_byte": 5,
+            "text": "class"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 6,
+            "end_byte": 10,
+            "text": "Main"
+          },
+          {
+            "type": "class_body",
+            "field": "body",
+            "start_byte": 11,
+            "end_byte": 53,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 11,
+                "end_byte": 12,
+                "text": "{"
+              },
+              {
+                "type": "method_declaration",
+                "start_byte": 13,
+                "end_byte": 51,
+                "children": [
+                  {
+                    "type": "modifiers",
+                    "start_byte": 13,
+                    "end_byte": 26,
+                    "children": [
+                      {
+                        "type": "public",
+                        "start_byte": 13,
+                        "end_byte": 19,
+                        "text": "public"
+                      },
+                      {
+                        "type": "static",
+                        "start_byte": 20,
+                        "end_byte": 26,
+                        "text": "static"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "void_type",
+                    "field": "type",
+                    "start_byte": 27,
+                    "end_byte": 31,
+                    "text": "void"
+                  },
+                  {
+                    "type": "identifier",
+                    "field": "name",
+                    "start_byte": 32,
+                    "end_byte": 36,
+                    "text": "main"
+                  },
+                  {
+                    "type": "formal_parameters",
+                    "field": "parameters",
+                    "start_byte": 36,
+                    "end_byte": 48,
+                    "children": [
+                      {
+                        "type": "(",
+                        "start_byte": 36,
+                        "end_byte": 37,
+                        "text": "("
+                      },
+                      {
+                        "type": "formal_parameter",
+                        "start_byte": 37,
+                        "end_byte": 47,
+                        "children": [
+                          {
+                            "type": "array_type",
+                            "field": "type",
+                            "start_byte": 37,
+                            "end_byte": 45,
+                            "children": [
+                              {
+                                "type": "type_identifier",
+                                "field": "element",
+                                "start_byte": 37,
+                                "end_byte": 43,
+                                "text": "String"
+                              },
+                              {
+                                "type": "dimensions",
+                                "field": "dimensions",
+                                "start_byte": 43,
+                                "end_byte": 45,
+                                "children": [
+                                  {
+                                    "type": "[",
+                                    "start_byte": 43,
+                                    "end_byte": 44,
+                                    "text": "["
+                                  },
+                                  {
+                                    "type": "]",
+                                    "start_byte": 44,
+                                    "end_byte": 45,
+                                    "text": "]"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "identifier",
+                            "field": "name",
+                            "start_byte": 46,
+                            "end_byte": 47,
+                            "text": "a"
+                          }
+                        ]
+                      },
+                      {
+                        "type": ")",
+                        "start_byte": 47,
+                        "end_byte": 48,
+                        "text": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "block",
+                    "field": "body",
+                    "start_byte": 49,
+                    "end_byte": 51,
+                    "children": [
+                      {
+                        "type": "{",
+                        "start_byte": 49,
+                        "end_byte": 50,
+                        "text": "{"
+                      },
+                      {
+                        "type": "}",
+                        "start_byte": 50,
+                        "end_byte": 51,
+                        "text": "}"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 52,
+                "end_byte": 53,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

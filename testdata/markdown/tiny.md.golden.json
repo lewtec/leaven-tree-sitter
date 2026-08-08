@@ -1,0 +1,58 @@
+{
+  "language": "markdown",
+  "file": "tiny.md",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 16,
+    "children": [
+      {
+        "type": "section",
+        "start_byte": 0,
+        "end_byte": 16,
+        "children": [
+          {
+            "type": "atx_heading",
+            "start_byte": 0,
+            "end_byte": 8,
+            "children": [
+              {
+                "type": "atx_h1_marker",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "#"
+              },
+              {
+                "type": "inline",
+                "field": "heading_content",
+                "start_byte": 2,
+                "end_byte": 7,
+                "text": "Title"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "start_byte": 9,
+            "end_byte": 16,
+            "children": [
+              {
+                "type": "inline",
+                "start_byte": 9,
+                "end_byte": 15,
+                "children": [
+                  {
+                    "type": ".",
+                    "start_byte": 14,
+                    "end_byte": 15,
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

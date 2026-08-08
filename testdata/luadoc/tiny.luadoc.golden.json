@@ -1,0 +1,30 @@
+{
+  "language": "luadoc",
+  "file": "tiny.luadoc",
+  "root": {
+    "type": "documentation",
+    "start_byte": 0,
+    "end_byte": 11,
+    "children": [
+      {
+        "type": "class_annotation",
+        "start_byte": 0,
+        "end_byte": 10,
+        "children": [
+          {
+            "type": "@class",
+            "start_byte": 0,
+            "end_byte": 6,
+            "text": "@class"
+          },
+          {
+            "type": "identifier",
+            "start_byte": 7,
+            "end_byte": 10,
+            "text": "Foo"
+          }
+        ]
+      }
+    ]
+  }
+}

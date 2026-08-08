@@ -1,0 +1,90 @@
+{
+  "language": "go",
+  "file": "tiny.go",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 29,
+    "children": [
+      {
+        "type": "package_clause",
+        "start_byte": 0,
+        "end_byte": 12,
+        "children": [
+          {
+            "type": "package",
+            "start_byte": 0,
+            "end_byte": 7,
+            "text": "package"
+          },
+          {
+            "type": "package_identifier",
+            "start_byte": 8,
+            "end_byte": 12,
+            "text": "main"
+          }
+        ]
+      },
+      {
+        "type": "function_declaration",
+        "start_byte": 14,
+        "end_byte": 28,
+        "children": [
+          {
+            "type": "func",
+            "start_byte": 14,
+            "end_byte": 18,
+            "text": "func"
+          },
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 19,
+            "end_byte": 23,
+            "text": "main"
+          },
+          {
+            "type": "parameter_list",
+            "field": "parameters",
+            "start_byte": 23,
+            "end_byte": 25,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 23,
+                "end_byte": 24,
+                "text": "("
+              },
+              {
+                "type": ")",
+                "start_byte": 24,
+                "end_byte": 25,
+                "text": ")"
+              }
+            ]
+          },
+          {
+            "type": "block",
+            "field": "body",
+            "start_byte": 26,
+            "end_byte": 28,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 26,
+                "end_byte": 27,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 27,
+                "end_byte": 28,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+name: Codegen
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: codegen
+  cancel-in-progress: true
+
+jobs:
+  codegen:
+    name: cook enabled grammars
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
+
+      - name: Install clang 14
+        run: mise install conda:clang@14.0.6
+
+      - name: Place grammar C (JIT)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mise run grammars:sync
+          # apply may pin host lazy tools; keep lockfile sources-only
+          git checkout -- workspaced.lock.json
+
+      - name: Ensure tree-sitter core
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: mise run tree-sitter:path
+
+      - name: Transpile core + enabled grammars
+        env:
+          CGO_ENABLED: "0"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export CC="$(mise which clang)"
+          go run -v ./cmd/codegen
+
+      - name: Test cooked tree
+        env:
+          CGO_ENABLED: "0"
+        run: go test work
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: cook enabled grammars"
+          title: "Cook enabled grammars"
+          body: |
+            Automated leaven codegen for live `#grammar` entries in workspaced.
+
+            Click **Approve workflows to run** so Test runs on this PR.
+          branch: codegen-update
+          delete-branch: true
+          add-paths: |
+            grammar/**
+            cmd/parse/languages.go
+            go.mod
+            go.sum
+            go.work
+            go.work.sum

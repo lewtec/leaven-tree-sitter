@@ -1,0 +1,117 @@
+{
+  "language": "angular",
+  "file": "sample.html",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 29,
+    "children": [
+      {
+        "type": "element",
+        "start_byte": 0,
+        "end_byte": 28,
+        "children": [
+          {
+            "type": "self_closing_tag",
+            "start_byte": 0,
+            "end_byte": 28,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 1,
+                "end_byte": 8,
+                "text": "element"
+              },
+              {
+                "type": "attribute",
+                "start_byte": 9,
+                "end_byte": 26,
+                "children": [
+                  {
+                    "type": "animation_binding",
+                    "start_byte": 9,
+                    "end_byte": 26,
+                    "children": [
+                      {
+                        "type": "[@",
+                        "start_byte": 9,
+                        "end_byte": 11,
+                        "text": "[@"
+                      },
+                      {
+                        "type": "binding_name",
+                        "start_byte": 11,
+                        "end_byte": 17,
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "start_byte": 11,
+                            "end_byte": 17,
+                            "text": "fadeIn"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "]",
+                        "start_byte": 17,
+                        "end_byte": 18,
+                        "text": "]"
+                      },
+                      {
+                        "type": "=",
+                        "field": "trigger",
+                        "start_byte": 18,
+                        "end_byte": 19,
+                        "text": "="
+                      },
+                      {
+                        "type": "\"",
+                        "field": "trigger",
+                        "start_byte": 19,
+                        "end_byte": 20,
+                        "text": "\""
+                      },
+                      {
+                        "type": "expression",
+                        "field": "trigger",
+                        "start_byte": 20,
+                        "end_byte": 25,
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "start_byte": 20,
+                            "end_byte": 25,
+                            "text": "value"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "\"",
+                        "field": "trigger",
+                        "start_byte": 25,
+                        "end_byte": 26,
+                        "text": "\""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "/\u003e",
+                "start_byte": 26,
+                "end_byte": 28,
+                "text": "/\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "language": "ocaml_type",
+  "file": "tiny.mly",
+  "root": {
+    "type": "type",
+    "start_byte": 0,
+    "end_byte": 4,
+    "children": [
+      {
+        "type": "type_constructor_path",
+        "start_byte": 0,
+        "end_byte": 3,
+        "children": [
+          {
+            "type": "type_constructor",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "int"
+          }
+        ]
+      }
+    ]
+  }
+}

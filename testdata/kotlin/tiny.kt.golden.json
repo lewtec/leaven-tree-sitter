@@ -1,0 +1,68 @@
+{
+  "language": "kotlin",
+  "file": "tiny.kt",
+  "root": {
+    "type": "source_file",
+    "start_byte": 0,
+    "end_byte": 14,
+    "children": [
+      {
+        "type": "function_declaration",
+        "start_byte": 0,
+        "end_byte": 13,
+        "children": [
+          {
+            "type": "fun",
+            "start_byte": 0,
+            "end_byte": 3,
+            "text": "fun"
+          },
+          {
+            "type": "simple_identifier",
+            "start_byte": 4,
+            "end_byte": 8,
+            "text": "main"
+          },
+          {
+            "type": "function_value_parameters",
+            "start_byte": 8,
+            "end_byte": 10,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 8,
+                "end_byte": 9,
+                "text": "("
+              },
+              {
+                "type": ")",
+                "start_byte": 9,
+                "end_byte": 10,
+                "text": ")"
+              }
+            ]
+          },
+          {
+            "type": "function_body",
+            "start_byte": 11,
+            "end_byte": 13,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 11,
+                "end_byte": 12,
+                "text": "{"
+              },
+              {
+                "type": "}",
+                "start_byte": 12,
+                "end_byte": 13,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

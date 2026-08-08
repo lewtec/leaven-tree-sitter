@@ -1,0 +1,187 @@
+{
+  "language": "blade",
+  "file": "sample.blade.php",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 52,
+    "children": [
+      {
+        "type": "element",
+        "start_byte": 0,
+        "end_byte": 51,
+        "children": [
+          {
+            "type": "start_tag",
+            "start_byte": 0,
+            "end_byte": 44,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 1,
+                "end_byte": 4,
+                "text": "div"
+              },
+              {
+                "type": "attribute",
+                "start_byte": 5,
+                "end_byte": 19,
+                "children": [
+                  {
+                    "type": "directive",
+                    "start_byte": 5,
+                    "end_byte": 11,
+                    "text": "@class"
+                  },
+                  {
+                    "type": "(",
+                    "start_byte": 11,
+                    "end_byte": 12,
+                    "text": "("
+                  },
+                  {
+                    "type": "parameter",
+                    "start_byte": 12,
+                    "end_byte": 18,
+                    "text": "'test'"
+                  },
+                  {
+                    "type": ")",
+                    "start_byte": 18,
+                    "end_byte": 19,
+                    "text": ")"
+                  }
+                ]
+              },
+              {
+                "type": "attribute",
+                "start_byte": 20,
+                "end_byte": 29,
+                "children": [
+                  {
+                    "type": "attribute_name",
+                    "start_byte": 20,
+                    "end_byte": 22,
+                    "text": "id"
+                  },
+                  {
+                    "type": "=",
+                    "start_byte": 22,
+                    "end_byte": 23,
+                    "text": "="
+                  },
+                  {
+                    "type": "quoted_attribute_value",
+                    "start_byte": 23,
+                    "end_byte": 29,
+                    "children": [
+                      {
+                        "type": "\"",
+                        "start_byte": 23,
+                        "end_byte": 24,
+                        "text": "\""
+                      },
+                      {
+                        "type": "attribute_value",
+                        "start_byte": 24,
+                        "end_byte": 28,
+                        "text": "test"
+                      },
+                      {
+                        "type": "\"",
+                        "start_byte": 28,
+                        "end_byte": 29,
+                        "text": "\""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "attribute",
+                "start_byte": 30,
+                "end_byte": 42,
+                "children": [
+                  {
+                    "type": "attribute_name",
+                    "start_byte": 30,
+                    "end_byte": 35,
+                    "text": "style"
+                  },
+                  {
+                    "type": "=",
+                    "start_byte": 35,
+                    "end_byte": 36,
+                    "text": "="
+                  },
+                  {
+                    "type": "quoted_attribute_value",
+                    "start_byte": 36,
+                    "end_byte": 42,
+                    "children": [
+                      {
+                        "type": "\"",
+                        "start_byte": 36,
+                        "end_byte": 37,
+                        "text": "\""
+                      },
+                      {
+                        "type": "attribute_value",
+                        "start_byte": 37,
+                        "end_byte": 41,
+                        "text": "test"
+                      },
+                      {
+                        "type": "\"",
+                        "start_byte": 41,
+                        "end_byte": 42,
+                        "text": "\""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 43,
+                "end_byte": 44,
+                "text": "\u003e"
+              }
+            ]
+          },
+          {
+            "type": "end_tag",
+            "start_byte": 45,
+            "end_byte": 51,
+            "children": [
+              {
+                "type": "\u003c/",
+                "start_byte": 45,
+                "end_byte": 47,
+                "text": "\u003c/"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 47,
+                "end_byte": 50,
+                "text": "div"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 50,
+                "end_byte": 51,
+                "text": "\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

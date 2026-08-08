@@ -1,0 +1,131 @@
+{
+  "language": "vue",
+  "file": "tiny.vue",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 31,
+    "children": [
+      {
+        "type": "template_element",
+        "start_byte": 0,
+        "end_byte": 30,
+        "children": [
+          {
+            "type": "start_tag",
+            "start_byte": 0,
+            "end_byte": 10,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 1,
+                "end_byte": 9,
+                "text": "template"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 9,
+                "end_byte": 10,
+                "text": "\u003e"
+              }
+            ]
+          },
+          {
+            "type": "element",
+            "start_byte": 10,
+            "end_byte": 19,
+            "children": [
+              {
+                "type": "start_tag",
+                "start_byte": 10,
+                "end_byte": 13,
+                "children": [
+                  {
+                    "type": "\u003c",
+                    "start_byte": 10,
+                    "end_byte": 11,
+                    "text": "\u003c"
+                  },
+                  {
+                    "type": "tag_name",
+                    "start_byte": 11,
+                    "end_byte": 12,
+                    "text": "p"
+                  },
+                  {
+                    "type": "\u003e",
+                    "start_byte": 12,
+                    "end_byte": 13,
+                    "text": "\u003e"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "start_byte": 13,
+                "end_byte": 15,
+                "text": "hi"
+              },
+              {
+                "type": "end_tag",
+                "start_byte": 15,
+                "end_byte": 19,
+                "children": [
+                  {
+                    "type": "\u003c/",
+                    "start_byte": 15,
+                    "end_byte": 17,
+                    "text": "\u003c/"
+                  },
+                  {
+                    "type": "tag_name",
+                    "start_byte": 17,
+                    "end_byte": 18,
+                    "text": "p"
+                  },
+                  {
+                    "type": "\u003e",
+                    "start_byte": 18,
+                    "end_byte": 19,
+                    "text": "\u003e"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "end_tag",
+            "start_byte": 19,
+            "end_byte": 30,
+            "children": [
+              {
+                "type": "\u003c/",
+                "start_byte": 19,
+                "end_byte": 21,
+                "text": "\u003c/"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 21,
+                "end_byte": 29,
+                "text": "template"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 29,
+                "end_byte": 30,
+                "text": "\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "language": "svelte",
+  "file": "tiny.svelte",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 38,
+    "children": [
+      {
+        "type": "script_element",
+        "start_byte": 0,
+        "end_byte": 26,
+        "children": [
+          {
+            "type": "start_tag",
+            "start_byte": 0,
+            "end_byte": 8,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 0,
+                "end_byte": 1,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 1,
+                "end_byte": 7,
+                "text": "script"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 7,
+                "end_byte": 8,
+                "text": "\u003e"
+              }
+            ]
+          },
+          {
+            "type": "raw_text",
+            "start_byte": 8,
+            "end_byte": 17,
+            "text": "let x = 1"
+          },
+          {
+            "type": "end_tag",
+            "start_byte": 17,
+            "end_byte": 26,
+            "children": [
+              {
+                "type": "\u003c/",
+                "start_byte": 17,
+                "end_byte": 19,
+                "text": "\u003c/"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 19,
+                "end_byte": 25,
+                "text": "script"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 25,
+                "end_byte": 26,
+                "text": "\u003e"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "element",
+        "start_byte": 27,
+        "end_byte": 37,
+        "children": [
+          {
+            "type": "start_tag",
+            "start_byte": 27,
+            "end_byte": 30,
+            "children": [
+              {
+                "type": "\u003c",
+                "start_byte": 27,
+                "end_byte": 28,
+                "text": "\u003c"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 28,
+                "end_byte": 29,
+                "text": "p"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 29,
+                "end_byte": 30,
+                "text": "\u003e"
+              }
+            ]
+          },
+          {
+            "type": "expression",
+            "start_byte": 30,
+            "end_byte": 33,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 30,
+                "end_byte": 31,
+                "text": "{"
+              },
+              {
+                "type": "svelte_raw_text",
+                "start_byte": 31,
+                "end_byte": 32,
+                "text": "x"
+              },
+              {
+                "type": "}",
+                "start_byte": 32,
+                "end_byte": 33,
+                "text": "}"
+              }
+            ]
+          },
+          {
+            "type": "end_tag",
+            "start_byte": 33,
+            "end_byte": 37,
+            "children": [
+              {
+                "type": "\u003c/",
+                "start_byte": 33,
+                "end_byte": 35,
+                "text": "\u003c/"
+              },
+              {
+                "type": "tag_name",
+                "start_byte": 35,
+                "end_byte": 36,
+                "text": "p"
+              },
+              {
+                "type": "\u003e",
+                "start_byte": 36,
+                "end_byte": 37,
+                "text": "\u003e"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

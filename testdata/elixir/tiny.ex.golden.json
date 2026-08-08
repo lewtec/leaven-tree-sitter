@@ -1,0 +1,118 @@
+{
+  "language": "elixir",
+  "file": "tiny.ex",
+  "root": {
+    "type": "source",
+    "start_byte": 0,
+    "end_byte": 34,
+    "children": [
+      {
+        "type": "call",
+        "start_byte": 0,
+        "end_byte": 33,
+        "children": [
+          {
+            "type": "identifier",
+            "field": "target",
+            "start_byte": 0,
+            "end_byte": 9,
+            "text": "defmodule"
+          },
+          {
+            "type": "arguments",
+            "start_byte": 10,
+            "end_byte": 11,
+            "children": [
+              {
+                "type": "alias",
+                "start_byte": 10,
+                "end_byte": 11,
+                "text": "M"
+              }
+            ]
+          },
+          {
+            "type": "do_block",
+            "start_byte": 12,
+            "end_byte": 33,
+            "children": [
+              {
+                "type": "do",
+                "start_byte": 12,
+                "end_byte": 14,
+                "text": "do"
+              },
+              {
+                "type": "call",
+                "start_byte": 17,
+                "end_byte": 29,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "field": "target",
+                    "start_byte": 17,
+                    "end_byte": 20,
+                    "text": "def"
+                  },
+                  {
+                    "type": "arguments",
+                    "start_byte": 21,
+                    "end_byte": 29,
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "start_byte": 21,
+                        "end_byte": 22,
+                        "text": "f"
+                      },
+                      {
+                        "type": ",",
+                        "start_byte": 22,
+                        "end_byte": 23,
+                        "text": ","
+                      },
+                      {
+                        "type": "keywords",
+                        "start_byte": 24,
+                        "end_byte": 29,
+                        "children": [
+                          {
+                            "type": "pair",
+                            "start_byte": 24,
+                            "end_byte": 29,
+                            "children": [
+                              {
+                                "type": "keyword",
+                                "field": "key",
+                                "start_byte": 24,
+                                "end_byte": 28,
+                                "text": "do: "
+                              },
+                              {
+                                "type": "integer",
+                                "field": "value",
+                                "start_byte": 28,
+                                "end_byte": 29,
+                                "text": "1"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "end",
+                "start_byte": 30,
+                "end_byte": 33,
+                "text": "end"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

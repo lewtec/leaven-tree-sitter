@@ -1,0 +1,107 @@
+{
+  "language": "lua",
+  "file": "tiny.lua",
+  "root": {
+    "type": "chunk",
+    "start_byte": 0,
+    "end_byte": 22,
+    "children": [
+      {
+        "type": "variable_declaration",
+        "field": "local_declaration",
+        "start_byte": 0,
+        "end_byte": 12,
+        "children": [
+          {
+            "type": "local",
+            "start_byte": 0,
+            "end_byte": 5,
+            "text": "local"
+          },
+          {
+            "type": "assignment_statement",
+            "start_byte": 6,
+            "end_byte": 12,
+            "children": [
+              {
+                "type": "variable_list",
+                "start_byte": 6,
+                "end_byte": 7,
+                "children": [
+                  {
+                    "type": "identifier",
+                    "field": "name",
+                    "start_byte": 6,
+                    "end_byte": 7,
+                    "text": "x"
+                  }
+                ]
+              },
+              {
+                "type": "=",
+                "field": "operator",
+                "start_byte": 8,
+                "end_byte": 9,
+                "text": "="
+              },
+              {
+                "type": "expression_list",
+                "start_byte": 10,
+                "end_byte": 12,
+                "children": [
+                  {
+                    "type": "number",
+                    "field": "value",
+                    "start_byte": 10,
+                    "end_byte": 12,
+                    "text": "10"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function_call",
+        "start_byte": 13,
+        "end_byte": 21,
+        "children": [
+          {
+            "type": "identifier",
+            "field": "name",
+            "start_byte": 13,
+            "end_byte": 18,
+            "text": "print"
+          },
+          {
+            "type": "arguments",
+            "field": "arguments",
+            "start_byte": 18,
+            "end_byte": 21,
+            "children": [
+              {
+                "type": "(",
+                "start_byte": 18,
+                "end_byte": 19,
+                "text": "("
+              },
+              {
+                "type": "identifier",
+                "start_byte": 19,
+                "end_byte": 20,
+                "text": "x"
+              },
+              {
+                "type": ")",
+                "start_byte": 20,
+                "end_byte": 21,
+                "text": ")"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

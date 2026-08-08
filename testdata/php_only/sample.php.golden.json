@@ -1,0 +1,209 @@
+{
+  "language": "php_only",
+  "file": "sample.php",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 82,
+    "children": [
+      {
+        "type": "class_declaration",
+        "start_byte": 0,
+        "end_byte": 81,
+        "children": [
+          {
+            "type": "abstract_modifier",
+            "start_byte": 0,
+            "end_byte": 8,
+            "children": [
+              {
+                "type": "abstract",
+                "start_byte": 0,
+                "end_byte": 8,
+                "text": "abstract"
+              }
+            ]
+          },
+          {
+            "type": "class",
+            "start_byte": 9,
+            "end_byte": 14,
+            "text": "class"
+          },
+          {
+            "type": "name",
+            "field": "name",
+            "start_byte": 15,
+            "end_byte": 16,
+            "text": "A"
+          },
+          {
+            "type": "declaration_list",
+            "field": "body",
+            "start_byte": 17,
+            "end_byte": 81,
+            "children": [
+              {
+                "type": "{",
+                "start_byte": 17,
+                "end_byte": 18,
+                "text": "{"
+              },
+              {
+                "type": "method_declaration",
+                "start_byte": 23,
+                "end_byte": 45,
+                "children": [
+                  {
+                    "type": "visibility_modifier",
+                    "start_byte": 23,
+                    "end_byte": 29,
+                    "children": [
+                      {
+                        "type": "public",
+                        "start_byte": 23,
+                        "end_byte": 29,
+                        "text": "public"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "function",
+                    "start_byte": 30,
+                    "end_byte": 38,
+                    "text": "function"
+                  },
+                  {
+                    "type": "name",
+                    "field": "name",
+                    "start_byte": 39,
+                    "end_byte": 40,
+                    "text": "a"
+                  },
+                  {
+                    "type": "formal_parameters",
+                    "field": "parameters",
+                    "start_byte": 40,
+                    "end_byte": 42,
+                    "children": [
+                      {
+                        "type": "(",
+                        "start_byte": 40,
+                        "end_byte": 41,
+                        "text": "("
+                      },
+                      {
+                        "type": ")",
+                        "start_byte": 41,
+                        "end_byte": 42,
+                        "text": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "compound_statement",
+                    "field": "body",
+                    "start_byte": 43,
+                    "end_byte": 45,
+                    "children": [
+                      {
+                        "type": "{",
+                        "start_byte": 43,
+                        "end_byte": 44,
+                        "text": "{"
+                      },
+                      {
+                        "type": "}",
+                        "start_byte": 44,
+                        "end_byte": 45,
+                        "text": "}"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "method_declaration",
+                "start_byte": 50,
+                "end_byte": 79,
+                "children": [
+                  {
+                    "type": "abstract_modifier",
+                    "start_byte": 50,
+                    "end_byte": 58,
+                    "children": [
+                      {
+                        "type": "abstract",
+                        "start_byte": 50,
+                        "end_byte": 58,
+                        "text": "abstract"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "visibility_modifier",
+                    "start_byte": 59,
+                    "end_byte": 65,
+                    "children": [
+                      {
+                        "type": "public",
+                        "start_byte": 59,
+                        "end_byte": 65,
+                        "text": "public"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "function",
+                    "start_byte": 66,
+                    "end_byte": 74,
+                    "text": "function"
+                  },
+                  {
+                    "type": "name",
+                    "field": "name",
+                    "start_byte": 75,
+                    "end_byte": 76,
+                    "text": "b"
+                  },
+                  {
+                    "type": "formal_parameters",
+                    "field": "parameters",
+                    "start_byte": 76,
+                    "end_byte": 78,
+                    "children": [
+                      {
+                        "type": "(",
+                        "start_byte": 76,
+                        "end_byte": 77,
+                        "text": "("
+                      },
+                      {
+                        "type": ")",
+                        "start_byte": 77,
+                        "end_byte": 78,
+                        "text": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";",
+                    "start_byte": 78,
+                    "end_byte": 79,
+                    "text": ";"
+                  }
+                ]
+              },
+              {
+                "type": "}",
+                "start_byte": 80,
+                "end_byte": 81,
+                "text": "}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
