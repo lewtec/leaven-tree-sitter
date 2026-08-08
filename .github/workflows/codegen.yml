@@ -2,6 +2,10 @@ name: Codegen
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - workspaced.lock.json
 
 concurrency:
   group: codegen

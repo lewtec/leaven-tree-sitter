@@ -73,7 +73,8 @@ Do not debug the first clang/PATH/leaven failure only on GitHub Actions.
 
 ## Codegen workflow
 
-Trigger: **`workflow_dispatch` only**. No cron. No lockfile auto-cook.
+Trigger: **`workflow_dispatch`**, or **push to `main`** that changes
+`workspaced.lock.json`. No cron.
 
 Runs once on ubuntu (clang 14 + leaven). One pure-Go output. No
 GOOS/GOARCH codegen matrix.
@@ -81,7 +82,7 @@ GOOS/GOARCH codegen matrix.
 Steps:
 
 1. You decide local state is good.
-2. Dispatch codegen.
+2. Dispatch codegen, or push a lockfile change to `main`.
 3. Job JIT-places C with `GITHUB_TOKEN` for the live lockfile set.
 4. Job transpiles every live/placed grammar (may refresh `core.go`).
 5. Job runs `go test` on ubuntu on that tree.
