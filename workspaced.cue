@@ -11,80 +11,80 @@ package workspaced
 // 	repo: "tree-sitter-fortran"
 // }
 
-// #grammar: ada: {
-// 	from: "github:briot/tree-sitter-ada"
-// 	repo: "tree-sitter-ada"
-// }
+#grammar: ada: {
+	from: "github:briot/tree-sitter-ada"
+	repo: "tree-sitter-ada"
+}
 
 // #grammar: agda: {
 // 	from: "github:tree-sitter/tree-sitter-agda"
 // 	repo: "tree-sitter-agda"
 // }
 
-// #grammar: angular: {
-// 	from: "github:dlvandenberg/tree-sitter-angular"
-// 	repo: "tree-sitter-angular"
-// }
+#grammar: angular: {
+	from: "github:dlvandenberg/tree-sitter-angular"
+	repo: "tree-sitter-angular"
+}
 
-// #grammar: arduino: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-arduino"
-// 	repo: "tree-sitter-arduino"
-// }
+#grammar: arduino: {
+	from: "github:tree-sitter-grammars/tree-sitter-arduino"
+	repo: "tree-sitter-arduino"
+}
 
 // #grammar: asm: {
 // 	from: "github:RubixDev/tree-sitter-asm"
 // 	repo: "tree-sitter-asm"
 // }
 
-// #grammar: astro: {
-// 	from: "github:virchau13/tree-sitter-astro"
-// 	repo: "tree-sitter-astro"
-// }
+#grammar: astro: {
+	from: "github:virchau13/tree-sitter-astro"
+	repo: "tree-sitter-astro"
+}
 
-// #grammar: bash: {
-// 	from: "github:tree-sitter/tree-sitter-bash"
-// 	repo: "tree-sitter-bash"
-// }
+#grammar: bash: {
+	from: "github:tree-sitter/tree-sitter-bash"
+	repo: "tree-sitter-bash"
+}
 
-// #grammar: beancount: {
-// 	from: "github:polarmutex/tree-sitter-beancount"
-// 	repo: "tree-sitter-beancount"
-// }
+#grammar: beancount: {
+	from: "github:polarmutex/tree-sitter-beancount"
+	repo: "tree-sitter-beancount"
+}
 
 // #grammar: bibtex: {
 // 	from: "github:latex-lsp/tree-sitter-bibtex"
 // 	repo: "tree-sitter-bibtex"
 // }
 
-// #grammar: bicep: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-bicep"
-// 	repo: "tree-sitter-bicep"
-// }
+#grammar: bicep: {
+	from: "github:tree-sitter-grammars/tree-sitter-bicep"
+	repo: "tree-sitter-bicep"
+}
 
 // #grammar: bitbake: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-bitbake"
 // 	repo: "tree-sitter-bitbake"
 // }
 
-// #grammar: blade: {
-// 	from: "github:EmranMR/tree-sitter-blade"
-// 	repo: "tree-sitter-blade"
-// }
+#grammar: blade: {
+	from: "github:EmranMR/tree-sitter-blade"
+	repo: "tree-sitter-blade"
+}
 
-// #grammar: c: {
-// 	from: "github:tree-sitter/tree-sitter-c"
-// 	repo: "tree-sitter-c"
-// }
+#grammar: c: {
+	from: "github:tree-sitter/tree-sitter-c"
+	repo: "tree-sitter-c"
+}
 
-// #grammar: "c-sharp": {
-// 	from: "github:tree-sitter/tree-sitter-c-sharp"
-// 	repo: "tree-sitter-c-sharp"
-// }
+#grammar: "c-sharp": {
+	from: "github:tree-sitter/tree-sitter-c-sharp"
+	repo: "tree-sitter-c-sharp"
+}
 
-// #grammar: cairo: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-cairo"
-// 	repo: "tree-sitter-cairo"
-// }
+#grammar: cairo: {
+	from: "github:tree-sitter-grammars/tree-sitter-cairo"
+	repo: "tree-sitter-cairo"
+}
 
 // #grammar: capnp: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-capnp"
@@ -101,61 +101,61 @@ package workspaced
 // 	repo: "tree-sitter-clojure"
 // }
 
-// #grammar: cmake: {
-// 	from: "github:uyha/tree-sitter-cmake"
-// 	repo: "tree-sitter-cmake"
-// }
+#grammar: cmake: {
+	from: "github:uyha/tree-sitter-cmake"
+	repo: "tree-sitter-cmake"
+}
 
-// #grammar: cobol: {
-// 	from: "github:yutaro-sakamoto/tree-sitter-cobol"
-// 	repo: "tree-sitter-cobol"
-// }
+#grammar: cobol: {
+	from: "github:yutaro-sakamoto/tree-sitter-cobol"
+	repo: "tree-sitter-cobol"
+}
 
 // #grammar: comment: {
 // 	from: "github:stsewd/tree-sitter-comment"
 // 	repo: "tree-sitter-comment"
 // }
 
-// #grammar: commonlisp: {
-// 	from: "github:theHamsta/tree-sitter-commonlisp"
-// 	repo: "tree-sitter-commonlisp"
-// }
+#grammar: commonlisp: {
+	from: "github:theHamsta/tree-sitter-commonlisp"
+	repo: "tree-sitter-commonlisp"
+}
 
 // #grammar: cpon: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-cpon"
 // 	repo: "tree-sitter-cpon"
 // }
 
-// #grammar: cpp: {
-// 	from: "github:tree-sitter/tree-sitter-cpp"
-// 	repo: "tree-sitter-cpp"
-// }
+#grammar: cpp: {
+	from: "github:tree-sitter/tree-sitter-cpp"
+	repo: "tree-sitter-cpp"
+}
 
 // #grammar: crystal: {
 // 	from: "github:crystal-lang-tools/tree-sitter-crystal"
 // 	repo: "tree-sitter-crystal"
 // }
 
-// #grammar: css: {
-// 	from: "github:tree-sitter/tree-sitter-css"
-// 	repo: "tree-sitter-css"
-// }
+#grammar: css: {
+	from: "github:tree-sitter/tree-sitter-css"
+	repo: "tree-sitter-css"
+}
 
 // #grammar: cst: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-cst"
 // 	repo: "tree-sitter-cst"
 // }
 
-// #grammar: csv: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-csv"
-// 	repo: "tree-sitter-csv"
-// 	paths: ["csv/src", "tsv/src", "psv/src", "common"]
-// }
+#grammar: csv: {
+	from: "github:tree-sitter-grammars/tree-sitter-csv"
+	repo: "tree-sitter-csv"
+	paths: ["csv/src", "tsv/src", "psv/src", "common"]
+}
 
-// #grammar: cuda: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-cuda"
-// 	repo: "tree-sitter-cuda"
-// }
+#grammar: cuda: {
+	from: "github:tree-sitter-grammars/tree-sitter-cuda"
+	repo: "tree-sitter-cuda"
+}
 
 // #grammar: cue: {
 // 	from: "github:eonpatapon/tree-sitter-cue"
@@ -167,20 +167,20 @@ package workspaced
 // 	repo: "tree-sitter-cyberchef"
 // }
 
-// #grammar: dart: {
-// 	from: "github:UserNobody14/tree-sitter-dart"
-// 	repo: "tree-sitter-dart"
-// }
+#grammar: dart: {
+	from: "github:UserNobody14/tree-sitter-dart"
+	repo: "tree-sitter-dart"
+}
 
-// #grammar: diff: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-diff"
-// 	repo: "tree-sitter-diff"
-// }
+#grammar: diff: {
+	from: "github:tree-sitter-grammars/tree-sitter-diff"
+	repo: "tree-sitter-diff"
+}
 
-// #grammar: dockerfile: {
-// 	from: "github:camdencheek/tree-sitter-dockerfile"
-// 	repo: "tree-sitter-dockerfile"
-// }
+#grammar: dockerfile: {
+	from: "github:camdencheek/tree-sitter-dockerfile"
+	repo: "tree-sitter-dockerfile"
+}
 
 // #grammar: doxygen: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-doxygen"
@@ -192,10 +192,10 @@ package workspaced
 // 	repo: "tree-sitter-eex"
 // }
 
-// #grammar: elixir: {
-// 	from: "github:elixir-lang/tree-sitter-elixir"
-// 	repo: "tree-sitter-elixir"
-// }
+#grammar: elixir: {
+	from: "github:elixir-lang/tree-sitter-elixir"
+	repo: "tree-sitter-elixir"
+}
 
 // #grammar: elm: {
 // 	from: "github:elm-tooling/tree-sitter-elm"
@@ -238,10 +238,10 @@ package workspaced
 // 	repo: "tree-sitter-func"
 // }
 
-// #grammar: gdscript: {
-// 	from: "github:PrestonKnopp/tree-sitter-gdscript"
-// 	repo: "tree-sitter-gdscript"
-// }
+#grammar: gdscript: {
+	from: "github:PrestonKnopp/tree-sitter-gdscript"
+	repo: "tree-sitter-gdscript"
+}
 
 // #grammar: "git-config": {
 // 	from: "github:the-mikedavis/tree-sitter-git-config"
@@ -253,15 +253,15 @@ package workspaced
 // 	repo: "tree-sitter-git-rebase"
 // }
 
-// #grammar: gitattributes: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-gitattributes"
-// 	repo: "tree-sitter-gitattributes"
-// }
+#grammar: gitattributes: {
+	from: "github:tree-sitter-grammars/tree-sitter-gitattributes"
+	repo: "tree-sitter-gitattributes"
+}
 
-// #grammar: gitcommit: {
-// 	from: "github:gbprod/tree-sitter-gitcommit"
-// 	repo: "tree-sitter-gitcommit"
-// }
+#grammar: gitcommit: {
+	from: "github:gbprod/tree-sitter-gitcommit"
+	repo: "tree-sitter-gitcommit"
+}
 
 // #grammar: gitignore: {
 // 	from: "github:shunsambongi/tree-sitter-gitignore"
@@ -273,23 +273,23 @@ package workspaced
 // 	repo: "tree-sitter-gleam"
 // }
 
-// #grammar: glsl: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-glsl"
-// 	repo: "tree-sitter-glsl"
-// }
+#grammar: glsl: {
+	from: "github:tree-sitter-grammars/tree-sitter-glsl"
+	repo: "tree-sitter-glsl"
+}
 
 // #grammar: gn: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-gn"
 // 	repo: "tree-sitter-gn"
 // }
 
-// #grammar: go: {
-// 	from: "github:tree-sitter/tree-sitter-go"
-// 	repo: "tree-sitter-go"
-// 	astdump: {
-// 		root_type: "source_file"
-// 		first_child_type: "package_clause"
-// 	}
+#grammar: go: {
+	from: "github:tree-sitter/tree-sitter-go"
+	repo: "tree-sitter-go"
+	astdump: {
+		root_type: "source_file"
+		first_child_type: "package_clause"
+	}
 // }
 
 // #grammar: "go-sum": {
@@ -327,21 +327,21 @@ package workspaced
 // 	repo: "tree-sitter-gstlaunch"
 // }
 
-// #grammar: hare: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-hare"
-// 	repo: "tree-sitter-hare"
-// }
+#grammar: hare: {
+	from: "github:tree-sitter-grammars/tree-sitter-hare"
+	repo: "tree-sitter-hare"
+}
 
-// #grammar: haskell: {
-// 	from: "github:tree-sitter/tree-sitter-haskell"
-// 	repo: "tree-sitter-haskell"
-// }
+#grammar: haskell: {
+	from: "github:tree-sitter/tree-sitter-haskell"
+	repo: "tree-sitter-haskell"
+}
 
-// #grammar: hcl: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-hcl"
-// 	repo: "tree-sitter-hcl"
-// 	paths: ["src", "dialects/terraform/src"]
-// }
+#grammar: hcl: {
+	from: "github:tree-sitter-grammars/tree-sitter-hcl"
+	repo: "tree-sitter-hcl"
+	paths: ["src", "dialects/terraform/src"]
+}
 
 // #grammar: heex: {
 // 	from: "github:phoenixframework/tree-sitter-heex"
@@ -353,10 +353,10 @@ package workspaced
 // 	repo: "tree-sitter-hlsl"
 // }
 
-// #grammar: html: {
-// 	from: "github:tree-sitter/tree-sitter-html"
-// 	repo: "tree-sitter-html"
-// }
+#grammar: html: {
+	from: "github:tree-sitter/tree-sitter-html"
+	repo: "tree-sitter-html"
+}
 
 // #grammar: http: {
 // 	from: "github:rest-nvim/tree-sitter-http"
@@ -383,28 +383,28 @@ package workspaced
 // 	repo: "tree-sitter-ispc"
 // }
 
-// #grammar: java: {
-// 	from: "github:tree-sitter/tree-sitter-java"
-// 	repo: "tree-sitter-java"
-// }
+#grammar: java: {
+	from: "github:tree-sitter/tree-sitter-java"
+	repo: "tree-sitter-java"
+}
 
-// #grammar: javascript: {
-// 	from: "github:tree-sitter/tree-sitter-javascript"
-// 	repo: "tree-sitter-javascript"
-// }
+#grammar: javascript: {
+	from: "github:tree-sitter/tree-sitter-javascript"
+	repo: "tree-sitter-javascript"
+}
 
-// #grammar: jsdoc: {
-// 	from: "github:tree-sitter/tree-sitter-jsdoc"
-// 	repo: "tree-sitter-jsdoc"
-// }
+#grammar: jsdoc: {
+	from: "github:tree-sitter/tree-sitter-jsdoc"
+	repo: "tree-sitter-jsdoc"
+}
 
-// #grammar: json: {
-// 	from: "github:tree-sitter/tree-sitter-json"
-// 	repo: "tree-sitter-json"
-// 	astdump: {
-// 		root_type: "document"
-// 		first_child_type: "object"
-// 	}
+#grammar: json: {
+	from: "github:tree-sitter/tree-sitter-json"
+	repo: "tree-sitter-json"
+	astdump: {
+		root_type: "document"
+		first_child_type: "object"
+	}
 // }
 
 // #grammar: json5: {
@@ -412,15 +412,15 @@ package workspaced
 // 	repo: "tree-sitter-json5"
 // }
 
-// #grammar: julia: {
-// 	from: "github:tree-sitter/tree-sitter-julia"
-// 	repo: "tree-sitter-julia"
-// }
+#grammar: julia: {
+	from: "github:tree-sitter/tree-sitter-julia"
+	repo: "tree-sitter-julia"
+}
 
-// #grammar: just: {
-// 	from: "github:casey/tree-sitter-just"
-// 	repo: "tree-sitter-just"
-// }
+#grammar: just: {
+	from: "github:casey/tree-sitter-just"
+	repo: "tree-sitter-just"
+}
 
 // #grammar: kconfig: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-kconfig"
@@ -432,10 +432,10 @@ package workspaced
 // 	repo: "tree-sitter-kdl"
 // }
 
-// #grammar: kotlin: {
-// 	from: "github:fwcd/tree-sitter-kotlin"
-// 	repo: "tree-sitter-kotlin"
-// }
+#grammar: kotlin: {
+	from: "github:fwcd/tree-sitter-kotlin"
+	repo: "tree-sitter-kotlin"
+}
 
 // #grammar: latex: {
 // 	from: "github:latex-lsp/tree-sitter-latex"
@@ -452,39 +452,39 @@ package workspaced
 // 	repo: "tree-sitter-llvm"
 // }
 
-// #grammar: lua: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-lua"
-// 	repo: "tree-sitter-lua"
-// 	astdump: {
-// 		root_type: "chunk"
-// 	}
+#grammar: lua: {
+	from: "github:tree-sitter-grammars/tree-sitter-lua"
+	repo: "tree-sitter-lua"
+	astdump: {
+		root_type: "chunk"
+	}
 // }
 
-// #grammar: luadoc: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-luadoc"
-// 	repo: "tree-sitter-luadoc"
-// }
+#grammar: luadoc: {
+	from: "github:tree-sitter-grammars/tree-sitter-luadoc"
+	repo: "tree-sitter-luadoc"
+}
 
-// #grammar: luap: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-luap"
-// 	repo: "tree-sitter-luap"
-// }
+#grammar: luap: {
+	from: "github:tree-sitter-grammars/tree-sitter-luap"
+	repo: "tree-sitter-luap"
+}
 
 // #grammar: luau: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-luau"
 // 	repo: "tree-sitter-luau"
 // }
 
-// #grammar: make: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-make"
-// 	repo: "tree-sitter-make"
-// }
+#grammar: make: {
+	from: "github:tree-sitter-grammars/tree-sitter-make"
+	repo: "tree-sitter-make"
+}
 
-// #grammar: markdown: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-markdown"
-// 	repo: "tree-sitter-markdown"
-// 	paths: ["tree-sitter-markdown/src", "tree-sitter-markdown-inline/src", "common"]
-// }
+#grammar: markdown: {
+	from: "github:tree-sitter-grammars/tree-sitter-markdown"
+	repo: "tree-sitter-markdown"
+	paths: ["tree-sitter-markdown/src", "tree-sitter-markdown-inline/src", "common"]
+}
 
 // #grammar: matlab: {
 // 	from: "github:acristoffers/tree-sitter-matlab"
@@ -516,15 +516,15 @@ package workspaced
 // 	repo: "tree-sitter-nickel"
 // }
 
-// #grammar: nim: {
-// 	from: "github:alaviss/tree-sitter-nim"
-// 	repo: "tree-sitter-nim"
-// }
+#grammar: nim: {
+	from: "github:alaviss/tree-sitter-nim"
+	repo: "tree-sitter-nim"
+}
 
-// #grammar: nix: {
-// 	from: "github:nix-community/tree-sitter-nix"
-// 	repo: "tree-sitter-nix"
-// }
+#grammar: nix: {
+	from: "github:nix-community/tree-sitter-nix"
+	repo: "tree-sitter-nix"
+}
 
 // #grammar: nqc: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-nqc"
@@ -541,11 +541,11 @@ package workspaced
 // 	repo: "tree-sitter-objdump"
 // }
 
-// #grammar: ocaml: {
-// 	from: "github:tree-sitter/tree-sitter-ocaml"
-// 	repo: "tree-sitter-ocaml"
-// 	paths: ["grammars/ocaml/src", "grammars/interface/src", "grammars/type/src", "common"]
-// }
+#grammar: ocaml: {
+	from: "github:tree-sitter/tree-sitter-ocaml"
+	repo: "tree-sitter-ocaml"
+	paths: ["grammars/ocaml/src", "grammars/interface/src", "grammars/type/src", "common"]
+}
 
 // #grammar: odin: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-odin"
@@ -570,7 +570,7 @@ package workspaced
 #grammar: php: {
 	from: "github:tree-sitter/tree-sitter-php"
 	repo: "tree-sitter-php"
-	paths: ["php/src", "common"]
+	paths: ["php/src", "php_only/src", "common"]
 }
 
 // #grammar: pkl: {
@@ -578,10 +578,10 @@ package workspaced
 // 	repo: "tree-sitter-pkl"
 // }
 
-// #grammar: po: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-po"
-// 	repo: "tree-sitter-po"
-// }
+#grammar: po: {
+	from: "github:tree-sitter-grammars/tree-sitter-po"
+	repo: "tree-sitter-po"
+}
 
 // #grammar: "poe-filter": {
 // 	from: "github:tree-sitter-grammars/tree-sitter-poe-filter"
@@ -618,28 +618,28 @@ package workspaced
 // 	repo: "tree-sitter-proto"
 // }
 
-// #grammar: puppet: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-puppet"
-// 	repo: "tree-sitter-puppet"
-// }
+#grammar: puppet: {
+	from: "github:tree-sitter-grammars/tree-sitter-puppet"
+	repo: "tree-sitter-puppet"
+}
 
-// #grammar: purescript: {
-// 	from: "github:postsolar/tree-sitter-purescript"
-// 	repo: "tree-sitter-purescript"
-// }
+#grammar: purescript: {
+	from: "github:postsolar/tree-sitter-purescript"
+	repo: "tree-sitter-purescript"
+}
 
 // #grammar: pymanifest: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-pymanifest"
 // 	repo: "tree-sitter-pymanifest"
 // }
 
-// #grammar: python: {
-// 	from: "github:tree-sitter/tree-sitter-python"
-// 	repo: "tree-sitter-python"
-// 	astdump: {
-// 		root_type: "module"
-// 		first_child_type: "assignment"
-// 	}
+#grammar: python: {
+	from: "github:tree-sitter/tree-sitter-python"
+	repo: "tree-sitter-python"
+	astdump: {
+		root_type: "module"
+		first_child_type: "assignment"
+	}
 // }
 
 // #grammar: ql: {
@@ -657,10 +657,10 @@ package workspaced
 // 	repo: "tree-sitter-qmldir"
 // }
 
-// #grammar: query: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-query"
-// 	repo: "tree-sitter-query"
-// }
+#grammar: query: {
+	from: "github:tree-sitter-grammars/tree-sitter-query"
+	repo: "tree-sitter-query"
+}
 
 // #grammar: racket: {
 // 	from: "github:6cdh/tree-sitter-racket"
@@ -682,50 +682,50 @@ package workspaced
 // 	repo: "tree-sitter-readline"
 // }
 
-// #grammar: regex: {
-// 	from: "github:tree-sitter/tree-sitter-regex"
-// 	repo: "tree-sitter-regex"
-// }
+#grammar: regex: {
+	from: "github:tree-sitter/tree-sitter-regex"
+	repo: "tree-sitter-regex"
+}
 
 // #grammar: rego: {
 // 	from: "github:FallenAngel97/tree-sitter-rego"
 // 	repo: "tree-sitter-rego"
 // }
 
-// #grammar: requirements: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-requirements"
-// 	repo: "tree-sitter-requirements"
-// }
+#grammar: requirements: {
+	from: "github:tree-sitter-grammars/tree-sitter-requirements"
+	repo: "tree-sitter-requirements"
+}
 
-// #grammar: rescript: {
-// 	from: "github:rescript-lang/tree-sitter-rescript"
-// 	repo: "tree-sitter-rescript"
-// }
+#grammar: rescript: {
+	from: "github:rescript-lang/tree-sitter-rescript"
+	repo: "tree-sitter-rescript"
+}
 
 // #grammar: roc: {
 // 	from: "github:faldor20/tree-sitter-roc"
 // 	repo: "tree-sitter-roc"
 // }
 
-// #grammar: ron: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-ron"
-// 	repo: "tree-sitter-ron"
-// }
+#grammar: ron: {
+	from: "github:tree-sitter-grammars/tree-sitter-ron"
+	repo: "tree-sitter-ron"
+}
 
-// #grammar: ruby: {
-// 	from: "github:tree-sitter/tree-sitter-ruby"
-// 	repo: "tree-sitter-ruby"
-// }
+#grammar: ruby: {
+	from: "github:tree-sitter/tree-sitter-ruby"
+	repo: "tree-sitter-ruby"
+}
 
-// #grammar: rust: {
-// 	from: "github:tree-sitter/tree-sitter-rust"
-// 	repo: "tree-sitter-rust"
-// }
+#grammar: rust: {
+	from: "github:tree-sitter/tree-sitter-rust"
+	repo: "tree-sitter-rust"
+}
 
-// #grammar: scala: {
-// 	from: "github:tree-sitter/tree-sitter-scala"
-// 	repo: "tree-sitter-scala"
-// }
+#grammar: scala: {
+	from: "github:tree-sitter/tree-sitter-scala"
+	repo: "tree-sitter-scala"
+}
 
 // #grammar: scheme: {
 // 	from: "github:6cdh/tree-sitter-scheme"
@@ -757,10 +757,10 @@ package workspaced
 // 	repo: "tree-sitter-sml"
 // }
 
-// #grammar: solidity: {
-// 	from: "github:JoranHonig/tree-sitter-solidity"
-// 	repo: "tree-sitter-solidity"
-// }
+#grammar: solidity: {
+	from: "github:JoranHonig/tree-sitter-solidity"
+	repo: "tree-sitter-solidity"
+}
 
 // #grammar: sparql: {
 // 	from: "github:GordianDziwis/tree-sitter-sparql"
@@ -772,10 +772,10 @@ package workspaced
 // 	repo: "tree-sitter-sql"
 // }
 
-// #grammar: squirrel: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-squirrel"
-// 	repo: "tree-sitter-squirrel"
-// }
+#grammar: squirrel: {
+	from: "github:tree-sitter-grammars/tree-sitter-squirrel"
+	repo: "tree-sitter-squirrel"
+}
 
 // #grammar: "ssh-config": {
 // 	from: "github:tree-sitter-grammars/tree-sitter-ssh-config"
@@ -792,10 +792,10 @@ package workspaced
 // 	repo: "tree-sitter-surface"
 // }
 
-// #grammar: svelte: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-svelte"
-// 	repo: "tree-sitter-svelte"
-// }
+#grammar: svelte: {
+	from: "github:tree-sitter-grammars/tree-sitter-svelte"
+	repo: "tree-sitter-svelte"
+}
 
 // #grammar: swift: {
 // 	from: "github:alex-pinkus/tree-sitter-swift"
@@ -807,15 +807,15 @@ package workspaced
 // 	repo: "tree-sitter-tablegen"
 // }
 
-// #grammar: tcl: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-tcl"
-// 	repo: "tree-sitter-tcl"
-// }
+#grammar: tcl: {
+	from: "github:tree-sitter-grammars/tree-sitter-tcl"
+	repo: "tree-sitter-tcl"
+}
 
-// #grammar: templ: {
-// 	from: "github:vrischmann/tree-sitter-templ"
-// 	repo: "tree-sitter-templ"
-// }
+#grammar: templ: {
+	from: "github:vrischmann/tree-sitter-templ"
+	repo: "tree-sitter-templ"
+}
 
 // #grammar: test: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-test"
@@ -832,10 +832,10 @@ package workspaced
 // 	repo: "tree-sitter-tmux"
 // }
 
-// #grammar: toml: {
-// 	from: "github:tree-sitter/tree-sitter-toml"
-// 	repo: "tree-sitter-toml"
-// }
+#grammar: toml: {
+	from: "github:tree-sitter/tree-sitter-toml"
+	repo: "tree-sitter-toml"
+}
 
 // #grammar: turtle: {
 // 	from: "github:GordianDziwis/tree-sitter-turtle"
@@ -847,11 +847,11 @@ package workspaced
 // 	repo: "tree-sitter-twig"
 // }
 
-// #grammar: typescript: {
-// 	from: "github:tree-sitter/tree-sitter-typescript"
-// 	repo: "tree-sitter-typescript"
-// 	paths: ["typescript/src", "tsx/src", "common"]
-// }
+#grammar: typescript: {
+	from: "github:tree-sitter/tree-sitter-typescript"
+	repo: "tree-sitter-typescript"
+	paths: ["typescript/src", "tsx/src", "common"]
+}
 
 // #grammar: typst: {
 // 	from: "github:uben0/tree-sitter-typst"
@@ -883,20 +883,20 @@ package workspaced
 // 	repo: "tree-sitter-vhdl"
 // }
 
-// #grammar: vim: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-vim"
-// 	repo: "tree-sitter-vim"
-// }
+#grammar: vim: {
+	from: "github:tree-sitter-grammars/tree-sitter-vim"
+	repo: "tree-sitter-vim"
+}
 
 // #grammar: vimdoc: {
 // 	from: "github:neovim/tree-sitter-vimdoc"
 // 	repo: "tree-sitter-vimdoc"
 // }
 
-// #grammar: vue: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-vue"
-// 	repo: "tree-sitter-vue"
-// }
+#grammar: vue: {
+	from: "github:tree-sitter-grammars/tree-sitter-vue"
+	repo: "tree-sitter-vue"
+}
 
 // #grammar: wasm: {
 // 	from: "github:wasm-lsp/tree-sitter-wasm"
@@ -904,15 +904,15 @@ package workspaced
 // 	paths: ["wast/src", "wat/src"]
 // }
 
-// #grammar: wgsl: {
-// 	from: "github:szebniok/tree-sitter-wgsl"
-// 	repo: "tree-sitter-wgsl"
-// }
+#grammar: wgsl: {
+	from: "github:szebniok/tree-sitter-wgsl"
+	repo: "tree-sitter-wgsl"
+}
 
-// #grammar: "wgsl-bevy": {
-// 	from: "github:tree-sitter-grammars/tree-sitter-wgsl-bevy"
-// 	repo: "tree-sitter-wgsl-bevy"
-// }
+#grammar: "wgsl-bevy": {
+	from: "github:tree-sitter-grammars/tree-sitter-wgsl-bevy"
+	repo: "tree-sitter-wgsl-bevy"
+}
 
 // #grammar: wit: {
 // 	from: "github:bytecodealliance/tree-sitter-wit"
@@ -924,27 +924,27 @@ package workspaced
 // 	repo: "tree-sitter-xcompose"
 // }
 
-// #grammar: xml: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-xml"
-// 	repo: "tree-sitter-xml"
-// 	paths: ["xml/src", "dtd/src", "common"]
-// }
+#grammar: xml: {
+	from: "github:tree-sitter-grammars/tree-sitter-xml"
+	repo: "tree-sitter-xml"
+	paths: ["xml/src", "dtd/src", "common"]
+}
 
-// #grammar: yaml: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-yaml"
-// 	repo: "tree-sitter-yaml"
-// 	paths: ["src", "schema/json/src", "schema/legacy/src", "schema/core/src"]
-// }
+#grammar: yaml: {
+	from: "github:tree-sitter-grammars/tree-sitter-yaml"
+	repo: "tree-sitter-yaml"
+	paths: ["src", "schema/json/src", "schema/legacy/src", "schema/core/src"]
+}
 
 // #grammar: yuck: {
 // 	from: "github:tree-sitter-grammars/tree-sitter-yuck"
 // 	repo: "tree-sitter-yuck"
 // }
 
-// #grammar: zig: {
-// 	from: "github:tree-sitter-grammars/tree-sitter-zig"
-// 	repo: "tree-sitter-zig"
-// }
+#grammar: zig: {
+	from: "github:tree-sitter-grammars/tree-sitter-zig"
+	repo: "tree-sitter-zig"
+}
 
 #grammar: [string]: {
 	from:    string
