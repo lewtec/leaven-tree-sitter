@@ -1,0 +1,34 @@
+{
+  "files": {
+    "third-party/tree-sitter-php/common/common.mak": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/common/common.mak)"
+    },
+    "third-party/tree-sitter-php/common/define-grammar.js": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/common/define-grammar.js)"
+    },
+    "third-party/tree-sitter-php/common/scanner.h": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/common/scanner.h)"
+    },
+    "third-party/tree-sitter-php/php/src/grammar.json": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/grammar.json)"
+    },
+    "third-party/tree-sitter-php/php/src/node-types.json": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/node-types.json)"
+    },
+    "third-party/tree-sitter-php/php/src/parser.c": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/parser.c)"
+    },
+    "third-party/tree-sitter-php/php/src/scanner.c": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/scanner.c)"
+    },
+    "third-party/tree-sitter-php/php/src/tree_sitter/alloc.h": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/tree_sitter/alloc.h)"
+    },
+    "third-party/tree-sitter-php/php/src/tree_sitter/array.h": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/tree_sitter/array.h)"
+    },
+    "third-party/tree-sitter-php/php/src/tree_sitter/parser.h": {
+      "source_info": "module:grammar_php place (third-party/tree-sitter-php/php/src/tree_sitter/parser.h)"
+    }
+  }
+}

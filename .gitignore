@@ -1,7 +1,6 @@
 /parse
 __pycache__
 .codex
-.workspaced/
 
 # Grammar C is JIT via workspaced. Do not commit placed trees.
 /third-party/

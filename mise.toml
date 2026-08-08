@@ -1,6 +1,6 @@
 [tools]
 go = "1.26.4"
-"github:lucasew/workspaced" = "0.14.1"
+"github:lucasew/workspaced" = "0.14.2"
 # Clang 14 for leaven (typed LLVM pointers).
 "conda:clang" = "14.0.6"
 
