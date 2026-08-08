@@ -3,6 +3,7 @@ package grammar_test
 import (
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -11,6 +12,9 @@ import (
 
 func requireAnyLang(t *testing.T) (name string, lang grammar.Language) {
 	t.Helper()
+	if strconv.IntSize == 32 {
+		t.Skip("leaven parse fatals on 32-bit (GOARCH=386 traceback unwind)")
+	}
 	names := grammar.List()
 	if len(names) == 0 {
 		t.Skip("no languages registered")

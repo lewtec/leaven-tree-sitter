@@ -13,7 +13,6 @@ jobs:
   test:
     name: test (${{ matrix.goos }}/${{ matrix.goarch }})
     runs-on: ${{ matrix.runner }}
-    continue-on-error: ${{ matrix.experimental }}
     permissions:
       contents: read
     strategy:
@@ -23,31 +22,21 @@ jobs:
           - runner: ubuntu-latest
             goos: linux
             goarch: amd64
-            experimental: false
           - runner: ubuntu-24.04-arm
             goos: linux
             goarch: arm64
-            experimental: false
-          - runner: ubuntu-latest
-            goos: linux
-            goarch: "386"
-            experimental: true
           - runner: macos-15-intel
             goos: darwin
             goarch: amd64
-            experimental: false
           - runner: macos-latest
             goos: darwin
             goarch: arm64
-            experimental: false
           - runner: windows-latest
             goos: windows
             goarch: amd64
-            experimental: false
           - runner: windows-11-arm
             goos: windows
             goarch: arm64
-            experimental: false
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
@@ -68,4 +57,31 @@ jobs:
           CGO_ENABLED: "0"
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
+        run: go test work
+
+  # Isolated: leaven parse fatals on 32-bit (traceback unwind). Not in the
+  # required matrix. Fixtures skip on 32-bit; this job still compiles + unit tests.
+  test-386:
+    name: test (linux/386)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 1
+
+      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
+        with:
+          install: false
+
+      - name: Install Go
+        run: mise install go
+
+      - name: Test
+        env:
+          CGO_ENABLED: "0"
+          GOOS: linux
+          GOARCH: "386"
         run: go test work

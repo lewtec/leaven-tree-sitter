@@ -107,7 +107,8 @@ lewbot / PAT: later. Not Phase 1.
 ## Test workflow
 
 Matrix: linux amd64/arm64, darwin amd64/arm64, windows amd64/arm64.
-linux/386 is experimental (`continue-on-error`). Runtime tests only.
+linux/386 is a separate `continue-on-error` job. Parse/fixtures skip on
+32-bit (leaven runtime fatal). Runtime tests only.
 If a target breaks, fix portability. Do not bring back per-arch codegen.
 
 | Tree | Must be green |
