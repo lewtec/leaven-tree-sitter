@@ -27,7 +27,7 @@ run = "go run ./cmd/codegen print-tree-sitter-path"
 [tasks.test]
 description = "Unit tests (pure Go, no CGO)"
 env = { CGO_ENABLED = "0" }
-run = "go test work"
+run = "go test -v work"
 
 [tasks.codegen]
 description = "Transpile core + every placed (enabled) grammar via clang IR + leaven"
