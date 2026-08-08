@@ -1,3 +1,7 @@
+# Windows must check out testdata/goldens as LF. Byte offsets in trees
+# are CRLF-sensitive.
+* text=auto eol=lf
+
 # Hide multi-MB leaven dumps in GitHub PR UI.
 grammar/core.go linguist-generated=true
 grammar/**/grammar.go linguist-generated=true
