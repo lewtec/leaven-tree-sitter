@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -11,6 +10,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/google/go-cmp/cmp"
 	"github.com/lewtec/leaven-tree-sitter/grammar"
 )
 
@@ -152,17 +152,15 @@ func TestLanguageFixtures(t *testing.T) {
 						t.Fatalf("missing golden %s (set UPDATE_GOLDENS=1 to create)", goldenPath)
 					}
 
-					if update && !bytes.Equal(want, gotJSON) {
-						if err := os.WriteFile(goldenPath, gotJSON, 0o644); err != nil {
-							t.Fatalf("update golden %s: %v", goldenPath, err)
+					if d := cmp.Diff(string(want), string(gotJSON)); d != "" {
+						if update {
+							if err := os.WriteFile(goldenPath, gotJSON, 0o644); err != nil {
+								t.Fatalf("update golden %s: %v", goldenPath, err)
+							}
+							t.Logf("updated %s", goldenPath)
+							return
 						}
-						t.Logf("updated %s", goldenPath)
-						return
-					}
-
-					if !bytes.Equal(want, gotJSON) {
-						t.Fatalf("golden mismatch for %s\n--- want ---\n%s\n--- got ---\n%s\n(set UPDATE_GOLDENS=1 to rewrite)",
-							goldenPath, want, gotJSON)
+						t.Fatalf("golden mismatch for %s (-want +got):\n%s\n(set UPDATE_GOLDENS=1 to rewrite)", goldenPath, d)
 					}
 				})
 			}

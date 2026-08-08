@@ -7,6 +7,8 @@ require (
 	golang.org/x/mod v0.38.0
 )
 
+require github.com/google/go-cmp v0.6.0
+
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/lewtec/leaven v0.0.0-20260808132831-ddad4fe451d9 // indirect
