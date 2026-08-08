@@ -104,8 +104,9 @@ lewbot / PAT: later. Not Phase 1.
 
 ## Test workflow
 
-Matrix: ubuntu + macos + windows. Runtime tests only. If a target
-breaks, fix portability. Do not bring back per-arch codegen.
+Matrix: linux amd64/arm64, darwin amd64/arm64, windows amd64/arm64.
+linux/386 is experimental (`continue-on-error`). Runtime tests only.
+If a target breaks, fix portability. Do not bring back per-arch codegen.
 
 | Tree | Must be green |
 |------|----------------|

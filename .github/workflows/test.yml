@@ -11,23 +11,61 @@ concurrency:
 
 jobs:
   test:
-    name: test (${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    name: test (${{ matrix.goos }}/${{ matrix.goarch }})
+    runs-on: ${{ matrix.runner }}
+    continue-on-error: ${{ matrix.experimental }}
     permissions:
       contents: read
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - runner: ubuntu-latest
+            goos: linux
+            goarch: amd64
+            experimental: false
+          - runner: ubuntu-24.04-arm
+            goos: linux
+            goarch: arm64
+            experimental: false
+          - runner: ubuntu-latest
+            goos: linux
+            goarch: "386"
+            experimental: true
+          - runner: macos-15-intel
+            goos: darwin
+            goarch: amd64
+            experimental: false
+          - runner: macos-latest
+            goos: darwin
+            goarch: arm64
+            experimental: false
+          - runner: windows-latest
+            goos: windows
+            goarch: amd64
+            experimental: false
+          - runner: windows-11-arm
+            goos: windows
+            goarch: arm64
+            experimental: false
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
 
+      # Runtime tests are pure Go. Do not install clang/workspaced on every OS.
       - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
+        with:
+          install: false
+
+      - name: Install Go
+        shell: bash
+        run: mise install go
 
       - name: Test
         shell: bash
         env:
           CGO_ENABLED: "0"
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
         run: go test work
