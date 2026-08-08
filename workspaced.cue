@@ -290,7 +290,7 @@ package workspaced
 		root_type: "source_file"
 		first_child_type: "package_clause"
 	}
-// }
+}
 
 // #grammar: "go-sum": {
 // 	from: "github:tree-sitter-grammars/tree-sitter-go-sum"
@@ -405,7 +405,7 @@ package workspaced
 		root_type: "document"
 		first_child_type: "object"
 	}
-// }
+}
 
 // #grammar: json5: {
 // 	from: "github:Joakker/tree-sitter-json5"
@@ -458,7 +458,7 @@ package workspaced
 	astdump: {
 		root_type: "chunk"
 	}
-// }
+}
 
 #grammar: luadoc: {
 	from: "github:tree-sitter-grammars/tree-sitter-luadoc"
@@ -640,7 +640,7 @@ package workspaced
 		root_type: "module"
 		first_child_type: "assignment"
 	}
-// }
+}
 
 // #grammar: ql: {
 // 	from: "github:tree-sitter/tree-sitter-ql"
