@@ -9,7 +9,7 @@ on:
 
 concurrency:
   group: codegen
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   codegen:
