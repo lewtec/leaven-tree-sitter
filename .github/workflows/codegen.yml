@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - workspaced.lock.json
+      - go.sum
 
 concurrency:
   group: codegen
