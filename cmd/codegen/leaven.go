@@ -1,16 +1,19 @@
 package main
 
 import (
+	"bytes"
+	"context"
 	"fmt"
 	"log/slog"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"regexp"
-	"strings"
+
+	"github.com/lewtec/leaven"
 )
 
-// LeavenTranspiler turns tree-sitter C into Go via clang -emit-llvm + go tool leaven.
+// LeavenTranspiler turns tree-sitter C into Go via clang -emit-llvm + leaven.
 // Output is raw leaven Go (no post-processing). This is the only codegen backend.
 type LeavenTranspiler struct {
 	TreeSitterPath string
@@ -20,7 +23,7 @@ type LeavenTranspiler struct {
 }
 
 // TranspileCore emits grammar/core.go from tree-sitter lib/src/lib.c.
-func (t *LeavenTranspiler) TranspileCore(outputDir string) error {
+func (t *LeavenTranspiler) TranspileCore(ctx context.Context, outputDir string) error {
 	libC := filepath.Join(t.TreeSitterPath, "lib/src/lib.c")
 	if _, err := os.Stat(libC); err != nil {
 		return fmt.Errorf("tree-sitter lib.c: %w", err)
@@ -43,11 +46,7 @@ func (t *LeavenTranspiler) TranspileCore(outputDir string) error {
 	if err := t.emitLLVM(libC, llPath, includes); err != nil {
 		return err
 	}
-	if err := t.runLeaven(llPath, "grammar"); err != nil {
-		return err
-	}
-	srcGo := strings.TrimSuffix(llPath, ".ll") + ".go"
-	data, err := os.ReadFile(srcGo)
+	data, err := t.runLeaven(ctx, llPath, "grammar")
 	if err != nil {
 		return err
 	}
@@ -63,7 +62,7 @@ func (t *LeavenTranspiler) TranspileCore(outputDir string) error {
 }
 
 // TranspileGrammar writes grammar/<name>/grammar.go from unit root grammarPath.
-func (t *LeavenTranspiler) TranspileGrammar(grammarPath, grammarName, grammarRoot string) error {
+func (t *LeavenTranspiler) TranspileGrammar(ctx context.Context, grammarPath, grammarName, grammarRoot string) error {
 	if grammarName == "" {
 		grammarName = normalizeGrammarName(grammarPath)
 	}
@@ -113,11 +112,7 @@ func (t *LeavenTranspiler) TranspileGrammar(grammarPath, grammarName, grammarRoo
 		return err
 	}
 	pkg := "grammar_" + grammarName
-	if err := t.runLeaven(llPath, pkg); err != nil {
-		return err
-	}
-	srcGo := strings.TrimSuffix(llPath, ".ll") + ".go"
-	data, err := os.ReadFile(srcGo)
+	data, err := t.runLeaven(ctx, llPath, pkg)
 	if err != nil {
 		return err
 	}
@@ -184,40 +179,33 @@ func (t *LeavenTranspiler) emitLLVM(srcC, llPath string, includes []string) erro
 	return nil
 }
 
-// runLeaven invokes `go tool leaven` (module tool; no global install).
-// pkg is the generated Go package name (-package).
-func (t *LeavenTranspiler) runLeaven(llPath, pkg string) error {
+// runLeaven transpiles LLVM IR at llPath in-process via leaven.Command.
+// pkg is the generated Go package name.
+func (t *LeavenTranspiler) runLeaven(ctx context.Context, llPath, pkg string) ([]byte, error) {
 	abs, err := filepath.Abs(llPath)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	if pkg == "" {
 		pkg = "main"
 	}
-	cmd := exec.Command("go", "tool", "leaven", "-package", pkg, abs)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	if root, err := moduleRoot(); err == nil {
-		cmd.Dir = root
-	}
-	slog.Info("go tool leaven", "ll", abs, "package", pkg)
-	if err := cmd.Run(); err != nil {
-		return fmt.Errorf("go tool leaven: %w", err)
-	}
-	return nil
-}
-
-func moduleRoot() (string, error) {
-	cmd := exec.Command("go", "env", "GOMOD")
-	out, err := cmd.Output()
+	in, err := os.Open(abs)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
-	mod := strings.TrimSpace(string(out))
-	if mod == "" || mod == os.DevNull {
-		return "", fmt.Errorf("not in a module")
+	defer in.Close()
+	var buf bytes.Buffer
+	cmd := &leaven.Command{
+		Package: pkg,
+		Name:    abs,
+		Input:   in,
+		Output:  &buf,
 	}
-	return filepath.Dir(mod), nil
+	slog.Info("leaven", "ll", abs, "package", pkg)
+	if err := cmd.Run(ctx); err != nil {
+		return nil, fmt.Errorf("leaven: %w", err)
+	}
+	return buf.Bytes(), nil
 }
 
 // combineScannerAndParser writes scanner.c then parser.c into one TU.

@@ -3,15 +3,17 @@ module github.com/lewtec/leaven-tree-sitter
 go 1.25.0
 
 require (
+	github.com/lewtec/leaven v0.0.0-20260809221120-a335499e5795
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/mod v0.38.0
 )
 
 require github.com/google/go-cmp v0.6.0
 
+require github.com/dave/jennifer v1.7.1 // indirect
+
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/lewtec/leaven v0.0.0-20260809213144-953c116a246c // indirect
 	github.com/lewtec/leaven-tree-sitter/grammar v0.0.0
 	github.com/lewtec/leaven-tree-sitter/grammar/COBOL v0.0.0
 	github.com/lewtec/leaven-tree-sitter/grammar/ada v0.0.0
@@ -213,8 +215,6 @@ require (
 	golang.org/x/sync v0.21.0 // indirect
 	golang.org/x/tools v0.47.0 // indirect
 )
-
-tool github.com/lewtec/leaven/cmd/leaven
 
 replace github.com/lewtec/leaven-tree-sitter/grammar => ./grammar
 

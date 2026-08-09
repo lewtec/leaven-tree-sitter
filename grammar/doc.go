@@ -3,7 +3,7 @@
 // # Generated files
 //
 // core.go and per-language grammar/<lang>/grammar.go are raw leaven output
-// (mise run codegen: clang 14 → LLVM IR → go tool leaven). Do not edit by hand.
+// (mise run codegen: clang 14 → LLVM IR → leaven). Do not edit by hand.
 //
 // # Hand-written API
 //

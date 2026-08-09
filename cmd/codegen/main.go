@@ -24,7 +24,7 @@ var (
 var rootCmd = &cobra.Command{
 	Use:   "codegen",
 	Short: "Transpile tree-sitter C to Go via clang IR + leaven",
-	Long: `Transpile tree-sitter core and grammars with clang -emit-llvm and go tool leaven.
+	Long: `Transpile tree-sitter core and grammars with clang -emit-llvm and leaven.
 
 No ccgo. Prefer clang 14 (typed pointers); pin with mise conda:clang@14.
 Use --only to limit grammar units (e.g. --only=json,python). With no --only,
@@ -111,7 +111,7 @@ func run(cmd *cobra.Command, args []string) error {
 
 	grammarDir := filepath.Join(defaultOutputDir, "grammar")
 	slog.Info("transpiling tree-sitter core via leaven", "path", treeSitterPath, "clang", clangBin)
-	if err := lt.TranspileCore(grammarDir); err != nil {
+	if err := lt.TranspileCore(cmd.Context(), grammarDir); err != nil {
 		// Core IR often uses atomicrmw / intrinsics leaven cannot parse yet.
 		// Still migrate every grammar; core remains a known follow-up.
 		slog.Error("leaven core failed; continuing with grammars only", "error", err)
@@ -161,7 +161,7 @@ func run(cmd *cobra.Command, args []string) error {
 	var failed int
 	for i, unit := range units {
 		slog.Info("transpiling grammar", "index", i+1, "total", len(units), "grammar", unit.Name, "path", unit.Path)
-		if err := lt.TranspileGrammar(unit.Path, unit.Name, grammarDir); err != nil {
+		if err := lt.TranspileGrammar(cmd.Context(), unit.Path, unit.Name, grammarDir); err != nil {
 			slog.Warn("failed to transpile grammar, skipping", "grammar", unit.Name, "path", unit.Path, "error", err)
 			fmt.Fprintf(summaryWriter, "- `%s`: ❌ (%v)\n", unit.Name, err)
 			failed++

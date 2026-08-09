@@ -17,7 +17,7 @@ Source of truth: grilling 2026-08-07/08, closed Q12.
 |------|----------|
 | Repo | https://github.com/lewtec/leaven-tree-sitter |
 | Module path | `github.com/lewtec/leaven-tree-sitter` |
-| Backend | clang 14 → LLVM IR → `go tool leaven` (lewtec/leaven pin) |
+| Backend | clang 14 → LLVM IR → leaven library (lewtec/leaven pin) |
 | Layout | One module for core (`…/grammar`) + one module per language (`…/grammar/<lang>`) |
 | Scheme | Codegen → nested modules → `Register` → parse/fixtures API |
 
