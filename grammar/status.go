@@ -36,6 +36,7 @@ func probeLiveParse(lang Language) (ok bool) {
 	}
 	// Tiny source: enough to exercise lex + accept + Subtree summarize.
 	tree := p.ParseBytes([]byte("0"))
+	defer tree.Delete()
 	root := tree.RootNode()
 	return root != nil && !root.IsNull()
 }

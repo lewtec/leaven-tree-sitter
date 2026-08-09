@@ -9,7 +9,7 @@
 //
 // api.go, query.go, parse.go, and registry.go wrap leaven symbols with a
 // thread-safe Go API: Parser/Query serialize native work under a mutex; Tree
-// and Node are immutable pure-Go snapshots safe for concurrent reads.
+// wraps the native *TSTree and Node methods call into it.
 // LiveParseReady(lang) probes once (sync.Once) that parse completes.
 //
 // # Registry

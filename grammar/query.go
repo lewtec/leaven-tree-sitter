@@ -11,8 +11,7 @@ import (
 //
 // Ownership is GC-managed; Delete is optional.
 // Methods are safe for concurrent use via an internal mutex.
-// ExecuteMatches re-parses source (Trees are pure-Go snapshots), runs the
-// query, and frees native state before return.
+// ExecuteMatches runs on the native tree behind root; it does not re-parse.
 type Query struct {
 	mu      sync.Mutex
 	q       *TSQuery
@@ -168,55 +167,20 @@ func (c *QueryCursor) Delete() {
 
 // ExecuteMatches runs the query over root and returns all matches.
 //
-// Trees are pure-Go snapshots, so this re-parses source with a temporary
-// parser, walks root's child-index path to the matching native node, runs the
-// query, then frees all native state before return.
-// Returns nil if the query is unusable, root is nil/null, or reparse fails.
+// root must come from a live Tree (native *TSTree still allocated).
+// Returns nil if the query is unusable or root is nil/null.
 // Safe for concurrent use.
 func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 	if q == nil || q.q == nil {
 		return nil
 	}
-	if root == nil || root.data == nil || root.IsNull() {
-		return nil
-	}
-
-	var lang Language
-	if root.tree != nil {
-		lang = root.tree.lang
-	}
-	if lang == nil {
-		lang = q.lang
-	}
-	if lang == nil {
+	if root == nil || !root.live() {
 		return nil
 	}
 
 	q.mu.Lock()
 	defer q.mu.Unlock()
 	if q.q == nil {
-		return nil
-	}
-
-	p := NewParser()
-	defer p.Delete()
-	if !p.SetLanguage(lang) {
-		return nil
-	}
-
-	p.mu.Lock()
-	defer p.mu.Unlock()
-
-	tree := p.parseNativeLocked(source)
-	if tree == nil {
-		return nil
-	}
-	defer ts_tree_delete(tree)
-
-	var nativeRoot TSNode
-	ts_tree_root_node(&nativeRoot, tree)
-	nativeNode := walkChildPath(&nativeRoot, root.data.path)
-	if ts_node_is_null(nativeNode) {
 		return nil
 	}
 
@@ -231,7 +195,7 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 		cursor.query = nil
 	}()
 
-	ts_query_cursor_exec(cursor.c, q.q, nativeNode)
+	ts_query_cursor_exec(cursor.c, q.q, &root.n)
 
 	matches := make([]QueryMatch, 0)
 	var rawMatch TSQueryMatch
@@ -266,26 +230,6 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 		})
 	}
 	return matches
-}
-
-// walkChildPath follows child indices from root (empty path = root).
-// The returned *TSNode points at a heap copy valid for the caller.
-func walkChildPath(root *TSNode, path []uint32) *TSNode {
-	if root == nil {
-		return nil
-	}
-	cur := *root
-	for _, i := range path {
-		if ts_node_is_null(&cur) {
-			out := cur
-			return &out
-		}
-		var child TSNode
-		ts_node_child(&child, &cur, int32(i))
-		cur = child
-	}
-	out := cur
-	return &out
 }
 
 func (q *Query) captureNameUnlocked(captureIndex uint32) string {

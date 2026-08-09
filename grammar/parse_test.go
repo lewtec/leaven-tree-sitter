@@ -120,6 +120,37 @@ func TestBuildParseNodeFromFixture(t *testing.T) {
 	}
 }
 
+func TestParseTreeChildAfterDeleteIsNull(t *testing.T) {
+	name, lang := requireAnyLang(t)
+	if !grammar.LiveParseReady(lang) {
+		t.Skip("leaven Subtree tagged-pointer crash in core parse")
+	}
+	src := fixtureSource(t, name)
+	p := grammar.NewParser()
+	if !p.SetLanguage(lang) {
+		t.Fatal("SetLanguage failed")
+	}
+	tree := p.ParseBytes(src)
+	root := tree.RootNode()
+	if root.IsNull() {
+		t.Fatal("null root")
+	}
+	if root.ChildCount() == 0 {
+		t.Skip("empty tree")
+	}
+	child := root.Child(0)
+	if child.IsNull() {
+		t.Fatal("child 0 null")
+	}
+	tree.Delete()
+	if !root.IsNull() {
+		t.Fatal("root still live after Tree.Delete")
+	}
+	if !child.IsNull() {
+		t.Fatal("child still live after Tree.Delete")
+	}
+}
+
 func TestBuildParseNodeRootFieldName(t *testing.T) {
 	name, lang := requireAnyLang(t)
 	if !grammar.LiveParseReady(lang) {

@@ -23,9 +23,9 @@ type ParseNode struct {
 }
 
 // BuildParseNode copies n into a ParseNode tree for JSON encoding.
-// n is already a pure-Go snapshot (no native lock). fieldName is the field
-// name on the parent (empty for the root). Leaf Text is source[start:end]
-// when the span is in range; returns nil if n is nil or null.
+// fieldName is the field name on the parent (empty for the root).
+// Leaf Text is source[start:end] when the span is in range; returns nil
+// if n is nil or null.
 func BuildParseNode(n *Node, source []byte, fieldName string) *ParseNode {
 	if n == nil || n.IsNull() {
 		return nil
