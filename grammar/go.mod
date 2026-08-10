@@ -2,4 +2,4 @@ module github.com/lewtec/leaven-tree-sitter/grammar
 
 go 1.25.0
 
-require github.com/lewtec/leaven v0.0.0-20260809222348-07380f8522c5
+require github.com/lewtec/leaven v0.0.0-20260810010149-5f9a5ec3c5c1
