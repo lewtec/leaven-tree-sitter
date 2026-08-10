@@ -181,9 +181,17 @@ func run(cmd *cobra.Command, args []string) error {
 	}
 
 	if failed > 0 {
+		slog.Warn("skipped failed grammars", "failed", failed, "total", len(units))
+		fmt.Fprintf(summaryWriter, "\n%d/%d grammars failed (skipped).\n", failed, len(units))
+	}
+	if allGrammarsFailed(failed, len(units)) {
 		return fmt.Errorf("leaven: %d/%d grammars failed", failed, len(units))
 	}
 	return nil
+}
+
+func allGrammarsFailed(failed, total int) bool {
+	return total > 0 && failed == total
 }
 
 func updateLanguagesGo(outputDir string) error {

@@ -74,7 +74,7 @@ Do not debug the first clang/PATH/leaven failure only on GitHub Actions.
 ## Codegen workflow
 
 Trigger: **`workflow_dispatch`**, or **push to `main`** that changes
-`workspaced.lock.json` or `go.sum`. No cron. Concurrency group `codegen` with
+`workspaced.lock.json`, `go.sum`, or `cmd/codegen/**`. No cron. Concurrency group `codegen` with
 `cancel-in-progress: false` — one cook at a time; later runs wait.
 
 Runs once on ubuntu (clang 14 + leaven). One pure-Go output. No
