@@ -7,18 +7,17 @@ type TSFieldMapEntry struct {
 	F1 byte
 	F2 byte
 }
-
 type TSLanguage struct {
-	F0 int32
-	F1 int32
-	F2 int32
-	F3 int32
-	F4 int32
-	F5 int32
-	F6 int32
-	F7 int32
-	F8 int32
-	F9 int16
+	F0  int32
+	F1  int32
+	F2  int32
+	F3  int32
+	F4  int32
+	F5  int32
+	F6  int32
+	F7  int32
+	F8  int32
+	F9  int16
 	F10 *int16
 	F11 *int16
 	F12 *int32
@@ -46,18 +45,15 @@ type TSLanguage struct {
 	F34 *int16
 	F35 TSLanguageMetadata
 }
-
 type TSLanguageMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
 }
-
 type TSLexMode struct {
 	F0 int16
 	F1 int16
 }
-
 type TSLexer struct {
 	F0 int32
 	F1 int16
@@ -68,24 +64,20 @@ type TSLexer struct {
 	F6 func(*TSLexer) bool
 	F7 func(*TSLexer, *byte, ...interface{})
 }
-
 type TSLexerMode struct {
 	F0 int16
 	F1 int16
 	F2 int16
 }
-
 type TSMapSlice struct {
 	F0 int16
 	F1 int16
 }
-
 type TSSymbolMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
 }
-
 type anon_0 struct {
 	F0 byte
 	F1 byte
@@ -93,12 +85,10 @@ type anon_0 struct {
 	F3 int16
 	F4 int16
 }
-
 type anon_1 struct {
 	F0 byte
 	F1 byte
 }
-
 type anon_2 struct {
 	F0 *byte
 	F1 *int16
@@ -108,157 +98,144 @@ type anon_2 struct {
 	F5 func(*byte, *byte) int32
 	F6 func(*byte, *byte, int32)
 }
-
 type TSParseAction struct {
 	F0 anon_0
 }
-
 type TSParseActionEntry struct {
 	F0 TSParseAction
 }
 
 var tree_sitter_legacy_schema_language TSLanguage = TSLanguage{14, 7, 0, 6, 0, 4, 2, 1, 0, 1, &ts_parse_table[0][0], &ts_small_parse_table[0], &ts_small_parse_table_map[0], &(*[11]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_symbol_names[0], nil, nil, nil, &ts_symbol_metadata[0], &ts_symbol_map[0], &ts_non_terminal_alias_map[0], &ts_alias_sequences[0][0], (*TSLexerMode)(unsafe.Pointer(&ts_lex_modes)), ts_lex, nil, 0, anon_2{}, &ts_primary_state_ids[0], nil, nil, 0, 0, nil, nil, nil, TSLanguageMetadata{}}
-
 var ts_parse_table [2][7]int16 = [2][7]int16{[7]int16{1, 1, 1, 1, 1, 1, 0}, [7]int16{0, 3, 5, 5, 3, 3, 3}}
-
 var ts_small_parse_table [8]int16 = [8]int16{1, 7, 1, 0, 1, 9, 1, 0}
-
 var ts_small_parse_table_map [2]int32 = [2]int32{0, 4}
-
 var ts_symbol_names [7]*byte = [7]*byte{&_str[0], &_str_2[0], &_str_3[0], &_str_4[0], &_str_5[0], &_str_6[0], &_str_7[0]}
-
 var ts_symbol_metadata [7]TSSymbolMetadata = [7]TSSymbolMetadata{TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}}
-
 var ts_symbol_map [7]int16 = [7]int16{0, 1, 2, 3, 4, 5, 6}
-
 var ts_non_terminal_alias_map [1]int16 = [1]int16{}
-
 var ts_alias_sequences [1][1]int16 = [1][1]int16{}
-
 var ts_lex_modes [4]TSLexMode = [4]TSLexMode{}
-
 var ts_primary_state_ids [4]int16 = [4]int16{0, 1, 2, 3}
-
 var ts_parse_actions struct {
 	F0 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F1 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F2 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F3 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F4 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F5 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F6 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F7 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F8 TSParseActionEntry
 	F9 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F10 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 } = struct {
 	F0 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F1 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F2 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F3 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F4 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F5 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F6 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F7 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F8 TSParseActionEntry
 	F9 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F10 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 }{struct {
 	F0 anon_1
 	F1 [6]byte
@@ -267,9 +244,9 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
+		F0 byte
+		F1 [7]byte
+	}
 }{struct {
 	F0 byte
 	F1 [7]byte
@@ -278,21 +255,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -304,21 +281,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -333,56 +310,43 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
+		F0 byte
+		F1 [7]byte
+	}
 }{struct {
 	F0 byte
 	F1 [7]byte
 }{2, [7]byte{}}}}
-
 var _str [4]byte = [4]byte{101, 110, 100, 0}
-
 var _str_2 [5]byte = [5]byte{110, 117, 108, 108, 0}
-
 var _str_3 [5]byte = [5]byte{98, 111, 111, 108, 0}
-
 var _str_4 [4]byte = [4]byte{105, 110, 116, 0}
-
 var _str_5 [6]byte = [6]byte{102, 108, 111, 97, 116, 0}
-
 var _str_6 [10]byte = [10]byte{116, 105, 109, 101, 115, 116, 97, 109, 112, 0}
-
 var _str_7 [7]byte = [7]byte{115, 99, 97, 108, 97, 114, 0}
-
-var ts_lex_map [30]int16 = [30]int16{
-	46, 89, 48, 75, 70, 13, 78, 70, 79, 17, 84, 24, 89, 69, 102, 29,
-	110, 72, 111, 33, 116, 40, 121, 71, 126, 67, 43, 7, 45, 7,
-}
+var ts_lex_map [30]int16 = [30]int16{46, 89, 48, 75, 70, 13, 78, 70, 79, 17, 84, 24, 89, 69, 102, 29, 110, 72, 111, 33, 116, 40, 121, 71, 126, 67, 43, 7, 45, 7}
 
 func tree_sitter_legacy_schema() *TSLanguage {
 	return &tree_sitter_legacy_schema_language
 }
-
 func ts_lex(lexer *TSLexer, state int16) bool {
-	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v233, v234, v236, v238, v239, v241, v243, v244, v246, v248, v249, v251, v255, v256, v258, v264, v265, v267, v270, v271, v273, v277, v278, v280, v290, v291, v293, v301, v302, v304, v315, v316, v318, v327, v328, v330, v339, v340, v342, v353, v354, v356, v365, v366, v368, v375, v376, v378, v385, v386, v388, v395, v396, v398, v405, v406, v408, v412, v413, v415, v421, v422, v424, v429, v430, v432, v441, v442, v444, v446, v447, v449, v460, v461, v463, v472, v473, v475, v482, v483, v485, v489, v490, v492, v497, v498, v500, v502, v503, v505, v513, v514, v516, v519, v520, v522, v527, v528, v530, v539, v540, v542 *TSLexer
-	var retval *bool
-	var result, skip, eof *byte
-	var mark_end, mark_end694, mark_end698, mark_end702, mark_end714, mark_end733, mark_end741, mark_end753, mark_end786, mark_end812, mark_end850, mark_end880, mark_end910, mark_end947, mark_end976, mark_end999, mark_end1022, mark_end1045, mark_end1067, mark_end1079, mark_end1098, mark_end1112, mark_end1138, mark_end1142, mark_end1179, mark_end1208, mark_end1229, mark_end1240, mark_end1254, mark_end1258, mark_end1284, mark_end1292, mark_end1307, mark_end1336 *func(*TSLexer)
-	var eof2 *func(*TSLexer) bool
-	var advance *func(*TSLexer, bool)
-	var state_addr, arrayidx, arrayidx11, result_symbol, result_symbol693, result_symbol697, result_symbol701, result_symbol713, result_symbol732, result_symbol740, result_symbol752, result_symbol785, result_symbol811, result_symbol849, result_symbol879, result_symbol909, result_symbol946, result_symbol975, result_symbol998, result_symbol1021, result_symbol1044, result_symbol1066, result_symbol1078, result_symbol1097, result_symbol1111, result_symbol1137, result_symbol1141, result_symbol1178, result_symbol1207, result_symbol1228, result_symbol1239, result_symbol1253, result_symbol1257, result_symbol1283, result_symbol1291, result_symbol1306, result_symbol1335 *int16
-	var lookahead, i, lookahead1 *int32
+	var lexer_addr **TSLexer
 	var tobool, call, tobool3, cmp, cmp7, cmp14, cmp16, tobool20, cmp22, cmp26, cmp30, cmp34, cmp37, cmp39, tobool43, cmp45, cmp49, cmp52, tobool56, cmp58, tobool62, cmp64, cmp68, cmp72, cmp76, cmp79, tobool83, cmp85, cmp89, cmp93, cmp97, cmp100, tobool104, cmp106, cmp110, cmp114, cmp117, cmp120, tobool124, cmp126, cmp130, cmp134, cmp137, tobool141, cmp143, cmp147, tobool151, cmp153, cmp157, cmp161, cmp164, tobool168, cmp170, tobool174, cmp176, cmp180, cmp183, tobool187, cmp189, tobool193, cmp195, cmp199, tobool203, cmp205, cmp209, tobool213, cmp215, tobool219, cmp221, tobool225, cmp227, cmp231, cmp235, cmp238, tobool242, cmp244, tobool248, cmp250, tobool254, cmp256, tobool260, cmp262, tobool266, cmp268, tobool272, cmp274, cmp278, tobool282, cmp284, cmp288, tobool292, cmp294, tobool298, cmp300, tobool304, cmp306, tobool310, cmp312, cmp316, cmp319, tobool323, cmp325, tobool329, cmp331, tobool335, cmp337, tobool341, cmp343, tobool347, cmp349, cmp353, tobool357, cmp359, tobool363, cmp365, tobool369, cmp371, tobool375, cmp377, tobool381, cmp383, tobool387, cmp389, tobool393, cmp395, tobool399, cmp401, tobool405, cmp407, tobool411, cmp413, tobool417, cmp419, cmp422, cmp426, cmp429, tobool433, cmp435, cmp438, cmp442, cmp445, cmp449, cmp452, tobool456, cmp458, cmp461, cmp465, cmp468, cmp472, cmp475, tobool479, cmp481, cmp484, cmp488, cmp491, tobool495, cmp497, cmp500, tobool504, cmp506, cmp509, cmp512, tobool516, cmp518, cmp521, cmp525, cmp528, tobool532, cmp534, cmp537, cmp541, cmp544, tobool548, cmp550, cmp553, tobool557, cmp559, cmp562, tobool566, cmp568, cmp571, tobool575, cmp577, cmp580, tobool584, cmp586, cmp589, tobool593, cmp595, cmp598, tobool602, cmp604, cmp607, tobool611, cmp613, cmp616, tobool620, cmp622, cmp625, tobool629, cmp631, cmp634, tobool638, cmp640, cmp643, tobool647, cmp649, cmp652, tobool656, cmp658, cmp661, tobool665, cmp667, cmp670, cmp673, cmp676, cmp679, cmp682, cmp685, tobool689, tobool691, tobool695, tobool699, cmp703, cmp707, tobool711, cmp715, cmp719, cmp723, cmp726, tobool730, cmp734, tobool738, cmp742, cmp746, tobool750, cmp754, cmp758, cmp762, cmp766, cmp769, cmp773, cmp776, cmp779, tobool783, cmp787, cmp791, cmp795, cmp799, cmp802, cmp805, tobool809, cmp813, cmp817, cmp821, cmp825, cmp829, cmp833, cmp836, cmp840, cmp843, tobool847, cmp851, cmp855, cmp859, cmp863, cmp866, cmp870, cmp873, tobool877, cmp881, cmp885, cmp889, cmp893, cmp896, cmp900, cmp903, tobool907, cmp911, cmp915, cmp919, cmp923, cmp927, cmp930, cmp934, cmp937, cmp940, tobool944, cmp948, cmp952, cmp956, cmp959, cmp963, cmp966, cmp969, tobool973, cmp977, cmp981, cmp985, cmp989, cmp992, tobool996, cmp1000, cmp1004, cmp1008, cmp1012, cmp1015, tobool1019, cmp1023, cmp1027, cmp1031, cmp1035, cmp1038, tobool1042, cmp1046, cmp1050, cmp1054, cmp1057, cmp1060, tobool1064, cmp1068, cmp1072, tobool1076, cmp1080, cmp1084, cmp1088, cmp1091, tobool1095, cmp1099, cmp1102, cmp1105, tobool1109, cmp1113, cmp1116, cmp1119, cmp1122, cmp1125, cmp1128, cmp1131, tobool1135, tobool1139, cmp1143, cmp1147, cmp1151, cmp1155, cmp1159, cmp1162, cmp1166, cmp1169, cmp1172, tobool1176, cmp1180, cmp1184, cmp1188, cmp1191, cmp1195, cmp1198, cmp1201, tobool1205, cmp1209, cmp1212, cmp1216, cmp1219, cmp1222, tobool1226, cmp1230, cmp1233, tobool1237, cmp1241, cmp1244, cmp1247, tobool1251, tobool1255, cmp1259, cmp1263, cmp1267, cmp1270, cmp1274, cmp1277, tobool1281, cmp1285, tobool1289, cmp1293, cmp1297, cmp1300, tobool1304, cmp1308, cmp1312, cmp1315, cmp1319, cmp1322, cmp1326, cmp1329, tobool1333, cmp1337, cmp1340, cmp1344, cmp1347, tobool1351, v548 bool
-	var v3, frombool, v10, v20, v27, v31, v33, v39, v45, v51, v56, v59, v64, v66, v70, v72, v75, v78, v80, v82, v87, v89, v91, v93, v95, v97, v100, v103, v105, v107, v109, v113, v115, v117, v119, v121, v124, v126, v128, v130, v132, v134, v136, v138, v140, v142, v144, v149, v156, v163, v168, v171, v175, v180, v185, v188, v191, v194, v197, v200, v203, v206, v209, v212, v215, v218, v221, v224, v232, v237, v242, v247, v254, v263, v269, v276, v289, v300, v314, v326, v338, v352, v364, v374, v384, v394, v404, v411, v420, v428, v440, v445, v459, v471, v481, v488, v496, v501, v512, v518, v526, v538, v547 byte
-	var v235, v240, v245, v250, v257, v266, v272, v279, v292, v303, v317, v329, v341, v355, v367, v377, v387, v397, v407, v414, v423, v431, v443, v448, v462, v474, v484, v491, v499, v504, v515, v521, v529, v541 func(*TSLexer)
 	var v7 func(*TSLexer) bool
-	var v1 func(*TSLexer, bool)
+	var eof2 *func(*TSLexer) bool
+	var retval *bool
 	var v9, v13, v16 int16
+	var state_addr, arrayidx, arrayidx11, result_symbol, result_symbol693, result_symbol697, result_symbol701, result_symbol713, result_symbol732, result_symbol740, result_symbol752, result_symbol785, result_symbol811, result_symbol849, result_symbol879, result_symbol909, result_symbol946, result_symbol975, result_symbol998, result_symbol1021, result_symbol1044, result_symbol1066, result_symbol1078, result_symbol1097, result_symbol1111, result_symbol1137, result_symbol1141, result_symbol1178, result_symbol1207, result_symbol1228, result_symbol1239, result_symbol1253, result_symbol1257, result_symbol1283, result_symbol1291, result_symbol1306, result_symbol1335 *int16
 	var v5, conv, v11, v12, conv6, v14, v15, add, v17, add13, v18, v19, v21, v22, v23, v24, v25, v26, v28, v29, v30, v32, v34, v35, v36, v37, v38, v40, v41, v42, v43, v44, v46, v47, v48, v49, v50, v52, v53, v54, v55, v57, v58, v60, v61, v62, v63, v65, v67, v68, v69, v71, v73, v74, v76, v77, v79, v81, v83, v84, v85, v86, v88, v90, v92, v94, v96, v98, v99, v101, v102, v104, v106, v108, v110, v111, v112, v114, v116, v118, v120, v122, v123, v125, v127, v129, v131, v133, v135, v137, v139, v141, v143, v145, v146, v147, v148, v150, v151, v152, v153, v154, v155, v157, v158, v159, v160, v161, v162, v164, v165, v166, v167, v169, v170, v172, v173, v174, v176, v177, v178, v179, v181, v182, v183, v184, v186, v187, v189, v190, v192, v193, v195, v196, v198, v199, v201, v202, v204, v205, v207, v208, v210, v211, v213, v214, v216, v217, v219, v220, v222, v223, v225, v226, v227, v228, v229, v230, v231, v252, v253, v259, v260, v261, v262, v268, v274, v275, v281, v282, v283, v284, v285, v286, v287, v288, v294, v295, v296, v297, v298, v299, v305, v306, v307, v308, v309, v310, v311, v312, v313, v319, v320, v321, v322, v323, v324, v325, v331, v332, v333, v334, v335, v336, v337, v343, v344, v345, v346, v347, v348, v349, v350, v351, v357, v358, v359, v360, v361, v362, v363, v369, v370, v371, v372, v373, v379, v380, v381, v382, v383, v389, v390, v391, v392, v393, v399, v400, v401, v402, v403, v409, v410, v416, v417, v418, v419, v425, v426, v427, v433, v434, v435, v436, v437, v438, v439, v450, v451, v452, v453, v454, v455, v456, v457, v458, v464, v465, v466, v467, v468, v469, v470, v476, v477, v478, v479, v480, v486, v487, v493, v494, v495, v506, v507, v508, v509, v510, v511, v517, v523, v524, v525, v531, v532, v533, v534, v535, v536, v537, v543, v544, v545, v546 int32
+	var lookahead, i, lookahead1 *int32
 	var conv4, idxprom, idxprom10 int64
-
+	var v3, frombool, v10, v20, v27, v31, v33, v39, v45, v51, v56, v59, v64, v66, v70, v72, v75, v78, v80, v82, v87, v89, v91, v93, v95, v97, v100, v103, v105, v107, v109, v113, v115, v117, v119, v121, v124, v126, v128, v130, v132, v134, v136, v138, v140, v142, v144, v149, v156, v163, v168, v171, v175, v180, v185, v188, v191, v194, v197, v200, v203, v206, v209, v212, v215, v218, v221, v224, v232, v237, v242, v247, v254, v263, v269, v276, v289, v300, v314, v326, v338, v352, v364, v374, v384, v394, v404, v411, v420, v428, v440, v445, v459, v471, v481, v488, v496, v501, v512, v518, v526, v538, v547 byte
+	var result, skip, eof *byte
+	var v235, v240, v245, v250, v257, v266, v272, v279, v292, v303, v317, v329, v341, v355, v367, v377, v387, v397, v407, v414, v423, v431, v443, v448, v462, v474, v484, v491, v499, v504, v515, v521, v529, v541 func(*TSLexer)
+	var mark_end, mark_end694, mark_end698, mark_end702, mark_end714, mark_end733, mark_end741, mark_end753, mark_end786, mark_end812, mark_end850, mark_end880, mark_end910, mark_end947, mark_end976, mark_end999, mark_end1022, mark_end1045, mark_end1067, mark_end1079, mark_end1098, mark_end1112, mark_end1138, mark_end1142, mark_end1179, mark_end1208, mark_end1229, mark_end1240, mark_end1254, mark_end1258, mark_end1284, mark_end1292, mark_end1307, mark_end1336 *func(*TSLexer)
+	var v1 func(*TSLexer, bool)
+	var advance *func(*TSLexer, bool)
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, v0, advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, tobool3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, tobool20, v21, cmp22, v22, cmp26, v23, cmp30, v24, cmp34, v25, cmp37, v26, cmp39, v27, tobool43, v28, cmp45, v29, cmp49, v30, cmp52, v31, tobool56, v32, cmp58, v33, tobool62, v34, cmp64, v35, cmp68, v36, cmp72, v37, cmp76, v38, cmp79, v39, tobool83, v40, cmp85, v41, cmp89, v42, cmp93, v43, cmp97, v44, cmp100, v45, tobool104, v46, cmp106, v47, cmp110, v48, cmp114, v49, cmp117, v50, cmp120, v51, tobool124, v52, cmp126, v53, cmp130, v54, cmp134, v55, cmp137, v56, tobool141, v57, cmp143, v58, cmp147, v59, tobool151, v60, cmp153, v61, cmp157, v62, cmp161, v63, cmp164, v64, tobool168, v65, cmp170, v66, tobool174, v67, cmp176, v68, cmp180, v69, cmp183, v70, tobool187, v71, cmp189, v72, tobool193, v73, cmp195, v74, cmp199, v75, tobool203, v76, cmp205, v77, cmp209, v78, tobool213, v79, cmp215, v80, tobool219, v81, cmp221, v82, tobool225, v83, cmp227, v84, cmp231, v85, cmp235, v86, cmp238, v87, tobool242, v88, cmp244, v89, tobool248, v90, cmp250, v91, tobool254, v92, cmp256, v93, tobool260, v94, cmp262, v95, tobool266, v96, cmp268, v97, tobool272, v98, cmp274, v99, cmp278, v100, tobool282, v101, cmp284, v102, cmp288, v103, tobool292, v104, cmp294, v105, tobool298, v106, cmp300, v107, tobool304, v108, cmp306, v109, tobool310, v110, cmp312, v111, cmp316, v112, cmp319, v113, tobool323, v114, cmp325, v115, tobool329, v116, cmp331, v117, tobool335, v118, cmp337, v119, tobool341, v120, cmp343, v121, tobool347, v122, cmp349, v123, cmp353, v124, tobool357, v125, cmp359, v126, tobool363, v127, cmp365, v128, tobool369, v129, cmp371, v130, tobool375, v131, cmp377, v132, tobool381, v133, cmp383, v134, tobool387, v135, cmp389, v136, tobool393, v137, cmp395, v138, tobool399, v139, cmp401, v140, tobool405, v141, cmp407, v142, tobool411, v143, cmp413, v144, tobool417, v145, cmp419, v146, cmp422, v147, cmp426, v148, cmp429, v149, tobool433, v150, cmp435, v151, cmp438, v152, cmp442, v153, cmp445, v154, cmp449, v155, cmp452, v156, tobool456, v157, cmp458, v158, cmp461, v159, cmp465, v160, cmp468, v161, cmp472, v162, cmp475, v163, tobool479, v164, cmp481, v165, cmp484, v166, cmp488, v167, cmp491, v168, tobool495, v169, cmp497, v170, cmp500, v171, tobool504, v172, cmp506, v173, cmp509, v174, cmp512, v175, tobool516, v176, cmp518, v177, cmp521, v178, cmp525, v179, cmp528, v180, tobool532, v181, cmp534, v182, cmp537, v183, cmp541, v184, cmp544, v185, tobool548, v186, cmp550, v187, cmp553, v188, tobool557, v189, cmp559, v190, cmp562, v191, tobool566, v192, cmp568, v193, cmp571, v194, tobool575, v195, cmp577, v196, cmp580, v197, tobool584, v198, cmp586, v199, cmp589, v200, tobool593, v201, cmp595, v202, cmp598, v203, tobool602, v204, cmp604, v205, cmp607, v206, tobool611, v207, cmp613, v208, cmp616, v209, tobool620, v210, cmp622, v211, cmp625, v212, tobool629, v213, cmp631, v214, cmp634, v215, tobool638, v216, cmp640, v217, cmp643, v218, tobool647, v219, cmp649, v220, cmp652, v221, tobool656, v222, cmp658, v223, cmp661, v224, tobool665, v225, cmp667, v226, cmp670, v227, cmp673, v228, cmp676, v229, cmp679, v230, cmp682, v231, cmp685, v232, tobool689, v233, result_symbol, v234, mark_end, v235, v236, v237, tobool691, v238, result_symbol693, v239, mark_end694, v240, v241, v242, tobool695, v243, result_symbol697, v244, mark_end698, v245, v246, v247, tobool699, v248, result_symbol701, v249, mark_end702, v250, v251, v252, cmp703, v253, cmp707, v254, tobool711, v255, result_symbol713, v256, mark_end714, v257, v258, v259, cmp715, v260, cmp719, v261, cmp723, v262, cmp726, v263, tobool730, v264, result_symbol732, v265, mark_end733, v266, v267, v268, cmp734, v269, tobool738, v270, result_symbol740, v271, mark_end741, v272, v273, v274, cmp742, v275, cmp746, v276, tobool750, v277, result_symbol752, v278, mark_end753, v279, v280, v281, cmp754, v282, cmp758, v283, cmp762, v284, cmp766, v285, cmp769, v286, cmp773, v287, cmp776, v288, cmp779, v289, tobool783, v290, result_symbol785, v291, mark_end786, v292, v293, v294, cmp787, v295, cmp791, v296, cmp795, v297, cmp799, v298, cmp802, v299, cmp805, v300, tobool809, v301, result_symbol811, v302, mark_end812, v303, v304, v305, cmp813, v306, cmp817, v307, cmp821, v308, cmp825, v309, cmp829, v310, cmp833, v311, cmp836, v312, cmp840, v313, cmp843, v314, tobool847, v315, result_symbol849, v316, mark_end850, v317, v318, v319, cmp851, v320, cmp855, v321, cmp859, v322, cmp863, v323, cmp866, v324, cmp870, v325, cmp873, v326, tobool877, v327, result_symbol879, v328, mark_end880, v329, v330, v331, cmp881, v332, cmp885, v333, cmp889, v334, cmp893, v335, cmp896, v336, cmp900, v337, cmp903, v338, tobool907, v339, result_symbol909, v340, mark_end910, v341, v342, v343, cmp911, v344, cmp915, v345, cmp919, v346, cmp923, v347, cmp927, v348, cmp930, v349, cmp934, v350, cmp937, v351, cmp940, v352, tobool944, v353, result_symbol946, v354, mark_end947, v355, v356, v357, cmp948, v358, cmp952, v359, cmp956, v360, cmp959, v361, cmp963, v362, cmp966, v363, cmp969, v364, tobool973, v365, result_symbol975, v366, mark_end976, v367, v368, v369, cmp977, v370, cmp981, v371, cmp985, v372, cmp989, v373, cmp992, v374, tobool996, v375, result_symbol998, v376, mark_end999, v377, v378, v379, cmp1000, v380, cmp1004, v381, cmp1008, v382, cmp1012, v383, cmp1015, v384, tobool1019, v385, result_symbol1021, v386, mark_end1022, v387, v388, v389, cmp1023, v390, cmp1027, v391, cmp1031, v392, cmp1035, v393, cmp1038, v394, tobool1042, v395, result_symbol1044, v396, mark_end1045, v397, v398, v399, cmp1046, v400, cmp1050, v401, cmp1054, v402, cmp1057, v403, cmp1060, v404, tobool1064, v405, result_symbol1066, v406, mark_end1067, v407, v408, v409, cmp1068, v410, cmp1072, v411, tobool1076, v412, result_symbol1078, v413, mark_end1079, v414, v415, v416, cmp1080, v417, cmp1084, v418, cmp1088, v419, cmp1091, v420, tobool1095, v421, result_symbol1097, v422, mark_end1098, v423, v424, v425, cmp1099, v426, cmp1102, v427, cmp1105, v428, tobool1109, v429, result_symbol1111, v430, mark_end1112, v431, v432, v433, cmp1113, v434, cmp1116, v435, cmp1119, v436, cmp1122, v437, cmp1125, v438, cmp1128, v439, cmp1131, v440, tobool1135, v441, result_symbol1137, v442, mark_end1138, v443, v444, v445, tobool1139, v446, result_symbol1141, v447, mark_end1142, v448, v449, v450, cmp1143, v451, cmp1147, v452, cmp1151, v453, cmp1155, v454, cmp1159, v455, cmp1162, v456, cmp1166, v457, cmp1169, v458, cmp1172, v459, tobool1176, v460, result_symbol1178, v461, mark_end1179, v462, v463, v464, cmp1180, v465, cmp1184, v466, cmp1188, v467, cmp1191, v468, cmp1195, v469, cmp1198, v470, cmp1201, v471, tobool1205, v472, result_symbol1207, v473, mark_end1208, v474, v475, v476, cmp1209, v477, cmp1212, v478, cmp1216, v479, cmp1219, v480, cmp1222, v481, tobool1226, v482, result_symbol1228, v483, mark_end1229, v484, v485, v486, cmp1230, v487, cmp1233, v488, tobool1237, v489, result_symbol1239, v490, mark_end1240, v491, v492, v493, cmp1241, v494, cmp1244, v495, cmp1247, v496, tobool1251, v497, result_symbol1253, v498, mark_end1254, v499, v500, v501, tobool1255, v502, result_symbol1257, v503, mark_end1258, v504, v505, v506, cmp1259, v507, cmp1263, v508, cmp1267, v509, cmp1270, v510, cmp1274, v511, cmp1277, v512, tobool1281, v513, result_symbol1283, v514, mark_end1284, v515, v516, v517, cmp1285, v518, tobool1289, v519, result_symbol1291, v520, mark_end1292, v521, v522, v523, cmp1293, v524, cmp1297, v525, cmp1300, v526, tobool1304, v527, result_symbol1306, v528, mark_end1307, v529, v530, v531, cmp1308, v532, cmp1312, v533, cmp1315, v534, cmp1319, v535, cmp1322, v536, cmp1326, v537, cmp1329, v538, tobool1333, v539, result_symbol1335, v540, mark_end1336, v541, v542, v543, cmp1337, v544, cmp1340, v545, cmp1344, v546, cmp1347, v547, tobool1351, v548
 
 	retval = new(bool)
@@ -421,7 +385,11 @@ start:
 	v7 = *eof2
 	v8 = *lexer_addr
 	call = v7(v8)
-	if call { frombool = 1 } else { frombool = 0 }
+	if call {
+		frombool = 1
+	} else {
+		frombool = 0
+	}
 	*eof = frombool
 	v9 = *state_addr
 	conv = int32(uint32(uint16(v9)))
@@ -5021,4 +4989,3 @@ _return:
 	v548 = *retval
 	return v548
 }
-

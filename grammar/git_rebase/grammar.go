@@ -7,18 +7,17 @@ type TSFieldMapEntry struct {
 	F1 byte
 	F2 byte
 }
-
 type TSLanguage struct {
-	F0 int32
-	F1 int32
-	F2 int32
-	F3 int32
-	F4 int32
-	F5 int32
-	F6 int32
-	F7 int32
-	F8 int32
-	F9 int16
+	F0  int32
+	F1  int32
+	F2  int32
+	F3  int32
+	F4  int32
+	F5  int32
+	F6  int32
+	F7  int32
+	F8  int32
+	F9  int16
 	F10 *int16
 	F11 *int16
 	F12 *int32
@@ -46,13 +45,11 @@ type TSLanguage struct {
 	F34 *int16
 	F35 TSLanguageMetadata
 }
-
 type TSLanguageMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
 }
-
 type TSLexer struct {
 	F0 int32
 	F1 int16
@@ -63,24 +60,20 @@ type TSLexer struct {
 	F6 func(*TSLexer) bool
 	F7 func(*TSLexer, *byte, ...interface{})
 }
-
 type TSLexerMode struct {
 	F0 int16
 	F1 int16
 	F2 int16
 }
-
 type TSMapSlice struct {
 	F0 int16
 	F1 int16
 }
-
 type TSSymbolMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
 }
-
 type anon_0 struct {
 	F0 byte
 	F1 byte
@@ -88,12 +81,10 @@ type anon_0 struct {
 	F3 int16
 	F4 int16
 }
-
 type anon_1 struct {
 	F0 byte
 	F1 byte
 }
-
 type anon_2 struct {
 	F0 *byte
 	F1 *int16
@@ -103,76 +94,29 @@ type anon_2 struct {
 	F5 func(*byte, *byte) int32
 	F6 func(*byte, *byte, int32)
 }
-
 type TSParseAction struct {
 	F0 anon_0
 }
-
 type TSParseActionEntry struct {
 	F0 TSParseAction
 }
 
 var tree_sitter_git_rebase_language TSLanguage = TSLanguage{15, 20, 0, 10, 0, 27, 7, 1, 0, 5, &(*[7][20]int16)(unsafe.Pointer(&ts_parse_table))[0][0], &ts_small_parse_table[0], &ts_small_parse_table_map[0], &(*[85]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_symbol_names[0], nil, nil, nil, &ts_symbol_metadata[0], &ts_symbol_map[0], &ts_non_terminal_alias_map[0], &ts_alias_sequences[0][0], &ts_lex_modes[0], ts_lex, nil, 0, anon_2{}, &ts_primary_state_ids[0], &_str[0], nil, 0, 0, nil, nil, nil, TSLanguageMetadata{0, 1, 0}}
-
-var ts_small_parse_table [232]int16 = [232]int16{
-	6, 3, 1, 9, 25, 1, 0, 27, 1, 1, 31, 1, 6, 26, 1, 17,
-	29, 2, 4, 5, 5, 13, 1, 9, 33, 1, 0, 35, 1, 1, 8, 1,
-	18, 38, 3, 2, 3, 8, 5, 13, 1, 9, 15, 1, 0, 40, 1, 1,
-	3, 1, 18, 14, 1, 19, 5, 13, 1, 9, 42, 1, 0, 44, 1, 1,
-	6, 1, 18, 10, 1, 19, 5, 3, 1, 9, 47, 1, 0, 49, 1, 1,
-	51, 1, 6, 53, 1, 7, 5, 13, 1, 9, 19, 1, 0, 55, 1, 1,
-	5, 1, 18, 13, 1, 19, 5, 13, 1, 9, 23, 1, 0, 57, 1, 1,
-	4, 1, 18, 10, 1, 19, 5, 13, 1, 9, 19, 1, 0, 55, 1, 1,
-	5, 1, 18, 10, 1, 19, 3, 3, 1, 9, 61, 1, 7, 59, 2, 0,
-	1, 3, 3, 1, 9, 65, 1, 7, 63, 2, 0, 1, 2, 13, 1, 9,
-	67, 2, 0, 1, 2, 13, 1, 9, 69, 2, 0, 1, 2, 13, 1, 9,
-	71, 2, 0, 1, 2, 13, 1, 9, 73, 2, 0, 1, 2, 13, 1, 9,
-	42, 2, 0, 1, 2, 13, 1, 9, 75, 2, 0, 1, 2, 13, 1, 9,
-	77, 1, 0, 2, 3, 1, 9, 79, 1, 6, 2, 3, 1, 9, 81, 1,
-	7, 2, 3, 1, 9, 83, 1, 6,
-}
-
-var ts_small_parse_table_map [20]int32 = [20]int32{
-	0, 20, 38, 54, 70, 86, 102, 118, 134, 145, 156, 164, 172, 180, 188, 196,
-	204, 211, 218, 225,
-}
-
-var ts_symbol_names [20]*byte = [20]*byte{
-	&_str_3[0], &_str_4[0], &_str_5[0], &_str_5[0], &_str_6[0], &_str_7[0], &_str_8[0], &_str_9[0], &_str_5[0], &_str_10[0], &_str_11[0], &_str_12[0], &_str_13[0], &_str_14[0], &_str_15[0], &_str_16[0],
-	&_str_17[0], &_str_18[0], &_str_19[0], &_str_20[0],
-}
-
-var ts_symbol_metadata [20]TSSymbolMetadata = [20]TSSymbolMetadata{
-	TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0},
-	TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{},
-}
-
-var ts_symbol_map [20]int16 = [20]int16{
-	0, 1, 8, 8, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-	16, 17, 18, 19,
-}
-
+var ts_small_parse_table [232]int16 = [232]int16{6, 3, 1, 9, 25, 1, 0, 27, 1, 1, 31, 1, 6, 26, 1, 17, 29, 2, 4, 5, 5, 13, 1, 9, 33, 1, 0, 35, 1, 1, 8, 1, 18, 38, 3, 2, 3, 8, 5, 13, 1, 9, 15, 1, 0, 40, 1, 1, 3, 1, 18, 14, 1, 19, 5, 13, 1, 9, 42, 1, 0, 44, 1, 1, 6, 1, 18, 10, 1, 19, 5, 3, 1, 9, 47, 1, 0, 49, 1, 1, 51, 1, 6, 53, 1, 7, 5, 13, 1, 9, 19, 1, 0, 55, 1, 1, 5, 1, 18, 13, 1, 19, 5, 13, 1, 9, 23, 1, 0, 57, 1, 1, 4, 1, 18, 10, 1, 19, 5, 13, 1, 9, 19, 1, 0, 55, 1, 1, 5, 1, 18, 10, 1, 19, 3, 3, 1, 9, 61, 1, 7, 59, 2, 0, 1, 3, 3, 1, 9, 65, 1, 7, 63, 2, 0, 1, 2, 13, 1, 9, 67, 2, 0, 1, 2, 13, 1, 9, 69, 2, 0, 1, 2, 13, 1, 9, 71, 2, 0, 1, 2, 13, 1, 9, 73, 2, 0, 1, 2, 13, 1, 9, 42, 2, 0, 1, 2, 13, 1, 9, 75, 2, 0, 1, 2, 13, 1, 9, 77, 1, 0, 2, 3, 1, 9, 79, 1, 6, 2, 3, 1, 9, 81, 1, 7, 2, 3, 1, 9, 83, 1, 6}
+var ts_small_parse_table_map [20]int32 = [20]int32{0, 20, 38, 54, 70, 86, 102, 118, 134, 145, 156, 164, 172, 180, 188, 196, 204, 211, 218, 225}
+var ts_symbol_names [20]*byte = [20]*byte{&_str_3[0], &_str_4[0], &_str_5[0], &_str_5[0], &_str_6[0], &_str_7[0], &_str_8[0], &_str_9[0], &_str_5[0], &_str_10[0], &_str_11[0], &_str_12[0], &_str_13[0], &_str_14[0], &_str_15[0], &_str_16[0], &_str_17[0], &_str_18[0], &_str_19[0], &_str_20[0]}
+var ts_symbol_metadata [20]TSSymbolMetadata = [20]TSSymbolMetadata{TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{}}
+var ts_symbol_map [20]int16 = [20]int16{0, 1, 8, 8, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
 var ts_non_terminal_alias_map [1]int16 = [1]int16{}
-
 var ts_alias_sequences [1][5]int16 = [1][5]int16{}
-
-var ts_lex_modes [27]TSLexerMode = [27]TSLexerMode{
-	TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{3, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{4, 0, 0},
-	TSLexerMode{4, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{2, 0, 0}, TSLexerMode{1, 0, 0}, TSLexerMode{2, 0, 0},
-}
-
-var ts_primary_state_ids [27]int16 = [27]int16{
-	0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-	16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-}
-
+var ts_lex_modes [27]TSLexerMode = [27]TSLexerMode{TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{3, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{4, 0, 0}, TSLexerMode{4, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{2, 0, 0}, TSLexerMode{1, 0, 0}, TSLexerMode{2, 0, 0}}
+var ts_primary_state_ids [27]int16 = [27]int16{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26}
 var _str [11]byte = [11]byte{103, 105, 116, 95, 114, 101, 98, 97, 115, 101, 0}
-
 var ts_parse_table struct {
 	F0 struct {
-	F0 [10]int16
-	F1 [10]int16
-}
+		F0 [10]int16
+		F1 [10]int16
+	}
 	F1 [20]int16
 	F2 [20]int16
 	F3 [20]int16
@@ -181,9 +125,9 @@ var ts_parse_table struct {
 	F6 [20]int16
 } = struct {
 	F0 struct {
-	F0 [10]int16
-	F1 [10]int16
-}
+		F0 [10]int16
+		F1 [10]int16
+	}
 	F1 [20]int16
 	F2 [20]int16
 	F3 [20]int16
@@ -193,850 +137,831 @@ var ts_parse_table struct {
 }{struct {
 	F0 [10]int16
 	F1 [10]int16
-}{[10]int16{1, 1, 1, 1, 1, 1, 0, 1, 0, 3}, [10]int16{}}, [20]int16{
-	5, 7, 9, 9, 0, 0, 0, 0, 11, 13, 23, 9, 17, 17, 17, 17,
-	17, 0, 2, 0,
-}, [20]int16{
-	15, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 12, 17, 17, 17, 17,
-	17, 0, 8, 0,
-}, [20]int16{
-	19, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17,
-	17, 0, 8, 0,
-}, [20]int16{
-	21, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17,
-	17, 0, 8, 0,
-}, [20]int16{
-	23, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17,
-	17, 0, 8, 0,
-}, [20]int16{
-	0, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17,
-	17, 0, 8, 0,
-}}
-
+}{[10]int16{1, 1, 1, 1, 1, 1, 0, 1, 0, 3}, [10]int16{}}, [20]int16{5, 7, 9, 9, 0, 0, 0, 0, 11, 13, 23, 9, 17, 17, 17, 17, 17, 0, 2, 0}, [20]int16{15, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 12, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{19, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{21, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{23, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{0, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}}
 var ts_parse_actions struct {
 	F0 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F1 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F2 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F3 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F4 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F5 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F6 TSParseActionEntry
 	F7 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F8 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F9 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F10 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F11 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F12 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F13 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F14 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F15 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F16 TSParseActionEntry
 	F17 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F18 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F19 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F20 TSParseActionEntry
 	F21 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F22 TSParseActionEntry
 	F23 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F24 TSParseActionEntry
 	F25 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F26 TSParseActionEntry
 	F27 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F28 TSParseActionEntry
 	F29 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F30 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F31 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F32 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F33 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F34 TSParseActionEntry
 	F35 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F36 TSParseActionEntry
 	F37 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F38 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F39 TSParseActionEntry
 	F40 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F41 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F42 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F43 TSParseActionEntry
 	F44 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F45 TSParseActionEntry
 	F46 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F47 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F48 TSParseActionEntry
 	F49 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F50 TSParseActionEntry
 	F51 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F52 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F53 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F54 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F55 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F56 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F57 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F58 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F59 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F60 TSParseActionEntry
 	F61 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F62 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F63 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F64 TSParseActionEntry
 	F65 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F66 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F67 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F68 TSParseActionEntry
 	F69 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F70 TSParseActionEntry
 	F71 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F72 TSParseActionEntry
 	F73 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F74 TSParseActionEntry
 	F75 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F76 TSParseActionEntry
 	F77 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F78 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F79 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F80 TSParseActionEntry
 	F81 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F82 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F83 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F84 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 } = struct {
 	F0 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F1 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F2 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F3 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F4 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F5 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F6 TSParseActionEntry
 	F7 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F8 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F9 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F10 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F11 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F12 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F13 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F14 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F15 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F16 TSParseActionEntry
 	F17 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F18 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F19 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F20 TSParseActionEntry
 	F21 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F22 TSParseActionEntry
 	F23 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F24 TSParseActionEntry
 	F25 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F26 TSParseActionEntry
 	F27 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F28 TSParseActionEntry
 	F29 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F30 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F31 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F32 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F33 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F34 TSParseActionEntry
 	F35 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F36 TSParseActionEntry
 	F37 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F38 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F39 TSParseActionEntry
 	F40 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F41 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F42 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F43 TSParseActionEntry
 	F44 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F45 TSParseActionEntry
 	F46 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F47 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F48 TSParseActionEntry
 	F49 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F50 TSParseActionEntry
 	F51 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F52 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F53 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F54 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F55 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F56 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F57 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F58 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F59 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F60 TSParseActionEntry
 	F61 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F62 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F63 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F64 TSParseActionEntry
 	F65 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F66 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F67 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F68 TSParseActionEntry
 	F69 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F70 TSParseActionEntry
 	F71 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F72 TSParseActionEntry
 	F73 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F74 TSParseActionEntry
 	F75 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F76 TSParseActionEntry
 	F77 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F78 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F79 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F80 TSParseActionEntry
 	F81 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F82 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F83 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F84 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 }{struct {
 	F0 anon_1
 	F1 [6]byte
@@ -1045,9 +970,9 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
+		F0 byte
+		F1 [7]byte
+	}
 }{struct {
 	F0 byte
 	F1 [7]byte
@@ -1056,21 +981,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1085,21 +1010,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1111,21 +1036,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1137,21 +1062,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1163,21 +1088,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1192,21 +1117,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1233,21 +1158,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1259,21 +1184,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1288,21 +1213,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 18, 0, 0}}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1317,21 +1242,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1346,21 +1271,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 19, 0, 0}}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1378,21 +1303,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1404,21 +1329,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1430,21 +1355,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1456,21 +1381,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1485,21 +1410,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1514,21 +1439,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1555,9 +1480,9 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
+		F0 byte
+		F1 [7]byte
+	}
 }{struct {
 	F0 byte
 	F1 [7]byte
@@ -1569,21 +1494,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1595,21 +1520,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1617,84 +1542,47 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 11, 0, 0}, [2]byte{}}}}
-
 var _str_3 [4]byte = [4]byte{101, 110, 100, 0}
-
 var _str_4 [14]byte = [14]byte{115, 111, 117, 114, 99, 101, 95, 116, 111, 107, 101, 110, 49, 0}
-
 var _str_5 [8]byte = [8]byte{99, 111, 109, 109, 97, 110, 100, 0}
-
 var _str_6 [3]byte = [3]byte{45, 99, 0}
-
 var _str_7 [3]byte = [3]byte{45, 67, 0}
-
 var _str_8 [6]byte = [6]byte{108, 97, 98, 101, 108, 0}
-
 var _str_9 [8]byte = [8]byte{109, 101, 115, 115, 97, 103, 101, 0}
-
 var _str_10 [8]byte = [8]byte{99, 111, 109, 109, 101, 110, 116, 0}
-
 var _str_11 [7]byte = [7]byte{115, 111, 117, 114, 99, 101, 0}
-
 var _str_12 [10]byte = [10]byte{111, 112, 101, 114, 97, 116, 105, 111, 110, 0}
-
-var _str_13 [19]byte = [19]byte{
-	95, 110, 117, 108, 108, 97, 114, 121, 95, 111, 112, 101, 114, 97, 116, 105,
-	111, 110, 0,
-}
-
-var _str_14 [17]byte = [17]byte{
-	95, 108, 97, 98, 101, 108, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110,
-	0,
-}
-
-var _str_15 [17]byte = [17]byte{
-	95, 109, 101, 114, 103, 101, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110,
-	0,
-}
-
-var _str_16 [17]byte = [17]byte{
-	95, 102, 105, 120, 117, 112, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110,
-	0,
-}
-
-var _str_17 [16]byte = [16]byte{
-	95, 101, 120, 101, 99, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0,
-}
-
+var _str_13 [19]byte = [19]byte{95, 110, 117, 108, 108, 97, 114, 121, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0}
+var _str_14 [17]byte = [17]byte{95, 108, 97, 98, 101, 108, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0}
+var _str_15 [17]byte = [17]byte{95, 109, 101, 114, 103, 101, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0}
+var _str_16 [17]byte = [17]byte{95, 102, 105, 120, 117, 112, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0}
+var _str_17 [16]byte = [16]byte{95, 101, 120, 101, 99, 95, 111, 112, 101, 114, 97, 116, 105, 111, 110, 0}
 var _str_18 [7]byte = [7]byte{111, 112, 116, 105, 111, 110, 0}
-
 var _str_19 [15]byte = [15]byte{115, 111, 117, 114, 99, 101, 95, 114, 101, 112, 101, 97, 116, 49, 0}
-
 var _str_20 [15]byte = [15]byte{115, 111, 117, 114, 99, 101, 95, 114, 101, 112, 101, 97, 116, 50, 0}
-
-var ts_lex_map [16]int16 = [16]int16{
-	45, 21, 63, 8, 101, 24, 120, 11, 10, 10, 13, 10, 35, 25, 59, 25,
-}
+var ts_lex_map [16]int16 = [16]int16{45, 21, 63, 8, 101, 24, 120, 11, 10, 10, 13, 10, 35, 25, 59, 25}
 
 func tree_sitter_git_rebase() *TSLanguage {
 	return &tree_sitter_git_rebase_language
 }
-
 func ts_lex(lexer *TSLexer, state int16) bool {
-	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v94, v95, v97, v99, v100, v102, v107, v108, v110, v119, v120, v122, v127, v128, v130, v132, v133, v135, v142, v143, v145, v147, v148, v150, v157, v158, v160, v162, v163, v165, v171, v172, v174, v176, v177, v179, v185, v186, v188, v196, v197, v199, v205, v206, v208, v215, v216, v218, v224, v225, v227, v233, v234, v236, v242, v243, v245, v250, v251, v253, v261, v262, v264, v272, v273, v275, v283, v284, v286, v293, v294, v296 *TSLexer
-	var retval *bool
-	var result, skip, eof *byte
-	var mark_end, mark_end266, mark_end281, mark_end309, mark_end323, mark_end327, mark_end347, mark_end351, mark_end371, mark_end375, mark_end392, mark_end396, mark_end413, mark_end438, mark_end455, mark_end477, mark_end495, mark_end513, mark_end531, mark_end545, mark_end569, mark_end593, mark_end617, mark_end637 *func(*TSLexer)
-	var eof2 *func(*TSLexer) bool
-	var advance *func(*TSLexer, bool)
-	var state_addr, arrayidx, arrayidx11, result_symbol, result_symbol265, result_symbol280, result_symbol308, result_symbol322, result_symbol326, result_symbol346, result_symbol350, result_symbol370, result_symbol374, result_symbol391, result_symbol395, result_symbol412, result_symbol437, result_symbol454, result_symbol476, result_symbol494, result_symbol512, result_symbol530, result_symbol544, result_symbol568, result_symbol592, result_symbol616, result_symbol636 *int16
-	var lookahead, i, lookahead1 *int32
+	var lexer_addr **TSLexer
 	var tobool, call, tobool3, cmp, cmp7, cmp14, cmp16, cmp18, cmp22, tobool26, cmp28, cmp31, cmp35, cmp38, cmp41, cmp44, cmp48, cmp51, cmp54, tobool58, cmp60, cmp63, cmp67, cmp70, cmp73, cmp76, cmp80, cmp83, cmp86, tobool90, tobool92, cmp95, cmp99, cmp103, cmp106, cmp110, cmp113, cmp117, cmp120, cmp123, cmp127, tobool131, tobool133, cmp136, cmp140, cmp143, cmp147, cmp150, cmp154, cmp157, cmp160, cmp164, tobool168, tobool170, cmp173, cmp177, cmp180, cmp184, cmp187, cmp191, cmp194, cmp197, cmp201, tobool205, tobool207, cmp210, cmp214, cmp218, cmp221, cmp225, cmp228, cmp231, cmp235, cmp238, cmp241, cmp245, cmp248, cmp251, cmp254, cmp257, tobool261, tobool263, cmp267, cmp271, cmp274, tobool278, cmp282, cmp286, cmp289, cmp293, cmp296, cmp299, cmp302, tobool306, cmp310, cmp313, cmp316, tobool320, tobool324, cmp328, cmp331, cmp334, cmp337, cmp340, tobool344, tobool348, cmp352, cmp355, cmp358, cmp361, cmp364, tobool368, tobool372, cmp376, cmp379, cmp382, cmp385, tobool389, tobool393, cmp397, cmp400, cmp403, cmp406, tobool410, cmp414, cmp418, cmp422, cmp425, cmp428, cmp431, tobool435, cmp439, cmp442, cmp445, cmp448, tobool452, cmp456, cmp460, cmp464, cmp467, cmp470, tobool474, cmp478, cmp482, cmp485, cmp488, tobool492, cmp496, cmp500, cmp503, cmp506, tobool510, cmp514, cmp518, cmp521, cmp524, tobool528, cmp532, cmp535, cmp538, tobool542, cmp546, cmp550, cmp553, cmp556, cmp559, cmp562, tobool566, cmp570, cmp574, cmp577, cmp580, cmp583, cmp586, tobool590, cmp594, cmp598, cmp601, cmp604, cmp607, cmp610, tobool614, cmp618, cmp621, cmp624, cmp627, cmp630, tobool634, cmp638, cmp641, cmp644, tobool648, v301 bool
-	var v3, frombool, v10, v22, v32, v42, v43, v54, v55, v65, v66, v76, v77, v93, v98, v106, v118, v126, v131, v141, v146, v156, v161, v170, v175, v184, v195, v204, v214, v223, v232, v241, v249, v260, v271, v282, v292, v300 byte
-	var v96, v101, v109, v121, v129, v134, v144, v149, v159, v164, v173, v178, v187, v198, v207, v217, v226, v235, v244, v252, v263, v274, v285, v295 func(*TSLexer)
 	var v7 func(*TSLexer) bool
-	var v1 func(*TSLexer, bool)
+	var eof2 *func(*TSLexer) bool
+	var retval *bool
 	var v9, v13, v16 int16
+	var state_addr, arrayidx, arrayidx11, result_symbol, result_symbol265, result_symbol280, result_symbol308, result_symbol322, result_symbol326, result_symbol346, result_symbol350, result_symbol370, result_symbol374, result_symbol391, result_symbol395, result_symbol412, result_symbol437, result_symbol454, result_symbol476, result_symbol494, result_symbol512, result_symbol530, result_symbol544, result_symbol568, result_symbol592, result_symbol616, result_symbol636 *int16
 	var v5, conv, v11, v12, conv6, v14, v15, add, v17, add13, v18, v19, v20, v21, v23, v24, v25, v26, v27, v28, v29, v30, v31, v33, v34, v35, v36, v37, v38, v39, v40, v41, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v56, v57, v58, v59, v60, v61, v62, v63, v64, v67, v68, v69, v70, v71, v72, v73, v74, v75, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v103, v104, v105, v111, v112, v113, v114, v115, v116, v117, v123, v124, v125, v136, v137, v138, v139, v140, v151, v152, v153, v154, v155, v166, v167, v168, v169, v180, v181, v182, v183, v189, v190, v191, v192, v193, v194, v200, v201, v202, v203, v209, v210, v211, v212, v213, v219, v220, v221, v222, v228, v229, v230, v231, v237, v238, v239, v240, v246, v247, v248, v254, v255, v256, v257, v258, v259, v265, v266, v267, v268, v269, v270, v276, v277, v278, v279, v280, v281, v287, v288, v289, v290, v291, v297, v298, v299 int32
+	var lookahead, i, lookahead1 *int32
 	var conv4, idxprom, idxprom10 int64
-
+	var v3, frombool, v10, v22, v32, v42, v43, v54, v55, v65, v66, v76, v77, v93, v98, v106, v118, v126, v131, v141, v146, v156, v161, v170, v175, v184, v195, v204, v214, v223, v232, v241, v249, v260, v271, v282, v292, v300 byte
+	var result, skip, eof *byte
+	var v96, v101, v109, v121, v129, v134, v144, v149, v159, v164, v173, v178, v187, v198, v207, v217, v226, v235, v244, v252, v263, v274, v285, v295 func(*TSLexer)
+	var mark_end, mark_end266, mark_end281, mark_end309, mark_end323, mark_end327, mark_end347, mark_end351, mark_end371, mark_end375, mark_end392, mark_end396, mark_end413, mark_end438, mark_end455, mark_end477, mark_end495, mark_end513, mark_end531, mark_end545, mark_end569, mark_end593, mark_end617, mark_end637 *func(*TSLexer)
+	var v1 func(*TSLexer, bool)
+	var advance *func(*TSLexer, bool)
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, v0, advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, tobool3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, cmp18, v21, cmp22, v22, tobool26, v23, cmp28, v24, cmp31, v25, cmp35, v26, cmp38, v27, cmp41, v28, cmp44, v29, cmp48, v30, cmp51, v31, cmp54, v32, tobool58, v33, cmp60, v34, cmp63, v35, cmp67, v36, cmp70, v37, cmp73, v38, cmp76, v39, cmp80, v40, cmp83, v41, cmp86, v42, tobool90, v43, tobool92, v44, cmp95, v45, cmp99, v46, cmp103, v47, cmp106, v48, cmp110, v49, cmp113, v50, cmp117, v51, cmp120, v52, cmp123, v53, cmp127, v54, tobool131, v55, tobool133, v56, cmp136, v57, cmp140, v58, cmp143, v59, cmp147, v60, cmp150, v61, cmp154, v62, cmp157, v63, cmp160, v64, cmp164, v65, tobool168, v66, tobool170, v67, cmp173, v68, cmp177, v69, cmp180, v70, cmp184, v71, cmp187, v72, cmp191, v73, cmp194, v74, cmp197, v75, cmp201, v76, tobool205, v77, tobool207, v78, cmp210, v79, cmp214, v80, cmp218, v81, cmp221, v82, cmp225, v83, cmp228, v84, cmp231, v85, cmp235, v86, cmp238, v87, cmp241, v88, cmp245, v89, cmp248, v90, cmp251, v91, cmp254, v92, cmp257, v93, tobool261, v94, result_symbol, v95, mark_end, v96, v97, v98, tobool263, v99, result_symbol265, v100, mark_end266, v101, v102, v103, cmp267, v104, cmp271, v105, cmp274, v106, tobool278, v107, result_symbol280, v108, mark_end281, v109, v110, v111, cmp282, v112, cmp286, v113, cmp289, v114, cmp293, v115, cmp296, v116, cmp299, v117, cmp302, v118, tobool306, v119, result_symbol308, v120, mark_end309, v121, v122, v123, cmp310, v124, cmp313, v125, cmp316, v126, tobool320, v127, result_symbol322, v128, mark_end323, v129, v130, v131, tobool324, v132, result_symbol326, v133, mark_end327, v134, v135, v136, cmp328, v137, cmp331, v138, cmp334, v139, cmp337, v140, cmp340, v141, tobool344, v142, result_symbol346, v143, mark_end347, v144, v145, v146, tobool348, v147, result_symbol350, v148, mark_end351, v149, v150, v151, cmp352, v152, cmp355, v153, cmp358, v154, cmp361, v155, cmp364, v156, tobool368, v157, result_symbol370, v158, mark_end371, v159, v160, v161, tobool372, v162, result_symbol374, v163, mark_end375, v164, v165, v166, cmp376, v167, cmp379, v168, cmp382, v169, cmp385, v170, tobool389, v171, result_symbol391, v172, mark_end392, v173, v174, v175, tobool393, v176, result_symbol395, v177, mark_end396, v178, v179, v180, cmp397, v181, cmp400, v182, cmp403, v183, cmp406, v184, tobool410, v185, result_symbol412, v186, mark_end413, v187, v188, v189, cmp414, v190, cmp418, v191, cmp422, v192, cmp425, v193, cmp428, v194, cmp431, v195, tobool435, v196, result_symbol437, v197, mark_end438, v198, v199, v200, cmp439, v201, cmp442, v202, cmp445, v203, cmp448, v204, tobool452, v205, result_symbol454, v206, mark_end455, v207, v208, v209, cmp456, v210, cmp460, v211, cmp464, v212, cmp467, v213, cmp470, v214, tobool474, v215, result_symbol476, v216, mark_end477, v217, v218, v219, cmp478, v220, cmp482, v221, cmp485, v222, cmp488, v223, tobool492, v224, result_symbol494, v225, mark_end495, v226, v227, v228, cmp496, v229, cmp500, v230, cmp503, v231, cmp506, v232, tobool510, v233, result_symbol512, v234, mark_end513, v235, v236, v237, cmp514, v238, cmp518, v239, cmp521, v240, cmp524, v241, tobool528, v242, result_symbol530, v243, mark_end531, v244, v245, v246, cmp532, v247, cmp535, v248, cmp538, v249, tobool542, v250, result_symbol544, v251, mark_end545, v252, v253, v254, cmp546, v255, cmp550, v256, cmp553, v257, cmp556, v258, cmp559, v259, cmp562, v260, tobool566, v261, result_symbol568, v262, mark_end569, v263, v264, v265, cmp570, v266, cmp574, v267, cmp577, v268, cmp580, v269, cmp583, v270, cmp586, v271, tobool590, v272, result_symbol592, v273, mark_end593, v274, v275, v276, cmp594, v277, cmp598, v278, cmp601, v279, cmp604, v280, cmp607, v281, cmp610, v282, tobool614, v283, result_symbol616, v284, mark_end617, v285, v286, v287, cmp618, v288, cmp621, v289, cmp624, v290, cmp627, v291, cmp630, v292, tobool634, v293, result_symbol636, v294, mark_end637, v295, v296, v297, cmp638, v298, cmp641, v299, cmp644, v300, tobool648, v301
 
 	retval = new(bool)
@@ -1733,7 +1621,11 @@ start:
 	v7 = *eof2
 	v8 = *lexer_addr
 	call = v7(v8)
-	if call { frombool = 1 } else { frombool = 0 }
+	if call {
+		frombool = 1
+	} else {
+		frombool = 0
+	}
 	*eof = frombool
 	v9 = *state_addr
 	conv = int32(uint32(uint16(v9)))
@@ -3948,4 +3840,3 @@ _return:
 	v301 = *retval
 	return v301
 }
-
