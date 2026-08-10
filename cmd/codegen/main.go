@@ -26,7 +26,7 @@ var rootCmd = &cobra.Command{
 	Short: "Transpile tree-sitter C to Go via clang IR + leaven",
 	Long: `Transpile tree-sitter core and grammars with clang -emit-llvm and leaven.
 
-No ccgo. Prefer clang 14 (typed pointers); pin with mise conda:clang@14.
+No ccgo. Prefer clang 22; pin with mise conda:clang@22.
 Use --only to limit grammar units (e.g. --only=json,python). With no --only,
 all discovered units under third-party/tree-sitter-*/ are attempted.
 
@@ -43,7 +43,7 @@ func env(key, defaultValue string) string {
 
 func init() {
 	rootCmd.PersistentFlags().BoolVarP(&keepTemp, "keep-temp", "k", false, "Keep temporary files for debugging")
-	rootCmd.Flags().StringVar(&clangBin, "clang", env("CC", "clang"), "clang binary (use 14.x for leaven)")
+	rootCmd.Flags().StringVar(&clangBin, "clang", env("CC", "clang"), "clang binary (use 22.x for leaven)")
 	rootCmd.Flags().StringSliceVar(&onlyLangs, "only", nil, "Limit to these language ids (repeatable or comma-separated)")
 
 	rootCmd.AddCommand(&cobra.Command{

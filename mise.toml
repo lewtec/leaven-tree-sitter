@@ -1,8 +1,8 @@
 [tools]
 go = "1.26.4"
 "github:lucasew/workspaced" = "0.14.3"
-# Clang 14 for leaven (typed LLVM pointers).
-"conda:clang" = "14.0.6"
+# Clang 22 for leaven (opaque pointers; matches leaven IR v22 frontend).
+"conda:clang" = "22.1.8"
 
 [env]
 CGO_ENABLED = "0"

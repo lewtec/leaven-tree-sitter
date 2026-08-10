@@ -18,7 +18,7 @@ import (
 type LeavenTranspiler struct {
 	TreeSitterPath string
 	KeepTemp       bool
-	// Clang is the clang binary (default: CC or clang on PATH; pin 14 via mise).
+	// Clang is the clang binary (default: CC or clang on PATH; pin 22 via mise).
 	Clang string
 }
 

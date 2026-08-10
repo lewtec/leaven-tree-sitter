@@ -8,6 +8,7 @@ on:
       - workspaced.lock.json
       - go.sum
       - cmd/codegen/**
+      - mise.toml
 
 concurrency:
   group: codegen

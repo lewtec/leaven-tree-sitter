@@ -17,7 +17,7 @@ Source of truth: grilling 2026-08-07/08, closed Q12.
 |------|----------|
 | Repo | https://github.com/lewtec/leaven-tree-sitter |
 | Module path | `github.com/lewtec/leaven-tree-sitter` |
-| Backend | clang 14 → LLVM IR → leaven library (lewtec/leaven pin) |
+| Backend | clang 22 → LLVM IR → leaven library (lewtec/leaven pin) |
 | Layout | One module for core (`…/grammar`) + one module per language (`…/grammar/<lang>`) |
 | Scheme | Codegen → nested modules → `Register` → parse/fixtures API |
 
@@ -60,7 +60,7 @@ modules per grammar.
 
 Work on the harness and `core.go` on `main`.
 
-1. Run codegen locally (clang 14 + leaven + JIT C). Use `--only=<lang>`
+1. Run codegen locally (clang 22 + leaven + JIT C). Use `--only=<lang>`
    to keep the loop short.
 2. Require green local tests for core + the langs you cooked.
 3. Keep or update `grammar/core.go`.
@@ -74,10 +74,10 @@ Do not debug the first clang/PATH/leaven failure only on GitHub Actions.
 ## Codegen workflow
 
 Trigger: **`workflow_dispatch`**, or **push to `main`** that changes
-`workspaced.lock.json`, `go.sum`, or `cmd/codegen/**`. No cron. Concurrency group `codegen` with
+`workspaced.lock.json`, `go.sum`, `cmd/codegen/**`, or `mise.toml`. No cron. Concurrency group `codegen` with
 `cancel-in-progress: false` — one cook at a time; later runs wait.
 
-Runs once on ubuntu (clang 14 + leaven). One pure-Go output. No
+Runs once on ubuntu (clang 22 + leaven). One pure-Go output. No
 GOOS/GOARCH codegen matrix.
 
 Steps:
@@ -143,7 +143,7 @@ php php_only purescript rescript squirrel vim wgsl wgsl_bevy
 
 Tiny `tiny.*` langs (json, go, python, …) stay commented until you want them.
 
-Optional later: Renovate/mise pins for clang 14 and leaven. GitHub App
+Optional later: Renovate/mise pins for clang 22 and leaven. GitHub App
 for cook PRs so Test runs without the approve click.
 
 ---
@@ -170,7 +170,7 @@ Origin: `modernc-tree-sitter/ccgo-tree-sitter` @ `20260806-try-codegen`.
 - `testdata/` (all origin fixtures + goldens)
 - workspaced: live `#grammar` only; other langs as comments
 - `go.mod` `tool` + `replace` for `github.com/lewtec/leaven`
-- mise: Go, workspaced, `conda:clang` 14
+- mise: Go, workspaced, `conda:clang` 22
 
 Adjust fixture tests so missing langs skip. Do not import a language
 package in core tests until that package exists on `main`.
