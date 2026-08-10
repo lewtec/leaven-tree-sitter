@@ -1,32 +1,30 @@
 package grammar_json5
 
 import (
-	"unsafe"
 	"github.com/lewtec/leaven/libc"
+	"unsafe"
 )
 
 type TSCharacterRange struct {
 	F0 int32
 	F1 int32
 }
-
 type TSFieldMapEntry struct {
 	F0 int16
 	F1 byte
 	F2 byte
 }
-
 type TSLanguage struct {
-	F0 int32
-	F1 int32
-	F2 int32
-	F3 int32
-	F4 int32
-	F5 int32
-	F6 int32
-	F7 int32
-	F8 int32
-	F9 int16
+	F0  int32
+	F1  int32
+	F2  int32
+	F3  int32
+	F4  int32
+	F5  int32
+	F6  int32
+	F7  int32
+	F8  int32
+	F9  int16
 	F10 *int16
 	F11 *int16
 	F12 *int32
@@ -54,13 +52,11 @@ type TSLanguage struct {
 	F34 *int16
 	F35 TSLanguageMetadata
 }
-
 type TSLanguageMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
 }
-
 type TSLexer struct {
 	F0 int32
 	F1 int16
@@ -71,24 +67,20 @@ type TSLexer struct {
 	F6 func(*TSLexer) bool
 	F7 func(*TSLexer, *byte, ...interface{})
 }
-
 type TSLexerMode struct {
 	F0 int16
 	F1 int16
 	F2 int16
 }
-
 type TSMapSlice struct {
 	F0 int16
 	F1 int16
 }
-
 type TSSymbolMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
 }
-
 type anon_0 struct {
 	F0 byte
 	F1 byte
@@ -96,12 +88,10 @@ type anon_0 struct {
 	F3 int16
 	F4 int16
 }
-
 type anon_1 struct {
 	F0 byte
 	F1 byte
 }
-
 type anon_2 struct {
 	F0 *byte
 	F1 *int16
@@ -111,964 +101,891 @@ type anon_2 struct {
 	F5 func(*byte, *byte) int32
 	F6 func(*byte, *byte, int32)
 }
-
 type TSParseAction struct {
 	F0 anon_0
 }
-
 type TSParseActionEntry struct {
 	F0 TSParseAction
 }
 
 var tree_sitter_json5_language TSLanguage = TSLanguage{15, 21, 0, 14, 0, 31, 7, 2, 2, 5, &ts_parse_table[0][0], &ts_small_parse_table[0], &ts_small_parse_table_map[0], &(*[77]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_symbol_names[0], &ts_field_names[0], &ts_field_map_slices[0], &ts_field_map_entries[0], &ts_symbol_metadata[0], &ts_symbol_map[0], &ts_non_terminal_alias_map[0], &ts_alias_sequences[0][0], &ts_lex_modes[0], ts_lex, nil, 0, anon_2{}, &ts_primary_state_ids[0], &_str[0], nil, 0, 0, nil, nil, nil, TSLanguageMetadata{0, 1, 0}}
-
-var ts_parse_table [7][21]int16 = [7][21]int16{[21]int16{
-	1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
-	0, 0, 0, 0, 0,
-}, [21]int16{
-	0, 3, 5, 0, 0, 0, 0, 7, 0, 9, 9, 9, 9, 9, 29, 30,
-	0, 30, 30, 0, 0,
-}, [21]int16{
-	0, 3, 5, 0, 0, 0, 0, 7, 11, 13, 13, 13, 13, 13, 0, 19,
-	0, 19, 19, 0, 0,
-}, [21]int16{
-	0, 3, 5, 0, 0, 0, 0, 7, 15, 17, 17, 17, 17, 17, 0, 25,
-	0, 25, 25, 0, 0,
-}, [21]int16{
-	0, 3, 5, 0, 0, 0, 0, 7, 19, 17, 17, 17, 17, 17, 0, 25,
-	0, 25, 25, 0, 0,
-}, [21]int16{
-	0, 3, 5, 0, 0, 0, 0, 7, 0, 21, 21, 21, 21, 21, 0, 26,
-	0, 26, 26, 0, 0,
-}, [21]int16{
-	0, 3, 5, 0, 0, 0, 0, 7, 0, 17, 17, 17, 17, 17, 0, 25,
-	0, 25, 25, 0, 0,
-}}
-
-var ts_small_parse_table [256]int16 = [256]int16{
-	4, 3, 1, 1, 23, 1, 4, 18, 1, 16, 25, 2, 6, 9, 2, 3,
-	1, 1, 27, 4, 0, 3, 4, 8, 4, 3, 1, 1, 29, 1, 4, 27,
-	1, 16, 25, 2, 6, 9, 2, 3, 1, 1, 31, 4, 0, 3, 4, 8,
-	2, 3, 1, 1, 33, 4, 0, 3, 4, 8, 2, 3, 1, 1, 35, 4,
-	0, 3, 4, 8, 4, 3, 1, 1, 37, 1, 4, 27, 1, 16, 25, 2,
-	6, 9, 2, 3, 1, 1, 39, 4, 0, 3, 4, 8, 2, 3, 1, 1,
-	41, 4, 0, 3, 4, 8, 2, 3, 1, 1, 43, 4, 0, 3, 4, 8,
-	2, 3, 1, 1, 45, 4, 0, 3, 4, 8, 4, 3, 1, 1, 47, 1,
-	3, 49, 1, 4, 20, 1, 19, 4, 3, 1, 1, 51, 1, 3, 53, 1,
-	8, 21, 1, 20, 4, 3, 1, 1, 29, 1, 4, 55, 1, 3, 22, 1,
-	19, 4, 3, 1, 1, 15, 1, 8, 57, 1, 3, 23, 1, 20, 4, 3,
-	1, 1, 59, 1, 3, 62, 1, 4, 22, 1, 19, 4, 3, 1, 1, 64,
-	1, 3, 67, 1, 8, 23, 1, 20, 3, 3, 1, 1, 27, 1, 16, 25,
-	2, 6, 9, 2, 3, 1, 1, 67, 2, 3, 8, 2, 3, 1, 1, 69,
-	2, 3, 4, 2, 3, 1, 1, 62, 2, 3, 4, 2, 3, 1, 1, 71,
-	1, 5, 2, 3, 1, 1, 73, 1, 0, 2, 3, 1, 1, 75, 1, 0,
-}
-
-var ts_small_parse_table_map [24]int32 = [24]int32{
-	0, 14, 24, 38, 48, 58, 68, 82, 92, 102, 112, 122, 135, 148, 161, 174,
-	187, 200, 211, 219, 227, 235, 242, 249,
-}
-
-var ts_symbol_names [21]*byte = [21]*byte{
-	&_str_2[0], &_str_3[0], &_str_4[0], &_str_5[0], &_str_6[0], &_str_7[0], &_str_8[0], &_str_9[0], &_str_10[0], &_str_11[0], &_str_12[0], &_str_13[0], &_str_14[0], &_str_15[0], &_str_16[0], &_str_17[0],
-	&_str_18[0], &_str_19[0], &_str_20[0], &_str_21[0], &_str_22[0],
-}
-
+var ts_parse_table [7][21]int16 = [7][21]int16{[21]int16{1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0}, [21]int16{0, 3, 5, 0, 0, 0, 0, 7, 0, 9, 9, 9, 9, 9, 29, 30, 0, 30, 30, 0, 0}, [21]int16{0, 3, 5, 0, 0, 0, 0, 7, 11, 13, 13, 13, 13, 13, 0, 19, 0, 19, 19, 0, 0}, [21]int16{0, 3, 5, 0, 0, 0, 0, 7, 15, 17, 17, 17, 17, 17, 0, 25, 0, 25, 25, 0, 0}, [21]int16{0, 3, 5, 0, 0, 0, 0, 7, 19, 17, 17, 17, 17, 17, 0, 25, 0, 25, 25, 0, 0}, [21]int16{0, 3, 5, 0, 0, 0, 0, 7, 0, 21, 21, 21, 21, 21, 0, 26, 0, 26, 26, 0, 0}, [21]int16{0, 3, 5, 0, 0, 0, 0, 7, 0, 17, 17, 17, 17, 17, 0, 25, 0, 25, 25, 0, 0}}
+var ts_small_parse_table [256]int16 = [256]int16{4, 3, 1, 1, 23, 1, 4, 18, 1, 16, 25, 2, 6, 9, 2, 3, 1, 1, 27, 4, 0, 3, 4, 8, 4, 3, 1, 1, 29, 1, 4, 27, 1, 16, 25, 2, 6, 9, 2, 3, 1, 1, 31, 4, 0, 3, 4, 8, 2, 3, 1, 1, 33, 4, 0, 3, 4, 8, 2, 3, 1, 1, 35, 4, 0, 3, 4, 8, 4, 3, 1, 1, 37, 1, 4, 27, 1, 16, 25, 2, 6, 9, 2, 3, 1, 1, 39, 4, 0, 3, 4, 8, 2, 3, 1, 1, 41, 4, 0, 3, 4, 8, 2, 3, 1, 1, 43, 4, 0, 3, 4, 8, 2, 3, 1, 1, 45, 4, 0, 3, 4, 8, 4, 3, 1, 1, 47, 1, 3, 49, 1, 4, 20, 1, 19, 4, 3, 1, 1, 51, 1, 3, 53, 1, 8, 21, 1, 20, 4, 3, 1, 1, 29, 1, 4, 55, 1, 3, 22, 1, 19, 4, 3, 1, 1, 15, 1, 8, 57, 1, 3, 23, 1, 20, 4, 3, 1, 1, 59, 1, 3, 62, 1, 4, 22, 1, 19, 4, 3, 1, 1, 64, 1, 3, 67, 1, 8, 23, 1, 20, 3, 3, 1, 1, 27, 1, 16, 25, 2, 6, 9, 2, 3, 1, 1, 67, 2, 3, 8, 2, 3, 1, 1, 69, 2, 3, 4, 2, 3, 1, 1, 62, 2, 3, 4, 2, 3, 1, 1, 71, 1, 5, 2, 3, 1, 1, 73, 1, 0, 2, 3, 1, 1, 75, 1, 0}
+var ts_small_parse_table_map [24]int32 = [24]int32{0, 14, 24, 38, 48, 58, 68, 82, 92, 102, 112, 122, 135, 148, 161, 174, 187, 200, 211, 219, 227, 235, 242, 249}
+var ts_symbol_names [21]*byte = [21]*byte{&_str_2[0], &_str_3[0], &_str_4[0], &_str_5[0], &_str_6[0], &_str_7[0], &_str_8[0], &_str_9[0], &_str_10[0], &_str_11[0], &_str_12[0], &_str_13[0], &_str_14[0], &_str_15[0], &_str_16[0], &_str_17[0], &_str_18[0], &_str_19[0], &_str_20[0], &_str_21[0], &_str_22[0]}
 var ts_field_names [3]*byte = [3]*byte{nil, &_str_23[0], &_str_24[0]}
-
 var ts_field_map_slices [2]TSMapSlice = [2]TSMapSlice{TSMapSlice{}, TSMapSlice{0, 2}}
-
 var ts_field_map_entries [2]TSFieldMapEntry = [2]TSFieldMapEntry{TSFieldMapEntry{1, 0, 0}, TSFieldMapEntry{2, 2, 0}}
-
-var ts_symbol_metadata [21]TSSymbolMetadata = [21]TSSymbolMetadata{
-	TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0},
-	TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{},
-}
-
-var ts_symbol_map [21]int16 = [21]int16{
-	0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-	16, 17, 18, 19, 20,
-}
-
+var ts_symbol_metadata [21]TSSymbolMetadata = [21]TSSymbolMetadata{TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{}}
+var ts_symbol_map [21]int16 = [21]int16{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 var ts_non_terminal_alias_map [1]int16 = [1]int16{}
-
 var ts_alias_sequences [2][5]int16 = [2][5]int16{}
-
-var ts_lex_modes [31]TSLexerMode = [31]TSLexerMode{
-	TSLexerMode{}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{},
-	TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{},
-}
-
-var ts_primary_state_ids [31]int16 = [31]int16{
-	0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-	16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-}
-
+var ts_lex_modes [31]TSLexerMode = [31]TSLexerMode{TSLexerMode{}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{5, 0, 0}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{6, 0, 0}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}, TSLexerMode{}}
+var ts_primary_state_ids [31]int16 = [31]int16{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30}
 var _str [6]byte = [6]byte{106, 115, 111, 110, 53, 0}
-
 var ts_parse_actions struct {
 	F0 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F1 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F2 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F3 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F4 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F5 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F6 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F7 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F8 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F9 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F10 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F11 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F12 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F13 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F14 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F15 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F16 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F17 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F18 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F19 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F20 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F21 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F22 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F23 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F24 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F25 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F26 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F27 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F28 TSParseActionEntry
 	F29 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F30 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F31 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F32 TSParseActionEntry
 	F33 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F34 TSParseActionEntry
 	F35 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F36 TSParseActionEntry
 	F37 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F38 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F39 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F40 TSParseActionEntry
 	F41 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F42 TSParseActionEntry
 	F43 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F44 TSParseActionEntry
 	F45 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F46 TSParseActionEntry
 	F47 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F48 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F49 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F50 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F51 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F52 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F53 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F54 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F55 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F56 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F57 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F58 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F59 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F60 TSParseActionEntry
 	F61 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F62 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F63 TSParseActionEntry
 	F64 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F65 TSParseActionEntry
 	F66 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F67 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F68 TSParseActionEntry
 	F69 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F70 TSParseActionEntry
 	F71 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F72 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F73 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F74 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F75 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F76 TSParseActionEntry
 } = struct {
 	F0 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F1 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F2 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F3 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F4 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F5 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F6 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F7 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F8 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F9 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F10 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F11 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F12 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F13 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F14 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F15 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F16 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F17 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F18 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F19 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F20 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F21 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F22 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F23 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F24 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F25 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F26 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F27 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F28 TSParseActionEntry
 	F29 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F30 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F31 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F32 TSParseActionEntry
 	F33 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F34 TSParseActionEntry
 	F35 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F36 TSParseActionEntry
 	F37 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F38 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F39 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F40 TSParseActionEntry
 	F41 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F42 TSParseActionEntry
 	F43 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F44 TSParseActionEntry
 	F45 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F46 TSParseActionEntry
 	F47 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F48 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F49 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F50 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F51 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F52 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F53 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F54 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F55 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F56 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F57 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F58 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F59 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F60 TSParseActionEntry
 	F61 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F62 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F63 TSParseActionEntry
 	F64 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F65 TSParseActionEntry
 	F66 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F67 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F68 TSParseActionEntry
 	F69 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F70 TSParseActionEntry
 	F71 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F72 struct {
-	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
-}
+		F0 struct {
+			F0 struct {
+				F0 byte
+				F1 int16
+				F2 byte
+				F3 byte
+			}
+			F1 [2]byte
+		}
+	}
 	F73 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F74 struct {
-	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
-}
+		F0 struct {
+			F0 byte
+			F1 [7]byte
+		}
+	}
 	F75 struct {
-	F0 anon_1
-	F1 [6]byte
-}
+		F0 anon_1
+		F1 [6]byte
+	}
 	F76 TSParseActionEntry
 }{struct {
 	F0 anon_1
@@ -1078,9 +995,9 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
+		F0 byte
+		F1 [7]byte
+	}
 }{struct {
 	F0 byte
 	F1 [7]byte
@@ -1089,21 +1006,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1115,21 +1032,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1141,21 +1058,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1167,21 +1084,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1193,21 +1110,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1219,21 +1136,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1245,21 +1162,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1271,21 +1188,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1297,21 +1214,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1323,21 +1240,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1349,21 +1266,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1375,21 +1292,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1404,21 +1321,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1439,21 +1356,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1477,21 +1394,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1503,21 +1420,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1529,21 +1446,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1555,21 +1472,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1581,21 +1498,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1607,21 +1524,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1633,21 +1550,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 19, 0, 0}}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1662,21 +1579,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 20, 0, 0}}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1694,21 +1611,21 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
-	F1 [2]byte
-}
+		F0 struct {
+			F0 byte
+			F1 int16
+			F2 byte
+			F3 byte
+		}
+		F1 [2]byte
+	}
 }{struct {
 	F0 struct {
-	F0 byte
-	F1 int16
-	F2 byte
-	F3 byte
-}
+		F0 byte
+		F1 int16
+		F2 byte
+		F3 byte
+	}
 	F1 [2]byte
 }{struct {
 	F0 byte
@@ -1720,9 +1637,9 @@ var ts_parse_actions struct {
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
-	F0 byte
-	F1 [7]byte
-}
+		F0 byte
+		F1 [7]byte
+	}
 }{struct {
 	F0 byte
 	F1 [7]byte
@@ -1730,189 +1647,57 @@ var ts_parse_actions struct {
 	F0 anon_1
 	F1 [6]byte
 }{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 14, 0, 0}}}}
-
 var _str_2 [4]byte = [4]byte{101, 110, 100, 0}
-
 var _str_3 [8]byte = [8]byte{99, 111, 109, 109, 101, 110, 116, 0}
-
 var _str_4 [2]byte = [2]byte{123, 0}
-
 var _str_5 [2]byte = [2]byte{44, 0}
-
 var _str_6 [2]byte = [2]byte{125, 0}
-
 var _str_7 [2]byte = [2]byte{58, 0}
-
 var _str_8 [11]byte = [11]byte{105, 100, 101, 110, 116, 105, 102, 105, 101, 114, 0}
-
 var _str_9 [2]byte = [2]byte{91, 0}
-
 var _str_10 [2]byte = [2]byte{93, 0}
-
 var _str_11 [7]byte = [7]byte{115, 116, 114, 105, 110, 103, 0}
-
 var _str_12 [7]byte = [7]byte{110, 117, 109, 98, 101, 114, 0}
-
 var _str_13 [5]byte = [5]byte{110, 117, 108, 108, 0}
-
 var _str_14 [5]byte = [5]byte{116, 114, 117, 101, 0}
-
 var _str_15 [6]byte = [6]byte{102, 97, 108, 115, 101, 0}
-
 var _str_16 [5]byte = [5]byte{102, 105, 108, 101, 0}
-
 var _str_17 [7]byte = [7]byte{111, 98, 106, 101, 99, 116, 0}
-
 var _str_18 [7]byte = [7]byte{109, 101, 109, 98, 101, 114, 0}
-
 var _str_19 [6]byte = [6]byte{97, 114, 114, 97, 121, 0}
-
 var _str_20 [7]byte = [7]byte{95, 118, 97, 108, 117, 101, 0}
-
 var _str_21 [15]byte = [15]byte{111, 98, 106, 101, 99, 116, 95, 114, 101, 112, 101, 97, 116, 49, 0}
-
 var _str_22 [14]byte = [14]byte{97, 114, 114, 97, 121, 95, 114, 101, 112, 101, 97, 116, 49, 0}
-
 var _str_23 [5]byte = [5]byte{110, 97, 109, 101, 0}
-
 var _str_24 [6]byte = [6]byte{118, 97, 108, 117, 101, 0}
-
-var ts_lex_map [36]int16 = [36]int16{
-	34, 7, 39, 8, 44, 47, 46, 76, 47, 9, 48, 74, 58, 49, 73, 61,
-	78, 51, 91, 70, 93, 71, 102, 52, 110, 67, 116, 63, 123, 46, 125, 48,
-	43, 12, 45, 12,
-}
-
-var sym_identifier_character_set_2 [680]TSCharacterRange = [680]TSCharacterRange{
-	TSCharacterRange{36, 36}, TSCharacterRange{48, 57}, TSCharacterRange{65, 90}, TSCharacterRange{95, 95}, TSCharacterRange{97, 122}, TSCharacterRange{170, 170}, TSCharacterRange{181, 181}, TSCharacterRange{186, 186}, TSCharacterRange{192, 214}, TSCharacterRange{216, 246}, TSCharacterRange{248, 705}, TSCharacterRange{710, 721}, TSCharacterRange{736, 740}, TSCharacterRange{748, 748}, TSCharacterRange{750, 750}, TSCharacterRange{880, 884},
-	TSCharacterRange{886, 887}, TSCharacterRange{890, 893}, TSCharacterRange{895, 895}, TSCharacterRange{902, 902}, TSCharacterRange{904, 906}, TSCharacterRange{908, 908}, TSCharacterRange{910, 929}, TSCharacterRange{931, 1013}, TSCharacterRange{1015, 1153}, TSCharacterRange{1162, 1327}, TSCharacterRange{1329, 1366}, TSCharacterRange{1369, 1369}, TSCharacterRange{1376, 1416}, TSCharacterRange{1488, 1514}, TSCharacterRange{1519, 1522}, TSCharacterRange{1568, 1610},
-	TSCharacterRange{1646, 1647}, TSCharacterRange{1649, 1747}, TSCharacterRange{1749, 1749}, TSCharacterRange{1765, 1766}, TSCharacterRange{1774, 1775}, TSCharacterRange{1786, 1788}, TSCharacterRange{1791, 1791}, TSCharacterRange{1808, 1808}, TSCharacterRange{1810, 1839}, TSCharacterRange{1869, 1957}, TSCharacterRange{1969, 1969}, TSCharacterRange{1994, 2026}, TSCharacterRange{2036, 2037}, TSCharacterRange{2042, 2042}, TSCharacterRange{2048, 2069}, TSCharacterRange{2074, 2074},
-	TSCharacterRange{2084, 2084}, TSCharacterRange{2088, 2088}, TSCharacterRange{2112, 2136}, TSCharacterRange{2144, 2154}, TSCharacterRange{2160, 2183}, TSCharacterRange{2185, 2190}, TSCharacterRange{2208, 2249}, TSCharacterRange{2308, 2361}, TSCharacterRange{2365, 2365}, TSCharacterRange{2384, 2384}, TSCharacterRange{2392, 2401}, TSCharacterRange{2417, 2432}, TSCharacterRange{2437, 2444}, TSCharacterRange{2447, 2448}, TSCharacterRange{2451, 2472}, TSCharacterRange{2474, 2480},
-	TSCharacterRange{2482, 2482}, TSCharacterRange{2486, 2489}, TSCharacterRange{2493, 2493}, TSCharacterRange{2510, 2510}, TSCharacterRange{2524, 2525}, TSCharacterRange{2527, 2529}, TSCharacterRange{2544, 2545}, TSCharacterRange{2556, 2556}, TSCharacterRange{2565, 2570}, TSCharacterRange{2575, 2576}, TSCharacterRange{2579, 2600}, TSCharacterRange{2602, 2608}, TSCharacterRange{2610, 2611}, TSCharacterRange{2613, 2614}, TSCharacterRange{2616, 2617}, TSCharacterRange{2649, 2652},
-	TSCharacterRange{2654, 2654}, TSCharacterRange{2674, 2676}, TSCharacterRange{2693, 2701}, TSCharacterRange{2703, 2705}, TSCharacterRange{2707, 2728}, TSCharacterRange{2730, 2736}, TSCharacterRange{2738, 2739}, TSCharacterRange{2741, 2745}, TSCharacterRange{2749, 2749}, TSCharacterRange{2768, 2768}, TSCharacterRange{2784, 2785}, TSCharacterRange{2809, 2809}, TSCharacterRange{2821, 2828}, TSCharacterRange{2831, 2832}, TSCharacterRange{2835, 2856}, TSCharacterRange{2858, 2864},
-	TSCharacterRange{2866, 2867}, TSCharacterRange{2869, 2873}, TSCharacterRange{2877, 2877}, TSCharacterRange{2908, 2909}, TSCharacterRange{2911, 2913}, TSCharacterRange{2929, 2929}, TSCharacterRange{2947, 2947}, TSCharacterRange{2949, 2954}, TSCharacterRange{2958, 2960}, TSCharacterRange{2962, 2965}, TSCharacterRange{2969, 2970}, TSCharacterRange{2972, 2972}, TSCharacterRange{2974, 2975}, TSCharacterRange{2979, 2980}, TSCharacterRange{2984, 2986}, TSCharacterRange{2990, 3001},
-	TSCharacterRange{3024, 3024}, TSCharacterRange{3077, 3084}, TSCharacterRange{3086, 3088}, TSCharacterRange{3090, 3112}, TSCharacterRange{3114, 3129}, TSCharacterRange{3133, 3133}, TSCharacterRange{3160, 3162}, TSCharacterRange{3165, 3165}, TSCharacterRange{3168, 3169}, TSCharacterRange{3200, 3200}, TSCharacterRange{3205, 3212}, TSCharacterRange{3214, 3216}, TSCharacterRange{3218, 3240}, TSCharacterRange{3242, 3251}, TSCharacterRange{3253, 3257}, TSCharacterRange{3261, 3261},
-	TSCharacterRange{3293, 3294}, TSCharacterRange{3296, 3297}, TSCharacterRange{3313, 3314}, TSCharacterRange{3332, 3340}, TSCharacterRange{3342, 3344}, TSCharacterRange{3346, 3386}, TSCharacterRange{3389, 3389}, TSCharacterRange{3406, 3406}, TSCharacterRange{3412, 3414}, TSCharacterRange{3423, 3425}, TSCharacterRange{3450, 3455}, TSCharacterRange{3461, 3478}, TSCharacterRange{3482, 3505}, TSCharacterRange{3507, 3515}, TSCharacterRange{3517, 3517}, TSCharacterRange{3520, 3526},
-	TSCharacterRange{3585, 3632}, TSCharacterRange{3634, 3635}, TSCharacterRange{3648, 3654}, TSCharacterRange{3713, 3714}, TSCharacterRange{3716, 3716}, TSCharacterRange{3718, 3722}, TSCharacterRange{3724, 3747}, TSCharacterRange{3749, 3749}, TSCharacterRange{3751, 3760}, TSCharacterRange{3762, 3763}, TSCharacterRange{3773, 3773}, TSCharacterRange{3776, 3780}, TSCharacterRange{3782, 3782}, TSCharacterRange{3804, 3807}, TSCharacterRange{3840, 3840}, TSCharacterRange{3904, 3911},
-	TSCharacterRange{3913, 3948}, TSCharacterRange{3976, 3980}, TSCharacterRange{4096, 4138}, TSCharacterRange{4159, 4159}, TSCharacterRange{4176, 4181}, TSCharacterRange{4186, 4189}, TSCharacterRange{4193, 4193}, TSCharacterRange{4197, 4198}, TSCharacterRange{4206, 4208}, TSCharacterRange{4213, 4225}, TSCharacterRange{4238, 4238}, TSCharacterRange{4256, 4293}, TSCharacterRange{4295, 4295}, TSCharacterRange{4301, 4301}, TSCharacterRange{4304, 4346}, TSCharacterRange{4348, 4680},
-	TSCharacterRange{4682, 4685}, TSCharacterRange{4688, 4694}, TSCharacterRange{4696, 4696}, TSCharacterRange{4698, 4701}, TSCharacterRange{4704, 4744}, TSCharacterRange{4746, 4749}, TSCharacterRange{4752, 4784}, TSCharacterRange{4786, 4789}, TSCharacterRange{4792, 4798}, TSCharacterRange{4800, 4800}, TSCharacterRange{4802, 4805}, TSCharacterRange{4808, 4822}, TSCharacterRange{4824, 4880}, TSCharacterRange{4882, 4885}, TSCharacterRange{4888, 4954}, TSCharacterRange{4992, 5007},
-	TSCharacterRange{5024, 5109}, TSCharacterRange{5112, 5117}, TSCharacterRange{5121, 5740}, TSCharacterRange{5743, 5759}, TSCharacterRange{5761, 5786}, TSCharacterRange{5792, 5866}, TSCharacterRange{5873, 5880}, TSCharacterRange{5888, 5905}, TSCharacterRange{5919, 5937}, TSCharacterRange{5952, 5969}, TSCharacterRange{5984, 5996}, TSCharacterRange{5998, 6000}, TSCharacterRange{6016, 6067}, TSCharacterRange{6103, 6103}, TSCharacterRange{6108, 6108}, TSCharacterRange{6176, 6264},
-	TSCharacterRange{6272, 6276}, TSCharacterRange{6279, 6312}, TSCharacterRange{6314, 6314}, TSCharacterRange{6320, 6389}, TSCharacterRange{6400, 6430}, TSCharacterRange{6480, 6509}, TSCharacterRange{6512, 6516}, TSCharacterRange{6528, 6571}, TSCharacterRange{6576, 6601}, TSCharacterRange{6656, 6678}, TSCharacterRange{6688, 6740}, TSCharacterRange{6823, 6823}, TSCharacterRange{6917, 6963}, TSCharacterRange{6981, 6988}, TSCharacterRange{7043, 7072}, TSCharacterRange{7086, 7087},
-	TSCharacterRange{7098, 7141}, TSCharacterRange{7168, 7203}, TSCharacterRange{7245, 7247}, TSCharacterRange{7258, 7293}, TSCharacterRange{7296, 7306}, TSCharacterRange{7312, 7354}, TSCharacterRange{7357, 7359}, TSCharacterRange{7401, 7404}, TSCharacterRange{7406, 7411}, TSCharacterRange{7413, 7414}, TSCharacterRange{7418, 7418}, TSCharacterRange{7424, 7615}, TSCharacterRange{7680, 7957}, TSCharacterRange{7960, 7965}, TSCharacterRange{7968, 8005}, TSCharacterRange{8008, 8013},
-	TSCharacterRange{8016, 8023}, TSCharacterRange{8025, 8025}, TSCharacterRange{8027, 8027}, TSCharacterRange{8029, 8029}, TSCharacterRange{8031, 8061}, TSCharacterRange{8064, 8116}, TSCharacterRange{8118, 8124}, TSCharacterRange{8126, 8126}, TSCharacterRange{8130, 8132}, TSCharacterRange{8134, 8140}, TSCharacterRange{8144, 8147}, TSCharacterRange{8150, 8155}, TSCharacterRange{8160, 8172}, TSCharacterRange{8178, 8180}, TSCharacterRange{8182, 8188}, TSCharacterRange{8305, 8305},
-	TSCharacterRange{8319, 8319}, TSCharacterRange{8336, 8348}, TSCharacterRange{8450, 8450}, TSCharacterRange{8455, 8455}, TSCharacterRange{8458, 8467}, TSCharacterRange{8469, 8469}, TSCharacterRange{8473, 8477}, TSCharacterRange{8484, 8484}, TSCharacterRange{8486, 8486}, TSCharacterRange{8488, 8488}, TSCharacterRange{8490, 8493}, TSCharacterRange{8495, 8505}, TSCharacterRange{8508, 8511}, TSCharacterRange{8517, 8521}, TSCharacterRange{8526, 8526}, TSCharacterRange{8579, 8580},
-	TSCharacterRange{11264, 11492}, TSCharacterRange{11499, 11502}, TSCharacterRange{11506, 11507}, TSCharacterRange{11520, 11557}, TSCharacterRange{11559, 11559}, TSCharacterRange{11565, 11565}, TSCharacterRange{11568, 11623}, TSCharacterRange{11631, 11631}, TSCharacterRange{11648, 11670}, TSCharacterRange{11680, 11686}, TSCharacterRange{11688, 11694}, TSCharacterRange{11696, 11702}, TSCharacterRange{11704, 11710}, TSCharacterRange{11712, 11718}, TSCharacterRange{11720, 11726}, TSCharacterRange{11728, 11734},
-	TSCharacterRange{11736, 11742}, TSCharacterRange{11823, 11823}, TSCharacterRange{12293, 12294}, TSCharacterRange{12337, 12341}, TSCharacterRange{12347, 12348}, TSCharacterRange{12353, 12438}, TSCharacterRange{12445, 12447}, TSCharacterRange{12449, 12538}, TSCharacterRange{12540, 12543}, TSCharacterRange{12549, 12591}, TSCharacterRange{12593, 12686}, TSCharacterRange{12704, 12735}, TSCharacterRange{12784, 12799}, TSCharacterRange{13312, 19903}, TSCharacterRange{19968, 42124}, TSCharacterRange{42192, 42237},
-	TSCharacterRange{42240, 42508}, TSCharacterRange{42512, 42527}, TSCharacterRange{42538, 42539}, TSCharacterRange{42560, 42606}, TSCharacterRange{42623, 42653}, TSCharacterRange{42656, 42725}, TSCharacterRange{42775, 42783}, TSCharacterRange{42786, 42888}, TSCharacterRange{42891, 42957}, TSCharacterRange{42960, 42961}, TSCharacterRange{42963, 42963}, TSCharacterRange{42965, 42972}, TSCharacterRange{42994, 43009}, TSCharacterRange{43011, 43013}, TSCharacterRange{43015, 43018}, TSCharacterRange{43020, 43042},
-	TSCharacterRange{43072, 43123}, TSCharacterRange{43138, 43187}, TSCharacterRange{43250, 43255}, TSCharacterRange{43259, 43259}, TSCharacterRange{43261, 43262}, TSCharacterRange{43274, 43301}, TSCharacterRange{43312, 43334}, TSCharacterRange{43360, 43388}, TSCharacterRange{43396, 43442}, TSCharacterRange{43471, 43471}, TSCharacterRange{43488, 43492}, TSCharacterRange{43494, 43503}, TSCharacterRange{43514, 43518}, TSCharacterRange{43520, 43560}, TSCharacterRange{43584, 43586}, TSCharacterRange{43588, 43595},
-	TSCharacterRange{43616, 43638}, TSCharacterRange{43642, 43642}, TSCharacterRange{43646, 43695}, TSCharacterRange{43697, 43697}, TSCharacterRange{43701, 43702}, TSCharacterRange{43705, 43709}, TSCharacterRange{43712, 43712}, TSCharacterRange{43714, 43714}, TSCharacterRange{43739, 43741}, TSCharacterRange{43744, 43754}, TSCharacterRange{43762, 43764}, TSCharacterRange{43777, 43782}, TSCharacterRange{43785, 43790}, TSCharacterRange{43793, 43798}, TSCharacterRange{43808, 43814}, TSCharacterRange{43816, 43822},
-	TSCharacterRange{43824, 43866}, TSCharacterRange{43868, 43881}, TSCharacterRange{43888, 44002}, TSCharacterRange{44032, 55203}, TSCharacterRange{55216, 55238}, TSCharacterRange{55243, 55291}, TSCharacterRange{63744, 64109}, TSCharacterRange{64112, 64217}, TSCharacterRange{64256, 64262}, TSCharacterRange{64275, 64279}, TSCharacterRange{64285, 64285}, TSCharacterRange{64287, 64296}, TSCharacterRange{64298, 64310}, TSCharacterRange{64312, 64316}, TSCharacterRange{64318, 64318}, TSCharacterRange{64320, 64321},
-	TSCharacterRange{64323, 64324}, TSCharacterRange{64326, 64433}, TSCharacterRange{64467, 64829}, TSCharacterRange{64848, 64911}, TSCharacterRange{64914, 64967}, TSCharacterRange{65008, 65019}, TSCharacterRange{65136, 65140}, TSCharacterRange{65142, 65276}, TSCharacterRange{65313, 65338}, TSCharacterRange{65345, 65370}, TSCharacterRange{65382, 65470}, TSCharacterRange{65474, 65479}, TSCharacterRange{65482, 65487}, TSCharacterRange{65490, 65495}, TSCharacterRange{65498, 65500}, TSCharacterRange{65536, 65547},
-	TSCharacterRange{65549, 65574}, TSCharacterRange{65576, 65594}, TSCharacterRange{65596, 65597}, TSCharacterRange{65599, 65613}, TSCharacterRange{65616, 65629}, TSCharacterRange{65664, 65786}, TSCharacterRange{66176, 66204}, TSCharacterRange{66208, 66256}, TSCharacterRange{66304, 66335}, TSCharacterRange{66349, 66368}, TSCharacterRange{66370, 66377}, TSCharacterRange{66384, 66421}, TSCharacterRange{66432, 66461}, TSCharacterRange{66464, 66499}, TSCharacterRange{66504, 66511}, TSCharacterRange{66560, 66717},
-	TSCharacterRange{66736, 66771}, TSCharacterRange{66776, 66811}, TSCharacterRange{66816, 66855}, TSCharacterRange{66864, 66915}, TSCharacterRange{66928, 66938}, TSCharacterRange{66940, 66954}, TSCharacterRange{66956, 66962}, TSCharacterRange{66964, 66965}, TSCharacterRange{66967, 66977}, TSCharacterRange{66979, 66993}, TSCharacterRange{66995, 67001}, TSCharacterRange{67003, 67004}, TSCharacterRange{67008, 67059}, TSCharacterRange{67072, 67382}, TSCharacterRange{67392, 67413}, TSCharacterRange{67424, 67431},
-	TSCharacterRange{67456, 67461}, TSCharacterRange{67463, 67504}, TSCharacterRange{67506, 67514}, TSCharacterRange{67584, 67589}, TSCharacterRange{67592, 67592}, TSCharacterRange{67594, 67637}, TSCharacterRange{67639, 67640}, TSCharacterRange{67644, 67644}, TSCharacterRange{67647, 67669}, TSCharacterRange{67680, 67702}, TSCharacterRange{67712, 67742}, TSCharacterRange{67808, 67826}, TSCharacterRange{67828, 67829}, TSCharacterRange{67840, 67861}, TSCharacterRange{67872, 67897}, TSCharacterRange{67968, 68023},
-	TSCharacterRange{68030, 68031}, TSCharacterRange{68096, 68096}, TSCharacterRange{68112, 68115}, TSCharacterRange{68117, 68119}, TSCharacterRange{68121, 68149}, TSCharacterRange{68192, 68220}, TSCharacterRange{68224, 68252}, TSCharacterRange{68288, 68295}, TSCharacterRange{68297, 68324}, TSCharacterRange{68352, 68405}, TSCharacterRange{68416, 68437}, TSCharacterRange{68448, 68466}, TSCharacterRange{68480, 68497}, TSCharacterRange{68608, 68680}, TSCharacterRange{68736, 68786}, TSCharacterRange{68800, 68850},
-	TSCharacterRange{68864, 68899}, TSCharacterRange{68938, 68965}, TSCharacterRange{68975, 68997}, TSCharacterRange{69248, 69289}, TSCharacterRange{69296, 69297}, TSCharacterRange{69314, 69316}, TSCharacterRange{69376, 69404}, TSCharacterRange{69415, 69415}, TSCharacterRange{69424, 69445}, TSCharacterRange{69488, 69505}, TSCharacterRange{69552, 69572}, TSCharacterRange{69600, 69622}, TSCharacterRange{69635, 69687}, TSCharacterRange{69745, 69746}, TSCharacterRange{69749, 69749}, TSCharacterRange{69763, 69807},
-	TSCharacterRange{69840, 69864}, TSCharacterRange{69891, 69926}, TSCharacterRange{69956, 69956}, TSCharacterRange{69959, 69959}, TSCharacterRange{69968, 70002}, TSCharacterRange{70006, 70006}, TSCharacterRange{70019, 70066}, TSCharacterRange{70081, 70084}, TSCharacterRange{70106, 70106}, TSCharacterRange{70108, 70108}, TSCharacterRange{70144, 70161}, TSCharacterRange{70163, 70187}, TSCharacterRange{70207, 70208}, TSCharacterRange{70272, 70278}, TSCharacterRange{70280, 70280}, TSCharacterRange{70282, 70285},
-	TSCharacterRange{70287, 70301}, TSCharacterRange{70303, 70312}, TSCharacterRange{70320, 70366}, TSCharacterRange{70405, 70412}, TSCharacterRange{70415, 70416}, TSCharacterRange{70419, 70440}, TSCharacterRange{70442, 70448}, TSCharacterRange{70450, 70451}, TSCharacterRange{70453, 70457}, TSCharacterRange{70461, 70461}, TSCharacterRange{70480, 70480}, TSCharacterRange{70493, 70497}, TSCharacterRange{70528, 70537}, TSCharacterRange{70539, 70539}, TSCharacterRange{70542, 70542}, TSCharacterRange{70544, 70581},
-	TSCharacterRange{70583, 70583}, TSCharacterRange{70609, 70609}, TSCharacterRange{70611, 70611}, TSCharacterRange{70656, 70708}, TSCharacterRange{70727, 70730}, TSCharacterRange{70751, 70753}, TSCharacterRange{70784, 70831}, TSCharacterRange{70852, 70853}, TSCharacterRange{70855, 70855}, TSCharacterRange{71040, 71086}, TSCharacterRange{71128, 71131}, TSCharacterRange{71168, 71215}, TSCharacterRange{71236, 71236}, TSCharacterRange{71296, 71338}, TSCharacterRange{71352, 71352}, TSCharacterRange{71424, 71450},
-	TSCharacterRange{71488, 71494}, TSCharacterRange{71680, 71723}, TSCharacterRange{71840, 71903}, TSCharacterRange{71935, 71942}, TSCharacterRange{71945, 71945}, TSCharacterRange{71948, 71955}, TSCharacterRange{71957, 71958}, TSCharacterRange{71960, 71983}, TSCharacterRange{71999, 71999}, TSCharacterRange{72001, 72001}, TSCharacterRange{72096, 72103}, TSCharacterRange{72106, 72144}, TSCharacterRange{72161, 72161}, TSCharacterRange{72163, 72163}, TSCharacterRange{72192, 72192}, TSCharacterRange{72203, 72242},
-	TSCharacterRange{72250, 72250}, TSCharacterRange{72272, 72272}, TSCharacterRange{72284, 72329}, TSCharacterRange{72349, 72349}, TSCharacterRange{72368, 72440}, TSCharacterRange{72640, 72672}, TSCharacterRange{72704, 72712}, TSCharacterRange{72714, 72750}, TSCharacterRange{72768, 72768}, TSCharacterRange{72818, 72847}, TSCharacterRange{72960, 72966}, TSCharacterRange{72968, 72969}, TSCharacterRange{72971, 73008}, TSCharacterRange{73030, 73030}, TSCharacterRange{73056, 73061}, TSCharacterRange{73063, 73064},
-	TSCharacterRange{73066, 73097}, TSCharacterRange{73112, 73112}, TSCharacterRange{73440, 73458}, TSCharacterRange{73474, 73474}, TSCharacterRange{73476, 73488}, TSCharacterRange{73490, 73523}, TSCharacterRange{73648, 73648}, TSCharacterRange{73728, 74649}, TSCharacterRange{74880, 75075}, TSCharacterRange{77712, 77808}, TSCharacterRange{77824, 78895}, TSCharacterRange{78913, 78918}, TSCharacterRange{78944, 82938}, TSCharacterRange{82944, 83526}, TSCharacterRange{90368, 90397}, TSCharacterRange{92160, 92728},
-	TSCharacterRange{92736, 92766}, TSCharacterRange{92784, 92862}, TSCharacterRange{92880, 92909}, TSCharacterRange{92928, 92975}, TSCharacterRange{92992, 92995}, TSCharacterRange{93027, 93047}, TSCharacterRange{93053, 93071}, TSCharacterRange{93504, 93548}, TSCharacterRange{93760, 93823}, TSCharacterRange{93952, 94026}, TSCharacterRange{94032, 94032}, TSCharacterRange{94099, 94111}, TSCharacterRange{94176, 94177}, TSCharacterRange{94179, 94179}, TSCharacterRange{94208, 100343}, TSCharacterRange{100352, 101589},
-	TSCharacterRange{101631, 101640}, TSCharacterRange{110576, 110579}, TSCharacterRange{110581, 110587}, TSCharacterRange{110589, 110590}, TSCharacterRange{110592, 110882}, TSCharacterRange{110898, 110898}, TSCharacterRange{110928, 110930}, TSCharacterRange{110933, 110933}, TSCharacterRange{110948, 110951}, TSCharacterRange{110960, 111355}, TSCharacterRange{113664, 113770}, TSCharacterRange{113776, 113788}, TSCharacterRange{113792, 113800}, TSCharacterRange{113808, 113817}, TSCharacterRange{119808, 119892}, TSCharacterRange{119894, 119964},
-	TSCharacterRange{119966, 119967}, TSCharacterRange{119970, 119970}, TSCharacterRange{119973, 119974}, TSCharacterRange{119977, 119980}, TSCharacterRange{119982, 119993}, TSCharacterRange{119995, 119995}, TSCharacterRange{119997, 120003}, TSCharacterRange{120005, 120069}, TSCharacterRange{120071, 120074}, TSCharacterRange{120077, 120084}, TSCharacterRange{120086, 120092}, TSCharacterRange{120094, 120121}, TSCharacterRange{120123, 120126}, TSCharacterRange{120128, 120132}, TSCharacterRange{120134, 120134}, TSCharacterRange{120138, 120144},
-	TSCharacterRange{120146, 120485}, TSCharacterRange{120488, 120512}, TSCharacterRange{120514, 120538}, TSCharacterRange{120540, 120570}, TSCharacterRange{120572, 120596}, TSCharacterRange{120598, 120628}, TSCharacterRange{120630, 120654}, TSCharacterRange{120656, 120686}, TSCharacterRange{120688, 120712}, TSCharacterRange{120714, 120744}, TSCharacterRange{120746, 120770}, TSCharacterRange{120772, 120779}, TSCharacterRange{122624, 122654}, TSCharacterRange{122661, 122666}, TSCharacterRange{122928, 122989}, TSCharacterRange{123136, 123180},
-	TSCharacterRange{123191, 123197}, TSCharacterRange{123214, 123214}, TSCharacterRange{123536, 123565}, TSCharacterRange{123584, 123627}, TSCharacterRange{124112, 124139}, TSCharacterRange{124368, 124397}, TSCharacterRange{124400, 124400}, TSCharacterRange{124896, 124902}, TSCharacterRange{124904, 124907}, TSCharacterRange{124909, 124910}, TSCharacterRange{124912, 124926}, TSCharacterRange{124928, 125124}, TSCharacterRange{125184, 125251}, TSCharacterRange{125259, 125259}, TSCharacterRange{126464, 126467}, TSCharacterRange{126469, 126495},
-	TSCharacterRange{126497, 126498}, TSCharacterRange{126500, 126500}, TSCharacterRange{126503, 126503}, TSCharacterRange{126505, 126514}, TSCharacterRange{126516, 126519}, TSCharacterRange{126521, 126521}, TSCharacterRange{126523, 126523}, TSCharacterRange{126530, 126530}, TSCharacterRange{126535, 126535}, TSCharacterRange{126537, 126537}, TSCharacterRange{126539, 126539}, TSCharacterRange{126541, 126543}, TSCharacterRange{126545, 126546}, TSCharacterRange{126548, 126548}, TSCharacterRange{126551, 126551}, TSCharacterRange{126553, 126553},
-	TSCharacterRange{126555, 126555}, TSCharacterRange{126557, 126557}, TSCharacterRange{126559, 126559}, TSCharacterRange{126561, 126562}, TSCharacterRange{126564, 126564}, TSCharacterRange{126567, 126570}, TSCharacterRange{126572, 126578}, TSCharacterRange{126580, 126583}, TSCharacterRange{126585, 126588}, TSCharacterRange{126590, 126590}, TSCharacterRange{126592, 126601}, TSCharacterRange{126603, 126619}, TSCharacterRange{126625, 126627}, TSCharacterRange{126629, 126633}, TSCharacterRange{126635, 126651}, TSCharacterRange{131072, 173791},
-	TSCharacterRange{173824, 177977}, TSCharacterRange{177984, 178205}, TSCharacterRange{178208, 183969}, TSCharacterRange{183984, 191456}, TSCharacterRange{191472, 192093}, TSCharacterRange{194560, 195101}, TSCharacterRange{196608, 201546}, TSCharacterRange{201552, 205743},
-}
-
-var ts_lex_map_25 [28]int16 = [28]int16{
-	13, 1, 117, 41, 120, 37, 10, 7, 34, 7, 39, 7, 47, 7, 92, 7,
-	98, 7, 102, 7, 110, 7, 114, 7, 116, 7, 118, 7,
-}
-
-var ts_lex_map_26 [28]int16 = [28]int16{
-	13, 2, 117, 42, 120, 38, 10, 8, 34, 8, 39, 8, 47, 8, 92, 8,
-	98, 8, 102, 8, 110, 8, 114, 8, 116, 8, 118, 8,
-}
-
-var ts_lex_map_27 [30]int16 = [30]int16{
-	34, 7, 39, 8, 46, 76, 47, 9, 48, 74, 73, 24, 78, 14, 91, 70,
-	93, 71, 102, 15, 110, 30, 116, 26, 123, 46, 43, 12, 45, 12,
-}
-
-var sym_identifier_character_set_1 [679]TSCharacterRange = [679]TSCharacterRange{
-	TSCharacterRange{36, 36}, TSCharacterRange{65, 90}, TSCharacterRange{95, 95}, TSCharacterRange{97, 122}, TSCharacterRange{170, 170}, TSCharacterRange{181, 181}, TSCharacterRange{186, 186}, TSCharacterRange{192, 214}, TSCharacterRange{216, 246}, TSCharacterRange{248, 705}, TSCharacterRange{710, 721}, TSCharacterRange{736, 740}, TSCharacterRange{748, 748}, TSCharacterRange{750, 750}, TSCharacterRange{880, 884}, TSCharacterRange{886, 887},
-	TSCharacterRange{890, 893}, TSCharacterRange{895, 895}, TSCharacterRange{902, 902}, TSCharacterRange{904, 906}, TSCharacterRange{908, 908}, TSCharacterRange{910, 929}, TSCharacterRange{931, 1013}, TSCharacterRange{1015, 1153}, TSCharacterRange{1162, 1327}, TSCharacterRange{1329, 1366}, TSCharacterRange{1369, 1369}, TSCharacterRange{1376, 1416}, TSCharacterRange{1488, 1514}, TSCharacterRange{1519, 1522}, TSCharacterRange{1568, 1610}, TSCharacterRange{1646, 1647},
-	TSCharacterRange{1649, 1747}, TSCharacterRange{1749, 1749}, TSCharacterRange{1765, 1766}, TSCharacterRange{1774, 1775}, TSCharacterRange{1786, 1788}, TSCharacterRange{1791, 1791}, TSCharacterRange{1808, 1808}, TSCharacterRange{1810, 1839}, TSCharacterRange{1869, 1957}, TSCharacterRange{1969, 1969}, TSCharacterRange{1994, 2026}, TSCharacterRange{2036, 2037}, TSCharacterRange{2042, 2042}, TSCharacterRange{2048, 2069}, TSCharacterRange{2074, 2074}, TSCharacterRange{2084, 2084},
-	TSCharacterRange{2088, 2088}, TSCharacterRange{2112, 2136}, TSCharacterRange{2144, 2154}, TSCharacterRange{2160, 2183}, TSCharacterRange{2185, 2190}, TSCharacterRange{2208, 2249}, TSCharacterRange{2308, 2361}, TSCharacterRange{2365, 2365}, TSCharacterRange{2384, 2384}, TSCharacterRange{2392, 2401}, TSCharacterRange{2417, 2432}, TSCharacterRange{2437, 2444}, TSCharacterRange{2447, 2448}, TSCharacterRange{2451, 2472}, TSCharacterRange{2474, 2480}, TSCharacterRange{2482, 2482},
-	TSCharacterRange{2486, 2489}, TSCharacterRange{2493, 2493}, TSCharacterRange{2510, 2510}, TSCharacterRange{2524, 2525}, TSCharacterRange{2527, 2529}, TSCharacterRange{2544, 2545}, TSCharacterRange{2556, 2556}, TSCharacterRange{2565, 2570}, TSCharacterRange{2575, 2576}, TSCharacterRange{2579, 2600}, TSCharacterRange{2602, 2608}, TSCharacterRange{2610, 2611}, TSCharacterRange{2613, 2614}, TSCharacterRange{2616, 2617}, TSCharacterRange{2649, 2652}, TSCharacterRange{2654, 2654},
-	TSCharacterRange{2674, 2676}, TSCharacterRange{2693, 2701}, TSCharacterRange{2703, 2705}, TSCharacterRange{2707, 2728}, TSCharacterRange{2730, 2736}, TSCharacterRange{2738, 2739}, TSCharacterRange{2741, 2745}, TSCharacterRange{2749, 2749}, TSCharacterRange{2768, 2768}, TSCharacterRange{2784, 2785}, TSCharacterRange{2809, 2809}, TSCharacterRange{2821, 2828}, TSCharacterRange{2831, 2832}, TSCharacterRange{2835, 2856}, TSCharacterRange{2858, 2864}, TSCharacterRange{2866, 2867},
-	TSCharacterRange{2869, 2873}, TSCharacterRange{2877, 2877}, TSCharacterRange{2908, 2909}, TSCharacterRange{2911, 2913}, TSCharacterRange{2929, 2929}, TSCharacterRange{2947, 2947}, TSCharacterRange{2949, 2954}, TSCharacterRange{2958, 2960}, TSCharacterRange{2962, 2965}, TSCharacterRange{2969, 2970}, TSCharacterRange{2972, 2972}, TSCharacterRange{2974, 2975}, TSCharacterRange{2979, 2980}, TSCharacterRange{2984, 2986}, TSCharacterRange{2990, 3001}, TSCharacterRange{3024, 3024},
-	TSCharacterRange{3077, 3084}, TSCharacterRange{3086, 3088}, TSCharacterRange{3090, 3112}, TSCharacterRange{3114, 3129}, TSCharacterRange{3133, 3133}, TSCharacterRange{3160, 3162}, TSCharacterRange{3165, 3165}, TSCharacterRange{3168, 3169}, TSCharacterRange{3200, 3200}, TSCharacterRange{3205, 3212}, TSCharacterRange{3214, 3216}, TSCharacterRange{3218, 3240}, TSCharacterRange{3242, 3251}, TSCharacterRange{3253, 3257}, TSCharacterRange{3261, 3261}, TSCharacterRange{3293, 3294},
-	TSCharacterRange{3296, 3297}, TSCharacterRange{3313, 3314}, TSCharacterRange{3332, 3340}, TSCharacterRange{3342, 3344}, TSCharacterRange{3346, 3386}, TSCharacterRange{3389, 3389}, TSCharacterRange{3406, 3406}, TSCharacterRange{3412, 3414}, TSCharacterRange{3423, 3425}, TSCharacterRange{3450, 3455}, TSCharacterRange{3461, 3478}, TSCharacterRange{3482, 3505}, TSCharacterRange{3507, 3515}, TSCharacterRange{3517, 3517}, TSCharacterRange{3520, 3526}, TSCharacterRange{3585, 3632},
-	TSCharacterRange{3634, 3635}, TSCharacterRange{3648, 3654}, TSCharacterRange{3713, 3714}, TSCharacterRange{3716, 3716}, TSCharacterRange{3718, 3722}, TSCharacterRange{3724, 3747}, TSCharacterRange{3749, 3749}, TSCharacterRange{3751, 3760}, TSCharacterRange{3762, 3763}, TSCharacterRange{3773, 3773}, TSCharacterRange{3776, 3780}, TSCharacterRange{3782, 3782}, TSCharacterRange{3804, 3807}, TSCharacterRange{3840, 3840}, TSCharacterRange{3904, 3911}, TSCharacterRange{3913, 3948},
-	TSCharacterRange{3976, 3980}, TSCharacterRange{4096, 4138}, TSCharacterRange{4159, 4159}, TSCharacterRange{4176, 4181}, TSCharacterRange{4186, 4189}, TSCharacterRange{4193, 4193}, TSCharacterRange{4197, 4198}, TSCharacterRange{4206, 4208}, TSCharacterRange{4213, 4225}, TSCharacterRange{4238, 4238}, TSCharacterRange{4256, 4293}, TSCharacterRange{4295, 4295}, TSCharacterRange{4301, 4301}, TSCharacterRange{4304, 4346}, TSCharacterRange{4348, 4680}, TSCharacterRange{4682, 4685},
-	TSCharacterRange{4688, 4694}, TSCharacterRange{4696, 4696}, TSCharacterRange{4698, 4701}, TSCharacterRange{4704, 4744}, TSCharacterRange{4746, 4749}, TSCharacterRange{4752, 4784}, TSCharacterRange{4786, 4789}, TSCharacterRange{4792, 4798}, TSCharacterRange{4800, 4800}, TSCharacterRange{4802, 4805}, TSCharacterRange{4808, 4822}, TSCharacterRange{4824, 4880}, TSCharacterRange{4882, 4885}, TSCharacterRange{4888, 4954}, TSCharacterRange{4992, 5007}, TSCharacterRange{5024, 5109},
-	TSCharacterRange{5112, 5117}, TSCharacterRange{5121, 5740}, TSCharacterRange{5743, 5759}, TSCharacterRange{5761, 5786}, TSCharacterRange{5792, 5866}, TSCharacterRange{5873, 5880}, TSCharacterRange{5888, 5905}, TSCharacterRange{5919, 5937}, TSCharacterRange{5952, 5969}, TSCharacterRange{5984, 5996}, TSCharacterRange{5998, 6000}, TSCharacterRange{6016, 6067}, TSCharacterRange{6103, 6103}, TSCharacterRange{6108, 6108}, TSCharacterRange{6176, 6264}, TSCharacterRange{6272, 6276},
-	TSCharacterRange{6279, 6312}, TSCharacterRange{6314, 6314}, TSCharacterRange{6320, 6389}, TSCharacterRange{6400, 6430}, TSCharacterRange{6480, 6509}, TSCharacterRange{6512, 6516}, TSCharacterRange{6528, 6571}, TSCharacterRange{6576, 6601}, TSCharacterRange{6656, 6678}, TSCharacterRange{6688, 6740}, TSCharacterRange{6823, 6823}, TSCharacterRange{6917, 6963}, TSCharacterRange{6981, 6988}, TSCharacterRange{7043, 7072}, TSCharacterRange{7086, 7087}, TSCharacterRange{7098, 7141},
-	TSCharacterRange{7168, 7203}, TSCharacterRange{7245, 7247}, TSCharacterRange{7258, 7293}, TSCharacterRange{7296, 7306}, TSCharacterRange{7312, 7354}, TSCharacterRange{7357, 7359}, TSCharacterRange{7401, 7404}, TSCharacterRange{7406, 7411}, TSCharacterRange{7413, 7414}, TSCharacterRange{7418, 7418}, TSCharacterRange{7424, 7615}, TSCharacterRange{7680, 7957}, TSCharacterRange{7960, 7965}, TSCharacterRange{7968, 8005}, TSCharacterRange{8008, 8013}, TSCharacterRange{8016, 8023},
-	TSCharacterRange{8025, 8025}, TSCharacterRange{8027, 8027}, TSCharacterRange{8029, 8029}, TSCharacterRange{8031, 8061}, TSCharacterRange{8064, 8116}, TSCharacterRange{8118, 8124}, TSCharacterRange{8126, 8126}, TSCharacterRange{8130, 8132}, TSCharacterRange{8134, 8140}, TSCharacterRange{8144, 8147}, TSCharacterRange{8150, 8155}, TSCharacterRange{8160, 8172}, TSCharacterRange{8178, 8180}, TSCharacterRange{8182, 8188}, TSCharacterRange{8305, 8305}, TSCharacterRange{8319, 8319},
-	TSCharacterRange{8336, 8348}, TSCharacterRange{8450, 8450}, TSCharacterRange{8455, 8455}, TSCharacterRange{8458, 8467}, TSCharacterRange{8469, 8469}, TSCharacterRange{8473, 8477}, TSCharacterRange{8484, 8484}, TSCharacterRange{8486, 8486}, TSCharacterRange{8488, 8488}, TSCharacterRange{8490, 8493}, TSCharacterRange{8495, 8505}, TSCharacterRange{8508, 8511}, TSCharacterRange{8517, 8521}, TSCharacterRange{8526, 8526}, TSCharacterRange{8579, 8580}, TSCharacterRange{11264, 11492},
-	TSCharacterRange{11499, 11502}, TSCharacterRange{11506, 11507}, TSCharacterRange{11520, 11557}, TSCharacterRange{11559, 11559}, TSCharacterRange{11565, 11565}, TSCharacterRange{11568, 11623}, TSCharacterRange{11631, 11631}, TSCharacterRange{11648, 11670}, TSCharacterRange{11680, 11686}, TSCharacterRange{11688, 11694}, TSCharacterRange{11696, 11702}, TSCharacterRange{11704, 11710}, TSCharacterRange{11712, 11718}, TSCharacterRange{11720, 11726}, TSCharacterRange{11728, 11734}, TSCharacterRange{11736, 11742},
-	TSCharacterRange{11823, 11823}, TSCharacterRange{12293, 12294}, TSCharacterRange{12337, 12341}, TSCharacterRange{12347, 12348}, TSCharacterRange{12353, 12438}, TSCharacterRange{12445, 12447}, TSCharacterRange{12449, 12538}, TSCharacterRange{12540, 12543}, TSCharacterRange{12549, 12591}, TSCharacterRange{12593, 12686}, TSCharacterRange{12704, 12735}, TSCharacterRange{12784, 12799}, TSCharacterRange{13312, 19903}, TSCharacterRange{19968, 42124}, TSCharacterRange{42192, 42237}, TSCharacterRange{42240, 42508},
-	TSCharacterRange{42512, 42527}, TSCharacterRange{42538, 42539}, TSCharacterRange{42560, 42606}, TSCharacterRange{42623, 42653}, TSCharacterRange{42656, 42725}, TSCharacterRange{42775, 42783}, TSCharacterRange{42786, 42888}, TSCharacterRange{42891, 42957}, TSCharacterRange{42960, 42961}, TSCharacterRange{42963, 42963}, TSCharacterRange{42965, 42972}, TSCharacterRange{42994, 43009}, TSCharacterRange{43011, 43013}, TSCharacterRange{43015, 43018}, TSCharacterRange{43020, 43042}, TSCharacterRange{43072, 43123},
-	TSCharacterRange{43138, 43187}, TSCharacterRange{43250, 43255}, TSCharacterRange{43259, 43259}, TSCharacterRange{43261, 43262}, TSCharacterRange{43274, 43301}, TSCharacterRange{43312, 43334}, TSCharacterRange{43360, 43388}, TSCharacterRange{43396, 43442}, TSCharacterRange{43471, 43471}, TSCharacterRange{43488, 43492}, TSCharacterRange{43494, 43503}, TSCharacterRange{43514, 43518}, TSCharacterRange{43520, 43560}, TSCharacterRange{43584, 43586}, TSCharacterRange{43588, 43595}, TSCharacterRange{43616, 43638},
-	TSCharacterRange{43642, 43642}, TSCharacterRange{43646, 43695}, TSCharacterRange{43697, 43697}, TSCharacterRange{43701, 43702}, TSCharacterRange{43705, 43709}, TSCharacterRange{43712, 43712}, TSCharacterRange{43714, 43714}, TSCharacterRange{43739, 43741}, TSCharacterRange{43744, 43754}, TSCharacterRange{43762, 43764}, TSCharacterRange{43777, 43782}, TSCharacterRange{43785, 43790}, TSCharacterRange{43793, 43798}, TSCharacterRange{43808, 43814}, TSCharacterRange{43816, 43822}, TSCharacterRange{43824, 43866},
-	TSCharacterRange{43868, 43881}, TSCharacterRange{43888, 44002}, TSCharacterRange{44032, 55203}, TSCharacterRange{55216, 55238}, TSCharacterRange{55243, 55291}, TSCharacterRange{63744, 64109}, TSCharacterRange{64112, 64217}, TSCharacterRange{64256, 64262}, TSCharacterRange{64275, 64279}, TSCharacterRange{64285, 64285}, TSCharacterRange{64287, 64296}, TSCharacterRange{64298, 64310}, TSCharacterRange{64312, 64316}, TSCharacterRange{64318, 64318}, TSCharacterRange{64320, 64321}, TSCharacterRange{64323, 64324},
-	TSCharacterRange{64326, 64433}, TSCharacterRange{64467, 64829}, TSCharacterRange{64848, 64911}, TSCharacterRange{64914, 64967}, TSCharacterRange{65008, 65019}, TSCharacterRange{65136, 65140}, TSCharacterRange{65142, 65276}, TSCharacterRange{65313, 65338}, TSCharacterRange{65345, 65370}, TSCharacterRange{65382, 65470}, TSCharacterRange{65474, 65479}, TSCharacterRange{65482, 65487}, TSCharacterRange{65490, 65495}, TSCharacterRange{65498, 65500}, TSCharacterRange{65536, 65547}, TSCharacterRange{65549, 65574},
-	TSCharacterRange{65576, 65594}, TSCharacterRange{65596, 65597}, TSCharacterRange{65599, 65613}, TSCharacterRange{65616, 65629}, TSCharacterRange{65664, 65786}, TSCharacterRange{66176, 66204}, TSCharacterRange{66208, 66256}, TSCharacterRange{66304, 66335}, TSCharacterRange{66349, 66368}, TSCharacterRange{66370, 66377}, TSCharacterRange{66384, 66421}, TSCharacterRange{66432, 66461}, TSCharacterRange{66464, 66499}, TSCharacterRange{66504, 66511}, TSCharacterRange{66560, 66717}, TSCharacterRange{66736, 66771},
-	TSCharacterRange{66776, 66811}, TSCharacterRange{66816, 66855}, TSCharacterRange{66864, 66915}, TSCharacterRange{66928, 66938}, TSCharacterRange{66940, 66954}, TSCharacterRange{66956, 66962}, TSCharacterRange{66964, 66965}, TSCharacterRange{66967, 66977}, TSCharacterRange{66979, 66993}, TSCharacterRange{66995, 67001}, TSCharacterRange{67003, 67004}, TSCharacterRange{67008, 67059}, TSCharacterRange{67072, 67382}, TSCharacterRange{67392, 67413}, TSCharacterRange{67424, 67431}, TSCharacterRange{67456, 67461},
-	TSCharacterRange{67463, 67504}, TSCharacterRange{67506, 67514}, TSCharacterRange{67584, 67589}, TSCharacterRange{67592, 67592}, TSCharacterRange{67594, 67637}, TSCharacterRange{67639, 67640}, TSCharacterRange{67644, 67644}, TSCharacterRange{67647, 67669}, TSCharacterRange{67680, 67702}, TSCharacterRange{67712, 67742}, TSCharacterRange{67808, 67826}, TSCharacterRange{67828, 67829}, TSCharacterRange{67840, 67861}, TSCharacterRange{67872, 67897}, TSCharacterRange{67968, 68023}, TSCharacterRange{68030, 68031},
-	TSCharacterRange{68096, 68096}, TSCharacterRange{68112, 68115}, TSCharacterRange{68117, 68119}, TSCharacterRange{68121, 68149}, TSCharacterRange{68192, 68220}, TSCharacterRange{68224, 68252}, TSCharacterRange{68288, 68295}, TSCharacterRange{68297, 68324}, TSCharacterRange{68352, 68405}, TSCharacterRange{68416, 68437}, TSCharacterRange{68448, 68466}, TSCharacterRange{68480, 68497}, TSCharacterRange{68608, 68680}, TSCharacterRange{68736, 68786}, TSCharacterRange{68800, 68850}, TSCharacterRange{68864, 68899},
-	TSCharacterRange{68938, 68965}, TSCharacterRange{68975, 68997}, TSCharacterRange{69248, 69289}, TSCharacterRange{69296, 69297}, TSCharacterRange{69314, 69316}, TSCharacterRange{69376, 69404}, TSCharacterRange{69415, 69415}, TSCharacterRange{69424, 69445}, TSCharacterRange{69488, 69505}, TSCharacterRange{69552, 69572}, TSCharacterRange{69600, 69622}, TSCharacterRange{69635, 69687}, TSCharacterRange{69745, 69746}, TSCharacterRange{69749, 69749}, TSCharacterRange{69763, 69807}, TSCharacterRange{69840, 69864},
-	TSCharacterRange{69891, 69926}, TSCharacterRange{69956, 69956}, TSCharacterRange{69959, 69959}, TSCharacterRange{69968, 70002}, TSCharacterRange{70006, 70006}, TSCharacterRange{70019, 70066}, TSCharacterRange{70081, 70084}, TSCharacterRange{70106, 70106}, TSCharacterRange{70108, 70108}, TSCharacterRange{70144, 70161}, TSCharacterRange{70163, 70187}, TSCharacterRange{70207, 70208}, TSCharacterRange{70272, 70278}, TSCharacterRange{70280, 70280}, TSCharacterRange{70282, 70285}, TSCharacterRange{70287, 70301},
-	TSCharacterRange{70303, 70312}, TSCharacterRange{70320, 70366}, TSCharacterRange{70405, 70412}, TSCharacterRange{70415, 70416}, TSCharacterRange{70419, 70440}, TSCharacterRange{70442, 70448}, TSCharacterRange{70450, 70451}, TSCharacterRange{70453, 70457}, TSCharacterRange{70461, 70461}, TSCharacterRange{70480, 70480}, TSCharacterRange{70493, 70497}, TSCharacterRange{70528, 70537}, TSCharacterRange{70539, 70539}, TSCharacterRange{70542, 70542}, TSCharacterRange{70544, 70581}, TSCharacterRange{70583, 70583},
-	TSCharacterRange{70609, 70609}, TSCharacterRange{70611, 70611}, TSCharacterRange{70656, 70708}, TSCharacterRange{70727, 70730}, TSCharacterRange{70751, 70753}, TSCharacterRange{70784, 70831}, TSCharacterRange{70852, 70853}, TSCharacterRange{70855, 70855}, TSCharacterRange{71040, 71086}, TSCharacterRange{71128, 71131}, TSCharacterRange{71168, 71215}, TSCharacterRange{71236, 71236}, TSCharacterRange{71296, 71338}, TSCharacterRange{71352, 71352}, TSCharacterRange{71424, 71450}, TSCharacterRange{71488, 71494},
-	TSCharacterRange{71680, 71723}, TSCharacterRange{71840, 71903}, TSCharacterRange{71935, 71942}, TSCharacterRange{71945, 71945}, TSCharacterRange{71948, 71955}, TSCharacterRange{71957, 71958}, TSCharacterRange{71960, 71983}, TSCharacterRange{71999, 71999}, TSCharacterRange{72001, 72001}, TSCharacterRange{72096, 72103}, TSCharacterRange{72106, 72144}, TSCharacterRange{72161, 72161}, TSCharacterRange{72163, 72163}, TSCharacterRange{72192, 72192}, TSCharacterRange{72203, 72242}, TSCharacterRange{72250, 72250},
-	TSCharacterRange{72272, 72272}, TSCharacterRange{72284, 72329}, TSCharacterRange{72349, 72349}, TSCharacterRange{72368, 72440}, TSCharacterRange{72640, 72672}, TSCharacterRange{72704, 72712}, TSCharacterRange{72714, 72750}, TSCharacterRange{72768, 72768}, TSCharacterRange{72818, 72847}, TSCharacterRange{72960, 72966}, TSCharacterRange{72968, 72969}, TSCharacterRange{72971, 73008}, TSCharacterRange{73030, 73030}, TSCharacterRange{73056, 73061}, TSCharacterRange{73063, 73064}, TSCharacterRange{73066, 73097},
-	TSCharacterRange{73112, 73112}, TSCharacterRange{73440, 73458}, TSCharacterRange{73474, 73474}, TSCharacterRange{73476, 73488}, TSCharacterRange{73490, 73523}, TSCharacterRange{73648, 73648}, TSCharacterRange{73728, 74649}, TSCharacterRange{74880, 75075}, TSCharacterRange{77712, 77808}, TSCharacterRange{77824, 78895}, TSCharacterRange{78913, 78918}, TSCharacterRange{78944, 82938}, TSCharacterRange{82944, 83526}, TSCharacterRange{90368, 90397}, TSCharacterRange{92160, 92728}, TSCharacterRange{92736, 92766},
-	TSCharacterRange{92784, 92862}, TSCharacterRange{92880, 92909}, TSCharacterRange{92928, 92975}, TSCharacterRange{92992, 92995}, TSCharacterRange{93027, 93047}, TSCharacterRange{93053, 93071}, TSCharacterRange{93504, 93548}, TSCharacterRange{93760, 93823}, TSCharacterRange{93952, 94026}, TSCharacterRange{94032, 94032}, TSCharacterRange{94099, 94111}, TSCharacterRange{94176, 94177}, TSCharacterRange{94179, 94179}, TSCharacterRange{94208, 100343}, TSCharacterRange{100352, 101589}, TSCharacterRange{101631, 101640},
-	TSCharacterRange{110576, 110579}, TSCharacterRange{110581, 110587}, TSCharacterRange{110589, 110590}, TSCharacterRange{110592, 110882}, TSCharacterRange{110898, 110898}, TSCharacterRange{110928, 110930}, TSCharacterRange{110933, 110933}, TSCharacterRange{110948, 110951}, TSCharacterRange{110960, 111355}, TSCharacterRange{113664, 113770}, TSCharacterRange{113776, 113788}, TSCharacterRange{113792, 113800}, TSCharacterRange{113808, 113817}, TSCharacterRange{119808, 119892}, TSCharacterRange{119894, 119964}, TSCharacterRange{119966, 119967},
-	TSCharacterRange{119970, 119970}, TSCharacterRange{119973, 119974}, TSCharacterRange{119977, 119980}, TSCharacterRange{119982, 119993}, TSCharacterRange{119995, 119995}, TSCharacterRange{119997, 120003}, TSCharacterRange{120005, 120069}, TSCharacterRange{120071, 120074}, TSCharacterRange{120077, 120084}, TSCharacterRange{120086, 120092}, TSCharacterRange{120094, 120121}, TSCharacterRange{120123, 120126}, TSCharacterRange{120128, 120132}, TSCharacterRange{120134, 120134}, TSCharacterRange{120138, 120144}, TSCharacterRange{120146, 120485},
-	TSCharacterRange{120488, 120512}, TSCharacterRange{120514, 120538}, TSCharacterRange{120540, 120570}, TSCharacterRange{120572, 120596}, TSCharacterRange{120598, 120628}, TSCharacterRange{120630, 120654}, TSCharacterRange{120656, 120686}, TSCharacterRange{120688, 120712}, TSCharacterRange{120714, 120744}, TSCharacterRange{120746, 120770}, TSCharacterRange{120772, 120779}, TSCharacterRange{122624, 122654}, TSCharacterRange{122661, 122666}, TSCharacterRange{122928, 122989}, TSCharacterRange{123136, 123180}, TSCharacterRange{123191, 123197},
-	TSCharacterRange{123214, 123214}, TSCharacterRange{123536, 123565}, TSCharacterRange{123584, 123627}, TSCharacterRange{124112, 124139}, TSCharacterRange{124368, 124397}, TSCharacterRange{124400, 124400}, TSCharacterRange{124896, 124902}, TSCharacterRange{124904, 124907}, TSCharacterRange{124909, 124910}, TSCharacterRange{124912, 124926}, TSCharacterRange{124928, 125124}, TSCharacterRange{125184, 125251}, TSCharacterRange{125259, 125259}, TSCharacterRange{126464, 126467}, TSCharacterRange{126469, 126495}, TSCharacterRange{126497, 126498},
-	TSCharacterRange{126500, 126500}, TSCharacterRange{126503, 126503}, TSCharacterRange{126505, 126514}, TSCharacterRange{126516, 126519}, TSCharacterRange{126521, 126521}, TSCharacterRange{126523, 126523}, TSCharacterRange{126530, 126530}, TSCharacterRange{126535, 126535}, TSCharacterRange{126537, 126537}, TSCharacterRange{126539, 126539}, TSCharacterRange{126541, 126543}, TSCharacterRange{126545, 126546}, TSCharacterRange{126548, 126548}, TSCharacterRange{126551, 126551}, TSCharacterRange{126553, 126553}, TSCharacterRange{126555, 126555},
-	TSCharacterRange{126557, 126557}, TSCharacterRange{126559, 126559}, TSCharacterRange{126561, 126562}, TSCharacterRange{126564, 126564}, TSCharacterRange{126567, 126570}, TSCharacterRange{126572, 126578}, TSCharacterRange{126580, 126583}, TSCharacterRange{126585, 126588}, TSCharacterRange{126590, 126590}, TSCharacterRange{126592, 126601}, TSCharacterRange{126603, 126619}, TSCharacterRange{126625, 126627}, TSCharacterRange{126629, 126633}, TSCharacterRange{126635, 126651}, TSCharacterRange{131072, 173791}, TSCharacterRange{173824, 177977},
-	TSCharacterRange{177984, 178205}, TSCharacterRange{178208, 183969}, TSCharacterRange{183984, 191456}, TSCharacterRange{191472, 192093}, TSCharacterRange{194560, 195101}, TSCharacterRange{196608, 201546}, TSCharacterRange{201552, 205743},
-}
+var ts_lex_map [36]int16 = [36]int16{34, 7, 39, 8, 44, 47, 46, 76, 47, 9, 48, 74, 58, 49, 73, 61, 78, 51, 91, 70, 93, 71, 102, 52, 110, 67, 116, 63, 123, 46, 125, 48, 43, 12, 45, 12}
+var sym_identifier_character_set_2 [680]TSCharacterRange = [680]TSCharacterRange{TSCharacterRange{36, 36}, TSCharacterRange{48, 57}, TSCharacterRange{65, 90}, TSCharacterRange{95, 95}, TSCharacterRange{97, 122}, TSCharacterRange{170, 170}, TSCharacterRange{181, 181}, TSCharacterRange{186, 186}, TSCharacterRange{192, 214}, TSCharacterRange{216, 246}, TSCharacterRange{248, 705}, TSCharacterRange{710, 721}, TSCharacterRange{736, 740}, TSCharacterRange{748, 748}, TSCharacterRange{750, 750}, TSCharacterRange{880, 884}, TSCharacterRange{886, 887}, TSCharacterRange{890, 893}, TSCharacterRange{895, 895}, TSCharacterRange{902, 902}, TSCharacterRange{904, 906}, TSCharacterRange{908, 908}, TSCharacterRange{910, 929}, TSCharacterRange{931, 1013}, TSCharacterRange{1015, 1153}, TSCharacterRange{1162, 1327}, TSCharacterRange{1329, 1366}, TSCharacterRange{1369, 1369}, TSCharacterRange{1376, 1416}, TSCharacterRange{1488, 1514}, TSCharacterRange{1519, 1522}, TSCharacterRange{1568, 1610}, TSCharacterRange{1646, 1647}, TSCharacterRange{1649, 1747}, TSCharacterRange{1749, 1749}, TSCharacterRange{1765, 1766}, TSCharacterRange{1774, 1775}, TSCharacterRange{1786, 1788}, TSCharacterRange{1791, 1791}, TSCharacterRange{1808, 1808}, TSCharacterRange{1810, 1839}, TSCharacterRange{1869, 1957}, TSCharacterRange{1969, 1969}, TSCharacterRange{1994, 2026}, TSCharacterRange{2036, 2037}, TSCharacterRange{2042, 2042}, TSCharacterRange{2048, 2069}, TSCharacterRange{2074, 2074}, TSCharacterRange{2084, 2084}, TSCharacterRange{2088, 2088}, TSCharacterRange{2112, 2136}, TSCharacterRange{2144, 2154}, TSCharacterRange{2160, 2183}, TSCharacterRange{2185, 2190}, TSCharacterRange{2208, 2249}, TSCharacterRange{2308, 2361}, TSCharacterRange{2365, 2365}, TSCharacterRange{2384, 2384}, TSCharacterRange{2392, 2401}, TSCharacterRange{2417, 2432}, TSCharacterRange{2437, 2444}, TSCharacterRange{2447, 2448}, TSCharacterRange{2451, 2472}, TSCharacterRange{2474, 2480}, TSCharacterRange{2482, 2482}, TSCharacterRange{2486, 2489}, TSCharacterRange{2493, 2493}, TSCharacterRange{2510, 2510}, TSCharacterRange{2524, 2525}, TSCharacterRange{2527, 2529}, TSCharacterRange{2544, 2545}, TSCharacterRange{2556, 2556}, TSCharacterRange{2565, 2570}, TSCharacterRange{2575, 2576}, TSCharacterRange{2579, 2600}, TSCharacterRange{2602, 2608}, TSCharacterRange{2610, 2611}, TSCharacterRange{2613, 2614}, TSCharacterRange{2616, 2617}, TSCharacterRange{2649, 2652}, TSCharacterRange{2654, 2654}, TSCharacterRange{2674, 2676}, TSCharacterRange{2693, 2701}, TSCharacterRange{2703, 2705}, TSCharacterRange{2707, 2728}, TSCharacterRange{2730, 2736}, TSCharacterRange{2738, 2739}, TSCharacterRange{2741, 2745}, TSCharacterRange{2749, 2749}, TSCharacterRange{2768, 2768}, TSCharacterRange{2784, 2785}, TSCharacterRange{2809, 2809}, TSCharacterRange{2821, 2828}, TSCharacterRange{2831, 2832}, TSCharacterRange{2835, 2856}, TSCharacterRange{2858, 2864}, TSCharacterRange{2866, 2867}, TSCharacterRange{2869, 2873}, TSCharacterRange{2877, 2877}, TSCharacterRange{2908, 2909}, TSCharacterRange{2911, 2913}, TSCharacterRange{2929, 2929}, TSCharacterRange{2947, 2947}, TSCharacterRange{2949, 2954}, TSCharacterRange{2958, 2960}, TSCharacterRange{2962, 2965}, TSCharacterRange{2969, 2970}, TSCharacterRange{2972, 2972}, TSCharacterRange{2974, 2975}, TSCharacterRange{2979, 2980}, TSCharacterRange{2984, 2986}, TSCharacterRange{2990, 3001}, TSCharacterRange{3024, 3024}, TSCharacterRange{3077, 3084}, TSCharacterRange{3086, 3088}, TSCharacterRange{3090, 3112}, TSCharacterRange{3114, 3129}, TSCharacterRange{3133, 3133}, TSCharacterRange{3160, 3162}, TSCharacterRange{3165, 3165}, TSCharacterRange{3168, 3169}, TSCharacterRange{3200, 3200}, TSCharacterRange{3205, 3212}, TSCharacterRange{3214, 3216}, TSCharacterRange{3218, 3240}, TSCharacterRange{3242, 3251}, TSCharacterRange{3253, 3257}, TSCharacterRange{3261, 3261}, TSCharacterRange{3293, 3294}, TSCharacterRange{3296, 3297}, TSCharacterRange{3313, 3314}, TSCharacterRange{3332, 3340}, TSCharacterRange{3342, 3344}, TSCharacterRange{3346, 3386}, TSCharacterRange{3389, 3389}, TSCharacterRange{3406, 3406}, TSCharacterRange{3412, 3414}, TSCharacterRange{3423, 3425}, TSCharacterRange{3450, 3455}, TSCharacterRange{3461, 3478}, TSCharacterRange{3482, 3505}, TSCharacterRange{3507, 3515}, TSCharacterRange{3517, 3517}, TSCharacterRange{3520, 3526}, TSCharacterRange{3585, 3632}, TSCharacterRange{3634, 3635}, TSCharacterRange{3648, 3654}, TSCharacterRange{3713, 3714}, TSCharacterRange{3716, 3716}, TSCharacterRange{3718, 3722}, TSCharacterRange{3724, 3747}, TSCharacterRange{3749, 3749}, TSCharacterRange{3751, 3760}, TSCharacterRange{3762, 3763}, TSCharacterRange{3773, 3773}, TSCharacterRange{3776, 3780}, TSCharacterRange{3782, 3782}, TSCharacterRange{3804, 3807}, TSCharacterRange{3840, 3840}, TSCharacterRange{3904, 3911}, TSCharacterRange{3913, 3948}, TSCharacterRange{3976, 3980}, TSCharacterRange{4096, 4138}, TSCharacterRange{4159, 4159}, TSCharacterRange{4176, 4181}, TSCharacterRange{4186, 4189}, TSCharacterRange{4193, 4193}, TSCharacterRange{4197, 4198}, TSCharacterRange{4206, 4208}, TSCharacterRange{4213, 4225}, TSCharacterRange{4238, 4238}, TSCharacterRange{4256, 4293}, TSCharacterRange{4295, 4295}, TSCharacterRange{4301, 4301}, TSCharacterRange{4304, 4346}, TSCharacterRange{4348, 4680}, TSCharacterRange{4682, 4685}, TSCharacterRange{4688, 4694}, TSCharacterRange{4696, 4696}, TSCharacterRange{4698, 4701}, TSCharacterRange{4704, 4744}, TSCharacterRange{4746, 4749}, TSCharacterRange{4752, 4784}, TSCharacterRange{4786, 4789}, TSCharacterRange{4792, 4798}, TSCharacterRange{4800, 4800}, TSCharacterRange{4802, 4805}, TSCharacterRange{4808, 4822}, TSCharacterRange{4824, 4880}, TSCharacterRange{4882, 4885}, TSCharacterRange{4888, 4954}, TSCharacterRange{4992, 5007}, TSCharacterRange{5024, 5109}, TSCharacterRange{5112, 5117}, TSCharacterRange{5121, 5740}, TSCharacterRange{5743, 5759}, TSCharacterRange{5761, 5786}, TSCharacterRange{5792, 5866}, TSCharacterRange{5873, 5880}, TSCharacterRange{5888, 5905}, TSCharacterRange{5919, 5937}, TSCharacterRange{5952, 5969}, TSCharacterRange{5984, 5996}, TSCharacterRange{5998, 6000}, TSCharacterRange{6016, 6067}, TSCharacterRange{6103, 6103}, TSCharacterRange{6108, 6108}, TSCharacterRange{6176, 6264}, TSCharacterRange{6272, 6276}, TSCharacterRange{6279, 6312}, TSCharacterRange{6314, 6314}, TSCharacterRange{6320, 6389}, TSCharacterRange{6400, 6430}, TSCharacterRange{6480, 6509}, TSCharacterRange{6512, 6516}, TSCharacterRange{6528, 6571}, TSCharacterRange{6576, 6601}, TSCharacterRange{6656, 6678}, TSCharacterRange{6688, 6740}, TSCharacterRange{6823, 6823}, TSCharacterRange{6917, 6963}, TSCharacterRange{6981, 6988}, TSCharacterRange{7043, 7072}, TSCharacterRange{7086, 7087}, TSCharacterRange{7098, 7141}, TSCharacterRange{7168, 7203}, TSCharacterRange{7245, 7247}, TSCharacterRange{7258, 7293}, TSCharacterRange{7296, 7306}, TSCharacterRange{7312, 7354}, TSCharacterRange{7357, 7359}, TSCharacterRange{7401, 7404}, TSCharacterRange{7406, 7411}, TSCharacterRange{7413, 7414}, TSCharacterRange{7418, 7418}, TSCharacterRange{7424, 7615}, TSCharacterRange{7680, 7957}, TSCharacterRange{7960, 7965}, TSCharacterRange{7968, 8005}, TSCharacterRange{8008, 8013}, TSCharacterRange{8016, 8023}, TSCharacterRange{8025, 8025}, TSCharacterRange{8027, 8027}, TSCharacterRange{8029, 8029}, TSCharacterRange{8031, 8061}, TSCharacterRange{8064, 8116}, TSCharacterRange{8118, 8124}, TSCharacterRange{8126, 8126}, TSCharacterRange{8130, 8132}, TSCharacterRange{8134, 8140}, TSCharacterRange{8144, 8147}, TSCharacterRange{8150, 8155}, TSCharacterRange{8160, 8172}, TSCharacterRange{8178, 8180}, TSCharacterRange{8182, 8188}, TSCharacterRange{8305, 8305}, TSCharacterRange{8319, 8319}, TSCharacterRange{8336, 8348}, TSCharacterRange{8450, 8450}, TSCharacterRange{8455, 8455}, TSCharacterRange{8458, 8467}, TSCharacterRange{8469, 8469}, TSCharacterRange{8473, 8477}, TSCharacterRange{8484, 8484}, TSCharacterRange{8486, 8486}, TSCharacterRange{8488, 8488}, TSCharacterRange{8490, 8493}, TSCharacterRange{8495, 8505}, TSCharacterRange{8508, 8511}, TSCharacterRange{8517, 8521}, TSCharacterRange{8526, 8526}, TSCharacterRange{8579, 8580}, TSCharacterRange{11264, 11492}, TSCharacterRange{11499, 11502}, TSCharacterRange{11506, 11507}, TSCharacterRange{11520, 11557}, TSCharacterRange{11559, 11559}, TSCharacterRange{11565, 11565}, TSCharacterRange{11568, 11623}, TSCharacterRange{11631, 11631}, TSCharacterRange{11648, 11670}, TSCharacterRange{11680, 11686}, TSCharacterRange{11688, 11694}, TSCharacterRange{11696, 11702}, TSCharacterRange{11704, 11710}, TSCharacterRange{11712, 11718}, TSCharacterRange{11720, 11726}, TSCharacterRange{11728, 11734}, TSCharacterRange{11736, 11742}, TSCharacterRange{11823, 11823}, TSCharacterRange{12293, 12294}, TSCharacterRange{12337, 12341}, TSCharacterRange{12347, 12348}, TSCharacterRange{12353, 12438}, TSCharacterRange{12445, 12447}, TSCharacterRange{12449, 12538}, TSCharacterRange{12540, 12543}, TSCharacterRange{12549, 12591}, TSCharacterRange{12593, 12686}, TSCharacterRange{12704, 12735}, TSCharacterRange{12784, 12799}, TSCharacterRange{13312, 19903}, TSCharacterRange{19968, 42124}, TSCharacterRange{42192, 42237}, TSCharacterRange{42240, 42508}, TSCharacterRange{42512, 42527}, TSCharacterRange{42538, 42539}, TSCharacterRange{42560, 42606}, TSCharacterRange{42623, 42653}, TSCharacterRange{42656, 42725}, TSCharacterRange{42775, 42783}, TSCharacterRange{42786, 42888}, TSCharacterRange{42891, 42957}, TSCharacterRange{42960, 42961}, TSCharacterRange{42963, 42963}, TSCharacterRange{42965, 42972}, TSCharacterRange{42994, 43009}, TSCharacterRange{43011, 43013}, TSCharacterRange{43015, 43018}, TSCharacterRange{43020, 43042}, TSCharacterRange{43072, 43123}, TSCharacterRange{43138, 43187}, TSCharacterRange{43250, 43255}, TSCharacterRange{43259, 43259}, TSCharacterRange{43261, 43262}, TSCharacterRange{43274, 43301}, TSCharacterRange{43312, 43334}, TSCharacterRange{43360, 43388}, TSCharacterRange{43396, 43442}, TSCharacterRange{43471, 43471}, TSCharacterRange{43488, 43492}, TSCharacterRange{43494, 43503}, TSCharacterRange{43514, 43518}, TSCharacterRange{43520, 43560}, TSCharacterRange{43584, 43586}, TSCharacterRange{43588, 43595}, TSCharacterRange{43616, 43638}, TSCharacterRange{43642, 43642}, TSCharacterRange{43646, 43695}, TSCharacterRange{43697, 43697}, TSCharacterRange{43701, 43702}, TSCharacterRange{43705, 43709}, TSCharacterRange{43712, 43712}, TSCharacterRange{43714, 43714}, TSCharacterRange{43739, 43741}, TSCharacterRange{43744, 43754}, TSCharacterRange{43762, 43764}, TSCharacterRange{43777, 43782}, TSCharacterRange{43785, 43790}, TSCharacterRange{43793, 43798}, TSCharacterRange{43808, 43814}, TSCharacterRange{43816, 43822}, TSCharacterRange{43824, 43866}, TSCharacterRange{43868, 43881}, TSCharacterRange{43888, 44002}, TSCharacterRange{44032, 55203}, TSCharacterRange{55216, 55238}, TSCharacterRange{55243, 55291}, TSCharacterRange{63744, 64109}, TSCharacterRange{64112, 64217}, TSCharacterRange{64256, 64262}, TSCharacterRange{64275, 64279}, TSCharacterRange{64285, 64285}, TSCharacterRange{64287, 64296}, TSCharacterRange{64298, 64310}, TSCharacterRange{64312, 64316}, TSCharacterRange{64318, 64318}, TSCharacterRange{64320, 64321}, TSCharacterRange{64323, 64324}, TSCharacterRange{64326, 64433}, TSCharacterRange{64467, 64829}, TSCharacterRange{64848, 64911}, TSCharacterRange{64914, 64967}, TSCharacterRange{65008, 65019}, TSCharacterRange{65136, 65140}, TSCharacterRange{65142, 65276}, TSCharacterRange{65313, 65338}, TSCharacterRange{65345, 65370}, TSCharacterRange{65382, 65470}, TSCharacterRange{65474, 65479}, TSCharacterRange{65482, 65487}, TSCharacterRange{65490, 65495}, TSCharacterRange{65498, 65500}, TSCharacterRange{65536, 65547}, TSCharacterRange{65549, 65574}, TSCharacterRange{65576, 65594}, TSCharacterRange{65596, 65597}, TSCharacterRange{65599, 65613}, TSCharacterRange{65616, 65629}, TSCharacterRange{65664, 65786}, TSCharacterRange{66176, 66204}, TSCharacterRange{66208, 66256}, TSCharacterRange{66304, 66335}, TSCharacterRange{66349, 66368}, TSCharacterRange{66370, 66377}, TSCharacterRange{66384, 66421}, TSCharacterRange{66432, 66461}, TSCharacterRange{66464, 66499}, TSCharacterRange{66504, 66511}, TSCharacterRange{66560, 66717}, TSCharacterRange{66736, 66771}, TSCharacterRange{66776, 66811}, TSCharacterRange{66816, 66855}, TSCharacterRange{66864, 66915}, TSCharacterRange{66928, 66938}, TSCharacterRange{66940, 66954}, TSCharacterRange{66956, 66962}, TSCharacterRange{66964, 66965}, TSCharacterRange{66967, 66977}, TSCharacterRange{66979, 66993}, TSCharacterRange{66995, 67001}, TSCharacterRange{67003, 67004}, TSCharacterRange{67008, 67059}, TSCharacterRange{67072, 67382}, TSCharacterRange{67392, 67413}, TSCharacterRange{67424, 67431}, TSCharacterRange{67456, 67461}, TSCharacterRange{67463, 67504}, TSCharacterRange{67506, 67514}, TSCharacterRange{67584, 67589}, TSCharacterRange{67592, 67592}, TSCharacterRange{67594, 67637}, TSCharacterRange{67639, 67640}, TSCharacterRange{67644, 67644}, TSCharacterRange{67647, 67669}, TSCharacterRange{67680, 67702}, TSCharacterRange{67712, 67742}, TSCharacterRange{67808, 67826}, TSCharacterRange{67828, 67829}, TSCharacterRange{67840, 67861}, TSCharacterRange{67872, 67897}, TSCharacterRange{67968, 68023}, TSCharacterRange{68030, 68031}, TSCharacterRange{68096, 68096}, TSCharacterRange{68112, 68115}, TSCharacterRange{68117, 68119}, TSCharacterRange{68121, 68149}, TSCharacterRange{68192, 68220}, TSCharacterRange{68224, 68252}, TSCharacterRange{68288, 68295}, TSCharacterRange{68297, 68324}, TSCharacterRange{68352, 68405}, TSCharacterRange{68416, 68437}, TSCharacterRange{68448, 68466}, TSCharacterRange{68480, 68497}, TSCharacterRange{68608, 68680}, TSCharacterRange{68736, 68786}, TSCharacterRange{68800, 68850}, TSCharacterRange{68864, 68899}, TSCharacterRange{68938, 68965}, TSCharacterRange{68975, 68997}, TSCharacterRange{69248, 69289}, TSCharacterRange{69296, 69297}, TSCharacterRange{69314, 69316}, TSCharacterRange{69376, 69404}, TSCharacterRange{69415, 69415}, TSCharacterRange{69424, 69445}, TSCharacterRange{69488, 69505}, TSCharacterRange{69552, 69572}, TSCharacterRange{69600, 69622}, TSCharacterRange{69635, 69687}, TSCharacterRange{69745, 69746}, TSCharacterRange{69749, 69749}, TSCharacterRange{69763, 69807}, TSCharacterRange{69840, 69864}, TSCharacterRange{69891, 69926}, TSCharacterRange{69956, 69956}, TSCharacterRange{69959, 69959}, TSCharacterRange{69968, 70002}, TSCharacterRange{70006, 70006}, TSCharacterRange{70019, 70066}, TSCharacterRange{70081, 70084}, TSCharacterRange{70106, 70106}, TSCharacterRange{70108, 70108}, TSCharacterRange{70144, 70161}, TSCharacterRange{70163, 70187}, TSCharacterRange{70207, 70208}, TSCharacterRange{70272, 70278}, TSCharacterRange{70280, 70280}, TSCharacterRange{70282, 70285}, TSCharacterRange{70287, 70301}, TSCharacterRange{70303, 70312}, TSCharacterRange{70320, 70366}, TSCharacterRange{70405, 70412}, TSCharacterRange{70415, 70416}, TSCharacterRange{70419, 70440}, TSCharacterRange{70442, 70448}, TSCharacterRange{70450, 70451}, TSCharacterRange{70453, 70457}, TSCharacterRange{70461, 70461}, TSCharacterRange{70480, 70480}, TSCharacterRange{70493, 70497}, TSCharacterRange{70528, 70537}, TSCharacterRange{70539, 70539}, TSCharacterRange{70542, 70542}, TSCharacterRange{70544, 70581}, TSCharacterRange{70583, 70583}, TSCharacterRange{70609, 70609}, TSCharacterRange{70611, 70611}, TSCharacterRange{70656, 70708}, TSCharacterRange{70727, 70730}, TSCharacterRange{70751, 70753}, TSCharacterRange{70784, 70831}, TSCharacterRange{70852, 70853}, TSCharacterRange{70855, 70855}, TSCharacterRange{71040, 71086}, TSCharacterRange{71128, 71131}, TSCharacterRange{71168, 71215}, TSCharacterRange{71236, 71236}, TSCharacterRange{71296, 71338}, TSCharacterRange{71352, 71352}, TSCharacterRange{71424, 71450}, TSCharacterRange{71488, 71494}, TSCharacterRange{71680, 71723}, TSCharacterRange{71840, 71903}, TSCharacterRange{71935, 71942}, TSCharacterRange{71945, 71945}, TSCharacterRange{71948, 71955}, TSCharacterRange{71957, 71958}, TSCharacterRange{71960, 71983}, TSCharacterRange{71999, 71999}, TSCharacterRange{72001, 72001}, TSCharacterRange{72096, 72103}, TSCharacterRange{72106, 72144}, TSCharacterRange{72161, 72161}, TSCharacterRange{72163, 72163}, TSCharacterRange{72192, 72192}, TSCharacterRange{72203, 72242}, TSCharacterRange{72250, 72250}, TSCharacterRange{72272, 72272}, TSCharacterRange{72284, 72329}, TSCharacterRange{72349, 72349}, TSCharacterRange{72368, 72440}, TSCharacterRange{72640, 72672}, TSCharacterRange{72704, 72712}, TSCharacterRange{72714, 72750}, TSCharacterRange{72768, 72768}, TSCharacterRange{72818, 72847}, TSCharacterRange{72960, 72966}, TSCharacterRange{72968, 72969}, TSCharacterRange{72971, 73008}, TSCharacterRange{73030, 73030}, TSCharacterRange{73056, 73061}, TSCharacterRange{73063, 73064}, TSCharacterRange{73066, 73097}, TSCharacterRange{73112, 73112}, TSCharacterRange{73440, 73458}, TSCharacterRange{73474, 73474}, TSCharacterRange{73476, 73488}, TSCharacterRange{73490, 73523}, TSCharacterRange{73648, 73648}, TSCharacterRange{73728, 74649}, TSCharacterRange{74880, 75075}, TSCharacterRange{77712, 77808}, TSCharacterRange{77824, 78895}, TSCharacterRange{78913, 78918}, TSCharacterRange{78944, 82938}, TSCharacterRange{82944, 83526}, TSCharacterRange{90368, 90397}, TSCharacterRange{92160, 92728}, TSCharacterRange{92736, 92766}, TSCharacterRange{92784, 92862}, TSCharacterRange{92880, 92909}, TSCharacterRange{92928, 92975}, TSCharacterRange{92992, 92995}, TSCharacterRange{93027, 93047}, TSCharacterRange{93053, 93071}, TSCharacterRange{93504, 93548}, TSCharacterRange{93760, 93823}, TSCharacterRange{93952, 94026}, TSCharacterRange{94032, 94032}, TSCharacterRange{94099, 94111}, TSCharacterRange{94176, 94177}, TSCharacterRange{94179, 94179}, TSCharacterRange{94208, 100343}, TSCharacterRange{100352, 101589}, TSCharacterRange{101631, 101640}, TSCharacterRange{110576, 110579}, TSCharacterRange{110581, 110587}, TSCharacterRange{110589, 110590}, TSCharacterRange{110592, 110882}, TSCharacterRange{110898, 110898}, TSCharacterRange{110928, 110930}, TSCharacterRange{110933, 110933}, TSCharacterRange{110948, 110951}, TSCharacterRange{110960, 111355}, TSCharacterRange{113664, 113770}, TSCharacterRange{113776, 113788}, TSCharacterRange{113792, 113800}, TSCharacterRange{113808, 113817}, TSCharacterRange{119808, 119892}, TSCharacterRange{119894, 119964}, TSCharacterRange{119966, 119967}, TSCharacterRange{119970, 119970}, TSCharacterRange{119973, 119974}, TSCharacterRange{119977, 119980}, TSCharacterRange{119982, 119993}, TSCharacterRange{119995, 119995}, TSCharacterRange{119997, 120003}, TSCharacterRange{120005, 120069}, TSCharacterRange{120071, 120074}, TSCharacterRange{120077, 120084}, TSCharacterRange{120086, 120092}, TSCharacterRange{120094, 120121}, TSCharacterRange{120123, 120126}, TSCharacterRange{120128, 120132}, TSCharacterRange{120134, 120134}, TSCharacterRange{120138, 120144}, TSCharacterRange{120146, 120485}, TSCharacterRange{120488, 120512}, TSCharacterRange{120514, 120538}, TSCharacterRange{120540, 120570}, TSCharacterRange{120572, 120596}, TSCharacterRange{120598, 120628}, TSCharacterRange{120630, 120654}, TSCharacterRange{120656, 120686}, TSCharacterRange{120688, 120712}, TSCharacterRange{120714, 120744}, TSCharacterRange{120746, 120770}, TSCharacterRange{120772, 120779}, TSCharacterRange{122624, 122654}, TSCharacterRange{122661, 122666}, TSCharacterRange{122928, 122989}, TSCharacterRange{123136, 123180}, TSCharacterRange{123191, 123197}, TSCharacterRange{123214, 123214}, TSCharacterRange{123536, 123565}, TSCharacterRange{123584, 123627}, TSCharacterRange{124112, 124139}, TSCharacterRange{124368, 124397}, TSCharacterRange{124400, 124400}, TSCharacterRange{124896, 124902}, TSCharacterRange{124904, 124907}, TSCharacterRange{124909, 124910}, TSCharacterRange{124912, 124926}, TSCharacterRange{124928, 125124}, TSCharacterRange{125184, 125251}, TSCharacterRange{125259, 125259}, TSCharacterRange{126464, 126467}, TSCharacterRange{126469, 126495}, TSCharacterRange{126497, 126498}, TSCharacterRange{126500, 126500}, TSCharacterRange{126503, 126503}, TSCharacterRange{126505, 126514}, TSCharacterRange{126516, 126519}, TSCharacterRange{126521, 126521}, TSCharacterRange{126523, 126523}, TSCharacterRange{126530, 126530}, TSCharacterRange{126535, 126535}, TSCharacterRange{126537, 126537}, TSCharacterRange{126539, 126539}, TSCharacterRange{126541, 126543}, TSCharacterRange{126545, 126546}, TSCharacterRange{126548, 126548}, TSCharacterRange{126551, 126551}, TSCharacterRange{126553, 126553}, TSCharacterRange{126555, 126555}, TSCharacterRange{126557, 126557}, TSCharacterRange{126559, 126559}, TSCharacterRange{126561, 126562}, TSCharacterRange{126564, 126564}, TSCharacterRange{126567, 126570}, TSCharacterRange{126572, 126578}, TSCharacterRange{126580, 126583}, TSCharacterRange{126585, 126588}, TSCharacterRange{126590, 126590}, TSCharacterRange{126592, 126601}, TSCharacterRange{126603, 126619}, TSCharacterRange{126625, 126627}, TSCharacterRange{126629, 126633}, TSCharacterRange{126635, 126651}, TSCharacterRange{131072, 173791}, TSCharacterRange{173824, 177977}, TSCharacterRange{177984, 178205}, TSCharacterRange{178208, 183969}, TSCharacterRange{183984, 191456}, TSCharacterRange{191472, 192093}, TSCharacterRange{194560, 195101}, TSCharacterRange{196608, 201546}, TSCharacterRange{201552, 205743}}
+var ts_lex_map_25 [28]int16 = [28]int16{13, 1, 117, 41, 120, 37, 10, 7, 34, 7, 39, 7, 47, 7, 92, 7, 98, 7, 102, 7, 110, 7, 114, 7, 116, 7, 118, 7}
+var ts_lex_map_26 [28]int16 = [28]int16{13, 2, 117, 42, 120, 38, 10, 8, 34, 8, 39, 8, 47, 8, 92, 8, 98, 8, 102, 8, 110, 8, 114, 8, 116, 8, 118, 8}
+var ts_lex_map_27 [30]int16 = [30]int16{34, 7, 39, 8, 46, 76, 47, 9, 48, 74, 73, 24, 78, 14, 91, 70, 93, 71, 102, 15, 110, 30, 116, 26, 123, 46, 43, 12, 45, 12}
+var sym_identifier_character_set_1 [679]TSCharacterRange = [679]TSCharacterRange{TSCharacterRange{36, 36}, TSCharacterRange{65, 90}, TSCharacterRange{95, 95}, TSCharacterRange{97, 122}, TSCharacterRange{170, 170}, TSCharacterRange{181, 181}, TSCharacterRange{186, 186}, TSCharacterRange{192, 214}, TSCharacterRange{216, 246}, TSCharacterRange{248, 705}, TSCharacterRange{710, 721}, TSCharacterRange{736, 740}, TSCharacterRange{748, 748}, TSCharacterRange{750, 750}, TSCharacterRange{880, 884}, TSCharacterRange{886, 887}, TSCharacterRange{890, 893}, TSCharacterRange{895, 895}, TSCharacterRange{902, 902}, TSCharacterRange{904, 906}, TSCharacterRange{908, 908}, TSCharacterRange{910, 929}, TSCharacterRange{931, 1013}, TSCharacterRange{1015, 1153}, TSCharacterRange{1162, 1327}, TSCharacterRange{1329, 1366}, TSCharacterRange{1369, 1369}, TSCharacterRange{1376, 1416}, TSCharacterRange{1488, 1514}, TSCharacterRange{1519, 1522}, TSCharacterRange{1568, 1610}, TSCharacterRange{1646, 1647}, TSCharacterRange{1649, 1747}, TSCharacterRange{1749, 1749}, TSCharacterRange{1765, 1766}, TSCharacterRange{1774, 1775}, TSCharacterRange{1786, 1788}, TSCharacterRange{1791, 1791}, TSCharacterRange{1808, 1808}, TSCharacterRange{1810, 1839}, TSCharacterRange{1869, 1957}, TSCharacterRange{1969, 1969}, TSCharacterRange{1994, 2026}, TSCharacterRange{2036, 2037}, TSCharacterRange{2042, 2042}, TSCharacterRange{2048, 2069}, TSCharacterRange{2074, 2074}, TSCharacterRange{2084, 2084}, TSCharacterRange{2088, 2088}, TSCharacterRange{2112, 2136}, TSCharacterRange{2144, 2154}, TSCharacterRange{2160, 2183}, TSCharacterRange{2185, 2190}, TSCharacterRange{2208, 2249}, TSCharacterRange{2308, 2361}, TSCharacterRange{2365, 2365}, TSCharacterRange{2384, 2384}, TSCharacterRange{2392, 2401}, TSCharacterRange{2417, 2432}, TSCharacterRange{2437, 2444}, TSCharacterRange{2447, 2448}, TSCharacterRange{2451, 2472}, TSCharacterRange{2474, 2480}, TSCharacterRange{2482, 2482}, TSCharacterRange{2486, 2489}, TSCharacterRange{2493, 2493}, TSCharacterRange{2510, 2510}, TSCharacterRange{2524, 2525}, TSCharacterRange{2527, 2529}, TSCharacterRange{2544, 2545}, TSCharacterRange{2556, 2556}, TSCharacterRange{2565, 2570}, TSCharacterRange{2575, 2576}, TSCharacterRange{2579, 2600}, TSCharacterRange{2602, 2608}, TSCharacterRange{2610, 2611}, TSCharacterRange{2613, 2614}, TSCharacterRange{2616, 2617}, TSCharacterRange{2649, 2652}, TSCharacterRange{2654, 2654}, TSCharacterRange{2674, 2676}, TSCharacterRange{2693, 2701}, TSCharacterRange{2703, 2705}, TSCharacterRange{2707, 2728}, TSCharacterRange{2730, 2736}, TSCharacterRange{2738, 2739}, TSCharacterRange{2741, 2745}, TSCharacterRange{2749, 2749}, TSCharacterRange{2768, 2768}, TSCharacterRange{2784, 2785}, TSCharacterRange{2809, 2809}, TSCharacterRange{2821, 2828}, TSCharacterRange{2831, 2832}, TSCharacterRange{2835, 2856}, TSCharacterRange{2858, 2864}, TSCharacterRange{2866, 2867}, TSCharacterRange{2869, 2873}, TSCharacterRange{2877, 2877}, TSCharacterRange{2908, 2909}, TSCharacterRange{2911, 2913}, TSCharacterRange{2929, 2929}, TSCharacterRange{2947, 2947}, TSCharacterRange{2949, 2954}, TSCharacterRange{2958, 2960}, TSCharacterRange{2962, 2965}, TSCharacterRange{2969, 2970}, TSCharacterRange{2972, 2972}, TSCharacterRange{2974, 2975}, TSCharacterRange{2979, 2980}, TSCharacterRange{2984, 2986}, TSCharacterRange{2990, 3001}, TSCharacterRange{3024, 3024}, TSCharacterRange{3077, 3084}, TSCharacterRange{3086, 3088}, TSCharacterRange{3090, 3112}, TSCharacterRange{3114, 3129}, TSCharacterRange{3133, 3133}, TSCharacterRange{3160, 3162}, TSCharacterRange{3165, 3165}, TSCharacterRange{3168, 3169}, TSCharacterRange{3200, 3200}, TSCharacterRange{3205, 3212}, TSCharacterRange{3214, 3216}, TSCharacterRange{3218, 3240}, TSCharacterRange{3242, 3251}, TSCharacterRange{3253, 3257}, TSCharacterRange{3261, 3261}, TSCharacterRange{3293, 3294}, TSCharacterRange{3296, 3297}, TSCharacterRange{3313, 3314}, TSCharacterRange{3332, 3340}, TSCharacterRange{3342, 3344}, TSCharacterRange{3346, 3386}, TSCharacterRange{3389, 3389}, TSCharacterRange{3406, 3406}, TSCharacterRange{3412, 3414}, TSCharacterRange{3423, 3425}, TSCharacterRange{3450, 3455}, TSCharacterRange{3461, 3478}, TSCharacterRange{3482, 3505}, TSCharacterRange{3507, 3515}, TSCharacterRange{3517, 3517}, TSCharacterRange{3520, 3526}, TSCharacterRange{3585, 3632}, TSCharacterRange{3634, 3635}, TSCharacterRange{3648, 3654}, TSCharacterRange{3713, 3714}, TSCharacterRange{3716, 3716}, TSCharacterRange{3718, 3722}, TSCharacterRange{3724, 3747}, TSCharacterRange{3749, 3749}, TSCharacterRange{3751, 3760}, TSCharacterRange{3762, 3763}, TSCharacterRange{3773, 3773}, TSCharacterRange{3776, 3780}, TSCharacterRange{3782, 3782}, TSCharacterRange{3804, 3807}, TSCharacterRange{3840, 3840}, TSCharacterRange{3904, 3911}, TSCharacterRange{3913, 3948}, TSCharacterRange{3976, 3980}, TSCharacterRange{4096, 4138}, TSCharacterRange{4159, 4159}, TSCharacterRange{4176, 4181}, TSCharacterRange{4186, 4189}, TSCharacterRange{4193, 4193}, TSCharacterRange{4197, 4198}, TSCharacterRange{4206, 4208}, TSCharacterRange{4213, 4225}, TSCharacterRange{4238, 4238}, TSCharacterRange{4256, 4293}, TSCharacterRange{4295, 4295}, TSCharacterRange{4301, 4301}, TSCharacterRange{4304, 4346}, TSCharacterRange{4348, 4680}, TSCharacterRange{4682, 4685}, TSCharacterRange{4688, 4694}, TSCharacterRange{4696, 4696}, TSCharacterRange{4698, 4701}, TSCharacterRange{4704, 4744}, TSCharacterRange{4746, 4749}, TSCharacterRange{4752, 4784}, TSCharacterRange{4786, 4789}, TSCharacterRange{4792, 4798}, TSCharacterRange{4800, 4800}, TSCharacterRange{4802, 4805}, TSCharacterRange{4808, 4822}, TSCharacterRange{4824, 4880}, TSCharacterRange{4882, 4885}, TSCharacterRange{4888, 4954}, TSCharacterRange{4992, 5007}, TSCharacterRange{5024, 5109}, TSCharacterRange{5112, 5117}, TSCharacterRange{5121, 5740}, TSCharacterRange{5743, 5759}, TSCharacterRange{5761, 5786}, TSCharacterRange{5792, 5866}, TSCharacterRange{5873, 5880}, TSCharacterRange{5888, 5905}, TSCharacterRange{5919, 5937}, TSCharacterRange{5952, 5969}, TSCharacterRange{5984, 5996}, TSCharacterRange{5998, 6000}, TSCharacterRange{6016, 6067}, TSCharacterRange{6103, 6103}, TSCharacterRange{6108, 6108}, TSCharacterRange{6176, 6264}, TSCharacterRange{6272, 6276}, TSCharacterRange{6279, 6312}, TSCharacterRange{6314, 6314}, TSCharacterRange{6320, 6389}, TSCharacterRange{6400, 6430}, TSCharacterRange{6480, 6509}, TSCharacterRange{6512, 6516}, TSCharacterRange{6528, 6571}, TSCharacterRange{6576, 6601}, TSCharacterRange{6656, 6678}, TSCharacterRange{6688, 6740}, TSCharacterRange{6823, 6823}, TSCharacterRange{6917, 6963}, TSCharacterRange{6981, 6988}, TSCharacterRange{7043, 7072}, TSCharacterRange{7086, 7087}, TSCharacterRange{7098, 7141}, TSCharacterRange{7168, 7203}, TSCharacterRange{7245, 7247}, TSCharacterRange{7258, 7293}, TSCharacterRange{7296, 7306}, TSCharacterRange{7312, 7354}, TSCharacterRange{7357, 7359}, TSCharacterRange{7401, 7404}, TSCharacterRange{7406, 7411}, TSCharacterRange{7413, 7414}, TSCharacterRange{7418, 7418}, TSCharacterRange{7424, 7615}, TSCharacterRange{7680, 7957}, TSCharacterRange{7960, 7965}, TSCharacterRange{7968, 8005}, TSCharacterRange{8008, 8013}, TSCharacterRange{8016, 8023}, TSCharacterRange{8025, 8025}, TSCharacterRange{8027, 8027}, TSCharacterRange{8029, 8029}, TSCharacterRange{8031, 8061}, TSCharacterRange{8064, 8116}, TSCharacterRange{8118, 8124}, TSCharacterRange{8126, 8126}, TSCharacterRange{8130, 8132}, TSCharacterRange{8134, 8140}, TSCharacterRange{8144, 8147}, TSCharacterRange{8150, 8155}, TSCharacterRange{8160, 8172}, TSCharacterRange{8178, 8180}, TSCharacterRange{8182, 8188}, TSCharacterRange{8305, 8305}, TSCharacterRange{8319, 8319}, TSCharacterRange{8336, 8348}, TSCharacterRange{8450, 8450}, TSCharacterRange{8455, 8455}, TSCharacterRange{8458, 8467}, TSCharacterRange{8469, 8469}, TSCharacterRange{8473, 8477}, TSCharacterRange{8484, 8484}, TSCharacterRange{8486, 8486}, TSCharacterRange{8488, 8488}, TSCharacterRange{8490, 8493}, TSCharacterRange{8495, 8505}, TSCharacterRange{8508, 8511}, TSCharacterRange{8517, 8521}, TSCharacterRange{8526, 8526}, TSCharacterRange{8579, 8580}, TSCharacterRange{11264, 11492}, TSCharacterRange{11499, 11502}, TSCharacterRange{11506, 11507}, TSCharacterRange{11520, 11557}, TSCharacterRange{11559, 11559}, TSCharacterRange{11565, 11565}, TSCharacterRange{11568, 11623}, TSCharacterRange{11631, 11631}, TSCharacterRange{11648, 11670}, TSCharacterRange{11680, 11686}, TSCharacterRange{11688, 11694}, TSCharacterRange{11696, 11702}, TSCharacterRange{11704, 11710}, TSCharacterRange{11712, 11718}, TSCharacterRange{11720, 11726}, TSCharacterRange{11728, 11734}, TSCharacterRange{11736, 11742}, TSCharacterRange{11823, 11823}, TSCharacterRange{12293, 12294}, TSCharacterRange{12337, 12341}, TSCharacterRange{12347, 12348}, TSCharacterRange{12353, 12438}, TSCharacterRange{12445, 12447}, TSCharacterRange{12449, 12538}, TSCharacterRange{12540, 12543}, TSCharacterRange{12549, 12591}, TSCharacterRange{12593, 12686}, TSCharacterRange{12704, 12735}, TSCharacterRange{12784, 12799}, TSCharacterRange{13312, 19903}, TSCharacterRange{19968, 42124}, TSCharacterRange{42192, 42237}, TSCharacterRange{42240, 42508}, TSCharacterRange{42512, 42527}, TSCharacterRange{42538, 42539}, TSCharacterRange{42560, 42606}, TSCharacterRange{42623, 42653}, TSCharacterRange{42656, 42725}, TSCharacterRange{42775, 42783}, TSCharacterRange{42786, 42888}, TSCharacterRange{42891, 42957}, TSCharacterRange{42960, 42961}, TSCharacterRange{42963, 42963}, TSCharacterRange{42965, 42972}, TSCharacterRange{42994, 43009}, TSCharacterRange{43011, 43013}, TSCharacterRange{43015, 43018}, TSCharacterRange{43020, 43042}, TSCharacterRange{43072, 43123}, TSCharacterRange{43138, 43187}, TSCharacterRange{43250, 43255}, TSCharacterRange{43259, 43259}, TSCharacterRange{43261, 43262}, TSCharacterRange{43274, 43301}, TSCharacterRange{43312, 43334}, TSCharacterRange{43360, 43388}, TSCharacterRange{43396, 43442}, TSCharacterRange{43471, 43471}, TSCharacterRange{43488, 43492}, TSCharacterRange{43494, 43503}, TSCharacterRange{43514, 43518}, TSCharacterRange{43520, 43560}, TSCharacterRange{43584, 43586}, TSCharacterRange{43588, 43595}, TSCharacterRange{43616, 43638}, TSCharacterRange{43642, 43642}, TSCharacterRange{43646, 43695}, TSCharacterRange{43697, 43697}, TSCharacterRange{43701, 43702}, TSCharacterRange{43705, 43709}, TSCharacterRange{43712, 43712}, TSCharacterRange{43714, 43714}, TSCharacterRange{43739, 43741}, TSCharacterRange{43744, 43754}, TSCharacterRange{43762, 43764}, TSCharacterRange{43777, 43782}, TSCharacterRange{43785, 43790}, TSCharacterRange{43793, 43798}, TSCharacterRange{43808, 43814}, TSCharacterRange{43816, 43822}, TSCharacterRange{43824, 43866}, TSCharacterRange{43868, 43881}, TSCharacterRange{43888, 44002}, TSCharacterRange{44032, 55203}, TSCharacterRange{55216, 55238}, TSCharacterRange{55243, 55291}, TSCharacterRange{63744, 64109}, TSCharacterRange{64112, 64217}, TSCharacterRange{64256, 64262}, TSCharacterRange{64275, 64279}, TSCharacterRange{64285, 64285}, TSCharacterRange{64287, 64296}, TSCharacterRange{64298, 64310}, TSCharacterRange{64312, 64316}, TSCharacterRange{64318, 64318}, TSCharacterRange{64320, 64321}, TSCharacterRange{64323, 64324}, TSCharacterRange{64326, 64433}, TSCharacterRange{64467, 64829}, TSCharacterRange{64848, 64911}, TSCharacterRange{64914, 64967}, TSCharacterRange{65008, 65019}, TSCharacterRange{65136, 65140}, TSCharacterRange{65142, 65276}, TSCharacterRange{65313, 65338}, TSCharacterRange{65345, 65370}, TSCharacterRange{65382, 65470}, TSCharacterRange{65474, 65479}, TSCharacterRange{65482, 65487}, TSCharacterRange{65490, 65495}, TSCharacterRange{65498, 65500}, TSCharacterRange{65536, 65547}, TSCharacterRange{65549, 65574}, TSCharacterRange{65576, 65594}, TSCharacterRange{65596, 65597}, TSCharacterRange{65599, 65613}, TSCharacterRange{65616, 65629}, TSCharacterRange{65664, 65786}, TSCharacterRange{66176, 66204}, TSCharacterRange{66208, 66256}, TSCharacterRange{66304, 66335}, TSCharacterRange{66349, 66368}, TSCharacterRange{66370, 66377}, TSCharacterRange{66384, 66421}, TSCharacterRange{66432, 66461}, TSCharacterRange{66464, 66499}, TSCharacterRange{66504, 66511}, TSCharacterRange{66560, 66717}, TSCharacterRange{66736, 66771}, TSCharacterRange{66776, 66811}, TSCharacterRange{66816, 66855}, TSCharacterRange{66864, 66915}, TSCharacterRange{66928, 66938}, TSCharacterRange{66940, 66954}, TSCharacterRange{66956, 66962}, TSCharacterRange{66964, 66965}, TSCharacterRange{66967, 66977}, TSCharacterRange{66979, 66993}, TSCharacterRange{66995, 67001}, TSCharacterRange{67003, 67004}, TSCharacterRange{67008, 67059}, TSCharacterRange{67072, 67382}, TSCharacterRange{67392, 67413}, TSCharacterRange{67424, 67431}, TSCharacterRange{67456, 67461}, TSCharacterRange{67463, 67504}, TSCharacterRange{67506, 67514}, TSCharacterRange{67584, 67589}, TSCharacterRange{67592, 67592}, TSCharacterRange{67594, 67637}, TSCharacterRange{67639, 67640}, TSCharacterRange{67644, 67644}, TSCharacterRange{67647, 67669}, TSCharacterRange{67680, 67702}, TSCharacterRange{67712, 67742}, TSCharacterRange{67808, 67826}, TSCharacterRange{67828, 67829}, TSCharacterRange{67840, 67861}, TSCharacterRange{67872, 67897}, TSCharacterRange{67968, 68023}, TSCharacterRange{68030, 68031}, TSCharacterRange{68096, 68096}, TSCharacterRange{68112, 68115}, TSCharacterRange{68117, 68119}, TSCharacterRange{68121, 68149}, TSCharacterRange{68192, 68220}, TSCharacterRange{68224, 68252}, TSCharacterRange{68288, 68295}, TSCharacterRange{68297, 68324}, TSCharacterRange{68352, 68405}, TSCharacterRange{68416, 68437}, TSCharacterRange{68448, 68466}, TSCharacterRange{68480, 68497}, TSCharacterRange{68608, 68680}, TSCharacterRange{68736, 68786}, TSCharacterRange{68800, 68850}, TSCharacterRange{68864, 68899}, TSCharacterRange{68938, 68965}, TSCharacterRange{68975, 68997}, TSCharacterRange{69248, 69289}, TSCharacterRange{69296, 69297}, TSCharacterRange{69314, 69316}, TSCharacterRange{69376, 69404}, TSCharacterRange{69415, 69415}, TSCharacterRange{69424, 69445}, TSCharacterRange{69488, 69505}, TSCharacterRange{69552, 69572}, TSCharacterRange{69600, 69622}, TSCharacterRange{69635, 69687}, TSCharacterRange{69745, 69746}, TSCharacterRange{69749, 69749}, TSCharacterRange{69763, 69807}, TSCharacterRange{69840, 69864}, TSCharacterRange{69891, 69926}, TSCharacterRange{69956, 69956}, TSCharacterRange{69959, 69959}, TSCharacterRange{69968, 70002}, TSCharacterRange{70006, 70006}, TSCharacterRange{70019, 70066}, TSCharacterRange{70081, 70084}, TSCharacterRange{70106, 70106}, TSCharacterRange{70108, 70108}, TSCharacterRange{70144, 70161}, TSCharacterRange{70163, 70187}, TSCharacterRange{70207, 70208}, TSCharacterRange{70272, 70278}, TSCharacterRange{70280, 70280}, TSCharacterRange{70282, 70285}, TSCharacterRange{70287, 70301}, TSCharacterRange{70303, 70312}, TSCharacterRange{70320, 70366}, TSCharacterRange{70405, 70412}, TSCharacterRange{70415, 70416}, TSCharacterRange{70419, 70440}, TSCharacterRange{70442, 70448}, TSCharacterRange{70450, 70451}, TSCharacterRange{70453, 70457}, TSCharacterRange{70461, 70461}, TSCharacterRange{70480, 70480}, TSCharacterRange{70493, 70497}, TSCharacterRange{70528, 70537}, TSCharacterRange{70539, 70539}, TSCharacterRange{70542, 70542}, TSCharacterRange{70544, 70581}, TSCharacterRange{70583, 70583}, TSCharacterRange{70609, 70609}, TSCharacterRange{70611, 70611}, TSCharacterRange{70656, 70708}, TSCharacterRange{70727, 70730}, TSCharacterRange{70751, 70753}, TSCharacterRange{70784, 70831}, TSCharacterRange{70852, 70853}, TSCharacterRange{70855, 70855}, TSCharacterRange{71040, 71086}, TSCharacterRange{71128, 71131}, TSCharacterRange{71168, 71215}, TSCharacterRange{71236, 71236}, TSCharacterRange{71296, 71338}, TSCharacterRange{71352, 71352}, TSCharacterRange{71424, 71450}, TSCharacterRange{71488, 71494}, TSCharacterRange{71680, 71723}, TSCharacterRange{71840, 71903}, TSCharacterRange{71935, 71942}, TSCharacterRange{71945, 71945}, TSCharacterRange{71948, 71955}, TSCharacterRange{71957, 71958}, TSCharacterRange{71960, 71983}, TSCharacterRange{71999, 71999}, TSCharacterRange{72001, 72001}, TSCharacterRange{72096, 72103}, TSCharacterRange{72106, 72144}, TSCharacterRange{72161, 72161}, TSCharacterRange{72163, 72163}, TSCharacterRange{72192, 72192}, TSCharacterRange{72203, 72242}, TSCharacterRange{72250, 72250}, TSCharacterRange{72272, 72272}, TSCharacterRange{72284, 72329}, TSCharacterRange{72349, 72349}, TSCharacterRange{72368, 72440}, TSCharacterRange{72640, 72672}, TSCharacterRange{72704, 72712}, TSCharacterRange{72714, 72750}, TSCharacterRange{72768, 72768}, TSCharacterRange{72818, 72847}, TSCharacterRange{72960, 72966}, TSCharacterRange{72968, 72969}, TSCharacterRange{72971, 73008}, TSCharacterRange{73030, 73030}, TSCharacterRange{73056, 73061}, TSCharacterRange{73063, 73064}, TSCharacterRange{73066, 73097}, TSCharacterRange{73112, 73112}, TSCharacterRange{73440, 73458}, TSCharacterRange{73474, 73474}, TSCharacterRange{73476, 73488}, TSCharacterRange{73490, 73523}, TSCharacterRange{73648, 73648}, TSCharacterRange{73728, 74649}, TSCharacterRange{74880, 75075}, TSCharacterRange{77712, 77808}, TSCharacterRange{77824, 78895}, TSCharacterRange{78913, 78918}, TSCharacterRange{78944, 82938}, TSCharacterRange{82944, 83526}, TSCharacterRange{90368, 90397}, TSCharacterRange{92160, 92728}, TSCharacterRange{92736, 92766}, TSCharacterRange{92784, 92862}, TSCharacterRange{92880, 92909}, TSCharacterRange{92928, 92975}, TSCharacterRange{92992, 92995}, TSCharacterRange{93027, 93047}, TSCharacterRange{93053, 93071}, TSCharacterRange{93504, 93548}, TSCharacterRange{93760, 93823}, TSCharacterRange{93952, 94026}, TSCharacterRange{94032, 94032}, TSCharacterRange{94099, 94111}, TSCharacterRange{94176, 94177}, TSCharacterRange{94179, 94179}, TSCharacterRange{94208, 100343}, TSCharacterRange{100352, 101589}, TSCharacterRange{101631, 101640}, TSCharacterRange{110576, 110579}, TSCharacterRange{110581, 110587}, TSCharacterRange{110589, 110590}, TSCharacterRange{110592, 110882}, TSCharacterRange{110898, 110898}, TSCharacterRange{110928, 110930}, TSCharacterRange{110933, 110933}, TSCharacterRange{110948, 110951}, TSCharacterRange{110960, 111355}, TSCharacterRange{113664, 113770}, TSCharacterRange{113776, 113788}, TSCharacterRange{113792, 113800}, TSCharacterRange{113808, 113817}, TSCharacterRange{119808, 119892}, TSCharacterRange{119894, 119964}, TSCharacterRange{119966, 119967}, TSCharacterRange{119970, 119970}, TSCharacterRange{119973, 119974}, TSCharacterRange{119977, 119980}, TSCharacterRange{119982, 119993}, TSCharacterRange{119995, 119995}, TSCharacterRange{119997, 120003}, TSCharacterRange{120005, 120069}, TSCharacterRange{120071, 120074}, TSCharacterRange{120077, 120084}, TSCharacterRange{120086, 120092}, TSCharacterRange{120094, 120121}, TSCharacterRange{120123, 120126}, TSCharacterRange{120128, 120132}, TSCharacterRange{120134, 120134}, TSCharacterRange{120138, 120144}, TSCharacterRange{120146, 120485}, TSCharacterRange{120488, 120512}, TSCharacterRange{120514, 120538}, TSCharacterRange{120540, 120570}, TSCharacterRange{120572, 120596}, TSCharacterRange{120598, 120628}, TSCharacterRange{120630, 120654}, TSCharacterRange{120656, 120686}, TSCharacterRange{120688, 120712}, TSCharacterRange{120714, 120744}, TSCharacterRange{120746, 120770}, TSCharacterRange{120772, 120779}, TSCharacterRange{122624, 122654}, TSCharacterRange{122661, 122666}, TSCharacterRange{122928, 122989}, TSCharacterRange{123136, 123180}, TSCharacterRange{123191, 123197}, TSCharacterRange{123214, 123214}, TSCharacterRange{123536, 123565}, TSCharacterRange{123584, 123627}, TSCharacterRange{124112, 124139}, TSCharacterRange{124368, 124397}, TSCharacterRange{124400, 124400}, TSCharacterRange{124896, 124902}, TSCharacterRange{124904, 124907}, TSCharacterRange{124909, 124910}, TSCharacterRange{124912, 124926}, TSCharacterRange{124928, 125124}, TSCharacterRange{125184, 125251}, TSCharacterRange{125259, 125259}, TSCharacterRange{126464, 126467}, TSCharacterRange{126469, 126495}, TSCharacterRange{126497, 126498}, TSCharacterRange{126500, 126500}, TSCharacterRange{126503, 126503}, TSCharacterRange{126505, 126514}, TSCharacterRange{126516, 126519}, TSCharacterRange{126521, 126521}, TSCharacterRange{126523, 126523}, TSCharacterRange{126530, 126530}, TSCharacterRange{126535, 126535}, TSCharacterRange{126537, 126537}, TSCharacterRange{126539, 126539}, TSCharacterRange{126541, 126543}, TSCharacterRange{126545, 126546}, TSCharacterRange{126548, 126548}, TSCharacterRange{126551, 126551}, TSCharacterRange{126553, 126553}, TSCharacterRange{126555, 126555}, TSCharacterRange{126557, 126557}, TSCharacterRange{126559, 126559}, TSCharacterRange{126561, 126562}, TSCharacterRange{126564, 126564}, TSCharacterRange{126567, 126570}, TSCharacterRange{126572, 126578}, TSCharacterRange{126580, 126583}, TSCharacterRange{126585, 126588}, TSCharacterRange{126590, 126590}, TSCharacterRange{126592, 126601}, TSCharacterRange{126603, 126619}, TSCharacterRange{126625, 126627}, TSCharacterRange{126629, 126633}, TSCharacterRange{126635, 126651}, TSCharacterRange{131072, 173791}, TSCharacterRange{173824, 177977}, TSCharacterRange{177984, 178205}, TSCharacterRange{178208, 183969}, TSCharacterRange{183984, 191456}, TSCharacterRange{191472, 192093}, TSCharacterRange{194560, 195101}, TSCharacterRange{196608, 201546}, TSCharacterRange{201552, 205743}}
 
 func tree_sitter_json5() *TSLanguage {
 	return &tree_sitter_json5_language
 }
-
 func ts_lex(lexer *TSLexer, state int16) bool {
-	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v201, v202, v204, v206, v207, v209, v211, v212, v214, v218, v219, v221, v223, v224, v226, v228, v229, v231, v233, v234, v236, v238, v239, v241, v245, v246, v248, v252, v253, v255, v259, v260, v262, v266, v267, v269, v273, v274, v276, v280, v281, v283, v287, v288, v290, v294, v295, v297, v301, v302, v304, v308, v309, v311, v315, v316, v318, v322, v323, v325, v329, v330, v332, v336, v337, v339, v343, v344, v346, v350, v351, v353, v357, v358, v360, v364, v365, v367, v371, v372, v374, v377, v378, v380, v382, v383, v385, v387, v388, v390, v392, v393, v395, v397, v398, v400, v407, v408, v410, v417, v418, v420, v426, v427, v429, v433, v434, v436, v444, v445, v447, v449, v450, v452, v455, v456, v458, v460, v461, v463, v466, v467, v469, v471, v472, v474 *TSLexer
-	var retval *bool
-	var result, skip, eof *byte
-	var mark_end, mark_end575, mark_end579, mark_end590, mark_end594, mark_end598, mark_end602, mark_end606, mark_end617, mark_end628, mark_end639, mark_end650, mark_end661, mark_end672, mark_end683, mark_end694, mark_end705, mark_end716, mark_end727, mark_end738, mark_end749, mark_end760, mark_end771, mark_end782, mark_end793, mark_end804, mark_end815, mark_end822, mark_end826, mark_end830, mark_end834, mark_end838, mark_end860, mark_end882, mark_end900, mark_end911, mark_end934, mark_end938, mark_end945, mark_end949, mark_end956, mark_end960 *func(*TSLexer)
-	var eof2 *func(*TSLexer) bool
-	var advance *func(*TSLexer, bool)
-	var state_addr, arrayidx, arrayidx11, arrayidx53, arrayidx60, arrayidx74, arrayidx81, arrayidx95, arrayidx102, result_symbol, result_symbol574, result_symbol578, result_symbol589, result_symbol593, result_symbol597, result_symbol601, result_symbol605, result_symbol616, result_symbol627, result_symbol638, result_symbol649, result_symbol660, result_symbol671, result_symbol682, result_symbol693, result_symbol704, result_symbol715, result_symbol726, result_symbol737, result_symbol748, result_symbol759, result_symbol770, result_symbol781, result_symbol792, result_symbol803, result_symbol814, result_symbol821, result_symbol825, result_symbol829, result_symbol833, result_symbol837, result_symbol859, result_symbol881, result_symbol899, result_symbol910, result_symbol933, result_symbol937, result_symbol944, result_symbol948, result_symbol955, result_symbol959 *int16
-	var lookahead, i, i46, i67, i88, lookahead1 *int32
+	var lexer_addr **TSLexer
 	var tobool, call, tobool3, cmp, cmp7, cmp14, cmp16, cmp18, cmp22, cmp25, call29, tobool32, cmp34, tobool38, cmp40, tobool44, cmp49, cmp55, tobool65, cmp70, cmp76, tobool86, cmp91, cmp97, cmp107, cmp110, cmp113, cmp117, cmp120, tobool124, cmp126, cmp130, cmp134, cmp138, cmp142, cmp145, cmp148, call152, tobool155, cmp157, cmp161, cmp165, tobool169, cmp171, cmp175, cmp179, tobool183, cmp185, cmp189, tobool193, cmp195, cmp199, cmp203, tobool207, cmp209, cmp213, tobool217, cmp219, cmp223, cmp227, cmp231, cmp235, cmp238, tobool242, cmp244, tobool248, cmp250, tobool254, cmp256, tobool260, cmp262, tobool266, cmp268, tobool272, cmp274, tobool278, cmp280, tobool284, cmp286, tobool290, cmp292, tobool296, cmp298, tobool302, cmp304, tobool308, cmp310, tobool314, cmp316, tobool320, cmp322, tobool326, cmp328, tobool332, cmp334, tobool338, cmp340, tobool344, cmp346, tobool350, cmp352, tobool356, cmp358, cmp361, cmp365, cmp368, tobool372, cmp374, cmp377, tobool381, cmp383, cmp386, cmp389, cmp392, cmp395, cmp398, tobool402, cmp404, cmp407, cmp410, cmp413, cmp416, cmp419, tobool423, cmp425, cmp428, cmp431, cmp434, cmp437, cmp440, tobool444, cmp446, cmp449, cmp452, cmp455, cmp458, cmp461, tobool465, cmp467, cmp470, cmp473, cmp476, cmp479, cmp482, tobool486, cmp488, cmp491, cmp494, cmp497, cmp500, cmp503, tobool507, cmp509, cmp512, cmp515, cmp518, cmp521, cmp524, tobool528, cmp530, cmp533, cmp536, cmp539, cmp542, cmp545, tobool549, cmp551, cmp554, cmp557, cmp560, cmp563, cmp566, tobool570, tobool572, tobool576, cmp580, cmp583, tobool587, tobool591, tobool595, tobool599, tobool603, cmp607, call611, tobool614, cmp618, call622, tobool625, cmp629, call633, tobool636, cmp640, call644, tobool647, cmp651, call655, tobool658, cmp662, call666, tobool669, cmp673, call677, tobool680, cmp684, call688, tobool691, cmp695, call699, tobool702, cmp706, call710, tobool713, cmp717, call721, tobool724, cmp728, call732, tobool735, cmp739, call743, tobool746, cmp750, call754, tobool757, cmp761, call765, tobool768, cmp772, call776, tobool779, cmp783, call787, tobool790, cmp794, call798, tobool801, cmp805, call809, tobool812, call816, tobool819, tobool823, tobool827, tobool831, tobool835, cmp839, cmp843, cmp846, cmp850, cmp853, tobool857, cmp861, cmp865, cmp868, cmp872, cmp875, tobool879, cmp883, cmp886, cmp890, cmp893, tobool897, cmp901, cmp904, tobool908, cmp912, cmp915, cmp918, cmp921, cmp924, cmp927, tobool931, tobool935, call939, tobool942, tobool946, call950, tobool953, tobool957, call961, tobool964, v477 bool
-	var v3, frombool, v10, v24, v26, v28, v36, v44, v57, v66, v70, v74, v77, v81, v84, v91, v93, v95, v97, v99, v101, v103, v105, v107, v109, v111, v113, v115, v117, v119, v121, v123, v125, v127, v129, v134, v137, v144, v151, v158, v165, v172, v179, v186, v193, v200, v205, v210, v217, v222, v227, v232, v237, v244, v251, v258, v265, v272, v279, v286, v293, v300, v307, v314, v321, v328, v335, v342, v349, v356, v363, v370, v376, v381, v386, v391, v396, v406, v416, v425, v432, v443, v448, v454, v459, v465, v470, v476 byte
-	var v203, v208, v213, v220, v225, v230, v235, v240, v247, v254, v261, v268, v275, v282, v289, v296, v303, v310, v317, v324, v331, v338, v345, v352, v359, v366, v373, v379, v384, v389, v394, v399, v409, v419, v428, v435, v446, v451, v457, v462, v468, v473 func(*TSLexer)
 	var v7 func(*TSLexer) bool
-	var v1 func(*TSLexer, bool)
+	var eof2 *func(*TSLexer) bool
+	var retval *bool
 	var v9, v13, v16, v31, v34, v39, v42, v47, v50 int16
+	var state_addr, arrayidx, arrayidx11, arrayidx53, arrayidx60, arrayidx74, arrayidx81, arrayidx95, arrayidx102, result_symbol, result_symbol574, result_symbol578, result_symbol589, result_symbol593, result_symbol597, result_symbol601, result_symbol605, result_symbol616, result_symbol627, result_symbol638, result_symbol649, result_symbol660, result_symbol671, result_symbol682, result_symbol693, result_symbol704, result_symbol715, result_symbol726, result_symbol737, result_symbol748, result_symbol759, result_symbol770, result_symbol781, result_symbol792, result_symbol803, result_symbol814, result_symbol821, result_symbol825, result_symbol829, result_symbol833, result_symbol837, result_symbol859, result_symbol881, result_symbol899, result_symbol910, result_symbol933, result_symbol937, result_symbol944, result_symbol948, result_symbol955, result_symbol959 *int16
 	var v5, conv, v11, v12, conv6, v14, v15, add, v17, add13, v18, v19, v20, v21, v22, v23, v25, v27, v29, v30, conv54, v32, v33, add58, v35, add63, v37, v38, conv75, v40, v41, add79, v43, add84, v45, v46, conv96, v48, v49, add100, v51, add105, v52, v53, v54, v55, v56, v58, v59, v60, v61, v62, v63, v64, v65, v67, v68, v69, v71, v72, v73, v75, v76, v78, v79, v80, v82, v83, v85, v86, v87, v88, v89, v90, v92, v94, v96, v98, v100, v102, v104, v106, v108, v110, v112, v114, v116, v118, v120, v122, v124, v126, v128, v130, v131, v132, v133, v135, v136, v138, v139, v140, v141, v142, v143, v145, v146, v147, v148, v149, v150, v152, v153, v154, v155, v156, v157, v159, v160, v161, v162, v163, v164, v166, v167, v168, v169, v170, v171, v173, v174, v175, v176, v177, v178, v180, v181, v182, v183, v184, v185, v187, v188, v189, v190, v191, v192, v194, v195, v196, v197, v198, v199, v215, v216, v242, v243, v249, v250, v256, v257, v263, v264, v270, v271, v277, v278, v284, v285, v291, v292, v298, v299, v305, v306, v312, v313, v319, v320, v326, v327, v333, v334, v340, v341, v347, v348, v354, v355, v361, v362, v368, v369, v375, v401, v402, v403, v404, v405, v411, v412, v413, v414, v415, v421, v422, v423, v424, v430, v431, v437, v438, v439, v440, v441, v442, v453, v464, v475 int32
+	var lookahead, i, i46, i67, i88, lookahead1 *int32
 	var conv4, idxprom, idxprom10, conv48, idxprom52, idxprom59, conv69, idxprom73, idxprom80, conv90, idxprom94, idxprom101 int64
-
+	var v3, frombool, v10, v24, v26, v28, v36, v44, v57, v66, v70, v74, v77, v81, v84, v91, v93, v95, v97, v99, v101, v103, v105, v107, v109, v111, v113, v115, v117, v119, v121, v123, v125, v127, v129, v134, v137, v144, v151, v158, v165, v172, v179, v186, v193, v200, v205, v210, v217, v222, v227, v232, v237, v244, v251, v258, v265, v272, v279, v286, v293, v300, v307, v314, v321, v328, v335, v342, v349, v356, v363, v370, v376, v381, v386, v391, v396, v406, v416, v425, v432, v443, v448, v454, v459, v465, v470, v476 byte
+	var result, skip, eof *byte
+	var v203, v208, v213, v220, v225, v230, v235, v240, v247, v254, v261, v268, v275, v282, v289, v296, v303, v310, v317, v324, v331, v338, v345, v352, v359, v366, v373, v379, v384, v389, v394, v399, v409, v419, v428, v435, v446, v451, v457, v462, v468, v473 func(*TSLexer)
+	var mark_end, mark_end575, mark_end579, mark_end590, mark_end594, mark_end598, mark_end602, mark_end606, mark_end617, mark_end628, mark_end639, mark_end650, mark_end661, mark_end672, mark_end683, mark_end694, mark_end705, mark_end716, mark_end727, mark_end738, mark_end749, mark_end760, mark_end771, mark_end782, mark_end793, mark_end804, mark_end815, mark_end822, mark_end826, mark_end830, mark_end834, mark_end838, mark_end860, mark_end882, mark_end900, mark_end911, mark_end934, mark_end938, mark_end945, mark_end949, mark_end956, mark_end960 *func(*TSLexer)
+	var v1 func(*TSLexer, bool)
+	var advance *func(*TSLexer, bool)
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, i46, i67, i88, v0, advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, tobool3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, cmp18, v21, cmp22, v22, cmp25, v23, call29, v24, tobool32, v25, cmp34, v26, tobool38, v27, cmp40, v28, tobool44, v29, conv48, cmp49, v30, idxprom52, arrayidx53, v31, conv54, v32, cmp55, v33, add58, idxprom59, arrayidx60, v34, v35, add63, v36, tobool65, v37, conv69, cmp70, v38, idxprom73, arrayidx74, v39, conv75, v40, cmp76, v41, add79, idxprom80, arrayidx81, v42, v43, add84, v44, tobool86, v45, conv90, cmp91, v46, idxprom94, arrayidx95, v47, conv96, v48, cmp97, v49, add100, idxprom101, arrayidx102, v50, v51, add105, v52, cmp107, v53, cmp110, v54, cmp113, v55, cmp117, v56, cmp120, v57, tobool124, v58, cmp126, v59, cmp130, v60, cmp134, v61, cmp138, v62, cmp142, v63, cmp145, v64, cmp148, v65, call152, v66, tobool155, v67, cmp157, v68, cmp161, v69, cmp165, v70, tobool169, v71, cmp171, v72, cmp175, v73, cmp179, v74, tobool183, v75, cmp185, v76, cmp189, v77, tobool193, v78, cmp195, v79, cmp199, v80, cmp203, v81, tobool207, v82, cmp209, v83, cmp213, v84, tobool217, v85, cmp219, v86, cmp223, v87, cmp227, v88, cmp231, v89, cmp235, v90, cmp238, v91, tobool242, v92, cmp244, v93, tobool248, v94, cmp250, v95, tobool254, v96, cmp256, v97, tobool260, v98, cmp262, v99, tobool266, v100, cmp268, v101, tobool272, v102, cmp274, v103, tobool278, v104, cmp280, v105, tobool284, v106, cmp286, v107, tobool290, v108, cmp292, v109, tobool296, v110, cmp298, v111, tobool302, v112, cmp304, v113, tobool308, v114, cmp310, v115, tobool314, v116, cmp316, v117, tobool320, v118, cmp322, v119, tobool326, v120, cmp328, v121, tobool332, v122, cmp334, v123, tobool338, v124, cmp340, v125, tobool344, v126, cmp346, v127, tobool350, v128, cmp352, v129, tobool356, v130, cmp358, v131, cmp361, v132, cmp365, v133, cmp368, v134, tobool372, v135, cmp374, v136, cmp377, v137, tobool381, v138, cmp383, v139, cmp386, v140, cmp389, v141, cmp392, v142, cmp395, v143, cmp398, v144, tobool402, v145, cmp404, v146, cmp407, v147, cmp410, v148, cmp413, v149, cmp416, v150, cmp419, v151, tobool423, v152, cmp425, v153, cmp428, v154, cmp431, v155, cmp434, v156, cmp437, v157, cmp440, v158, tobool444, v159, cmp446, v160, cmp449, v161, cmp452, v162, cmp455, v163, cmp458, v164, cmp461, v165, tobool465, v166, cmp467, v167, cmp470, v168, cmp473, v169, cmp476, v170, cmp479, v171, cmp482, v172, tobool486, v173, cmp488, v174, cmp491, v175, cmp494, v176, cmp497, v177, cmp500, v178, cmp503, v179, tobool507, v180, cmp509, v181, cmp512, v182, cmp515, v183, cmp518, v184, cmp521, v185, cmp524, v186, tobool528, v187, cmp530, v188, cmp533, v189, cmp536, v190, cmp539, v191, cmp542, v192, cmp545, v193, tobool549, v194, cmp551, v195, cmp554, v196, cmp557, v197, cmp560, v198, cmp563, v199, cmp566, v200, tobool570, v201, result_symbol, v202, mark_end, v203, v204, v205, tobool572, v206, result_symbol574, v207, mark_end575, v208, v209, v210, tobool576, v211, result_symbol578, v212, mark_end579, v213, v214, v215, cmp580, v216, cmp583, v217, tobool587, v218, result_symbol589, v219, mark_end590, v220, v221, v222, tobool591, v223, result_symbol593, v224, mark_end594, v225, v226, v227, tobool595, v228, result_symbol597, v229, mark_end598, v230, v231, v232, tobool599, v233, result_symbol601, v234, mark_end602, v235, v236, v237, tobool603, v238, result_symbol605, v239, mark_end606, v240, v241, v242, cmp607, v243, call611, v244, tobool614, v245, result_symbol616, v246, mark_end617, v247, v248, v249, cmp618, v250, call622, v251, tobool625, v252, result_symbol627, v253, mark_end628, v254, v255, v256, cmp629, v257, call633, v258, tobool636, v259, result_symbol638, v260, mark_end639, v261, v262, v263, cmp640, v264, call644, v265, tobool647, v266, result_symbol649, v267, mark_end650, v268, v269, v270, cmp651, v271, call655, v272, tobool658, v273, result_symbol660, v274, mark_end661, v275, v276, v277, cmp662, v278, call666, v279, tobool669, v280, result_symbol671, v281, mark_end672, v282, v283, v284, cmp673, v285, call677, v286, tobool680, v287, result_symbol682, v288, mark_end683, v289, v290, v291, cmp684, v292, call688, v293, tobool691, v294, result_symbol693, v295, mark_end694, v296, v297, v298, cmp695, v299, call699, v300, tobool702, v301, result_symbol704, v302, mark_end705, v303, v304, v305, cmp706, v306, call710, v307, tobool713, v308, result_symbol715, v309, mark_end716, v310, v311, v312, cmp717, v313, call721, v314, tobool724, v315, result_symbol726, v316, mark_end727, v317, v318, v319, cmp728, v320, call732, v321, tobool735, v322, result_symbol737, v323, mark_end738, v324, v325, v326, cmp739, v327, call743, v328, tobool746, v329, result_symbol748, v330, mark_end749, v331, v332, v333, cmp750, v334, call754, v335, tobool757, v336, result_symbol759, v337, mark_end760, v338, v339, v340, cmp761, v341, call765, v342, tobool768, v343, result_symbol770, v344, mark_end771, v345, v346, v347, cmp772, v348, call776, v349, tobool779, v350, result_symbol781, v351, mark_end782, v352, v353, v354, cmp783, v355, call787, v356, tobool790, v357, result_symbol792, v358, mark_end793, v359, v360, v361, cmp794, v362, call798, v363, tobool801, v364, result_symbol803, v365, mark_end804, v366, v367, v368, cmp805, v369, call809, v370, tobool812, v371, result_symbol814, v372, mark_end815, v373, v374, v375, call816, v376, tobool819, v377, result_symbol821, v378, mark_end822, v379, v380, v381, tobool823, v382, result_symbol825, v383, mark_end826, v384, v385, v386, tobool827, v387, result_symbol829, v388, mark_end830, v389, v390, v391, tobool831, v392, result_symbol833, v393, mark_end834, v394, v395, v396, tobool835, v397, result_symbol837, v398, mark_end838, v399, v400, v401, cmp839, v402, cmp843, v403, cmp846, v404, cmp850, v405, cmp853, v406, tobool857, v407, result_symbol859, v408, mark_end860, v409, v410, v411, cmp861, v412, cmp865, v413, cmp868, v414, cmp872, v415, cmp875, v416, tobool879, v417, result_symbol881, v418, mark_end882, v419, v420, v421, cmp883, v422, cmp886, v423, cmp890, v424, cmp893, v425, tobool897, v426, result_symbol899, v427, mark_end900, v428, v429, v430, cmp901, v431, cmp904, v432, tobool908, v433, result_symbol910, v434, mark_end911, v435, v436, v437, cmp912, v438, cmp915, v439, cmp918, v440, cmp921, v441, cmp924, v442, cmp927, v443, tobool931, v444, result_symbol933, v445, mark_end934, v446, v447, v448, tobool935, v449, result_symbol937, v450, mark_end938, v451, v452, v453, call939, v454, tobool942, v455, result_symbol944, v456, mark_end945, v457, v458, v459, tobool946, v460, result_symbol948, v461, mark_end949, v462, v463, v464, call950, v465, tobool953, v466, result_symbol955, v467, mark_end956, v468, v469, v470, tobool957, v471, result_symbol959, v472, mark_end960, v473, v474, v475, call961, v476, tobool964, v477
 
 	retval = new(bool)
@@ -1954,7 +1739,11 @@ start:
 	v7 = *eof2
 	v8 = *lexer_addr
 	call = v7(v8)
-	if call { frombool = 1 } else { frombool = 0 }
+	if call {
+		frombool = 1
+	} else {
+		frombool = 0
+	}
 	*eof = frombool
 	v9 = *state_addr
 	conv = int32(uint32(uint16(v9)))
@@ -5354,16 +5143,14 @@ _return:
 	v477 = *retval
 	return v477
 }
-
 func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
-	var ranges_addr, _range, range8 **TSCharacterRange
 	var v6, arrayidx, v9, v12, v15, v20, arrayidx10, v23, v26 *TSCharacterRange
-	var retval *bool
-	var len_addr, lookahead_addr, index, size, half_size, mid_index, start, end, end3, start11, end13 *int32
+	var ranges_addr, _range, range8 **TSCharacterRange
 	var cmp, cmp1, cmp2, cmp4, cmp12, cmp14, v28, v29 bool
+	var retval *bool
 	var v0, v1, sub, v2, v3, div, v4, v5, add, v7, v8, v10, v11, v13, v14, v16, v17, v18, v19, sub7, v21, v22, v24, v25, v27 int32
+	var len_addr, lookahead_addr, index, size, half_size, mid_index, start, end, end3, start11, end13 *int32
 	var idxprom, idxprom9 int64
-
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ranges_addr, len_addr, lookahead_addr, index, size, half_size, mid_index, _range, range8, v0, v1, sub, v2, cmp, v3, div, v4, v5, add, v6, v7, idxprom, arrayidx, v8, v9, start, v10, cmp1, v11, v12, end, v13, cmp2, v14, v15, end3, v16, cmp4, v17, v18, v19, sub7, v20, v21, idxprom9, arrayidx10, v22, v23, start11, v24, cmp12, v25, v26, end13, v27, cmp14, v28, v29
 
 	retval = new(bool)
@@ -5497,4 +5284,3 @@ _return:
 	v29 = *retval
 	return v29
 }
-
