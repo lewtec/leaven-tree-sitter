@@ -11,8 +11,8 @@ github.com/kr/pretty v0.2.0/go.mod h1:ipq/a2n7PKx3OHsz4KJII5eveXtPO4qwEXGdVfWzfn
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
 github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
-github.com/lewtec/leaven v0.0.0-20260809221120-a335499e5795 h1:p8voZ/TovqtGZsbASaG1byFgG8mA8mtdu2Z/SJa0tl8=
-github.com/lewtec/leaven v0.0.0-20260809221120-a335499e5795/go.mod h1:7/mp/iurNSGiaN/DZkgS7cntWzOkV8BlxUdJoBbhD6E=
+github.com/lewtec/leaven v0.0.0-20260809222348-07380f8522c5 h1:U90GE5KoITgfvQlUwVwlCKVY4L/pTpYvOwa4DJXlpfk=
+github.com/lewtec/leaven v0.0.0-20260809222348-07380f8522c5/go.mod h1:7/mp/iurNSGiaN/DZkgS7cntWzOkV8BlxUdJoBbhD6E=
 github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 h1:Hq2U9Y7KGvx2FHe4u3fOr2qLkuonIUMcDhcY59Smwsc=
 github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9/go.mod h1:2F+W9dmrXLYy3UZXnii5UM7QDRiVsz4QkMpC0vaBU7M=
 github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 h1:qpWeOVS0QMji1NhDfYKc7bYU9HFl+Yi1K5aWCbn6f8I=

@@ -3,7 +3,7 @@ module github.com/lewtec/leaven-tree-sitter
 go 1.25.0
 
 require (
-	github.com/lewtec/leaven v0.0.0-20260809221120-a335499e5795
+	github.com/lewtec/leaven v0.0.0-20260809222348-07380f8522c5
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/mod v0.38.0
 )
