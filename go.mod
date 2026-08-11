@@ -3,17 +3,27 @@ module github.com/lewtec/leaven-tree-sitter
 go 1.25.0
 
 require (
-	github.com/lewtec/leaven v0.0.0-20260810010149-5f9a5ec3c5c1
+	github.com/lewtec/leaven v0.0.0-20260810142115-e19d3f9f90f2
 	github.com/spf13/cobra v1.10.2
 	golang.org/x/mod v0.38.0
 )
 
 require github.com/google/go-cmp v0.6.0
 
-require github.com/dave/jennifer v1.7.1 // indirect
+require (
+	github.com/dave/jennifer v1.7.1 // indirect
+	golang.org/x/sys v0.46.0 // indirect
+	modernc.org/memory v1.11.0 // indirect
+)
 
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
+	github.com/pkg/errors v0.9.1 // indirect
+	github.com/spf13/pflag v1.0.9 // indirect
+	golang.org/x/exp v0.0.0-20220407100705-7b9b53b0aca4 // indirect
+	golang.org/x/sync v0.21.0 // indirect
+	golang.org/x/tools v0.47.0 // indirect
 	github.com/lewtec/leaven-tree-sitter/grammar v0.0.0
 	github.com/lewtec/leaven-tree-sitter/grammar/COBOL v0.0.0
 	github.com/lewtec/leaven-tree-sitter/grammar/ada v0.0.0
@@ -206,12 +216,6 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/yaml v0.0.0
 	github.com/lewtec/leaven-tree-sitter/grammar/yuck v0.0.0
 	github.com/lewtec/leaven-tree-sitter/grammar/zig v0.0.0
-	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/spf13/pflag v1.0.9 // indirect
-	golang.org/x/exp v0.0.0-20220407100705-7b9b53b0aca4 // indirect
-	golang.org/x/sync v0.21.0 // indirect
-	golang.org/x/tools v0.47.0 // indirect
 )
 
 replace github.com/lewtec/leaven-tree-sitter/grammar => ./grammar
