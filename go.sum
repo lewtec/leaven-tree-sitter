@@ -9,6 +9,8 @@ github.com/lewtec/leaven v0.0.0-20260810142115-e19d3f9f90f2 h1:k30RCuosdn/rdioCo
 github.com/lewtec/leaven v0.0.0-20260810142115-e19d3f9f90f2/go.mod h1:dm9Ri4N6fnxAcLFsAx9mJyy4mwuF9aLJesoB/G4SjiA=
 github.com/lewtec/leaven v0.0.0-20260813225135-059e92bec875 h1:+fii4Yxe0H7gMnIY96XYQ/6qhbUX4/TgaXJNhi4qcNs=
 github.com/lewtec/leaven v0.0.0-20260813225135-059e92bec875/go.mod h1:HOFzC2wlZaWuw1ohT9xEqQr2ElYwZMGd5xzxqygqWxQ=
+github.com/lewtec/leaven v0.0.0-20260814142252-666e23083398 h1:WZkGYLNpijUbXwthaHVpgZssRFN052D1xnINef5qvt8=
+github.com/lewtec/leaven v0.0.0-20260814142252-666e23083398/go.mod h1:dm9Ri4N6fnxAcLFsAx9mJyy4mwuF9aLJesoB/G4SjiA=
 github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa h1:R27wrYHe8Zik4z/EV8xxfoH3cwMJw3qI4xsI3yYkGDQ=
 github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa/go.mod h1:O+xb+8ycBNHzJicFVs7GRWtruD4tVZI0huVnw5TM01E=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
