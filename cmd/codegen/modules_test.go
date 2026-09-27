@@ -35,7 +35,7 @@ func TestWriteLangGoModRequiresPublishedCore(t *testing.T) {
 		"module github.com/lewtec/leaven-tree-sitter/grammar/json",
 		"github.com/lewtec/leaven-tree-sitter/grammar " + coreVer,
 		"github.com/lewtec/leaven v0.0.0-20260814142252-666e23083398",
-		"replace github.com/lewtec/leaven-tree-sitter/grammar => ../",
+
 	} {
 		if !strings.Contains(s, want) {
 			t.Errorf("go.mod missing %q\n%s", want, s)

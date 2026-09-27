@@ -176,12 +176,9 @@ require (
 	%s %s
 	%s %s
 )
-
-replace %s => ../
 `, grammarModulePath, lang, moduleGoVersion,
 		grammarModulePath, coreVer,
-		leavenModulePath, leavenModuleVer,
-		grammarModulePath)
+		leavenModulePath, leavenModuleVer)
 	return os.WriteFile(filepath.Join(grammarDir, lang, "go.mod"), []byte(content), 0644)
 }
 
@@ -214,13 +211,9 @@ func updateRootGoMod(outputDir string, langs []string) error {
 		return err
 	}
 
-	type modRef struct {
-		path string
-		dir  string
-	}
-	mods := []modRef{{grammarModulePath, "./grammar"}}
+	mods := []string{grammarModulePath}
 	for _, lang := range langs {
-		mods = append(mods, modRef{grammarModulePath + "/" + lang, "./grammar/" + lang})
+		mods = append(mods, grammarModulePath+"/"+lang)
 	}
 	// Drop every local grammar require/replace we manage, including stale
 	// languages removed since the last run (prefix match, not only current set).
@@ -261,11 +254,12 @@ func updateRootGoMod(outputDir string, langs []string) error {
 		}
 	}
 
+	coreVer, err := coreGrammarPseudoVersion()
+	if err != nil {
+		return err
+	}
 	for _, m := range mods {
-		f.AddNewRequire(m.path, localPseudoVer, false)
-		if err := f.AddReplace(m.path, "", m.dir, ""); err != nil {
-			return err
-		}
+		f.AddNewRequire(m, coreVer, false)
 	}
 
 	f.Cleanup()
