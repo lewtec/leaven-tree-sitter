@@ -62,8 +62,9 @@ func init() {
 	modulesCmd := &cobra.Command{
 		Use:   "modules",
 		Short: "Write nested go.mod files and go.work for grammar packages",
-		Long: `Write grammar/go.mod, grammar/<lang>/go.mod (with local replace
-directives), and go.work. Optionally run go work sync / go mod tidy.
+		Long: `Write grammar/go.mod, grammar/<lang>/go.mod (core grammar required at
+the HEAD pseudo-version, plus local replace directives), and go.work.
+Optionally run go work sync / go mod tidy.
 
 Does not transpile C sources.`,
 		RunE: runModules,
