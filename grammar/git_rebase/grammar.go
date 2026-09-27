@@ -1,13 +1,54 @@
 package grammar_git_rebase
 
-import "unsafe"
+import (
+	"github.com/lewtec/leaven/libc"
+	"unsafe"
+)
 
-type TSFieldMapEntry struct {
-	F0 int16
+type TSLanguageMetadata struct {
+	F0 byte
 	F1 byte
 	F2 byte
 }
-type TSLanguage struct {
+type TSSymbolMetadata struct {
+	F0 byte
+	F1 byte
+	F2 byte
+}
+type TSLexerMode struct {
+	F0 int16
+	F1 int16
+	F2 int16
+}
+type TSParseActionEntry struct {
+	F0 TSParseAction
+}
+type TSParseAction struct {
+	F0 anon_1
+}
+type anon_1 struct {
+	F0 byte
+	F1 byte
+	F2 int16
+	F3 int16
+	F4 int16
+}
+type anon_2 struct {
+	F0 byte
+	F1 byte
+}
+type TSLexer struct {
+	F0 int32
+	F1 int16
+	F2 unsafe.Pointer
+	F3 unsafe.Pointer
+	F4 unsafe.Pointer
+	F5 unsafe.Pointer
+	F6 unsafe.Pointer
+	F7 unsafe.Pointer
+}
+
+var tree_sitter_git_rebase_language struct {
 	F0  int32
 	F1  int32
 	F2  int32
@@ -18,93 +59,48 @@ type TSLanguage struct {
 	F7  int32
 	F8  int32
 	F9  int16
-	F10 *int16
-	F11 *int16
-	F12 *int32
-	F13 *TSParseActionEntry
-	F14 **byte
-	F15 **byte
-	F16 *TSMapSlice
-	F17 *TSFieldMapEntry
-	F18 *TSSymbolMetadata
-	F19 *int16
-	F20 *int16
-	F21 *int16
-	F22 *TSLexerMode
-	F23 func(*TSLexer, int16) bool
-	F24 func(*TSLexer, int16) bool
-	F25 int16
-	F26 anon_2
-	F27 *int16
-	F28 *byte
-	F29 *int16
-	F30 int16
-	F31 int32
-	F32 *int16
-	F33 *TSMapSlice
-	F34 *int16
-	F35 TSLanguageMetadata
+	F10 [2]byte
+	F11 unsafe.Pointer
+	F12 unsafe.Pointer
+	F13 unsafe.Pointer
+	F14 unsafe.Pointer
+	F15 unsafe.Pointer
+	F16 unsafe.Pointer
+	F17 unsafe.Pointer
+	F18 unsafe.Pointer
+	F19 unsafe.Pointer
+	F20 unsafe.Pointer
+	F21 unsafe.Pointer
+	F22 unsafe.Pointer
+	F23 unsafe.Pointer
+	F24 unsafe.Pointer
+	F25 unsafe.Pointer
+	F26 int16
+	F27 [6]byte
+	F28 struct {
+		F0 unsafe.Pointer
+		F1 unsafe.Pointer
+		F2 unsafe.Pointer
+		F3 unsafe.Pointer
+		F4 unsafe.Pointer
+		F5 unsafe.Pointer
+		F6 unsafe.Pointer
+	}
+	F29 unsafe.Pointer
+	F30 unsafe.Pointer
+	F31 unsafe.Pointer
+	F32 int16
+	F33 [2]byte
+	F34 int32
+	F35 unsafe.Pointer
+	F36 unsafe.Pointer
+	F37 unsafe.Pointer
+	F38 TSLanguageMetadata
+	F39 [5]byte
 }
-type TSLanguageMetadata struct {
-	F0 byte
-	F1 byte
-	F2 byte
-}
-type TSLexer struct {
-	F0 int32
-	F1 int16
-	F2 func(*TSLexer, bool)
-	F3 func(*TSLexer)
-	F4 func(*TSLexer) int32
-	F5 func(*TSLexer) bool
-	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte, ...interface{})
-}
-type TSLexerMode struct {
-	F0 int16
-	F1 int16
-	F2 int16
-}
-type TSMapSlice struct {
-	F0 int16
-	F1 int16
-}
-type TSSymbolMetadata struct {
-	F0 byte
-	F1 byte
-	F2 byte
-}
-type anon_0 struct {
-	F0 byte
-	F1 byte
-	F2 int16
-	F3 int16
-	F4 int16
-}
-type anon_1 struct {
-	F0 byte
-	F1 byte
-}
-type anon_2 struct {
-	F0 *byte
-	F1 *int16
-	F2 func() *byte
-	F3 func(*byte)
-	F4 func(*byte, *TSLexer, *byte) bool
-	F5 func(*byte, *byte) int32
-	F6 func(*byte, *byte, int32)
-}
-type TSParseAction struct {
-	F0 anon_0
-}
-type TSParseActionEntry struct {
-	F0 TSParseAction
-}
-
-var tree_sitter_git_rebase_language TSLanguage = TSLanguage{15, 20, 0, 10, 0, 27, 7, 1, 0, 5, &(*[7][20]int16)(unsafe.Pointer(&ts_parse_table))[0][0], &ts_small_parse_table[0], &ts_small_parse_table_map[0], &(*[85]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_symbol_names[0], nil, nil, nil, &ts_symbol_metadata[0], &ts_symbol_map[0], &ts_non_terminal_alias_map[0], &ts_alias_sequences[0][0], &ts_lex_modes[0], ts_lex, nil, 0, anon_2{}, &ts_primary_state_ids[0], &_str[0], nil, 0, 0, nil, nil, nil, TSLanguageMetadata{0, 1, 0}}
 var ts_small_parse_table [232]int16 = [232]int16{6, 3, 1, 9, 25, 1, 0, 27, 1, 1, 31, 1, 6, 26, 1, 17, 29, 2, 4, 5, 5, 13, 1, 9, 33, 1, 0, 35, 1, 1, 8, 1, 18, 38, 3, 2, 3, 8, 5, 13, 1, 9, 15, 1, 0, 40, 1, 1, 3, 1, 18, 14, 1, 19, 5, 13, 1, 9, 42, 1, 0, 44, 1, 1, 6, 1, 18, 10, 1, 19, 5, 3, 1, 9, 47, 1, 0, 49, 1, 1, 51, 1, 6, 53, 1, 7, 5, 13, 1, 9, 19, 1, 0, 55, 1, 1, 5, 1, 18, 13, 1, 19, 5, 13, 1, 9, 23, 1, 0, 57, 1, 1, 4, 1, 18, 10, 1, 19, 5, 13, 1, 9, 19, 1, 0, 55, 1, 1, 5, 1, 18, 10, 1, 19, 3, 3, 1, 9, 61, 1, 7, 59, 2, 0, 1, 3, 3, 1, 9, 65, 1, 7, 63, 2, 0, 1, 2, 13, 1, 9, 67, 2, 0, 1, 2, 13, 1, 9, 69, 2, 0, 1, 2, 13, 1, 9, 71, 2, 0, 1, 2, 13, 1, 9, 73, 2, 0, 1, 2, 13, 1, 9, 42, 2, 0, 1, 2, 13, 1, 9, 75, 2, 0, 1, 2, 13, 1, 9, 77, 1, 0, 2, 3, 1, 9, 79, 1, 6, 2, 3, 1, 9, 81, 1, 7, 2, 3, 1, 9, 83, 1, 6}
 var ts_small_parse_table_map [20]int32 = [20]int32{0, 20, 38, 54, 70, 86, 102, 118, 134, 145, 156, 164, 172, 180, 188, 196, 204, 211, 218, 225}
-var ts_symbol_names [20]*byte = [20]*byte{&_str_3[0], &_str_4[0], &_str_5[0], &_str_5[0], &_str_6[0], &_str_7[0], &_str_8[0], &_str_9[0], &_str_5[0], &_str_10[0], &_str_11[0], &_str_12[0], &_str_13[0], &_str_14[0], &_str_15[0], &_str_16[0], &_str_17[0], &_str_18[0], &_str_19[0], &_str_20[0]}
+var ts_symbol_names [20]unsafe.Pointer = [20]unsafe.Pointer{libc.Ptr(&_str_3), libc.Ptr(&_str_4), libc.Ptr(&_str_5), libc.Ptr(&_str_5), libc.Ptr(&_str_6), libc.Ptr(&_str_7), libc.Ptr(&_str_8), libc.Ptr(&_str_9), libc.Ptr(&_str_5), libc.Ptr(&_str_10), libc.Ptr(&_str_11), libc.Ptr(&_str_12), libc.Ptr(&_str_13), libc.Ptr(&_str_14), libc.Ptr(&_str_15), libc.Ptr(&_str_16), libc.Ptr(&_str_17), libc.Ptr(&_str_18), libc.Ptr(&_str_19), libc.Ptr(&_str_20)}
 var ts_symbol_metadata [20]TSSymbolMetadata = [20]TSSymbolMetadata{TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 0, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{0, 1, 0}, TSSymbolMetadata{1, 1, 0}, TSSymbolMetadata{}, TSSymbolMetadata{}}
 var ts_symbol_map [20]int16 = [20]int16{0, 1, 8, 8, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
 var ts_non_terminal_alias_map [1]int16 = [1]int16{}
@@ -140,11 +136,11 @@ var ts_parse_table struct {
 }{[10]int16{1, 1, 1, 1, 1, 1, 0, 1, 0, 3}, [10]int16{}}, [20]int16{5, 7, 9, 9, 0, 0, 0, 0, 11, 13, 23, 9, 17, 17, 17, 17, 17, 0, 2, 0}, [20]int16{15, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 12, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{19, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{21, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{23, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}, [20]int16{0, 17, 9, 9, 0, 0, 0, 0, 11, 13, 0, 21, 17, 17, 17, 17, 17, 0, 8, 0}}
 var ts_parse_actions struct {
 	F0 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F1 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F2 struct {
@@ -154,167 +150,175 @@ var ts_parse_actions struct {
 		}
 	}
 	F3 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F4 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F5 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F6 TSParseActionEntry
 	F7 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F8 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F9 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F10 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F11 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F12 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F13 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F14 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F15 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F16 TSParseActionEntry
 	F17 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F18 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F19 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F20 TSParseActionEntry
 	F21 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F22 TSParseActionEntry
 	F23 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F24 TSParseActionEntry
 	F25 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F26 TSParseActionEntry
 	F27 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F28 TSParseActionEntry
 	F29 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F30 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F31 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F32 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F33 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F34 TSParseActionEntry
 	F35 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F36 TSParseActionEntry
@@ -322,40 +326,42 @@ var ts_parse_actions struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F38 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F39 TSParseActionEntry
 	F40 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F41 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F42 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F43 TSParseActionEntry
 	F44 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F45 TSParseActionEntry
@@ -363,150 +369,157 @@ var ts_parse_actions struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F47 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F48 TSParseActionEntry
 	F49 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F50 TSParseActionEntry
 	F51 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F52 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F53 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F54 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F55 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F56 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F57 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F58 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F59 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F60 TSParseActionEntry
 	F61 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F62 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F63 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F64 TSParseActionEntry
 	F65 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F66 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F67 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F68 TSParseActionEntry
 	F69 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F70 TSParseActionEntry
 	F71 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F72 TSParseActionEntry
 	F73 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F74 TSParseActionEntry
 	F75 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F76 TSParseActionEntry
 	F77 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F78 struct {
@@ -516,47 +529,49 @@ var ts_parse_actions struct {
 		}
 	}
 	F79 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F80 TSParseActionEntry
 	F81 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F82 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F83 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F84 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 } = struct {
 	F0 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F1 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F2 struct {
@@ -566,167 +581,175 @@ var ts_parse_actions struct {
 		}
 	}
 	F3 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F4 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F5 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F6 TSParseActionEntry
 	F7 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F8 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F9 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F10 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F11 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F12 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F13 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F14 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F15 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F16 TSParseActionEntry
 	F17 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F18 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F19 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F20 TSParseActionEntry
 	F21 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F22 TSParseActionEntry
 	F23 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F24 TSParseActionEntry
 	F25 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F26 TSParseActionEntry
 	F27 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F28 TSParseActionEntry
 	F29 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F30 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F31 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F32 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F33 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F34 TSParseActionEntry
 	F35 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F36 TSParseActionEntry
@@ -734,40 +757,42 @@ var ts_parse_actions struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F38 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F39 TSParseActionEntry
 	F40 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F41 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F42 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F43 TSParseActionEntry
 	F44 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F45 TSParseActionEntry
@@ -775,150 +800,157 @@ var ts_parse_actions struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F47 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F48 TSParseActionEntry
 	F49 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F50 TSParseActionEntry
 	F51 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F52 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F53 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F54 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F55 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F56 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F57 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F58 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F59 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F60 TSParseActionEntry
 	F61 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F62 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F63 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F64 TSParseActionEntry
 	F65 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F66 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F67 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F68 TSParseActionEntry
 	F69 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F70 TSParseActionEntry
 	F71 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F72 TSParseActionEntry
 	F73 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F74 TSParseActionEntry
 	F75 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F76 TSParseActionEntry
 	F77 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F78 struct {
@@ -928,47 +960,49 @@ var ts_parse_actions struct {
 		}
 	}
 	F79 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F80 TSParseActionEntry
 	F81 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F82 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 	F83 struct {
-		F0 anon_1
+		F0 anon_2
 		F1 [6]byte
 	}
 	F84 struct {
 		F0 struct {
 			F0 struct {
 				F0 byte
-				F1 int16
-				F2 byte
+				F1 byte
+				F2 int16
 				F3 byte
+				F4 byte
 			}
 			F1 [2]byte
 		}
 	}
 }{struct {
-	F0 anon_1
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{}, [6]byte{}}, struct {
-	F0 anon_1
+}{}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 byte
 		F1 [7]byte
@@ -977,508 +1011,559 @@ var ts_parse_actions struct {
 	F0 byte
 	F1 [7]byte
 }{3, [7]byte{}}}, struct {
-	F0 anon_1
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 0, 1, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 0, 1, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 0, 10, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 0, 10, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 2, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 2, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 25, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 25, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 7, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 7, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 0, 1, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 0, 1, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 10, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 1, 10, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 8, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 8, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 10, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 10, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 10, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 4, 10, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 10, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 3, 10, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 12, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 1, 12, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 12, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 1, 12, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 24, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 24, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 15, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 15, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 18, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 18, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 18, 0, 0}}}, struct {
+}{anon_2{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 18, 0, 0}}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 8, 0, 1}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 8, 0, 1}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 18, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 18, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 3, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 3, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 19, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 19, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 19, 0, 0}}}, struct {
+}{anon_2{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 19, 0, 0}}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 6, 0, 1}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 6, 0, 1}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 15, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 3, 15, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 15, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 3, 15, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 16, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 16, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 20, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 20, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 5, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 5, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 4, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 13, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 13, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 19, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 19, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 14, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 4, 14, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 0}, [6]byte{}}, struct {
+}{anon_2{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 22, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 22, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 11, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 1, 11, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 16, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 2, 16, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 13, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 3, 13, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 15, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 4, 15, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 14, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 5, 14, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 byte
 		F1 [7]byte
@@ -1487,61 +1572,67 @@ var ts_parse_actions struct {
 	F0 byte
 	F1 [7]byte
 }{2, [7]byte{}}}, struct {
-	F0 anon_1
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 17, 0, 0}}}, struct {
-	F0 anon_1
+}{anon_2{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_1{1, 1, 17, 0, 0}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 18, 0, 0}, [2]byte{}}}, struct {
-	F0 anon_1
+	F4 byte
+}{0, 0, 18, 0, 0}, [2]byte{}}}, struct {
+	F0 anon_2
 	F1 [6]byte
-}{anon_1{1, 1}, [6]byte{}}, struct {
+}{anon_2{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 		F0 struct {
 			F0 byte
-			F1 int16
-			F2 byte
+			F1 byte
+			F2 int16
 			F3 byte
+			F4 byte
 		}
 		F1 [2]byte
 	}
 }{struct {
 	F0 struct {
 		F0 byte
-		F1 int16
-		F2 byte
+		F1 byte
+		F2 int16
 		F3 byte
+		F4 byte
 	}
 	F1 [2]byte
 }{struct {
 	F0 byte
-	F1 int16
-	F2 byte
+	F1 byte
+	F2 int16
 	F3 byte
-}{0, 11, 0, 0}, [2]byte{}}}}
+	F4 byte
+}{0, 0, 11, 0, 0}, [2]byte{}}}}
 var _str_3 [4]byte = [4]byte{101, 110, 100, 0}
 var _str_4 [14]byte = [14]byte{115, 111, 117, 114, 99, 101, 95, 116, 111, 107, 101, 110, 49, 0}
 var _str_5 [8]byte = [8]byte{99, 111, 109, 109, 97, 110, 100, 0}
@@ -1562,72 +1653,158 @@ var _str_19 [15]byte = [15]byte{115, 111, 117, 114, 99, 101, 95, 114, 101, 112, 
 var _str_20 [15]byte = [15]byte{115, 111, 117, 114, 99, 101, 95, 114, 101, 112, 101, 97, 116, 50, 0}
 var ts_lex_map [16]int16 = [16]int16{45, 21, 63, 8, 101, 24, 120, 11, 10, 10, 13, 10, 35, 25, 59, 25}
 
-func tree_sitter_git_rebase() *TSLanguage {
-	return &tree_sitter_git_rebase_language
+func init() {
+	tree_sitter_git_rebase_language = struct {
+		F0  int32
+		F1  int32
+		F2  int32
+		F3  int32
+		F4  int32
+		F5  int32
+		F6  int32
+		F7  int32
+		F8  int32
+		F9  int16
+		F10 [2]byte
+		F11 unsafe.Pointer
+		F12 unsafe.Pointer
+		F13 unsafe.Pointer
+		F14 unsafe.Pointer
+		F15 unsafe.Pointer
+		F16 unsafe.Pointer
+		F17 unsafe.Pointer
+		F18 unsafe.Pointer
+		F19 unsafe.Pointer
+		F20 unsafe.Pointer
+		F21 unsafe.Pointer
+		F22 unsafe.Pointer
+		F23 unsafe.Pointer
+		F24 unsafe.Pointer
+		F25 unsafe.Pointer
+		F26 int16
+		F27 [6]byte
+		F28 struct {
+			F0 unsafe.Pointer
+			F1 unsafe.Pointer
+			F2 unsafe.Pointer
+			F3 unsafe.Pointer
+			F4 unsafe.Pointer
+			F5 unsafe.Pointer
+			F6 unsafe.Pointer
+		}
+		F29 unsafe.Pointer
+		F30 unsafe.Pointer
+		F31 unsafe.Pointer
+		F32 int16
+		F33 [2]byte
+		F34 int32
+		F35 unsafe.Pointer
+		F36 unsafe.Pointer
+		F37 unsafe.Pointer
+		F38 TSLanguageMetadata
+		F39 [5]byte
+	}{15, 20, 0, 10, 0, 27, 7, 1, 0, 5, [2]byte{}, libc.Ptr(&ts_parse_table), libc.Ptr(&ts_small_parse_table), libc.Ptr(&ts_small_parse_table_map), libc.Ptr(&ts_parse_actions), libc.Ptr(&ts_symbol_names), nil, nil, nil, libc.Ptr(&ts_symbol_metadata), libc.Ptr(&ts_symbol_map), libc.Ptr(&ts_non_terminal_alias_map), libc.Ptr(&ts_alias_sequences), libc.Ptr(&ts_lex_modes), libc.FuncCode(ts_lex), nil, 0, [6]byte{}, struct {
+		F0 unsafe.Pointer
+		F1 unsafe.Pointer
+		F2 unsafe.Pointer
+		F3 unsafe.Pointer
+		F4 unsafe.Pointer
+		F5 unsafe.Pointer
+		F6 unsafe.Pointer
+	}{}, libc.Ptr(&ts_primary_state_ids), libc.Ptr(&_str), nil, 0, [2]byte{}, 0, nil, nil, nil, TSLanguageMetadata{0, 1, 0}, [5]byte{}}
 }
-func ts_lex(lexer *TSLexer, state int16) bool {
-	var v0, v2, v4, v6, v8, v94, v95, v97, v99, v100, v102, v107, v108, v110, v119, v120, v122, v127, v128, v130, v132, v133, v135, v142, v143, v145, v147, v148, v150, v157, v158, v160, v162, v163, v165, v171, v172, v174, v176, v177, v179, v185, v186, v188, v196, v197, v199, v205, v206, v208, v215, v216, v218, v224, v225, v227, v233, v234, v236, v242, v243, v245, v250, v251, v253, v261, v262, v264, v272, v273, v275, v283, v284, v286, v293, v294, v296 *TSLexer
-	var lexer_addr **TSLexer
-	var tobool, call, tobool3, cmp, cmp7, cmp14, cmp16, cmp18, cmp22, tobool26, cmp28, cmp31, cmp35, cmp38, cmp41, cmp44, cmp48, cmp51, cmp54, tobool58, cmp60, cmp63, cmp67, cmp70, cmp73, cmp76, cmp80, cmp83, cmp86, tobool90, tobool92, cmp95, cmp99, cmp103, cmp106, cmp110, cmp113, cmp117, cmp120, cmp123, cmp127, tobool131, tobool133, cmp136, cmp140, cmp143, cmp147, cmp150, cmp154, cmp157, cmp160, cmp164, tobool168, tobool170, cmp173, cmp177, cmp180, cmp184, cmp187, cmp191, cmp194, cmp197, cmp201, tobool205, tobool207, cmp210, cmp214, cmp218, cmp221, cmp225, cmp228, cmp231, cmp235, cmp238, cmp241, cmp245, cmp248, cmp251, cmp254, cmp257, tobool261, tobool263, cmp267, cmp271, cmp274, tobool278, cmp282, cmp286, cmp289, cmp293, cmp296, cmp299, cmp302, tobool306, cmp310, cmp313, cmp316, tobool320, tobool324, cmp328, cmp331, cmp334, cmp337, cmp340, tobool344, tobool348, cmp352, cmp355, cmp358, cmp361, cmp364, tobool368, tobool372, cmp376, cmp379, cmp382, cmp385, tobool389, tobool393, cmp397, cmp400, cmp403, cmp406, tobool410, cmp414, cmp418, cmp422, cmp425, cmp428, cmp431, tobool435, cmp439, cmp442, cmp445, cmp448, tobool452, cmp456, cmp460, cmp464, cmp467, cmp470, tobool474, cmp478, cmp482, cmp485, cmp488, tobool492, cmp496, cmp500, cmp503, cmp506, tobool510, cmp514, cmp518, cmp521, cmp524, tobool528, cmp532, cmp535, cmp538, tobool542, cmp546, cmp550, cmp553, cmp556, cmp559, cmp562, tobool566, cmp570, cmp574, cmp577, cmp580, cmp583, cmp586, tobool590, cmp594, cmp598, cmp601, cmp604, cmp607, cmp610, tobool614, cmp618, cmp621, cmp624, cmp627, cmp630, tobool634, cmp638, cmp641, cmp644, tobool648, v301 bool
-	var v7 func(*TSLexer) bool
-	var eof2 *func(*TSLexer) bool
-	var retval *bool
+func tree_sitter_git_rebase() unsafe.Pointer {
+	return libc.Ptr(&tree_sitter_git_rebase_language)
+}
+func ts_lex(lexer unsafe.Pointer, state int16) bool {
+	var loadedv, call, loadedv3, cmp, cmp7, cmp14, cmp16, cmp18, cmp22, loadedv26, cmp28, cmp31, cmp35, cmp38, cmp41, cmp44, cmp48, cmp51, cmp54, loadedv58, cmp60, cmp63, cmp67, cmp70, cmp73, cmp76, cmp80, cmp83, cmp86, loadedv90, loadedv92, cmp95, cmp99, cmp103, cmp106, cmp110, cmp113, cmp117, cmp120, cmp123, cmp127, loadedv131, loadedv133, cmp136, cmp140, cmp143, cmp147, cmp150, cmp154, cmp157, cmp160, cmp164, loadedv168, loadedv170, cmp173, cmp177, cmp180, cmp184, cmp187, cmp191, cmp194, cmp197, cmp201, loadedv205, loadedv207, cmp210, cmp214, cmp218, cmp221, cmp225, cmp228, cmp231, cmp235, cmp238, cmp241, cmp245, cmp248, cmp251, cmp254, cmp257, loadedv261, loadedv263, cmp267, cmp271, cmp274, loadedv278, cmp282, cmp286, cmp289, cmp293, cmp296, cmp299, cmp302, loadedv306, cmp310, cmp313, cmp316, loadedv320, loadedv324, cmp328, cmp331, cmp334, cmp337, cmp340, loadedv344, loadedv348, cmp352, cmp355, cmp358, cmp361, cmp364, loadedv368, loadedv372, cmp376, cmp379, cmp382, cmp385, loadedv389, loadedv393, cmp397, cmp400, cmp403, cmp406, loadedv410, cmp414, cmp418, cmp422, cmp425, cmp428, cmp431, loadedv435, cmp439, cmp442, cmp445, cmp448, loadedv452, cmp456, cmp460, cmp464, cmp467, cmp470, loadedv474, cmp478, cmp482, cmp485, cmp488, loadedv492, cmp496, cmp500, cmp503, cmp506, loadedv510, cmp514, cmp518, cmp521, cmp524, loadedv528, cmp532, cmp535, cmp538, loadedv542, cmp546, cmp550, cmp553, cmp556, cmp559, cmp562, loadedv566, cmp570, cmp574, cmp577, cmp580, cmp583, cmp586, loadedv590, cmp594, cmp598, cmp601, cmp604, cmp607, cmp610, loadedv614, cmp618, cmp621, cmp624, cmp627, cmp630, loadedv634, cmp638, cmp641, cmp644, loadedv648, v301 bool
+	var retval unsafe.Pointer
 	var v9, v13, v16 int16
-	var state_addr, arrayidx, arrayidx11, result_symbol, result_symbol265, result_symbol280, result_symbol308, result_symbol322, result_symbol326, result_symbol346, result_symbol350, result_symbol370, result_symbol374, result_symbol391, result_symbol395, result_symbol412, result_symbol437, result_symbol454, result_symbol476, result_symbol494, result_symbol512, result_symbol530, result_symbol544, result_symbol568, result_symbol592, result_symbol616, result_symbol636 *int16
+	var state_addr, arrayidx, arrayidx11, result_symbol, result_symbol265, result_symbol280, result_symbol308, result_symbol322, result_symbol326, result_symbol346, result_symbol350, result_symbol370, result_symbol374, result_symbol391, result_symbol395, result_symbol412, result_symbol437, result_symbol454, result_symbol476, result_symbol494, result_symbol512, result_symbol530, result_symbol544, result_symbol568, result_symbol592, result_symbol616, result_symbol636 unsafe.Pointer
 	var v5, conv, v11, v12, conv6, v14, v15, add, v17, add13, v18, v19, v20, v21, v23, v24, v25, v26, v27, v28, v29, v30, v31, v33, v34, v35, v36, v37, v38, v39, v40, v41, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v56, v57, v58, v59, v60, v61, v62, v63, v64, v67, v68, v69, v70, v71, v72, v73, v74, v75, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v103, v104, v105, v111, v112, v113, v114, v115, v116, v117, v123, v124, v125, v136, v137, v138, v139, v140, v151, v152, v153, v154, v155, v166, v167, v168, v169, v180, v181, v182, v183, v189, v190, v191, v192, v193, v194, v200, v201, v202, v203, v209, v210, v211, v212, v213, v219, v220, v221, v222, v228, v229, v230, v231, v237, v238, v239, v240, v246, v247, v248, v254, v255, v256, v257, v258, v259, v265, v266, v267, v268, v269, v270, v276, v277, v278, v279, v280, v281, v287, v288, v289, v290, v291, v297, v298, v299 int32
-	var lookahead, i, lookahead1 *int32
+	var lookahead, i, lookahead1 unsafe.Pointer
 	var conv4, idxprom, idxprom10 int64
-	var v3, frombool, v10, v22, v32, v42, v43, v54, v55, v65, v66, v76, v77, v93, v98, v106, v118, v126, v131, v141, v146, v156, v161, v170, v175, v184, v195, v204, v214, v223, v232, v241, v249, v260, v271, v282, v292, v300 byte
-	var result, skip, eof *byte
-	var v96, v101, v109, v121, v129, v134, v144, v149, v159, v164, v173, v178, v187, v198, v207, v217, v226, v235, v244, v252, v263, v274, v285, v295 func(*TSLexer)
-	var mark_end, mark_end266, mark_end281, mark_end309, mark_end323, mark_end327, mark_end347, mark_end351, mark_end371, mark_end375, mark_end392, mark_end396, mark_end413, mark_end438, mark_end455, mark_end477, mark_end495, mark_end513, mark_end531, mark_end545, mark_end569, mark_end593, mark_end617, mark_end637 *func(*TSLexer)
-	var v1 func(*TSLexer, bool)
-	var advance *func(*TSLexer, bool)
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, v0, advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, tobool3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, cmp18, v21, cmp22, v22, tobool26, v23, cmp28, v24, cmp31, v25, cmp35, v26, cmp38, v27, cmp41, v28, cmp44, v29, cmp48, v30, cmp51, v31, cmp54, v32, tobool58, v33, cmp60, v34, cmp63, v35, cmp67, v36, cmp70, v37, cmp73, v38, cmp76, v39, cmp80, v40, cmp83, v41, cmp86, v42, tobool90, v43, tobool92, v44, cmp95, v45, cmp99, v46, cmp103, v47, cmp106, v48, cmp110, v49, cmp113, v50, cmp117, v51, cmp120, v52, cmp123, v53, cmp127, v54, tobool131, v55, tobool133, v56, cmp136, v57, cmp140, v58, cmp143, v59, cmp147, v60, cmp150, v61, cmp154, v62, cmp157, v63, cmp160, v64, cmp164, v65, tobool168, v66, tobool170, v67, cmp173, v68, cmp177, v69, cmp180, v70, cmp184, v71, cmp187, v72, cmp191, v73, cmp194, v74, cmp197, v75, cmp201, v76, tobool205, v77, tobool207, v78, cmp210, v79, cmp214, v80, cmp218, v81, cmp221, v82, cmp225, v83, cmp228, v84, cmp231, v85, cmp235, v86, cmp238, v87, cmp241, v88, cmp245, v89, cmp248, v90, cmp251, v91, cmp254, v92, cmp257, v93, tobool261, v94, result_symbol, v95, mark_end, v96, v97, v98, tobool263, v99, result_symbol265, v100, mark_end266, v101, v102, v103, cmp267, v104, cmp271, v105, cmp274, v106, tobool278, v107, result_symbol280, v108, mark_end281, v109, v110, v111, cmp282, v112, cmp286, v113, cmp289, v114, cmp293, v115, cmp296, v116, cmp299, v117, cmp302, v118, tobool306, v119, result_symbol308, v120, mark_end309, v121, v122, v123, cmp310, v124, cmp313, v125, cmp316, v126, tobool320, v127, result_symbol322, v128, mark_end323, v129, v130, v131, tobool324, v132, result_symbol326, v133, mark_end327, v134, v135, v136, cmp328, v137, cmp331, v138, cmp334, v139, cmp337, v140, cmp340, v141, tobool344, v142, result_symbol346, v143, mark_end347, v144, v145, v146, tobool348, v147, result_symbol350, v148, mark_end351, v149, v150, v151, cmp352, v152, cmp355, v153, cmp358, v154, cmp361, v155, cmp364, v156, tobool368, v157, result_symbol370, v158, mark_end371, v159, v160, v161, tobool372, v162, result_symbol374, v163, mark_end375, v164, v165, v166, cmp376, v167, cmp379, v168, cmp382, v169, cmp385, v170, tobool389, v171, result_symbol391, v172, mark_end392, v173, v174, v175, tobool393, v176, result_symbol395, v177, mark_end396, v178, v179, v180, cmp397, v181, cmp400, v182, cmp403, v183, cmp406, v184, tobool410, v185, result_symbol412, v186, mark_end413, v187, v188, v189, cmp414, v190, cmp418, v191, cmp422, v192, cmp425, v193, cmp428, v194, cmp431, v195, tobool435, v196, result_symbol437, v197, mark_end438, v198, v199, v200, cmp439, v201, cmp442, v202, cmp445, v203, cmp448, v204, tobool452, v205, result_symbol454, v206, mark_end455, v207, v208, v209, cmp456, v210, cmp460, v211, cmp464, v212, cmp467, v213, cmp470, v214, tobool474, v215, result_symbol476, v216, mark_end477, v217, v218, v219, cmp478, v220, cmp482, v221, cmp485, v222, cmp488, v223, tobool492, v224, result_symbol494, v225, mark_end495, v226, v227, v228, cmp496, v229, cmp500, v230, cmp503, v231, cmp506, v232, tobool510, v233, result_symbol512, v234, mark_end513, v235, v236, v237, cmp514, v238, cmp518, v239, cmp521, v240, cmp524, v241, tobool528, v242, result_symbol530, v243, mark_end531, v244, v245, v246, cmp532, v247, cmp535, v248, cmp538, v249, tobool542, v250, result_symbol544, v251, mark_end545, v252, v253, v254, cmp546, v255, cmp550, v256, cmp553, v257, cmp556, v258, cmp559, v259, cmp562, v260, tobool566, v261, result_symbol568, v262, mark_end569, v263, v264, v265, cmp570, v266, cmp574, v267, cmp577, v268, cmp580, v269, cmp583, v270, cmp586, v271, tobool590, v272, result_symbol592, v273, mark_end593, v274, v275, v276, cmp594, v277, cmp598, v278, cmp601, v279, cmp604, v280, cmp607, v281, cmp610, v282, tobool614, v283, result_symbol616, v284, mark_end617, v285, v286, v287, cmp618, v288, cmp621, v289, cmp624, v290, cmp627, v291, cmp630, v292, tobool634, v293, result_symbol636, v294, mark_end637, v295, v296, v297, cmp638, v298, cmp641, v299, cmp644, v300, tobool648, v301
+	var v3, storedv, v10, v22, v32, v42, v43, v54, v55, v65, v66, v76, v77, v93, v98, v106, v118, v126, v131, v141, v146, v156, v161, v170, v175, v184, v195, v204, v214, v223, v232, v241, v249, v260, v271, v282, v292, v300 byte
+	var result, skip, eof unsafe.Pointer
+	var v0, v1, v2, v4, v6, v7, v8, v94, v95, v96, v97, v99, v100, v101, v102, v107, v108, v109, v110, v119, v120, v121, v122, v127, v128, v129, v130, v132, v133, v134, v135, v142, v143, v144, v145, v147, v148, v149, v150, v157, v158, v159, v160, v162, v163, v164, v165, v171, v172, v173, v174, v176, v177, v178, v179, v185, v186, v187, v188, v196, v197, v198, v199, v205, v206, v207, v208, v215, v216, v217, v218, v224, v225, v226, v227, v233, v234, v235, v236, v242, v243, v244, v245, v250, v251, v252, v253, v261, v262, v263, v264, v272, v273, v274, v275, v283, v284, v285, v286, v293, v294, v295, v296 unsafe.Pointer
+	var lexer_addr, advance, eof2, mark_end, mark_end266, mark_end281, mark_end309, mark_end323, mark_end327, mark_end347, mark_end351, mark_end371, mark_end375, mark_end392, mark_end396, mark_end413, mark_end438, mark_end455, mark_end477, mark_end495, mark_end513, mark_end531, mark_end545, mark_end569, mark_end593, mark_end617, mark_end637 unsafe.Pointer
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, v0, advance, v1, v2, v3, loadedv, v4, lookahead1, v5, v6, eof2, v7, v8, call, storedv, v9, conv, v10, loadedv3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, cmp18, v21, cmp22, v22, loadedv26, v23, cmp28, v24, cmp31, v25, cmp35, v26, cmp38, v27, cmp41, v28, cmp44, v29, cmp48, v30, cmp51, v31, cmp54, v32, loadedv58, v33, cmp60, v34, cmp63, v35, cmp67, v36, cmp70, v37, cmp73, v38, cmp76, v39, cmp80, v40, cmp83, v41, cmp86, v42, loadedv90, v43, loadedv92, v44, cmp95, v45, cmp99, v46, cmp103, v47, cmp106, v48, cmp110, v49, cmp113, v50, cmp117, v51, cmp120, v52, cmp123, v53, cmp127, v54, loadedv131, v55, loadedv133, v56, cmp136, v57, cmp140, v58, cmp143, v59, cmp147, v60, cmp150, v61, cmp154, v62, cmp157, v63, cmp160, v64, cmp164, v65, loadedv168, v66, loadedv170, v67, cmp173, v68, cmp177, v69, cmp180, v70, cmp184, v71, cmp187, v72, cmp191, v73, cmp194, v74, cmp197, v75, cmp201, v76, loadedv205, v77, loadedv207, v78, cmp210, v79, cmp214, v80, cmp218, v81, cmp221, v82, cmp225, v83, cmp228, v84, cmp231, v85, cmp235, v86, cmp238, v87, cmp241, v88, cmp245, v89, cmp248, v90, cmp251, v91, cmp254, v92, cmp257, v93, loadedv261, v94, result_symbol, v95, mark_end, v96, v97, v98, loadedv263, v99, result_symbol265, v100, mark_end266, v101, v102, v103, cmp267, v104, cmp271, v105, cmp274, v106, loadedv278, v107, result_symbol280, v108, mark_end281, v109, v110, v111, cmp282, v112, cmp286, v113, cmp289, v114, cmp293, v115, cmp296, v116, cmp299, v117, cmp302, v118, loadedv306, v119, result_symbol308, v120, mark_end309, v121, v122, v123, cmp310, v124, cmp313, v125, cmp316, v126, loadedv320, v127, result_symbol322, v128, mark_end323, v129, v130, v131, loadedv324, v132, result_symbol326, v133, mark_end327, v134, v135, v136, cmp328, v137, cmp331, v138, cmp334, v139, cmp337, v140, cmp340, v141, loadedv344, v142, result_symbol346, v143, mark_end347, v144, v145, v146, loadedv348, v147, result_symbol350, v148, mark_end351, v149, v150, v151, cmp352, v152, cmp355, v153, cmp358, v154, cmp361, v155, cmp364, v156, loadedv368, v157, result_symbol370, v158, mark_end371, v159, v160, v161, loadedv372, v162, result_symbol374, v163, mark_end375, v164, v165, v166, cmp376, v167, cmp379, v168, cmp382, v169, cmp385, v170, loadedv389, v171, result_symbol391, v172, mark_end392, v173, v174, v175, loadedv393, v176, result_symbol395, v177, mark_end396, v178, v179, v180, cmp397, v181, cmp400, v182, cmp403, v183, cmp406, v184, loadedv410, v185, result_symbol412, v186, mark_end413, v187, v188, v189, cmp414, v190, cmp418, v191, cmp422, v192, cmp425, v193, cmp428, v194, cmp431, v195, loadedv435, v196, result_symbol437, v197, mark_end438, v198, v199, v200, cmp439, v201, cmp442, v202, cmp445, v203, cmp448, v204, loadedv452, v205, result_symbol454, v206, mark_end455, v207, v208, v209, cmp456, v210, cmp460, v211, cmp464, v212, cmp467, v213, cmp470, v214, loadedv474, v215, result_symbol476, v216, mark_end477, v217, v218, v219, cmp478, v220, cmp482, v221, cmp485, v222, cmp488, v223, loadedv492, v224, result_symbol494, v225, mark_end495, v226, v227, v228, cmp496, v229, cmp500, v230, cmp503, v231, cmp506, v232, loadedv510, v233, result_symbol512, v234, mark_end513, v235, v236, v237, cmp514, v238, cmp518, v239, cmp521, v240, cmp524, v241, loadedv528, v242, result_symbol530, v243, mark_end531, v244, v245, v246, cmp532, v247, cmp535, v248, cmp538, v249, loadedv542, v250, result_symbol544, v251, mark_end545, v252, v253, v254, cmp546, v255, cmp550, v256, cmp553, v257, cmp556, v258, cmp559, v259, cmp562, v260, loadedv566, v261, result_symbol568, v262, mark_end569, v263, v264, v265, cmp570, v266, cmp574, v267, cmp577, v268, cmp580, v269, cmp583, v270, cmp586, v271, loadedv590, v272, result_symbol592, v273, mark_end593, v274, v275, v276, cmp594, v277, cmp598, v278, cmp601, v279, cmp604, v280, cmp607, v281, cmp610, v282, loadedv614, v283, result_symbol616, v284, mark_end617, v285, v286, v287, cmp618, v288, cmp621, v289, cmp624, v290, cmp627, v291, cmp630, v292, loadedv634, v293, result_symbol636, v294, mark_end637, v295, v296, v297, cmp638, v298, cmp641, v299, cmp644, v300, loadedv648, v301
 
-	retval = new(bool)
-	lexer_addr = new(*TSLexer)
-	state_addr = new(int16)
-	result = new(byte)
-	skip = new(byte)
-	eof = new(byte)
-	lookahead = new(int32)
-	i = new(int32)
-	*lexer_addr = lexer
-	*state_addr = state
-	*result = 0
-	*skip = 0
-	*eof = 0
+	retval = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v bool
+		b byte
+	}).v)
+	lexer_addr = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v unsafe.Pointer
+		b byte
+	}).v)
+	state_addr = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v int16
+		b byte
+	}).v)
+	result = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v byte
+		b byte
+	}).v)
+	skip = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v byte
+		b byte
+	}).v)
+	eof = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v byte
+		b byte
+	}).v)
+	lookahead = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v int32
+		b byte
+	}).v)
+	i = libc.Ptr(&new(struct {
+		_ [0]uint64
+		v int32
+		b byte
+	}).v)
+	*libc.As[unsafe.Pointer](lexer_addr) = lexer
+	*libc.As[int16](state_addr) = state
+	*libc.As[byte](result) = 0
+	*libc.As[byte](skip) = 0
+	*libc.As[byte](eof) = 0
 	goto start
 
 next_state:
-	v0 = *lexer_addr
-	advance = &v0.F2
-	v1 = *advance
-	v2 = *lexer_addr
-	v3 = *skip
-	tobool = (v3 & 1) != 0
-	v1(v2, tobool)
+	v0 = *libc.As[unsafe.Pointer](lexer_addr)
+	advance = libc.Ptr(&libc.As[TSLexer](v0).F2)
+	v1 = *libc.As[unsafe.Pointer](advance)
+	v2 = *libc.As[unsafe.Pointer](lexer_addr)
+	v3 = *libc.As[byte](skip)
+	loadedv = (v3 & 1) != 0
+	libc.FuncFromCode[func(unsafe.Pointer, bool)](v1)(v2, loadedv)
 	goto start
 
 start:
-	*skip = 0
-	v4 = *lexer_addr
-	lookahead1 = &v4.F0
-	v5 = *lookahead1
-	*lookahead = v5
-	v6 = *lexer_addr
-	eof2 = &v6.F6
-	v7 = *eof2
-	v8 = *lexer_addr
-	call = v7(v8)
+	*libc.As[byte](skip) = 0
+	v4 = *libc.As[unsafe.Pointer](lexer_addr)
+	lookahead1 = libc.Ptr(&libc.As[TSLexer](v4).F0)
+	v5 = *libc.As[int32](lookahead1)
+	*libc.As[int32](lookahead) = v5
+	v6 = *libc.As[unsafe.Pointer](lexer_addr)
+	eof2 = libc.Ptr(&libc.As[TSLexer](v6).F6)
+	v7 = *libc.As[unsafe.Pointer](eof2)
+	v8 = *libc.As[unsafe.Pointer](lexer_addr)
+	call = libc.FuncFromCode[func(unsafe.Pointer) bool](v7)(v8)
 	if call {
-		frombool = 1
+		storedv = 1
 	} else {
-		frombool = 0
+		storedv = 0
 	}
-	*eof = frombool
-	v9 = *state_addr
+	*libc.As[byte](eof) = storedv
+	v9 = *libc.As[int16](state_addr)
 	conv = int32(uint32(uint16(v9)))
 	switch conv {
 	case 0:
@@ -1697,24 +1874,24 @@ start:
 	}
 
 sw_bb:
-	v10 = *eof
-	tobool3 = (v10 & 1) != 0
-	if tobool3 {
+	v10 = *libc.As[byte](eof)
+	loadedv3 = (v10 & 1) != 0
+	if loadedv3 {
 		goto if_then
 	} else {
 		goto if_end
 	}
 
 if_then:
-	*state_addr = 7
+	*libc.As[int16](state_addr) = 7
 	goto next_state
 
 if_end:
-	*i = 0
+	*libc.As[int32](i) = 0
 	goto for_cond
 
 for_cond:
-	v11 = *i
+	v11 = *libc.As[int32](i)
 	conv4 = int64(uint64(uint32(v11)))
 	cmp = uint64(conv4) < uint64(16)
 	if cmp {
@@ -1724,12 +1901,12 @@ for_cond:
 	}
 
 for_body:
-	v12 = *i
+	v12 = *libc.As[int32](i)
 	idxprom = int64(uint64(uint32(v12)))
-	arrayidx = &ts_lex_map[idxprom]
-	v13 = *arrayidx
+	arrayidx = libc.Ptr(&ts_lex_map[idxprom])
+	v13 = *libc.As[int16](arrayidx)
 	conv6 = int32(uint32(uint16(v13)))
-	v14 = *lookahead
+	v14 = *libc.As[int32](lookahead)
 	cmp7 = conv6 == v14
 	if cmp7 {
 		goto if_then9
@@ -1738,25 +1915,25 @@ for_body:
 	}
 
 if_then9:
-	v15 = *i
+	v15 = *libc.As[int32](i)
 	add = v15 + 1
 	idxprom10 = int64(uint64(uint32(add)))
-	arrayidx11 = &ts_lex_map[idxprom10]
-	v16 = *arrayidx11
-	*state_addr = v16
+	arrayidx11 = libc.Ptr(&ts_lex_map[idxprom10])
+	v16 = *libc.As[int16](arrayidx11)
+	*libc.As[int16](state_addr) = v16
 	goto next_state
 
 if_end12:
 	goto for_inc
 
 for_inc:
-	v17 = *i
+	v17 = *libc.As[int32](i)
 	add13 = v17 + 2
-	*i = add13
+	*libc.As[int32](i) = add13
 	goto for_cond
 
 for_end:
-	v18 = *lookahead
+	v18 = *libc.As[int32](lookahead)
 	cmp14 = 9 <= v18
 	if cmp14 {
 		goto land_lhs_true
@@ -1765,7 +1942,7 @@ for_end:
 	}
 
 land_lhs_true:
-	v19 = *lookahead
+	v19 = *libc.As[int32](lookahead)
 	cmp16 = v19 <= 12
 	if cmp16 {
 		goto if_then20
@@ -1774,7 +1951,7 @@ land_lhs_true:
 	}
 
 lor_lhs_false:
-	v20 = *lookahead
+	v20 = *libc.As[int32](lookahead)
 	cmp18 = v20 == 32
 	if cmp18 {
 		goto if_then20
@@ -1783,12 +1960,12 @@ lor_lhs_false:
 	}
 
 if_then20:
-	*skip = 1
-	*state_addr = 0
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 0
 	goto next_state
 
 if_end21:
-	v21 = *lookahead
+	v21 = *libc.As[int32](lookahead)
 	cmp22 = v21 != 0
 	if cmp22 {
 		goto if_then24
@@ -1797,17 +1974,17 @@ if_end21:
 	}
 
 if_then24:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end25:
-	v22 = *result
-	tobool26 = (v22 & 1) != 0
-	*retval = tobool26
+	v22 = *libc.As[byte](result)
+	loadedv26 = (v22 & 1) != 0
+	*libc.As[bool](retval) = loadedv26
 	goto _return
 
 sw_bb27:
-	v23 = *lookahead
+	v23 = *libc.As[int32](lookahead)
 	cmp28 = v23 == 35
 	if cmp28 {
 		goto if_then33
@@ -1816,7 +1993,7 @@ sw_bb27:
 	}
 
 lor_lhs_false30:
-	v24 = *lookahead
+	v24 = *libc.As[int32](lookahead)
 	cmp31 = v24 == 59
 	if cmp31 {
 		goto if_then33
@@ -1825,11 +2002,11 @@ lor_lhs_false30:
 	}
 
 if_then33:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end34:
-	v25 = *lookahead
+	v25 = *libc.As[int32](lookahead)
 	cmp35 = v25 == 9
 	if cmp35 {
 		goto if_then46
@@ -1838,7 +2015,7 @@ if_end34:
 	}
 
 lor_lhs_false37:
-	v26 = *lookahead
+	v26 = *libc.As[int32](lookahead)
 	cmp38 = v26 == 11
 	if cmp38 {
 		goto if_then46
@@ -1847,7 +2024,7 @@ lor_lhs_false37:
 	}
 
 lor_lhs_false40:
-	v27 = *lookahead
+	v27 = *libc.As[int32](lookahead)
 	cmp41 = v27 == 12
 	if cmp41 {
 		goto if_then46
@@ -1856,7 +2033,7 @@ lor_lhs_false40:
 	}
 
 lor_lhs_false43:
-	v28 = *lookahead
+	v28 = *libc.As[int32](lookahead)
 	cmp44 = v28 == 32
 	if cmp44 {
 		goto if_then46
@@ -1865,12 +2042,12 @@ lor_lhs_false43:
 	}
 
 if_then46:
-	*skip = 1
-	*state_addr = 1
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 1
 	goto next_state
 
 if_end47:
-	v29 = *lookahead
+	v29 = *libc.As[int32](lookahead)
 	cmp48 = v29 != 0
 	if cmp48 {
 		goto land_lhs_true50
@@ -1879,7 +2056,7 @@ if_end47:
 	}
 
 land_lhs_true50:
-	v30 = *lookahead
+	v30 = *libc.As[int32](lookahead)
 	cmp51 = v30 < 9
 	if cmp51 {
 		goto if_then56
@@ -1888,7 +2065,7 @@ land_lhs_true50:
 	}
 
 lor_lhs_false53:
-	v31 = *lookahead
+	v31 = *libc.As[int32](lookahead)
 	cmp54 = 13 < v31
 	if cmp54 {
 		goto if_then56
@@ -1897,17 +2074,17 @@ lor_lhs_false53:
 	}
 
 if_then56:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end57:
-	v32 = *result
-	tobool58 = (v32 & 1) != 0
-	*retval = tobool58
+	v32 = *libc.As[byte](result)
+	loadedv58 = (v32 & 1) != 0
+	*libc.As[bool](retval) = loadedv58
 	goto _return
 
 sw_bb59:
-	v33 = *lookahead
+	v33 = *libc.As[int32](lookahead)
 	cmp60 = v33 == 35
 	if cmp60 {
 		goto if_then65
@@ -1916,7 +2093,7 @@ sw_bb59:
 	}
 
 lor_lhs_false62:
-	v34 = *lookahead
+	v34 = *libc.As[int32](lookahead)
 	cmp63 = v34 == 59
 	if cmp63 {
 		goto if_then65
@@ -1925,11 +2102,11 @@ lor_lhs_false62:
 	}
 
 if_then65:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end66:
-	v35 = *lookahead
+	v35 = *libc.As[int32](lookahead)
 	cmp67 = v35 == 9
 	if cmp67 {
 		goto if_then78
@@ -1938,7 +2115,7 @@ if_end66:
 	}
 
 lor_lhs_false69:
-	v36 = *lookahead
+	v36 = *libc.As[int32](lookahead)
 	cmp70 = v36 == 11
 	if cmp70 {
 		goto if_then78
@@ -1947,7 +2124,7 @@ lor_lhs_false69:
 	}
 
 lor_lhs_false72:
-	v37 = *lookahead
+	v37 = *libc.As[int32](lookahead)
 	cmp73 = v37 == 12
 	if cmp73 {
 		goto if_then78
@@ -1956,7 +2133,7 @@ lor_lhs_false72:
 	}
 
 lor_lhs_false75:
-	v38 = *lookahead
+	v38 = *libc.As[int32](lookahead)
 	cmp76 = v38 == 32
 	if cmp76 {
 		goto if_then78
@@ -1965,12 +2142,12 @@ lor_lhs_false75:
 	}
 
 if_then78:
-	*skip = 1
-	*state_addr = 2
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 2
 	goto next_state
 
 if_end79:
-	v39 = *lookahead
+	v39 = *libc.As[int32](lookahead)
 	cmp80 = v39 != 0
 	if cmp80 {
 		goto land_lhs_true82
@@ -1979,7 +2156,7 @@ if_end79:
 	}
 
 land_lhs_true82:
-	v40 = *lookahead
+	v40 = *libc.As[int32](lookahead)
 	cmp83 = v40 < 9
 	if cmp83 {
 		goto if_then88
@@ -1988,7 +2165,7 @@ land_lhs_true82:
 	}
 
 lor_lhs_false85:
-	v41 = *lookahead
+	v41 = *libc.As[int32](lookahead)
 	cmp86 = 13 < v41
 	if cmp86 {
 		goto if_then88
@@ -1997,30 +2174,30 @@ lor_lhs_false85:
 	}
 
 if_then88:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end89:
-	v42 = *result
-	tobool90 = (v42 & 1) != 0
-	*retval = tobool90
+	v42 = *libc.As[byte](result)
+	loadedv90 = (v42 & 1) != 0
+	*libc.As[bool](retval) = loadedv90
 	goto _return
 
 sw_bb91:
-	v43 = *eof
-	tobool92 = (v43 & 1) != 0
-	if tobool92 {
+	v43 = *libc.As[byte](eof)
+	loadedv92 = (v43 & 1) != 0
+	if loadedv92 {
 		goto if_then93
 	} else {
 		goto if_end94
 	}
 
 if_then93:
-	*state_addr = 7
+	*libc.As[int16](state_addr) = 7
 	goto next_state
 
 if_end94:
-	v44 = *lookahead
+	v44 = *libc.As[int32](lookahead)
 	cmp95 = v44 == 45
 	if cmp95 {
 		goto if_then97
@@ -2029,11 +2206,11 @@ if_end94:
 	}
 
 if_then97:
-	*state_addr = 19
+	*libc.As[int16](state_addr) = 19
 	goto next_state
 
 if_end98:
-	v45 = *lookahead
+	v45 = *libc.As[int32](lookahead)
 	cmp99 = v45 == 63
 	if cmp99 {
 		goto if_then101
@@ -2042,11 +2219,11 @@ if_end98:
 	}
 
 if_then101:
-	*state_addr = 9
+	*libc.As[int16](state_addr) = 9
 	goto next_state
 
 if_end102:
-	v46 = *lookahead
+	v46 = *libc.As[int32](lookahead)
 	cmp103 = v46 == 10
 	if cmp103 {
 		goto if_then108
@@ -2055,7 +2232,7 @@ if_end102:
 	}
 
 lor_lhs_false105:
-	v47 = *lookahead
+	v47 = *libc.As[int32](lookahead)
 	cmp106 = v47 == 13
 	if cmp106 {
 		goto if_then108
@@ -2064,11 +2241,11 @@ lor_lhs_false105:
 	}
 
 if_then108:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end109:
-	v48 = *lookahead
+	v48 = *libc.As[int32](lookahead)
 	cmp110 = v48 == 35
 	if cmp110 {
 		goto if_then115
@@ -2077,7 +2254,7 @@ if_end109:
 	}
 
 lor_lhs_false112:
-	v49 = *lookahead
+	v49 = *libc.As[int32](lookahead)
 	cmp113 = v49 == 59
 	if cmp113 {
 		goto if_then115
@@ -2086,11 +2263,11 @@ lor_lhs_false112:
 	}
 
 if_then115:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end116:
-	v50 = *lookahead
+	v50 = *libc.As[int32](lookahead)
 	cmp117 = 9 <= v50
 	if cmp117 {
 		goto land_lhs_true119
@@ -2099,7 +2276,7 @@ if_end116:
 	}
 
 land_lhs_true119:
-	v51 = *lookahead
+	v51 = *libc.As[int32](lookahead)
 	cmp120 = v51 <= 12
 	if cmp120 {
 		goto if_then125
@@ -2108,7 +2285,7 @@ land_lhs_true119:
 	}
 
 lor_lhs_false122:
-	v52 = *lookahead
+	v52 = *libc.As[int32](lookahead)
 	cmp123 = v52 == 32
 	if cmp123 {
 		goto if_then125
@@ -2117,12 +2294,12 @@ lor_lhs_false122:
 	}
 
 if_then125:
-	*skip = 1
-	*state_addr = 3
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 3
 	goto next_state
 
 if_end126:
-	v53 = *lookahead
+	v53 = *libc.As[int32](lookahead)
 	cmp127 = v53 != 0
 	if cmp127 {
 		goto if_then129
@@ -2131,30 +2308,30 @@ if_end126:
 	}
 
 if_then129:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end130:
-	v54 = *result
-	tobool131 = (v54 & 1) != 0
-	*retval = tobool131
+	v54 = *libc.As[byte](result)
+	loadedv131 = (v54 & 1) != 0
+	*libc.As[bool](retval) = loadedv131
 	goto _return
 
 sw_bb132:
-	v55 = *eof
-	tobool133 = (v55 & 1) != 0
-	if tobool133 {
+	v55 = *libc.As[byte](eof)
+	loadedv133 = (v55 & 1) != 0
+	if loadedv133 {
 		goto if_then134
 	} else {
 		goto if_end135
 	}
 
 if_then134:
-	*state_addr = 7
+	*libc.As[int16](state_addr) = 7
 	goto next_state
 
 if_end135:
-	v56 = *lookahead
+	v56 = *libc.As[int32](lookahead)
 	cmp136 = v56 == 63
 	if cmp136 {
 		goto if_then138
@@ -2163,11 +2340,11 @@ if_end135:
 	}
 
 if_then138:
-	*state_addr = 8
+	*libc.As[int16](state_addr) = 8
 	goto next_state
 
 if_end139:
-	v57 = *lookahead
+	v57 = *libc.As[int32](lookahead)
 	cmp140 = v57 == 10
 	if cmp140 {
 		goto if_then145
@@ -2176,7 +2353,7 @@ if_end139:
 	}
 
 lor_lhs_false142:
-	v58 = *lookahead
+	v58 = *libc.As[int32](lookahead)
 	cmp143 = v58 == 13
 	if cmp143 {
 		goto if_then145
@@ -2185,11 +2362,11 @@ lor_lhs_false142:
 	}
 
 if_then145:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end146:
-	v59 = *lookahead
+	v59 = *libc.As[int32](lookahead)
 	cmp147 = v59 == 35
 	if cmp147 {
 		goto if_then152
@@ -2198,7 +2375,7 @@ if_end146:
 	}
 
 lor_lhs_false149:
-	v60 = *lookahead
+	v60 = *libc.As[int32](lookahead)
 	cmp150 = v60 == 59
 	if cmp150 {
 		goto if_then152
@@ -2207,11 +2384,11 @@ lor_lhs_false149:
 	}
 
 if_then152:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end153:
-	v61 = *lookahead
+	v61 = *libc.As[int32](lookahead)
 	cmp154 = 9 <= v61
 	if cmp154 {
 		goto land_lhs_true156
@@ -2220,7 +2397,7 @@ if_end153:
 	}
 
 land_lhs_true156:
-	v62 = *lookahead
+	v62 = *libc.As[int32](lookahead)
 	cmp157 = v62 <= 12
 	if cmp157 {
 		goto if_then162
@@ -2229,7 +2406,7 @@ land_lhs_true156:
 	}
 
 lor_lhs_false159:
-	v63 = *lookahead
+	v63 = *libc.As[int32](lookahead)
 	cmp160 = v63 == 32
 	if cmp160 {
 		goto if_then162
@@ -2238,12 +2415,12 @@ lor_lhs_false159:
 	}
 
 if_then162:
-	*skip = 1
-	*state_addr = 4
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 4
 	goto next_state
 
 if_end163:
-	v64 = *lookahead
+	v64 = *libc.As[int32](lookahead)
 	cmp164 = v64 != 0
 	if cmp164 {
 		goto if_then166
@@ -2252,30 +2429,30 @@ if_end163:
 	}
 
 if_then166:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end167:
-	v65 = *result
-	tobool168 = (v65 & 1) != 0
-	*retval = tobool168
+	v65 = *libc.As[byte](result)
+	loadedv168 = (v65 & 1) != 0
+	*libc.As[bool](retval) = loadedv168
 	goto _return
 
 sw_bb169:
-	v66 = *eof
-	tobool170 = (v66 & 1) != 0
-	if tobool170 {
+	v66 = *libc.As[byte](eof)
+	loadedv170 = (v66 & 1) != 0
+	if loadedv170 {
 		goto if_then171
 	} else {
 		goto if_end172
 	}
 
 if_then171:
-	*state_addr = 7
+	*libc.As[int16](state_addr) = 7
 	goto next_state
 
 if_end172:
-	v67 = *lookahead
+	v67 = *libc.As[int32](lookahead)
 	cmp173 = v67 == 63
 	if cmp173 {
 		goto if_then175
@@ -2284,11 +2461,11 @@ if_end172:
 	}
 
 if_then175:
-	*state_addr = 9
+	*libc.As[int16](state_addr) = 9
 	goto next_state
 
 if_end176:
-	v68 = *lookahead
+	v68 = *libc.As[int32](lookahead)
 	cmp177 = v68 == 10
 	if cmp177 {
 		goto if_then182
@@ -2297,7 +2474,7 @@ if_end176:
 	}
 
 lor_lhs_false179:
-	v69 = *lookahead
+	v69 = *libc.As[int32](lookahead)
 	cmp180 = v69 == 13
 	if cmp180 {
 		goto if_then182
@@ -2306,11 +2483,11 @@ lor_lhs_false179:
 	}
 
 if_then182:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end183:
-	v70 = *lookahead
+	v70 = *libc.As[int32](lookahead)
 	cmp184 = v70 == 35
 	if cmp184 {
 		goto if_then189
@@ -2319,7 +2496,7 @@ if_end183:
 	}
 
 lor_lhs_false186:
-	v71 = *lookahead
+	v71 = *libc.As[int32](lookahead)
 	cmp187 = v71 == 59
 	if cmp187 {
 		goto if_then189
@@ -2328,11 +2505,11 @@ lor_lhs_false186:
 	}
 
 if_then189:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end190:
-	v72 = *lookahead
+	v72 = *libc.As[int32](lookahead)
 	cmp191 = 9 <= v72
 	if cmp191 {
 		goto land_lhs_true193
@@ -2341,7 +2518,7 @@ if_end190:
 	}
 
 land_lhs_true193:
-	v73 = *lookahead
+	v73 = *libc.As[int32](lookahead)
 	cmp194 = v73 <= 12
 	if cmp194 {
 		goto if_then199
@@ -2350,7 +2527,7 @@ land_lhs_true193:
 	}
 
 lor_lhs_false196:
-	v74 = *lookahead
+	v74 = *libc.As[int32](lookahead)
 	cmp197 = v74 == 32
 	if cmp197 {
 		goto if_then199
@@ -2359,12 +2536,12 @@ lor_lhs_false196:
 	}
 
 if_then199:
-	*skip = 1
-	*state_addr = 5
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 5
 	goto next_state
 
 if_end200:
-	v75 = *lookahead
+	v75 = *libc.As[int32](lookahead)
 	cmp201 = v75 != 0
 	if cmp201 {
 		goto if_then203
@@ -2373,30 +2550,30 @@ if_end200:
 	}
 
 if_then203:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end204:
-	v76 = *result
-	tobool205 = (v76 & 1) != 0
-	*retval = tobool205
+	v76 = *libc.As[byte](result)
+	loadedv205 = (v76 & 1) != 0
+	*libc.As[bool](retval) = loadedv205
 	goto _return
 
 sw_bb206:
-	v77 = *eof
-	tobool207 = (v77 & 1) != 0
-	if tobool207 {
+	v77 = *libc.As[byte](eof)
+	loadedv207 = (v77 & 1) != 0
+	if loadedv207 {
 		goto if_then208
 	} else {
 		goto if_end209
 	}
 
 if_then208:
-	*state_addr = 7
+	*libc.As[int16](state_addr) = 7
 	goto next_state
 
 if_end209:
-	v78 = *lookahead
+	v78 = *libc.As[int32](lookahead)
 	cmp210 = v78 == 101
 	if cmp210 {
 		goto if_then212
@@ -2405,11 +2582,11 @@ if_end209:
 	}
 
 if_then212:
-	*state_addr = 28
+	*libc.As[int16](state_addr) = 28
 	goto next_state
 
 if_end213:
-	v79 = *lookahead
+	v79 = *libc.As[int32](lookahead)
 	cmp214 = v79 == 120
 	if cmp214 {
 		goto if_then216
@@ -2418,11 +2595,11 @@ if_end213:
 	}
 
 if_then216:
-	*state_addr = 12
+	*libc.As[int16](state_addr) = 12
 	goto next_state
 
 if_end217:
-	v80 = *lookahead
+	v80 = *libc.As[int32](lookahead)
 	cmp218 = v80 == 35
 	if cmp218 {
 		goto if_then223
@@ -2431,7 +2608,7 @@ if_end217:
 	}
 
 lor_lhs_false220:
-	v81 = *lookahead
+	v81 = *libc.As[int32](lookahead)
 	cmp221 = v81 == 59
 	if cmp221 {
 		goto if_then223
@@ -2440,11 +2617,11 @@ lor_lhs_false220:
 	}
 
 if_then223:
-	*state_addr = 30
+	*libc.As[int16](state_addr) = 30
 	goto next_state
 
 if_end224:
-	v82 = *lookahead
+	v82 = *libc.As[int32](lookahead)
 	cmp225 = v82 == 10
 	if cmp225 {
 		goto if_then233
@@ -2453,7 +2630,7 @@ if_end224:
 	}
 
 lor_lhs_false227:
-	v83 = *lookahead
+	v83 = *libc.As[int32](lookahead)
 	cmp228 = v83 == 13
 	if cmp228 {
 		goto if_then233
@@ -2462,7 +2639,7 @@ lor_lhs_false227:
 	}
 
 lor_lhs_false230:
-	v84 = *lookahead
+	v84 = *libc.As[int32](lookahead)
 	cmp231 = v84 == 63
 	if cmp231 {
 		goto if_then233
@@ -2471,11 +2648,11 @@ lor_lhs_false230:
 	}
 
 if_then233:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end234:
-	v85 = *lookahead
+	v85 = *libc.As[int32](lookahead)
 	cmp235 = 9 <= v85
 	if cmp235 {
 		goto land_lhs_true237
@@ -2484,7 +2661,7 @@ if_end234:
 	}
 
 land_lhs_true237:
-	v86 = *lookahead
+	v86 = *libc.As[int32](lookahead)
 	cmp238 = v86 <= 12
 	if cmp238 {
 		goto if_then243
@@ -2493,7 +2670,7 @@ land_lhs_true237:
 	}
 
 lor_lhs_false240:
-	v87 = *lookahead
+	v87 = *libc.As[int32](lookahead)
 	cmp241 = v87 == 32
 	if cmp241 {
 		goto if_then243
@@ -2502,12 +2679,12 @@ lor_lhs_false240:
 	}
 
 if_then243:
-	*skip = 1
-	*state_addr = 6
+	*libc.As[byte](skip) = 1
+	*libc.As[int16](state_addr) = 6
 	goto next_state
 
 if_end244:
-	v88 = *lookahead
+	v88 = *libc.As[int32](lookahead)
 	cmp245 = v88 == 45
 	if cmp245 {
 		goto if_then259
@@ -2516,7 +2693,7 @@ if_end244:
 	}
 
 lor_lhs_false247:
-	v89 = *lookahead
+	v89 = *libc.As[int32](lookahead)
 	cmp248 = 65 <= v89
 	if cmp248 {
 		goto land_lhs_true250
@@ -2525,7 +2702,7 @@ lor_lhs_false247:
 	}
 
 land_lhs_true250:
-	v90 = *lookahead
+	v90 = *libc.As[int32](lookahead)
 	cmp251 = v90 <= 90
 	if cmp251 {
 		goto if_then259
@@ -2534,7 +2711,7 @@ land_lhs_true250:
 	}
 
 lor_lhs_false253:
-	v91 = *lookahead
+	v91 = *libc.As[int32](lookahead)
 	cmp254 = 97 <= v91
 	if cmp254 {
 		goto land_lhs_true256
@@ -2543,7 +2720,7 @@ lor_lhs_false253:
 	}
 
 land_lhs_true256:
-	v92 = *lookahead
+	v92 = *libc.As[int32](lookahead)
 	cmp257 = v92 <= 122
 	if cmp257 {
 		goto if_then259
@@ -2552,41 +2729,41 @@ land_lhs_true256:
 	}
 
 if_then259:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end260:
-	v93 = *result
-	tobool261 = (v93 & 1) != 0
-	*retval = tobool261
+	v93 = *libc.As[byte](result)
+	loadedv261 = (v93 & 1) != 0
+	*libc.As[bool](retval) = loadedv261
 	goto _return
 
 sw_bb262:
-	*result = 1
-	v94 = *lexer_addr
-	result_symbol = &v94.F1
-	*result_symbol = 0
-	v95 = *lexer_addr
-	mark_end = &v95.F3
-	v96 = *mark_end
-	v97 = *lexer_addr
-	v96(v97)
-	v98 = *result
-	tobool263 = (v98 & 1) != 0
-	*retval = tobool263
+	*libc.As[byte](result) = 1
+	v94 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol = libc.Ptr(&libc.As[TSLexer](v94).F1)
+	*libc.As[int16](result_symbol) = 0
+	v95 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end = libc.Ptr(&libc.As[TSLexer](v95).F3)
+	v96 = *libc.As[unsafe.Pointer](mark_end)
+	v97 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v96)(v97)
+	v98 = *libc.As[byte](result)
+	loadedv263 = (v98 & 1) != 0
+	*libc.As[bool](retval) = loadedv263
 	goto _return
 
 sw_bb264:
-	*result = 1
-	v99 = *lexer_addr
-	result_symbol265 = &v99.F1
-	*result_symbol265 = 1
-	v100 = *lexer_addr
-	mark_end266 = &v100.F3
-	v101 = *mark_end266
-	v102 = *lexer_addr
-	v101(v102)
-	v103 = *lookahead
+	*libc.As[byte](result) = 1
+	v99 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol265 = libc.Ptr(&libc.As[TSLexer](v99).F1)
+	*libc.As[int16](result_symbol265) = 1
+	v100 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end266 = libc.Ptr(&libc.As[TSLexer](v100).F3)
+	v101 = *libc.As[unsafe.Pointer](mark_end266)
+	v102 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v101)(v102)
+	v103 = *libc.As[int32](lookahead)
 	cmp267 = v103 == 63
 	if cmp267 {
 		goto if_then269
@@ -2595,11 +2772,11 @@ sw_bb264:
 	}
 
 if_then269:
-	*state_addr = 8
+	*libc.As[int16](state_addr) = 8
 	goto next_state
 
 if_end270:
-	v104 = *lookahead
+	v104 = *libc.As[int32](lookahead)
 	cmp271 = v104 == 10
 	if cmp271 {
 		goto if_then276
@@ -2608,7 +2785,7 @@ if_end270:
 	}
 
 lor_lhs_false273:
-	v105 = *lookahead
+	v105 = *libc.As[int32](lookahead)
 	cmp274 = v105 == 13
 	if cmp274 {
 		goto if_then276
@@ -2617,26 +2794,26 @@ lor_lhs_false273:
 	}
 
 if_then276:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end277:
-	v106 = *result
-	tobool278 = (v106 & 1) != 0
-	*retval = tobool278
+	v106 = *libc.As[byte](result)
+	loadedv278 = (v106 & 1) != 0
+	*libc.As[bool](retval) = loadedv278
 	goto _return
 
 sw_bb279:
-	*result = 1
-	v107 = *lexer_addr
-	result_symbol280 = &v107.F1
-	*result_symbol280 = 1
-	v108 = *lexer_addr
-	mark_end281 = &v108.F3
-	v109 = *mark_end281
-	v110 = *lexer_addr
-	v109(v110)
-	v111 = *lookahead
+	*libc.As[byte](result) = 1
+	v107 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol280 = libc.Ptr(&libc.As[TSLexer](v107).F1)
+	*libc.As[int16](result_symbol280) = 1
+	v108 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end281 = libc.Ptr(&libc.As[TSLexer](v108).F3)
+	v109 = *libc.As[unsafe.Pointer](mark_end281)
+	v110 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v109)(v110)
+	v111 = *libc.As[int32](lookahead)
 	cmp282 = v111 == 63
 	if cmp282 {
 		goto if_then284
@@ -2645,11 +2822,11 @@ sw_bb279:
 	}
 
 if_then284:
-	*state_addr = 9
+	*libc.As[int16](state_addr) = 9
 	goto next_state
 
 if_end285:
-	v112 = *lookahead
+	v112 = *libc.As[int32](lookahead)
 	cmp286 = v112 == 10
 	if cmp286 {
 		goto if_then291
@@ -2658,7 +2835,7 @@ if_end285:
 	}
 
 lor_lhs_false288:
-	v113 = *lookahead
+	v113 = *libc.As[int32](lookahead)
 	cmp289 = v113 == 13
 	if cmp289 {
 		goto if_then291
@@ -2667,11 +2844,11 @@ lor_lhs_false288:
 	}
 
 if_then291:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end292:
-	v114 = *lookahead
+	v114 = *libc.As[int32](lookahead)
 	cmp293 = v114 != 0
 	if cmp293 {
 		goto land_lhs_true295
@@ -2680,7 +2857,7 @@ if_end292:
 	}
 
 land_lhs_true295:
-	v115 = *lookahead
+	v115 = *libc.As[int32](lookahead)
 	cmp296 = v115 < 9
 	if cmp296 {
 		goto land_lhs_true301
@@ -2689,7 +2866,7 @@ land_lhs_true295:
 	}
 
 lor_lhs_false298:
-	v116 = *lookahead
+	v116 = *libc.As[int32](lookahead)
 	cmp299 = 13 < v116
 	if cmp299 {
 		goto land_lhs_true301
@@ -2698,7 +2875,7 @@ lor_lhs_false298:
 	}
 
 land_lhs_true301:
-	v117 = *lookahead
+	v117 = *libc.As[int32](lookahead)
 	cmp302 = v117 != 32
 	if cmp302 {
 		goto if_then304
@@ -2707,26 +2884,26 @@ land_lhs_true301:
 	}
 
 if_then304:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end305:
-	v118 = *result
-	tobool306 = (v118 & 1) != 0
-	*retval = tobool306
+	v118 = *libc.As[byte](result)
+	loadedv306 = (v118 & 1) != 0
+	*libc.As[bool](retval) = loadedv306
 	goto _return
 
 sw_bb307:
-	*result = 1
-	v119 = *lexer_addr
-	result_symbol308 = &v119.F1
-	*result_symbol308 = 1
-	v120 = *lexer_addr
-	mark_end309 = &v120.F3
-	v121 = *mark_end309
-	v122 = *lexer_addr
-	v121(v122)
-	v123 = *lookahead
+	*libc.As[byte](result) = 1
+	v119 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol308 = libc.Ptr(&libc.As[TSLexer](v119).F1)
+	*libc.As[int16](result_symbol308) = 1
+	v120 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end309 = libc.Ptr(&libc.As[TSLexer](v120).F3)
+	v121 = *libc.As[unsafe.Pointer](mark_end309)
+	v122 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v121)(v122)
+	v123 = *libc.As[int32](lookahead)
 	cmp310 = v123 == 10
 	if cmp310 {
 		goto if_then318
@@ -2735,7 +2912,7 @@ sw_bb307:
 	}
 
 lor_lhs_false312:
-	v124 = *lookahead
+	v124 = *libc.As[int32](lookahead)
 	cmp313 = v124 == 13
 	if cmp313 {
 		goto if_then318
@@ -2744,7 +2921,7 @@ lor_lhs_false312:
 	}
 
 lor_lhs_false315:
-	v125 = *lookahead
+	v125 = *libc.As[int32](lookahead)
 	cmp316 = v125 == 63
 	if cmp316 {
 		goto if_then318
@@ -2753,41 +2930,41 @@ lor_lhs_false315:
 	}
 
 if_then318:
-	*state_addr = 10
+	*libc.As[int16](state_addr) = 10
 	goto next_state
 
 if_end319:
-	v126 = *result
-	tobool320 = (v126 & 1) != 0
-	*retval = tobool320
+	v126 = *libc.As[byte](result)
+	loadedv320 = (v126 & 1) != 0
+	*libc.As[bool](retval) = loadedv320
 	goto _return
 
 sw_bb321:
-	*result = 1
-	v127 = *lexer_addr
-	result_symbol322 = &v127.F1
-	*result_symbol322 = 2
-	v128 = *lexer_addr
-	mark_end323 = &v128.F3
-	v129 = *mark_end323
-	v130 = *lexer_addr
-	v129(v130)
-	v131 = *result
-	tobool324 = (v131 & 1) != 0
-	*retval = tobool324
+	*libc.As[byte](result) = 1
+	v127 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol322 = libc.Ptr(&libc.As[TSLexer](v127).F1)
+	*libc.As[int16](result_symbol322) = 2
+	v128 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end323 = libc.Ptr(&libc.As[TSLexer](v128).F3)
+	v129 = *libc.As[unsafe.Pointer](mark_end323)
+	v130 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v129)(v130)
+	v131 = *libc.As[byte](result)
+	loadedv324 = (v131 & 1) != 0
+	*libc.As[bool](retval) = loadedv324
 	goto _return
 
 sw_bb325:
-	*result = 1
-	v132 = *lexer_addr
-	result_symbol326 = &v132.F1
-	*result_symbol326 = 2
-	v133 = *lexer_addr
-	mark_end327 = &v133.F3
-	v134 = *mark_end327
-	v135 = *lexer_addr
-	v134(v135)
-	v136 = *lookahead
+	*libc.As[byte](result) = 1
+	v132 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol326 = libc.Ptr(&libc.As[TSLexer](v132).F1)
+	*libc.As[int16](result_symbol326) = 2
+	v133 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end327 = libc.Ptr(&libc.As[TSLexer](v133).F3)
+	v134 = *libc.As[unsafe.Pointer](mark_end327)
+	v135 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v134)(v135)
+	v136 = *libc.As[int32](lookahead)
 	cmp328 = v136 == 45
 	if cmp328 {
 		goto if_then342
@@ -2796,7 +2973,7 @@ sw_bb325:
 	}
 
 lor_lhs_false330:
-	v137 = *lookahead
+	v137 = *libc.As[int32](lookahead)
 	cmp331 = 65 <= v137
 	if cmp331 {
 		goto land_lhs_true333
@@ -2805,7 +2982,7 @@ lor_lhs_false330:
 	}
 
 land_lhs_true333:
-	v138 = *lookahead
+	v138 = *libc.As[int32](lookahead)
 	cmp334 = v138 <= 90
 	if cmp334 {
 		goto if_then342
@@ -2814,7 +2991,7 @@ land_lhs_true333:
 	}
 
 lor_lhs_false336:
-	v139 = *lookahead
+	v139 = *libc.As[int32](lookahead)
 	cmp337 = 97 <= v139
 	if cmp337 {
 		goto land_lhs_true339
@@ -2823,7 +3000,7 @@ lor_lhs_false336:
 	}
 
 land_lhs_true339:
-	v140 = *lookahead
+	v140 = *libc.As[int32](lookahead)
 	cmp340 = v140 <= 122
 	if cmp340 {
 		goto if_then342
@@ -2832,41 +3009,41 @@ land_lhs_true339:
 	}
 
 if_then342:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end343:
-	v141 = *result
-	tobool344 = (v141 & 1) != 0
-	*retval = tobool344
+	v141 = *libc.As[byte](result)
+	loadedv344 = (v141 & 1) != 0
+	*libc.As[bool](retval) = loadedv344
 	goto _return
 
 sw_bb345:
-	*result = 1
-	v142 = *lexer_addr
-	result_symbol346 = &v142.F1
-	*result_symbol346 = 3
-	v143 = *lexer_addr
-	mark_end347 = &v143.F3
-	v144 = *mark_end347
-	v145 = *lexer_addr
-	v144(v145)
-	v146 = *result
-	tobool348 = (v146 & 1) != 0
-	*retval = tobool348
+	*libc.As[byte](result) = 1
+	v142 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol346 = libc.Ptr(&libc.As[TSLexer](v142).F1)
+	*libc.As[int16](result_symbol346) = 3
+	v143 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end347 = libc.Ptr(&libc.As[TSLexer](v143).F3)
+	v144 = *libc.As[unsafe.Pointer](mark_end347)
+	v145 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v144)(v145)
+	v146 = *libc.As[byte](result)
+	loadedv348 = (v146 & 1) != 0
+	*libc.As[bool](retval) = loadedv348
 	goto _return
 
 sw_bb349:
-	*result = 1
-	v147 = *lexer_addr
-	result_symbol350 = &v147.F1
-	*result_symbol350 = 3
-	v148 = *lexer_addr
-	mark_end351 = &v148.F3
-	v149 = *mark_end351
-	v150 = *lexer_addr
-	v149(v150)
-	v151 = *lookahead
+	*libc.As[byte](result) = 1
+	v147 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol350 = libc.Ptr(&libc.As[TSLexer](v147).F1)
+	*libc.As[int16](result_symbol350) = 3
+	v148 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end351 = libc.Ptr(&libc.As[TSLexer](v148).F3)
+	v149 = *libc.As[unsafe.Pointer](mark_end351)
+	v150 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v149)(v150)
+	v151 = *libc.As[int32](lookahead)
 	cmp352 = v151 == 45
 	if cmp352 {
 		goto if_then366
@@ -2875,7 +3052,7 @@ sw_bb349:
 	}
 
 lor_lhs_false354:
-	v152 = *lookahead
+	v152 = *libc.As[int32](lookahead)
 	cmp355 = 65 <= v152
 	if cmp355 {
 		goto land_lhs_true357
@@ -2884,7 +3061,7 @@ lor_lhs_false354:
 	}
 
 land_lhs_true357:
-	v153 = *lookahead
+	v153 = *libc.As[int32](lookahead)
 	cmp358 = v153 <= 90
 	if cmp358 {
 		goto if_then366
@@ -2893,7 +3070,7 @@ land_lhs_true357:
 	}
 
 lor_lhs_false360:
-	v154 = *lookahead
+	v154 = *libc.As[int32](lookahead)
 	cmp361 = 97 <= v154
 	if cmp361 {
 		goto land_lhs_true363
@@ -2902,7 +3079,7 @@ lor_lhs_false360:
 	}
 
 land_lhs_true363:
-	v155 = *lookahead
+	v155 = *libc.As[int32](lookahead)
 	cmp364 = v155 <= 122
 	if cmp364 {
 		goto if_then366
@@ -2911,41 +3088,41 @@ land_lhs_true363:
 	}
 
 if_then366:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end367:
-	v156 = *result
-	tobool368 = (v156 & 1) != 0
-	*retval = tobool368
+	v156 = *libc.As[byte](result)
+	loadedv368 = (v156 & 1) != 0
+	*libc.As[bool](retval) = loadedv368
 	goto _return
 
 sw_bb369:
-	*result = 1
-	v157 = *lexer_addr
-	result_symbol370 = &v157.F1
-	*result_symbol370 = 4
-	v158 = *lexer_addr
-	mark_end371 = &v158.F3
-	v159 = *mark_end371
-	v160 = *lexer_addr
-	v159(v160)
-	v161 = *result
-	tobool372 = (v161 & 1) != 0
-	*retval = tobool372
+	*libc.As[byte](result) = 1
+	v157 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol370 = libc.Ptr(&libc.As[TSLexer](v157).F1)
+	*libc.As[int16](result_symbol370) = 4
+	v158 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end371 = libc.Ptr(&libc.As[TSLexer](v158).F3)
+	v159 = *libc.As[unsafe.Pointer](mark_end371)
+	v160 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v159)(v160)
+	v161 = *libc.As[byte](result)
+	loadedv372 = (v161 & 1) != 0
+	*libc.As[bool](retval) = loadedv372
 	goto _return
 
 sw_bb373:
-	*result = 1
-	v162 = *lexer_addr
-	result_symbol374 = &v162.F1
-	*result_symbol374 = 4
-	v163 = *lexer_addr
-	mark_end375 = &v163.F3
-	v164 = *mark_end375
-	v165 = *lexer_addr
-	v164(v165)
-	v166 = *lookahead
+	*libc.As[byte](result) = 1
+	v162 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol374 = libc.Ptr(&libc.As[TSLexer](v162).F1)
+	*libc.As[int16](result_symbol374) = 4
+	v163 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end375 = libc.Ptr(&libc.As[TSLexer](v163).F3)
+	v164 = *libc.As[unsafe.Pointer](mark_end375)
+	v165 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v164)(v165)
+	v166 = *libc.As[int32](lookahead)
 	cmp376 = v166 != 0
 	if cmp376 {
 		goto land_lhs_true378
@@ -2954,7 +3131,7 @@ sw_bb373:
 	}
 
 land_lhs_true378:
-	v167 = *lookahead
+	v167 = *libc.As[int32](lookahead)
 	cmp379 = v167 < 9
 	if cmp379 {
 		goto land_lhs_true384
@@ -2963,7 +3140,7 @@ land_lhs_true378:
 	}
 
 lor_lhs_false381:
-	v168 = *lookahead
+	v168 = *libc.As[int32](lookahead)
 	cmp382 = 13 < v168
 	if cmp382 {
 		goto land_lhs_true384
@@ -2972,7 +3149,7 @@ lor_lhs_false381:
 	}
 
 land_lhs_true384:
-	v169 = *lookahead
+	v169 = *libc.As[int32](lookahead)
 	cmp385 = v169 != 32
 	if cmp385 {
 		goto if_then387
@@ -2981,41 +3158,41 @@ land_lhs_true384:
 	}
 
 if_then387:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end388:
-	v170 = *result
-	tobool389 = (v170 & 1) != 0
-	*retval = tobool389
+	v170 = *libc.As[byte](result)
+	loadedv389 = (v170 & 1) != 0
+	*libc.As[bool](retval) = loadedv389
 	goto _return
 
 sw_bb390:
-	*result = 1
-	v171 = *lexer_addr
-	result_symbol391 = &v171.F1
-	*result_symbol391 = 5
-	v172 = *lexer_addr
-	mark_end392 = &v172.F3
-	v173 = *mark_end392
-	v174 = *lexer_addr
-	v173(v174)
-	v175 = *result
-	tobool393 = (v175 & 1) != 0
-	*retval = tobool393
+	*libc.As[byte](result) = 1
+	v171 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol391 = libc.Ptr(&libc.As[TSLexer](v171).F1)
+	*libc.As[int16](result_symbol391) = 5
+	v172 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end392 = libc.Ptr(&libc.As[TSLexer](v172).F3)
+	v173 = *libc.As[unsafe.Pointer](mark_end392)
+	v174 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v173)(v174)
+	v175 = *libc.As[byte](result)
+	loadedv393 = (v175 & 1) != 0
+	*libc.As[bool](retval) = loadedv393
 	goto _return
 
 sw_bb394:
-	*result = 1
-	v176 = *lexer_addr
-	result_symbol395 = &v176.F1
-	*result_symbol395 = 5
-	v177 = *lexer_addr
-	mark_end396 = &v177.F3
-	v178 = *mark_end396
-	v179 = *lexer_addr
-	v178(v179)
-	v180 = *lookahead
+	*libc.As[byte](result) = 1
+	v176 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol395 = libc.Ptr(&libc.As[TSLexer](v176).F1)
+	*libc.As[int16](result_symbol395) = 5
+	v177 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end396 = libc.Ptr(&libc.As[TSLexer](v177).F3)
+	v178 = *libc.As[unsafe.Pointer](mark_end396)
+	v179 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v178)(v179)
+	v180 = *libc.As[int32](lookahead)
 	cmp397 = v180 != 0
 	if cmp397 {
 		goto land_lhs_true399
@@ -3024,7 +3201,7 @@ sw_bb394:
 	}
 
 land_lhs_true399:
-	v181 = *lookahead
+	v181 = *libc.As[int32](lookahead)
 	cmp400 = v181 < 9
 	if cmp400 {
 		goto land_lhs_true405
@@ -3033,7 +3210,7 @@ land_lhs_true399:
 	}
 
 lor_lhs_false402:
-	v182 = *lookahead
+	v182 = *libc.As[int32](lookahead)
 	cmp403 = 13 < v182
 	if cmp403 {
 		goto land_lhs_true405
@@ -3042,7 +3219,7 @@ lor_lhs_false402:
 	}
 
 land_lhs_true405:
-	v183 = *lookahead
+	v183 = *libc.As[int32](lookahead)
 	cmp406 = v183 != 32
 	if cmp406 {
 		goto if_then408
@@ -3051,26 +3228,26 @@ land_lhs_true405:
 	}
 
 if_then408:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end409:
-	v184 = *result
-	tobool410 = (v184 & 1) != 0
-	*retval = tobool410
+	v184 = *libc.As[byte](result)
+	loadedv410 = (v184 & 1) != 0
+	*libc.As[bool](retval) = loadedv410
 	goto _return
 
 sw_bb411:
-	*result = 1
-	v185 = *lexer_addr
-	result_symbol412 = &v185.F1
-	*result_symbol412 = 6
-	v186 = *lexer_addr
-	mark_end413 = &v186.F3
-	v187 = *mark_end413
-	v188 = *lexer_addr
-	v187(v188)
-	v189 = *lookahead
+	*libc.As[byte](result) = 1
+	v185 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol412 = libc.Ptr(&libc.As[TSLexer](v185).F1)
+	*libc.As[int16](result_symbol412) = 6
+	v186 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end413 = libc.Ptr(&libc.As[TSLexer](v186).F3)
+	v187 = *libc.As[unsafe.Pointer](mark_end413)
+	v188 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v187)(v188)
+	v189 = *libc.As[int32](lookahead)
 	cmp414 = v189 == 67
 	if cmp414 {
 		goto if_then416
@@ -3079,11 +3256,11 @@ sw_bb411:
 	}
 
 if_then416:
-	*state_addr = 18
+	*libc.As[int16](state_addr) = 18
 	goto next_state
 
 if_end417:
-	v190 = *lookahead
+	v190 = *libc.As[int32](lookahead)
 	cmp418 = v190 == 99
 	if cmp418 {
 		goto if_then420
@@ -3092,11 +3269,11 @@ if_end417:
 	}
 
 if_then420:
-	*state_addr = 16
+	*libc.As[int16](state_addr) = 16
 	goto next_state
 
 if_end421:
-	v191 = *lookahead
+	v191 = *libc.As[int32](lookahead)
 	cmp422 = v191 != 0
 	if cmp422 {
 		goto land_lhs_true424
@@ -3105,7 +3282,7 @@ if_end421:
 	}
 
 land_lhs_true424:
-	v192 = *lookahead
+	v192 = *libc.As[int32](lookahead)
 	cmp425 = v192 < 9
 	if cmp425 {
 		goto land_lhs_true430
@@ -3114,7 +3291,7 @@ land_lhs_true424:
 	}
 
 lor_lhs_false427:
-	v193 = *lookahead
+	v193 = *libc.As[int32](lookahead)
 	cmp428 = 13 < v193
 	if cmp428 {
 		goto land_lhs_true430
@@ -3123,7 +3300,7 @@ lor_lhs_false427:
 	}
 
 land_lhs_true430:
-	v194 = *lookahead
+	v194 = *libc.As[int32](lookahead)
 	cmp431 = v194 != 32
 	if cmp431 {
 		goto if_then433
@@ -3132,26 +3309,26 @@ land_lhs_true430:
 	}
 
 if_then433:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end434:
-	v195 = *result
-	tobool435 = (v195 & 1) != 0
-	*retval = tobool435
+	v195 = *libc.As[byte](result)
+	loadedv435 = (v195 & 1) != 0
+	*libc.As[bool](retval) = loadedv435
 	goto _return
 
 sw_bb436:
-	*result = 1
-	v196 = *lexer_addr
-	result_symbol437 = &v196.F1
-	*result_symbol437 = 6
-	v197 = *lexer_addr
-	mark_end438 = &v197.F3
-	v198 = *mark_end438
-	v199 = *lexer_addr
-	v198(v199)
-	v200 = *lookahead
+	*libc.As[byte](result) = 1
+	v196 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol437 = libc.Ptr(&libc.As[TSLexer](v196).F1)
+	*libc.As[int16](result_symbol437) = 6
+	v197 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end438 = libc.Ptr(&libc.As[TSLexer](v197).F3)
+	v198 = *libc.As[unsafe.Pointer](mark_end438)
+	v199 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v198)(v199)
+	v200 = *libc.As[int32](lookahead)
 	cmp439 = v200 != 0
 	if cmp439 {
 		goto land_lhs_true441
@@ -3160,7 +3337,7 @@ sw_bb436:
 	}
 
 land_lhs_true441:
-	v201 = *lookahead
+	v201 = *libc.As[int32](lookahead)
 	cmp442 = v201 < 9
 	if cmp442 {
 		goto land_lhs_true447
@@ -3169,7 +3346,7 @@ land_lhs_true441:
 	}
 
 lor_lhs_false444:
-	v202 = *lookahead
+	v202 = *libc.As[int32](lookahead)
 	cmp445 = 13 < v202
 	if cmp445 {
 		goto land_lhs_true447
@@ -3178,7 +3355,7 @@ lor_lhs_false444:
 	}
 
 land_lhs_true447:
-	v203 = *lookahead
+	v203 = *libc.As[int32](lookahead)
 	cmp448 = v203 != 32
 	if cmp448 {
 		goto if_then450
@@ -3187,26 +3364,26 @@ land_lhs_true447:
 	}
 
 if_then450:
-	*state_addr = 20
+	*libc.As[int16](state_addr) = 20
 	goto next_state
 
 if_end451:
-	v204 = *result
-	tobool452 = (v204 & 1) != 0
-	*retval = tobool452
+	v204 = *libc.As[byte](result)
+	loadedv452 = (v204 & 1) != 0
+	*libc.As[bool](retval) = loadedv452
 	goto _return
 
 sw_bb453:
-	*result = 1
-	v205 = *lexer_addr
-	result_symbol454 = &v205.F1
-	*result_symbol454 = 7
-	v206 = *lexer_addr
-	mark_end455 = &v206.F3
-	v207 = *mark_end455
-	v208 = *lexer_addr
-	v207(v208)
-	v209 = *lookahead
+	*libc.As[byte](result) = 1
+	v205 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol454 = libc.Ptr(&libc.As[TSLexer](v205).F1)
+	*libc.As[int16](result_symbol454) = 7
+	v206 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end455 = libc.Ptr(&libc.As[TSLexer](v206).F3)
+	v207 = *libc.As[unsafe.Pointer](mark_end455)
+	v208 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v207)(v208)
+	v209 = *libc.As[int32](lookahead)
 	cmp456 = v209 == 67
 	if cmp456 {
 		goto if_then458
@@ -3215,11 +3392,11 @@ sw_bb453:
 	}
 
 if_then458:
-	*state_addr = 17
+	*libc.As[int16](state_addr) = 17
 	goto next_state
 
 if_end459:
-	v210 = *lookahead
+	v210 = *libc.As[int32](lookahead)
 	cmp460 = v210 == 99
 	if cmp460 {
 		goto if_then462
@@ -3228,11 +3405,11 @@ if_end459:
 	}
 
 if_then462:
-	*state_addr = 15
+	*libc.As[int16](state_addr) = 15
 	goto next_state
 
 if_end463:
-	v211 = *lookahead
+	v211 = *libc.As[int32](lookahead)
 	cmp464 = v211 != 0
 	if cmp464 {
 		goto land_lhs_true466
@@ -3241,7 +3418,7 @@ if_end463:
 	}
 
 land_lhs_true466:
-	v212 = *lookahead
+	v212 = *libc.As[int32](lookahead)
 	cmp467 = v212 != 10
 	if cmp467 {
 		goto land_lhs_true469
@@ -3250,7 +3427,7 @@ land_lhs_true466:
 	}
 
 land_lhs_true469:
-	v213 = *lookahead
+	v213 = *libc.As[int32](lookahead)
 	cmp470 = v213 != 13
 	if cmp470 {
 		goto if_then472
@@ -3259,26 +3436,26 @@ land_lhs_true469:
 	}
 
 if_then472:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end473:
-	v214 = *result
-	tobool474 = (v214 & 1) != 0
-	*retval = tobool474
+	v214 = *libc.As[byte](result)
+	loadedv474 = (v214 & 1) != 0
+	*libc.As[bool](retval) = loadedv474
 	goto _return
 
 sw_bb475:
-	*result = 1
-	v215 = *lexer_addr
-	result_symbol476 = &v215.F1
-	*result_symbol476 = 7
-	v216 = *lexer_addr
-	mark_end477 = &v216.F3
-	v217 = *mark_end477
-	v218 = *lexer_addr
-	v217(v218)
-	v219 = *lookahead
+	*libc.As[byte](result) = 1
+	v215 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol476 = libc.Ptr(&libc.As[TSLexer](v215).F1)
+	*libc.As[int16](result_symbol476) = 7
+	v216 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end477 = libc.Ptr(&libc.As[TSLexer](v216).F3)
+	v217 = *libc.As[unsafe.Pointer](mark_end477)
+	v218 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v217)(v218)
+	v219 = *libc.As[int32](lookahead)
 	cmp478 = v219 == 99
 	if cmp478 {
 		goto if_then480
@@ -3287,11 +3464,11 @@ sw_bb475:
 	}
 
 if_then480:
-	*state_addr = 13
+	*libc.As[int16](state_addr) = 13
 	goto next_state
 
 if_end481:
-	v220 = *lookahead
+	v220 = *libc.As[int32](lookahead)
 	cmp482 = v220 != 0
 	if cmp482 {
 		goto land_lhs_true484
@@ -3300,7 +3477,7 @@ if_end481:
 	}
 
 land_lhs_true484:
-	v221 = *lookahead
+	v221 = *libc.As[int32](lookahead)
 	cmp485 = v221 != 10
 	if cmp485 {
 		goto land_lhs_true487
@@ -3309,7 +3486,7 @@ land_lhs_true484:
 	}
 
 land_lhs_true487:
-	v222 = *lookahead
+	v222 = *libc.As[int32](lookahead)
 	cmp488 = v222 != 13
 	if cmp488 {
 		goto if_then490
@@ -3318,26 +3495,26 @@ land_lhs_true487:
 	}
 
 if_then490:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end491:
-	v223 = *result
-	tobool492 = (v223 & 1) != 0
-	*retval = tobool492
+	v223 = *libc.As[byte](result)
+	loadedv492 = (v223 & 1) != 0
+	*libc.As[bool](retval) = loadedv492
 	goto _return
 
 sw_bb493:
-	*result = 1
-	v224 = *lexer_addr
-	result_symbol494 = &v224.F1
-	*result_symbol494 = 7
-	v225 = *lexer_addr
-	mark_end495 = &v225.F3
-	v226 = *mark_end495
-	v227 = *lexer_addr
-	v226(v227)
-	v228 = *lookahead
+	*libc.As[byte](result) = 1
+	v224 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol494 = libc.Ptr(&libc.As[TSLexer](v224).F1)
+	*libc.As[int16](result_symbol494) = 7
+	v225 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end495 = libc.Ptr(&libc.As[TSLexer](v225).F3)
+	v226 = *libc.As[unsafe.Pointer](mark_end495)
+	v227 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v226)(v227)
+	v228 = *libc.As[int32](lookahead)
 	cmp496 = v228 == 101
 	if cmp496 {
 		goto if_then498
@@ -3346,11 +3523,11 @@ sw_bb493:
 	}
 
 if_then498:
-	*state_addr = 22
+	*libc.As[int16](state_addr) = 22
 	goto next_state
 
 if_end499:
-	v229 = *lookahead
+	v229 = *libc.As[int32](lookahead)
 	cmp500 = v229 != 0
 	if cmp500 {
 		goto land_lhs_true502
@@ -3359,7 +3536,7 @@ if_end499:
 	}
 
 land_lhs_true502:
-	v230 = *lookahead
+	v230 = *libc.As[int32](lookahead)
 	cmp503 = v230 != 10
 	if cmp503 {
 		goto land_lhs_true505
@@ -3368,7 +3545,7 @@ land_lhs_true502:
 	}
 
 land_lhs_true505:
-	v231 = *lookahead
+	v231 = *libc.As[int32](lookahead)
 	cmp506 = v231 != 13
 	if cmp506 {
 		goto if_then508
@@ -3377,26 +3554,26 @@ land_lhs_true505:
 	}
 
 if_then508:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end509:
-	v232 = *result
-	tobool510 = (v232 & 1) != 0
-	*retval = tobool510
+	v232 = *libc.As[byte](result)
+	loadedv510 = (v232 & 1) != 0
+	*libc.As[bool](retval) = loadedv510
 	goto _return
 
 sw_bb511:
-	*result = 1
-	v233 = *lexer_addr
-	result_symbol512 = &v233.F1
-	*result_symbol512 = 7
-	v234 = *lexer_addr
-	mark_end513 = &v234.F3
-	v235 = *mark_end513
-	v236 = *lexer_addr
-	v235(v236)
-	v237 = *lookahead
+	*libc.As[byte](result) = 1
+	v233 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol512 = libc.Ptr(&libc.As[TSLexer](v233).F1)
+	*libc.As[int16](result_symbol512) = 7
+	v234 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end513 = libc.Ptr(&libc.As[TSLexer](v234).F3)
+	v235 = *libc.As[unsafe.Pointer](mark_end513)
+	v236 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v235)(v236)
+	v237 = *libc.As[int32](lookahead)
 	cmp514 = v237 == 120
 	if cmp514 {
 		goto if_then516
@@ -3405,11 +3582,11 @@ sw_bb511:
 	}
 
 if_then516:
-	*state_addr = 23
+	*libc.As[int16](state_addr) = 23
 	goto next_state
 
 if_end517:
-	v238 = *lookahead
+	v238 = *libc.As[int32](lookahead)
 	cmp518 = v238 != 0
 	if cmp518 {
 		goto land_lhs_true520
@@ -3418,7 +3595,7 @@ if_end517:
 	}
 
 land_lhs_true520:
-	v239 = *lookahead
+	v239 = *libc.As[int32](lookahead)
 	cmp521 = v239 != 10
 	if cmp521 {
 		goto land_lhs_true523
@@ -3427,7 +3604,7 @@ land_lhs_true520:
 	}
 
 land_lhs_true523:
-	v240 = *lookahead
+	v240 = *libc.As[int32](lookahead)
 	cmp524 = v240 != 13
 	if cmp524 {
 		goto if_then526
@@ -3436,26 +3613,26 @@ land_lhs_true523:
 	}
 
 if_then526:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end527:
-	v241 = *result
-	tobool528 = (v241 & 1) != 0
-	*retval = tobool528
+	v241 = *libc.As[byte](result)
+	loadedv528 = (v241 & 1) != 0
+	*libc.As[bool](retval) = loadedv528
 	goto _return
 
 sw_bb529:
-	*result = 1
-	v242 = *lexer_addr
-	result_symbol530 = &v242.F1
-	*result_symbol530 = 7
-	v243 = *lexer_addr
-	mark_end531 = &v243.F3
-	v244 = *mark_end531
-	v245 = *lexer_addr
-	v244(v245)
-	v246 = *lookahead
+	*libc.As[byte](result) = 1
+	v242 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol530 = libc.Ptr(&libc.As[TSLexer](v242).F1)
+	*libc.As[int16](result_symbol530) = 7
+	v243 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end531 = libc.Ptr(&libc.As[TSLexer](v243).F3)
+	v244 = *libc.As[unsafe.Pointer](mark_end531)
+	v245 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v244)(v245)
+	v246 = *libc.As[int32](lookahead)
 	cmp532 = v246 != 0
 	if cmp532 {
 		goto land_lhs_true534
@@ -3464,7 +3641,7 @@ sw_bb529:
 	}
 
 land_lhs_true534:
-	v247 = *lookahead
+	v247 = *libc.As[int32](lookahead)
 	cmp535 = v247 != 10
 	if cmp535 {
 		goto land_lhs_true537
@@ -3473,7 +3650,7 @@ land_lhs_true534:
 	}
 
 land_lhs_true537:
-	v248 = *lookahead
+	v248 = *libc.As[int32](lookahead)
 	cmp538 = v248 != 13
 	if cmp538 {
 		goto if_then540
@@ -3482,26 +3659,26 @@ land_lhs_true537:
 	}
 
 if_then540:
-	*state_addr = 25
+	*libc.As[int16](state_addr) = 25
 	goto next_state
 
 if_end541:
-	v249 = *result
-	tobool542 = (v249 & 1) != 0
-	*retval = tobool542
+	v249 = *libc.As[byte](result)
+	loadedv542 = (v249 & 1) != 0
+	*libc.As[bool](retval) = loadedv542
 	goto _return
 
 sw_bb543:
-	*result = 1
-	v250 = *lexer_addr
-	result_symbol544 = &v250.F1
-	*result_symbol544 = 8
-	v251 = *lexer_addr
-	mark_end545 = &v251.F3
-	v252 = *mark_end545
-	v253 = *lexer_addr
-	v252(v253)
-	v254 = *lookahead
+	*libc.As[byte](result) = 1
+	v250 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol544 = libc.Ptr(&libc.As[TSLexer](v250).F1)
+	*libc.As[int16](result_symbol544) = 8
+	v251 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end545 = libc.Ptr(&libc.As[TSLexer](v251).F3)
+	v252 = *libc.As[unsafe.Pointer](mark_end545)
+	v253 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v252)(v253)
+	v254 = *libc.As[int32](lookahead)
 	cmp546 = v254 == 99
 	if cmp546 {
 		goto if_then548
@@ -3510,11 +3687,11 @@ sw_bb543:
 	}
 
 if_then548:
-	*state_addr = 14
+	*libc.As[int16](state_addr) = 14
 	goto next_state
 
 if_end549:
-	v255 = *lookahead
+	v255 = *libc.As[int32](lookahead)
 	cmp550 = v255 == 45
 	if cmp550 {
 		goto if_then564
@@ -3523,7 +3700,7 @@ if_end549:
 	}
 
 lor_lhs_false552:
-	v256 = *lookahead
+	v256 = *libc.As[int32](lookahead)
 	cmp553 = 65 <= v256
 	if cmp553 {
 		goto land_lhs_true555
@@ -3532,7 +3709,7 @@ lor_lhs_false552:
 	}
 
 land_lhs_true555:
-	v257 = *lookahead
+	v257 = *libc.As[int32](lookahead)
 	cmp556 = v257 <= 90
 	if cmp556 {
 		goto if_then564
@@ -3541,7 +3718,7 @@ land_lhs_true555:
 	}
 
 lor_lhs_false558:
-	v258 = *lookahead
+	v258 = *libc.As[int32](lookahead)
 	cmp559 = 97 <= v258
 	if cmp559 {
 		goto land_lhs_true561
@@ -3550,7 +3727,7 @@ lor_lhs_false558:
 	}
 
 land_lhs_true561:
-	v259 = *lookahead
+	v259 = *libc.As[int32](lookahead)
 	cmp562 = v259 <= 122
 	if cmp562 {
 		goto if_then564
@@ -3559,26 +3736,26 @@ land_lhs_true561:
 	}
 
 if_then564:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end565:
-	v260 = *result
-	tobool566 = (v260 & 1) != 0
-	*retval = tobool566
+	v260 = *libc.As[byte](result)
+	loadedv566 = (v260 & 1) != 0
+	*libc.As[bool](retval) = loadedv566
 	goto _return
 
 sw_bb567:
-	*result = 1
-	v261 = *lexer_addr
-	result_symbol568 = &v261.F1
-	*result_symbol568 = 8
-	v262 = *lexer_addr
-	mark_end569 = &v262.F3
-	v263 = *mark_end569
-	v264 = *lexer_addr
-	v263(v264)
-	v265 = *lookahead
+	*libc.As[byte](result) = 1
+	v261 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol568 = libc.Ptr(&libc.As[TSLexer](v261).F1)
+	*libc.As[int16](result_symbol568) = 8
+	v262 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end569 = libc.Ptr(&libc.As[TSLexer](v262).F3)
+	v263 = *libc.As[unsafe.Pointer](mark_end569)
+	v264 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v263)(v264)
+	v265 = *libc.As[int32](lookahead)
 	cmp570 = v265 == 101
 	if cmp570 {
 		goto if_then572
@@ -3587,11 +3764,11 @@ sw_bb567:
 	}
 
 if_then572:
-	*state_addr = 26
+	*libc.As[int16](state_addr) = 26
 	goto next_state
 
 if_end573:
-	v266 = *lookahead
+	v266 = *libc.As[int32](lookahead)
 	cmp574 = v266 == 45
 	if cmp574 {
 		goto if_then588
@@ -3600,7 +3777,7 @@ if_end573:
 	}
 
 lor_lhs_false576:
-	v267 = *lookahead
+	v267 = *libc.As[int32](lookahead)
 	cmp577 = 65 <= v267
 	if cmp577 {
 		goto land_lhs_true579
@@ -3609,7 +3786,7 @@ lor_lhs_false576:
 	}
 
 land_lhs_true579:
-	v268 = *lookahead
+	v268 = *libc.As[int32](lookahead)
 	cmp580 = v268 <= 90
 	if cmp580 {
 		goto if_then588
@@ -3618,7 +3795,7 @@ land_lhs_true579:
 	}
 
 lor_lhs_false582:
-	v269 = *lookahead
+	v269 = *libc.As[int32](lookahead)
 	cmp583 = 97 <= v269
 	if cmp583 {
 		goto land_lhs_true585
@@ -3627,7 +3804,7 @@ lor_lhs_false582:
 	}
 
 land_lhs_true585:
-	v270 = *lookahead
+	v270 = *libc.As[int32](lookahead)
 	cmp586 = v270 <= 122
 	if cmp586 {
 		goto if_then588
@@ -3636,26 +3813,26 @@ land_lhs_true585:
 	}
 
 if_then588:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end589:
-	v271 = *result
-	tobool590 = (v271 & 1) != 0
-	*retval = tobool590
+	v271 = *libc.As[byte](result)
+	loadedv590 = (v271 & 1) != 0
+	*libc.As[bool](retval) = loadedv590
 	goto _return
 
 sw_bb591:
-	*result = 1
-	v272 = *lexer_addr
-	result_symbol592 = &v272.F1
-	*result_symbol592 = 8
-	v273 = *lexer_addr
-	mark_end593 = &v273.F3
-	v274 = *mark_end593
-	v275 = *lexer_addr
-	v274(v275)
-	v276 = *lookahead
+	*libc.As[byte](result) = 1
+	v272 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol592 = libc.Ptr(&libc.As[TSLexer](v272).F1)
+	*libc.As[int16](result_symbol592) = 8
+	v273 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end593 = libc.Ptr(&libc.As[TSLexer](v273).F3)
+	v274 = *libc.As[unsafe.Pointer](mark_end593)
+	v275 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v274)(v275)
+	v276 = *libc.As[int32](lookahead)
 	cmp594 = v276 == 120
 	if cmp594 {
 		goto if_then596
@@ -3664,11 +3841,11 @@ sw_bb591:
 	}
 
 if_then596:
-	*state_addr = 27
+	*libc.As[int16](state_addr) = 27
 	goto next_state
 
 if_end597:
-	v277 = *lookahead
+	v277 = *libc.As[int32](lookahead)
 	cmp598 = v277 == 45
 	if cmp598 {
 		goto if_then612
@@ -3677,7 +3854,7 @@ if_end597:
 	}
 
 lor_lhs_false600:
-	v278 = *lookahead
+	v278 = *libc.As[int32](lookahead)
 	cmp601 = 65 <= v278
 	if cmp601 {
 		goto land_lhs_true603
@@ -3686,7 +3863,7 @@ lor_lhs_false600:
 	}
 
 land_lhs_true603:
-	v279 = *lookahead
+	v279 = *libc.As[int32](lookahead)
 	cmp604 = v279 <= 90
 	if cmp604 {
 		goto if_then612
@@ -3695,7 +3872,7 @@ land_lhs_true603:
 	}
 
 lor_lhs_false606:
-	v280 = *lookahead
+	v280 = *libc.As[int32](lookahead)
 	cmp607 = 97 <= v280
 	if cmp607 {
 		goto land_lhs_true609
@@ -3704,7 +3881,7 @@ lor_lhs_false606:
 	}
 
 land_lhs_true609:
-	v281 = *lookahead
+	v281 = *libc.As[int32](lookahead)
 	cmp610 = v281 <= 122
 	if cmp610 {
 		goto if_then612
@@ -3713,26 +3890,26 @@ land_lhs_true609:
 	}
 
 if_then612:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end613:
-	v282 = *result
-	tobool614 = (v282 & 1) != 0
-	*retval = tobool614
+	v282 = *libc.As[byte](result)
+	loadedv614 = (v282 & 1) != 0
+	*libc.As[bool](retval) = loadedv614
 	goto _return
 
 sw_bb615:
-	*result = 1
-	v283 = *lexer_addr
-	result_symbol616 = &v283.F1
-	*result_symbol616 = 8
-	v284 = *lexer_addr
-	mark_end617 = &v284.F3
-	v285 = *mark_end617
-	v286 = *lexer_addr
-	v285(v286)
-	v287 = *lookahead
+	*libc.As[byte](result) = 1
+	v283 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol616 = libc.Ptr(&libc.As[TSLexer](v283).F1)
+	*libc.As[int16](result_symbol616) = 8
+	v284 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end617 = libc.Ptr(&libc.As[TSLexer](v284).F3)
+	v285 = *libc.As[unsafe.Pointer](mark_end617)
+	v286 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v285)(v286)
+	v287 = *libc.As[int32](lookahead)
 	cmp618 = v287 == 45
 	if cmp618 {
 		goto if_then632
@@ -3741,7 +3918,7 @@ sw_bb615:
 	}
 
 lor_lhs_false620:
-	v288 = *lookahead
+	v288 = *libc.As[int32](lookahead)
 	cmp621 = 65 <= v288
 	if cmp621 {
 		goto land_lhs_true623
@@ -3750,7 +3927,7 @@ lor_lhs_false620:
 	}
 
 land_lhs_true623:
-	v289 = *lookahead
+	v289 = *libc.As[int32](lookahead)
 	cmp624 = v289 <= 90
 	if cmp624 {
 		goto if_then632
@@ -3759,7 +3936,7 @@ land_lhs_true623:
 	}
 
 lor_lhs_false626:
-	v290 = *lookahead
+	v290 = *libc.As[int32](lookahead)
 	cmp627 = 97 <= v290
 	if cmp627 {
 		goto land_lhs_true629
@@ -3768,7 +3945,7 @@ lor_lhs_false626:
 	}
 
 land_lhs_true629:
-	v291 = *lookahead
+	v291 = *libc.As[int32](lookahead)
 	cmp630 = v291 <= 122
 	if cmp630 {
 		goto if_then632
@@ -3777,26 +3954,26 @@ land_lhs_true629:
 	}
 
 if_then632:
-	*state_addr = 29
+	*libc.As[int16](state_addr) = 29
 	goto next_state
 
 if_end633:
-	v292 = *result
-	tobool634 = (v292 & 1) != 0
-	*retval = tobool634
+	v292 = *libc.As[byte](result)
+	loadedv634 = (v292 & 1) != 0
+	*libc.As[bool](retval) = loadedv634
 	goto _return
 
 sw_bb635:
-	*result = 1
-	v293 = *lexer_addr
-	result_symbol636 = &v293.F1
-	*result_symbol636 = 9
-	v294 = *lexer_addr
-	mark_end637 = &v294.F3
-	v295 = *mark_end637
-	v296 = *lexer_addr
-	v295(v296)
-	v297 = *lookahead
+	*libc.As[byte](result) = 1
+	v293 = *libc.As[unsafe.Pointer](lexer_addr)
+	result_symbol636 = libc.Ptr(&libc.As[TSLexer](v293).F1)
+	*libc.As[int16](result_symbol636) = 9
+	v294 = *libc.As[unsafe.Pointer](lexer_addr)
+	mark_end637 = libc.Ptr(&libc.As[TSLexer](v294).F3)
+	v295 = *libc.As[unsafe.Pointer](mark_end637)
+	v296 = *libc.As[unsafe.Pointer](lexer_addr)
+	libc.FuncFromCode[func(unsafe.Pointer)](v295)(v296)
+	v297 = *libc.As[int32](lookahead)
 	cmp638 = v297 != 0
 	if cmp638 {
 		goto land_lhs_true640
@@ -3805,7 +3982,7 @@ sw_bb635:
 	}
 
 land_lhs_true640:
-	v298 = *lookahead
+	v298 = *libc.As[int32](lookahead)
 	cmp641 = v298 != 10
 	if cmp641 {
 		goto land_lhs_true643
@@ -3814,7 +3991,7 @@ land_lhs_true640:
 	}
 
 land_lhs_true643:
-	v299 = *lookahead
+	v299 = *libc.As[int32](lookahead)
 	cmp644 = v299 != 13
 	if cmp644 {
 		goto if_then646
@@ -3823,20 +4000,20 @@ land_lhs_true643:
 	}
 
 if_then646:
-	*state_addr = 30
+	*libc.As[int16](state_addr) = 30
 	goto next_state
 
 if_end647:
-	v300 = *result
-	tobool648 = (v300 & 1) != 0
-	*retval = tobool648
+	v300 = *libc.As[byte](result)
+	loadedv648 = (v300 & 1) != 0
+	*libc.As[bool](retval) = loadedv648
 	goto _return
 
 sw_default:
-	*retval = false
+	*libc.As[bool](retval) = false
 	goto _return
 
 _return:
-	v301 = *retval
+	v301 = *libc.As[bool](retval)
 	return v301
 }
