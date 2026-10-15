@@ -198,7 +198,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/twig v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/typescript v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/typst v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/udev v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/udev v0.0.0-20260927191427-b55c533d023c
 	github.com/lewtec/leaven-tree-sitter/grammar/ungrammar v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/uxntal v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/verilog v0.0.0-20260927175155-6b7c6c643bc9
