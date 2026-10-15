@@ -170,7 +170,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/roc v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/ron v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/ruby v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/rust v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/rust v0.0.0-20260927191427-b55c533d023c
 	github.com/lewtec/leaven-tree-sitter/grammar/scala v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/scheme v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/scss v0.0.0-20260927175155-6b7c6c643bc9
