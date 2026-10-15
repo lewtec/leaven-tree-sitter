@@ -43,7 +43,7 @@ jobs:
           fetch-depth: 1
 
       # Runtime tests are pure Go. Do not install clang/workspaced on every OS.
-      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
+      - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4
         with:
           install: false
 
@@ -72,7 +72,7 @@ jobs:
         with:
           fetch-depth: 1
 
-      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
+      - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4
         with:
           install: false
 
