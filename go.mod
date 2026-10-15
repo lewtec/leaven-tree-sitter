@@ -62,7 +62,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/dockerfile v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/doxygen v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/dtd v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/eex v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/eex v0.0.0-20260927191427-b55c533d023c
 	github.com/lewtec/leaven-tree-sitter/grammar/elixir v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/elm v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/embedded_template v0.0.0-20260927175155-6b7c6c643bc9
