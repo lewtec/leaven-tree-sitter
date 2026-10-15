@@ -515,7 +515,7 @@
       "depName": "opa-oz/tree-sitter-nginx",
       "packageName": "https://github.com/opa-oz/tree-sitter-nginx",
       "currentValue": "main",
-      "currentDigest": "47ade644d754cce57974aac44d2c9450e823d4f4",
+      "currentDigest": "7cdf006ed1addef698fc680ae31721950f85e5e9",
       "datasource": "git-refs"
     },
     {
