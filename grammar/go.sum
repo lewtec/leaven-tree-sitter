@@ -1,2 +1,8 @@
 github.com/lewtec/leaven v0.0.0-20260810010149-5f9a5ec3c5c1 h1:5aeyOi4tC6ddq4s6SnFAkHKfFKYfDpfGSe538GlPGYQ=
 github.com/lewtec/leaven v0.0.0-20260810010149-5f9a5ec3c5c1/go.mod h1:eZD4ezTn+yrldselg35NguzpXrzmldUWpLP35vobXcI=
+github.com/lewtec/leaven v0.0.0-20260910232115-f2053fec770f h1:0YgR8rKzZj8MvUWWUE59XhhH/9SgWxTGqdO/XZuf2qU=
+github.com/lewtec/leaven v0.0.0-20260910232115-f2053fec770f/go.mod h1:PGUjRH6pDQyhGPl1CX3pBuzt6aXaq4oKtMq/zpin5c0=
+golang.org/x/sys v0.48.0 h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo=
+golang.org/x/sys v0.48.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
+modernc.org/memory v1.11.0 h1:o4QC8aMQzmcwCK3t3Ux/ZHmwFPzE6hf2Y5LbkRs+hbI=
+modernc.org/memory v1.11.0/go.mod h1:/JP4VbVC+K5sU2wZi9bHoq2MAkCnrt2r98UGeSK7Mjw=
