@@ -18,12 +18,6 @@ require (
 
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/spf13/pflag v1.0.9 // indirect
-	golang.org/x/exp v0.0.0-20220407100705-7b9b53b0aca4 // indirect
-	golang.org/x/sync v0.21.0 // indirect
-	golang.org/x/tools v0.47.0 // indirect
 	github.com/lewtec/leaven-tree-sitter/grammar v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/COBOL v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/ada v0.0.0-20260927175155-6b7c6c643bc9
@@ -179,7 +173,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/smithy v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/sml v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/solidity v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/sparql v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/sparql v0.0.0-20260927191427-b55c533d023c
 	github.com/lewtec/leaven-tree-sitter/grammar/squirrel v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/ssh_config v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/starlark v0.0.0-20260927175155-6b7c6c643bc9
@@ -216,4 +210,10 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/yaml v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/yuck v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/zig v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
+	github.com/pkg/errors v0.9.1 // indirect
+	github.com/spf13/pflag v1.0.9 // indirect
+	golang.org/x/exp v0.0.0-20220407100705-7b9b53b0aca4 // indirect
+	golang.org/x/sync v0.21.0 // indirect
+	golang.org/x/tools v0.47.0 // indirect
 )
