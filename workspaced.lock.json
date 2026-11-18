@@ -1494,7 +1494,7 @@
       "depName": "tree-sitter/tree-sitter-json",
       "packageName": "https://github.com/tree-sitter/tree-sitter-json",
       "currentValue": "master",
-      "currentDigest": "001c28d7a29832b06b0e831ec77845553c89b56d",
+      "currentDigest": "254c42a6476413b776221e03982ac8ae159eeb72",
       "datasource": "git-refs"
     },
     {
