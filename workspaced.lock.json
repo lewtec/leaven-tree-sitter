@@ -738,7 +738,7 @@
       "depName": "tree-sitter-grammars/tree-sitter-cuda",
       "packageName": "https://github.com/tree-sitter-grammars/tree-sitter-cuda",
       "currentValue": "master",
-      "currentDigest": "48b066f334f4cf2174e05a50218ce2ed98b6fd01",
+      "currentDigest": "d58080a327756e4d1d16ec329ba7cb2048f6c6cd",
       "datasource": "git-refs"
     },
     {
