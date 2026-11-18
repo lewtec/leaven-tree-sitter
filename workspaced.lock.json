@@ -756,7 +756,7 @@
       "depName": "tree-sitter-grammars/tree-sitter-diff",
       "packageName": "https://github.com/tree-sitter-grammars/tree-sitter-diff",
       "currentValue": "main",
-      "currentDigest": "0f8fe525b2ff5fbd7f21d0dcfb756fbbe30ca844",
+      "currentDigest": "ada384ac7bfc1307f32de474620120add29998fb",
       "datasource": "git-refs"
     },
     {
