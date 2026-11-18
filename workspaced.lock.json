@@ -765,7 +765,7 @@
       "depName": "tree-sitter-grammars/tree-sitter-doxygen",
       "packageName": "https://github.com/tree-sitter-grammars/tree-sitter-doxygen",
       "currentValue": "master",
-      "currentDigest": "ccd998f378c3f9345ea4eeb223f56d7b84d16687",
+      "currentDigest": "6069b1815b139080d6c562b5ff9ae2296cbc6602",
       "datasource": "git-refs"
     },
     {
