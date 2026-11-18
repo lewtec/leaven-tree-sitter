@@ -927,7 +927,7 @@
       "depName": "tree-sitter-grammars/tree-sitter-luadoc",
       "packageName": "https://github.com/tree-sitter-grammars/tree-sitter-luadoc",
       "currentValue": "master",
-      "currentDigest": "873612aadd3f684dd4e631bdf42ea8990c57634e",
+      "currentDigest": "4d04632a3a398b78af52e83be074883e722f40be",
       "datasource": "git-refs"
     },
     {
