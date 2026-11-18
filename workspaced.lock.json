@@ -900,7 +900,7 @@
       "depName": "tree-sitter-grammars/tree-sitter-kdl",
       "packageName": "https://github.com/tree-sitter-grammars/tree-sitter-kdl",
       "currentValue": "master",
-      "currentDigest": "b37e3d58e5c5cf8d739b315d6114e02d42e66664",
+      "currentDigest": "e8ff98a113e175b84b92ec2096820517c1e10a66",
       "datasource": "git-refs"
     },
     {
