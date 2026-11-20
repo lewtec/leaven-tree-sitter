@@ -55,7 +55,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/cst v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/csv v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/cuda v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/cue v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/cue v0.0.0-20261118140914-64140f7a3d9b
 	github.com/lewtec/leaven-tree-sitter/grammar/cyberchef v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/dart v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/diff v0.0.0-20260927175155-6b7c6c643bc9
