@@ -125,7 +125,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/matlab v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/meson v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/move v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/nasm v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/nasm v0.0.0-20261118140914-64140f7a3d9b
 	github.com/lewtec/leaven-tree-sitter/grammar/nginx v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/nickel v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/nim v0.0.0-20260927175155-6b7c6c643bc9
