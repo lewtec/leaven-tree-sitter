@@ -160,7 +160,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/qmldir v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/query v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/racket v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/rasi v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/rasi v0.0.0-20261118140914-64140f7a3d9b
 	github.com/lewtec/leaven-tree-sitter/grammar/re2c v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/readline v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/regex v0.0.0-20260927175155-6b7c6c643bc9
