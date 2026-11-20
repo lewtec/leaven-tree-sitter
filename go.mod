@@ -129,7 +129,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/nginx v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/nickel v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/nim v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/nix v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/nix v0.0.0-20261118140914-64140f7a3d9b
 	github.com/lewtec/leaven-tree-sitter/grammar/nqc v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/objc v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/objdump v0.0.0-20260927175155-6b7c6c643bc9
