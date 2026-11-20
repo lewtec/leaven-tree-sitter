@@ -48,7 +48,7 @@ require (
 	github.com/lewtec/leaven-tree-sitter/grammar/comment v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/commonlisp v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/core_schema v0.0.0-20260927175155-6b7c6c643bc9
-	github.com/lewtec/leaven-tree-sitter/grammar/cpon v0.0.0-20260927175155-6b7c6c643bc9
+	github.com/lewtec/leaven-tree-sitter/grammar/cpon v0.0.0-20261118140914-64140f7a3d9b
 	github.com/lewtec/leaven-tree-sitter/grammar/cpp v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/crystal v0.0.0-20260927175155-6b7c6c643bc9
 	github.com/lewtec/leaven-tree-sitter/grammar/css v0.0.0-20260927175155-6b7c6c643bc9
